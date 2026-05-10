@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="robots" content="noindex,nofollow">
+  <title>OPC 测评 · 解锁完整版</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pay-header { text-align: center; padding: 24px 0; }
+    .pay-header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+
+    /* 预览区域 */
+    .preview-section { margin: 16px 0; position: relative; }
+    .preview-content {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+    }
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(245, 240, 232, 0.5);
+      border-radius: var(--radius);
+      z-index: 5;
+    }
+    .preview-overlay__text { font-size: 0.9375rem; color: var(--primary); font-weight: 600; }
+
+    /* 对比表格 */
+    .compare-section { margin: 24px 0; }
+    .compare-section h3 { text-align: center; margin-bottom: 12px; font-size: 1rem; }
+
+    /* 收款码区域 */
+    .pay-qr-section { text-align: center; margin: 28px 0; }
+    .pay-qr-section .price-tag { margin-bottom: 8px; }
+    .pay-qr-section .price-original { margin-bottom: 12px; }
+    .pay-qr-section img {
+      width: 260px; max-width: 100%; height: auto;
+      border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+      margin-bottom: 12px;
+    }
+    .pay-qr-note { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* 零风险承诺 */
+    .guarantee { margin: 16px 0 20px; }
+
+    /* 支付按钮 */
+    .pay-btn-area { text-align: center; margin: 20px 0; }
+    .pay-btn-area .btn { font-size: 1.1875rem; padding: 16px 48px; width: 100%; max-width: 360px; }
+
+    /* 社会证明 */
+    .pay-social { text-align: center; margin: 16px 0; }
+  </style>
+</head>
+<body data-page="pay">
+  <div class="page">
+    <div class="page-content">
+
+      <!-- 头部 -->
+      <div class="pay-header anim-fade-in-up">
+        <h1>解锁你的完整版报告</h1>
+        <p class="subtitle">查看6维度详细拆解 + 定制赛道 + 行动计划</p>
+      </div>
+
+      <!-- 免费版预览（模糊） -->
+      <div class="preview-section anim-fade-in-up anim-delay-1">
+        <div class="preview-content">
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:12px;">
+              <div class="score-number preview-score" style="font-size:2.5rem;">--</div>
+              <div class="grade-tag preview-grade" style="width:44px;height:44px;font-size:1.25rem;">-</div>
+            </div>
+            <div style="height:12px;background:#eee;border-radius:6px;margin:8px 0;"></div>
+            <div style="height:12px;background:#eee;border-radius:6px;width:80%;margin:8px 0;"></div>
+            <div style="height:12px;background:#eee;border-radius:6px;width:60%;margin:8px 0;"></div>
+          </div>
+        </div>
+        <div class="preview-overlay">
+          <div class="preview-overlay__text">付费解锁完整报告</div>
+        </div>
+      </div>
+
+      <!-- 对比表格 -->
+      <div class="compare-section anim-fade-in-up anim-delay-2">
+        <h3>免费版 vs 完整版</h3>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>功能</th>
+                <th>免费版</th>
+                <th>完整版</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>总分 + 等级</td><td>✓</td><td>✓</td></tr>
+              <tr><td>核心优势 & 卡点</td><td>✓</td><td>✓</td></tr>
+              <tr><td>9维度详细拆解</td><td>✗</td><td style="color:var(--accent);font-weight:700;">✓</td></tr>
+              <tr><td>3条定制赛道</td><td>✗</td><td style="color:var(--accent);font-weight:700;">✓</td></tr>
+              <tr><td>30天SOP计划</td><td>✗</td><td style="color:var(--accent);font-weight:700;">✓</td></tr>
+              <tr><td>避坑指南</td><td>✗</td><td style="color:var(--accent);font-weight:700;">✓</td></tr>
+              <tr><td>1v1诊断优惠</td><td>✗</td><td style="color:var(--accent);font-weight:700;">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 价格 + 收款码（图片+CSS水印） -->
+      <div class="pay-qr-section card card-lg anim-fade-in-up anim-delay-3">
+        <div class="price-tag"><span>¥</span>19.9</div>
+        <div class="price-original">原价 ¥99</div>
+        <div id="qr-wrap" style="position:relative;display:inline-block;overflow:hidden;border-radius:12px;">
+          <img id="qr-img" src="assets/wechat-pay.jpg" alt="微信扫一扫付款" style="display:block;width:260px;max-width:100%;height:auto;border-radius:12px;">
+          <div id="qr-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;"></div>
+        </div>
+        <div class="pay-qr-note">微信扫一扫上方二维码完成付款<br>付款后点击下方按钮领取完整报告</div>
+        <div style="font-size:0.625rem;color:#ccc;margin-top:4px;">本页面收款码仅限本次测评使用，禁止截图传播</div>
+      </div>
+
+      <!-- 领取报告按钮（付款后截图发客服） -->
+      <div class="pay-btn-area anim-fade-in-up anim-delay-4">
+        <button class="btn btn-primary btn-lg pay-btn" style="cursor:pointer;" onclick="showSubmitProof()">已付款，截图发客服领取报告</button>
+      </div>
+
+      <!-- 社会证明 -->
+      <div class="pay-social anim-fade-in-up anim-delay-4">
+        <div class="social-proof">
+          <div class="social-proof__avatars">
+            <div class="social-proof__avatar" style="background:#4a90d9;"></div>
+            <div class="social-proof__avatar" style="background:#d4a853;"></div>
+            <div class="social-proof__avatar" style="background:#4caf50;"></div>
+          </div>
+          <span><strong>1,283</strong> 人已解锁完整版</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer">
+        <p>本测评基于OPC一人公司孵化器200+案例数据</p>
+        <p>© OPC 一人公司孵化器 · 保留所有权利</p>
+      </div>
+
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>
+  // 防护：禁止右键、禁止拖拽
+  document.addEventListener("contextmenu", function(e) { e.preventDefault(); });
+  document.addEventListener("dragstart", function(e) { e.preventDefault(); });
+
+  // 收款码水印：每5秒刷新文字覆盖（不影响二维码扫描）
+  (function() {
+    var overlay = document.getElementById("qr-overlay");
+    var qrImg = document.getElementById("qr-img");
+    if (!overlay || !qrImg) return;
+    
+    function updateWatermark() {
+      var now = new Date();
+      var ts = now.getMonth()+1 + "/" + now.getDate() + " " + 
+              String(now.getHours()).padStart(2,'0') + ":" + 
+              String(now.getMinutes()).padStart(2,'0');
+      overlay.innerHTML = '<div style="position:absolute;bottom:4px;right:4px;font-size:10px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.25);padding:2px 6px;border-radius:3px;user-select:none;z-index:3;">' + ts + '</div>';
+    }
+    updateWatermark();
+    setInterval(updateWatermark, 5000);
+  })();
+  </script>

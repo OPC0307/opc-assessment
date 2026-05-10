@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OPC 测评 · 答题</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quiz-header { text-align: center; margin-bottom: 8px; }
+    .quiz-header h2 { font-size: 1rem; color: var(--text-light); font-weight: 500; }
+    .question-card {
+      margin-top: 16px;
+    }
+    .question-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .question-num {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .question-dim {
+      font-size: 0.75rem;
+      background: rgba(26,54,93,0.08);
+      color: var(--primary);
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+    .question-text {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .options-wrap { margin-bottom: 16px; }
+    .quiz-tip {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body data-page="quiz">
+  <div class="page">
+    <div class="page-content">
+
+      <!-- 顶部进度条 -->
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-bar__fill"></div>
+        </div>
+        <div class="progress-text">
+          <span>已完成 <span class="progress-current">0</span> / <span class="progress-total">15</span> 题</span>
+          <span>⏱ 约3分钟</span>
+        </div>
+      </div>
+
+      <!-- 题目卡片 -->
+      <div class="card card-lg question-card anim-fade-in-up">
+        <div class="question-meta">
+          <span class="question-num">第 1 题</span>
+          <span class="question-dim">核心禀赋</span>
+        </div>
+        <div class="question-text">题目加载中...</div>
+        <div class="question-hint">加载题目提示...</div>
+        <div class="options-wrap"></div>
+      </div>
+
+      <div class="quiz-tip">选择一个最符合你情况的选项；每题都有提示，帮助你更快理解题面含义</div>
+
+    </div>
+  </div>
+
+  <!-- 弹窗容器 -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal__icon" id="fb-icon"></div>
+      <div class="modal__title" id="fb-title"></div>
+      <div class="modal__text" id="fb-text"></div>
+      <div class="modal__progress" id="fb-progress" style="display:none;">
+        <div class="modal__progress-bar"><div class="modal__progress-fill" id="fb-progress-fill"></div></div>
+        <div class="modal__progress-text" id="fb-progress-text">正在生成报告… 0%</div>
+      </div>
+      <button class="btn btn-primary btn-sm" id="fb-close">继续答题</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

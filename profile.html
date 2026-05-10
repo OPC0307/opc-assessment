@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OPC 测评 · 信息采集</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body[data-page="profile"] .page { justify-content: flex-start; }
+    .profile-header { text-align: center; padding: 20px 0 10px; }
+    .profile-header .brand-badge { margin: 0 auto 12px; display: inline-flex; }
+    .profile-header h1 {
+      font-family: "Songti SC","Noto Serif SC","Source Han Serif SC","SimSun", serif;
+      font-size: 1.4rem;
+      line-height: 1.45;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .profile-header p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .form-card { margin-top: 12px; }
+    .form-field { margin-bottom: 14px; }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .form-input,
+    .form-select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--card);
+      appearance: none;
+      -webkit-appearance: none;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+    }
+    .form-select {
+      background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+                        linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+      background-position: calc(100% - 16px) center, calc(100% - 12px) center;
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 34px;
+    }
+    .form-hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.55;
+    }
+    .form-row { margin-bottom: 10px; }
+    .profile-footer {
+      text-align: center;
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-top: 14px;
+    }
+    .cta-wrap { margin-top: 8px; }
+    .cta-wrap .btn { width: 100%; }
+  </style>
+</head>
+<body data-page="profile">
+  <div class="page">
+    <div class="page-content">
+
+      <div class="profile-header anim-fade-in-up">
+        <div class="brand-badge">
+          <span class="brand-badge__dot"></span>
+          OPC 一人公司孵化器
+        </div>
+        <h1>在开始评估前，请先填写你的基础画像</h1>
+        <p>这些信息用于生成更贴合你当前阶段的评估题目，并作为后续报告的背景参考。你的信息仅用于本次测评。</p>
+      </div>
+
+      <div class="card card-lg form-card anim-fade-in-up anim-delay-1">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">你的年龄段</label>
+            <select id="pf-age" class="form-select">
+              <option value="">请选择</option>
+              <option value="18-22">18-22 岁</option>
+              <option value="23-27">23-27 岁</option>
+              <option value="28-35">28-35 岁</option>
+              <option value="36-45">36-45 岁</option>
+              <option value="46+">46 岁及以上</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">你的性别</label>
+            <select id="pf-gender" class="form-select">
+              <option value="">请选择</option>
+              <option value="male">男</option>
+              <option value="female">女</option>
+              <option value="other">其他/不方便透露</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">你当前的主要身份</label>
+            <select id="pf-occupation" class="form-select">
+              <option value="">请选择</option>
+              <option value="在职员工">在职员工</option>
+              <option value="自由职业">自由职业</option>
+              <option value="创业者">创业者</option>
+              <option value="个体经营者">个体经营者</option>
+              <option value="学生">学生</option>
+              <option value="待业/转行中">待业/转行中</option>
+              <option value="全职主理人">全职主理人</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">你的最高学历</label>
+            <select id="pf-edu" class="form-select">
+              <option value="">请选择</option>
+              <option value="高中及以下">高中及以下</option>
+              <option value="大专">大专</option>
+              <option value="本科">本科</option>
+              <option value="硕士及以上">硕士及以上</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">你是从哪个渠道来到本次测评的</label>
+            <select id="pf-channel" class="form-select">
+              <option value="">请选择</option>
+              <option value="小红书">小红书</option>
+              <option value="微信私域/朋友圈">微信私域/朋友圈</option>
+              <option value="公众号">公众号</option>
+              <option value="视频号/抖音">视频号/抖音</option>
+              <option value="朋友推荐">朋友推荐</option>
+              <option value="搜索平台">搜索平台</option>
+              <option value="其他渠道">其他渠道</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-hint">填写完成后，系统将结合你的画像信息，为你生成更具针对性的评估题目。</div>
+      </div>
+
+      <div class="cta-wrap anim-fade-in-up anim-delay-3">
+        <button id="pf-submit" class="btn btn-primary btn-lg">下一步：开始评估</button>
+      </div>
+
+      <div class="profile-footer anim-fade-in-up anim-delay-4">
+        你填写的信息将用于本次评估输出与结果解读，不会用于任何未经授权的用途。
+      </div>
+
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

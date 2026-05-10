@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+@page {
+  size: A4;
+  margin: 25mm 20mm 20mm;
+  @bottom-center {
+    content: "— 第 " counter(page) " 页 —";
+    font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+    font-size: 8pt;
+    color: #999;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  font-size: 10.5pt;
+  line-height: 1.8;
+  color: #2c2c2c;
+}
+
+/* 封面 */
+.cover {
+  page-break-after: always;
+  padding-top: 120px;
+  text-align: center;
+}
+.cover__badge {
+  display: inline-block;
+  background: #1a365d;
+  color: #fff;
+  padding: 4px 16px;
+  font-size: 9pt;
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+}
+.cover__title {
+  font-size: 22pt;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.cover__subtitle {
+  font-size: 12pt;
+  color: #666;
+  margin-bottom: 48px;
+}
+.cover__info {
+  font-size: 10pt;
+  color: #888;
+  line-height: 2;
+}
+.cover__line {
+  width: 60px;
+  height: 2px;
+  background: #d4a853;
+  margin: 24px auto;
+}
+.cover__brand {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #1a365d;
+  letter-spacing: 0.15em;
+  margin-top: 80px;
+}
+
+/* 正文样式 */
+.section {
+  margin-bottom: 20px;
+}
+.section__title {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1a365d;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #d4a853;
+  margin-bottom: 12px;
+}
+.section__body {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: #f8f6f2;
+  margin-bottom: 16px;
+}
+.score-num {
+  font-size: 36pt;
+  font-weight: 900;
+  color: #1a365d;
+}
+.score-grade {
+  font-size: 16pt;
+  color: #d4a853;
+  font-weight: 700;
+}
+.score-label {
+  font-size: 9pt;
+  color: #888;
+}
+.dim-table { width: 100%; border-collapse: collapse; }
+.dim-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e8e0d4;
+  font-size: 10pt;
+}
+.dim-table tr:last-child td { border-bottom: none; }
+.dim-table td:first-child { font-weight: 600; color: #1a365d; width: 120px; }
+.dim-table td:last-child { text-align: right; font-weight: 700; width: 60px; }
+.tag { display: inline-block; background: #1a365d; color: #fff; padding: 0 8px; font-size: 8pt; margin-right: 6px; }
+.tag-accent { background: #d4a853; color: #1a365d; }
+.track-item {
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0d8cc;
+}
+.track-item:last-child { border-bottom: none; }
+.track-rank {
+  display: inline-block;
+  background: #1a365d;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 7.5pt;
+  margin-right: 8px;
+}
+.track-name { font-size: 11pt; font-weight: 700; color: #1a365d; margin: 4px 0 2px; }
+.track-desc { font-size: 9.5pt; color: #666; }
+.closing {
+  margin-top: 32px;
+  padding: 16px;
+  border-left: 3px solid #d4a853;
+  background: #f8f6f2;
+}
+.closing__title { font-size: 11pt; font-weight: 700; color: #1a365d; margin-bottom: 6px; }
+.closing__text { font-size: 10pt; color: #444; line-height: 1.8; }
+.footer-page {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #e0d8cc;
+  text-align: center;
+  font-size: 8pt;
+  color: #999;
+  line-height: 1.8;
+}
+.glossary {
+  margin-top: 24px;
+  padding: 12px;
+  background: #faf8f5;
+}
+.glossary__title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.glossary-item {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 9pt;
+}
+.glossary-item__term {
+  font-weight: 600;
+  color: #1a365d;
+  white-space: nowrap;
+  min-width: 60px;
+}
+.glossary-item__def { color: #888; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover__badge">OPC 专业测评系统</div>
+  <div class="cover__title">一人公司适配度诊断报告</div>
+  <div class="cover__subtitle">__GRADE_LABEL__</div>
+  <div class="cover__line"></div>
+  <div class="cover__info">
+    <div>测评对象：__USER_NAME__</div>
+    <div>报告编号：__REPORT_ID__</div>
+    <div>生成时间：__TIMESTAMP__</div>
+    <div>测评版本：OPC 专业测评系统 V2.0</div>
+  </div>
+  <div class="cover__brand">孵化OPC</div>
+</div>
+
+<!-- 总览 -->
+<div class="section">
+  <div class="section__title">综合评估</div>
+  <div class="score-row">
+    <div>
+      <div class="score-num">__TOTAL_SCORE__</div>
+      <div class="score-label">综合得分 / 100</div>
+    </div>
+    <div>
+      <div class="score-grade">__GRADE__</div>
+      <div class="score-label">__GRADE_LABEL__</div>
+    </div>
+  </div>
+</div>
+
+<!-- 维度得分 -->
+<div class="section">
+  <div class="section__title">九大维度评估</div>
+  <table class="dim-table">
+__DIM_ROWS__
+  </table>
+</div>
+
+<!-- 核心优势与卡点 -->
+<div class="section">
+  <div class="section__title">核心优势</div>
+  <div class="section__body">__STRENGTHS__</div>
+</div>
+<div class="section">
+  <div class="section__title">待提升领域</div>
+  <div class="section__body">__PAIN_POINTS__</div>
+</div>
+
+<!-- 定制赛道 -->
+<div class="section">
+  <div class="section__title">定制赛道</div>
+  __TRACKS__
+</div>
+
+<!-- 结语 -->
+<div class="closing">
+  <div class="closing__title">结语</div>
+  <div class="closing__text">一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。</div>
+</div>
+
+<!-- 词汇注释 -->
+<div class="glossary">
+  <div class="glossary__title">专业词汇注释</div>
+  <div class="glossary-item"><span class="glossary-item__term">一人公司</span><span class="glossary-item__def">以个人或极简团队为核心的小规模商业组织。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term">核心禀赋</span><span class="glossary-item__def">被市场验证的、具有差异化优势的个人能力。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term">商业闭环</span><span class="glossary-item__def">从获客到售后的完整变现链路。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term">定制赛道</span><span class="glossary-item__def">根据能力画像量身定制的经营方向与启动方案。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term">SOP</span><span class="glossary-item__def">标准操作流程，将重复性工作流程化。</span></div>
+</div>
+
+<div class="footer-page">
+  <div>本报告由 OPC 一人公司孵化器测评系统自动生成</div>
+  <div>报告内容及相关测评模型受著作权法保护，未经许可不得擅自复制、改编、转载</div>
+  <div style="margin-top:8px;font-weight:700;letter-spacing:0.2em;">孵化OPC</div>
+</div>
+
+</body>
+</html>
