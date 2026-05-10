@@ -2,360 +2,324 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>OPC 一人公司适配度测评</title>
+  <meta name="description" content="科学评估你的一人公司适配度，找到从打工人到超级个体的最佳路径。基于纳瓦尔宝典、一人公司共识等前沿理论构建。">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ---- 首页专用样式 ---- */
-    body[data-page="index"] .page {
-      padding: 0 16px;
-      justify-content: flex-start;
-    }
-    body[data-page="index"] .page-content {
-      min-height: 100vh;
+    /* Title candidate buttons */
+    .title-switcher {
       display: flex;
-      flex-direction: column;
-    }
-
-    /* 学术/专业调性字体 */
-    .acad-title { font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif; }
-
-    /* ---- 首屏区 ---- */
-    .hero-screen {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 28px 0 20px;
-      min-height: 0;
-    }
-
-    /* 品牌标识 */
-    .brand-badge {
-      display: inline-flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 6px;
-      background: rgba(26,54,93,0.08);
-      border: 1px solid rgba(26,54,93,0.15);
-      border-radius: 6px;
-      padding: 4px 14px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--primary);
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
-    }
-    .brand-badge__dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* 主标题 */
-    .hero-screen h1 {
-      font-size: 1.45rem;
-      line-height: 1.45;
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
-    }
-    .hero-screen .hero__subtitle {
-      font-size: 0.92rem;
-      color: var(--text-light);
-      margin-bottom: 18px;
-      line-height: 1.55;
-    }
-
-    /* 主CTA */
-    .hero-cta {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    .hero-cta .btn {
-      width: 100%;
-      padding: 15px 32px;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-    }
-    .cta-sub {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    /* 社会证明 */
-    .social-proof-compact {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
-    .social-proof-compact__dots {
-      display: flex;
-      gap: 3px;
-    }
-    .social-proof-compact__dot {
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* ---- 标题候选按钮（隐藏，仅后台调试用） ---- */
-    .hero__title-candidates {
-      display: none;
-    }
-
-    /* ---- 下方折叠区 ---- */
-    .below-fold {
-      padding: 0 0 20px;
-    }
-
-    /* 权威短句卡 */
-    .trust-strip {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
       margin-bottom: 16px;
+      justify-content: center;
     }
-    .trust-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--card);
-      border-radius: var(--radius-sm);
-      border-left: 3px solid var(--accent);
-      font-size: 0.82rem;
-      color: var(--text);
-      line-height: 1.5;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+
+    .title-candidate {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--bg-card);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-out);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
-    .trust-item__index {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.7rem;
+
+    .title-candidate:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .title-candidate.active {
+      border-color: var(--accent);
+      background: rgba(212, 168, 83, 0.1);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Hero title min-height prevent CLS */
+    .hero__title {
+      min-height: 2.8em;
+    }
+
+    /* Desktop: 3-column bento grid for the value section */
+    @media (min-width: 680px) {
+      .bento-grid--3col {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Theory cards - full width single column */
+    .bento-grid--theory {
+      grid-template-columns: 1fr;
+    }
+
+    /* Book card styling */
+    .book-card__title {
+      font-size: 0.9375rem;
       font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .book-card__author {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .book-card__desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Gold accent line */
+    .accent-line {
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* Bento item icon area */
+    .bento-item__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: rgba(212, 168, 83, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 0;
-      font-style: italic;
-    }
-    .trust-item strong {
-      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--accent);
     }
 
-    /* ---- 理论依据（测评底层理论） ---- */
-    .authority-section { margin-bottom: 16px; }
-    .authority-section__title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
+    .bento-item--accent .bento-item__icon {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--accent-light);
     }
-    .authority-list { display: flex; flex-direction: column; gap: 4px; }
-    .authority-item {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      padding: 6px 10px;
-      background: var(--card);
-      border-radius: 6px;
-      border-left: 2px solid var(--border);
-      font-size: 0.78rem;
-      color: var(--text);
-      line-height: 1.45;
-    }
-    .authority-item__source { font-weight: 600; color: var(--text-light); font-size: 0.75rem; }
-    .authority-item__core { color: var(--text); }
-    .authority-item__core strong { color: var(--primary); }
 
-    /* ---- 理论依据（新增，与上面authority-section复用同一块） ---- */
-    .theory-section { margin-bottom: 16px; }
-    .theory-section__title {
-      font-size: 0.72rem;
+    .bento-item__title {
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
+      color: inherit;
+      margin-bottom: 6px;
     }
-    .theory-list { display: flex; flex-direction: column; gap: 4px; }
+
+    .bento-item__desc {
+      font-size: 0.8125rem;
+      color: inherit;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .bento-item--accent .bento-item__desc {
+      opacity: 0.8;
+    }
+
+    /* Theory bento items */
     .theory-item {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      padding: 6px 10px;
-      background: var(--card);
-      border-radius: 6px;
-      border-left: 2px solid var(--accent);
-      font-size: 0.78rem;
-      color: var(--text);
-      line-height: 1.45;
-    }
-    .theory-item__source { font-weight: 600; color: var(--text-light); font-size: 0.75rem; }
-    .theory-item__core { color: var(--text); }
-    .theory-item__core strong { color: var(--primary); }
-
-    /* 免责声明（弱化） */
-    .disclaimer-compact {
-      padding: 12px 14px;
-      background: rgba(245,240,232,0.6);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      margin-bottom: 14px;
-    }
-    .disclaimer-compact__title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      letter-spacing: 0.04em;
-    }
-    .disclaimer-compact__text {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      line-height: 1.7;
     }
 
-    /* 著作权声明 */
-    .footer-compact {
-      text-align: center;
-      padding: 16px 0 8px;
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      opacity: 0.8;
-    }
-    .footer-compact .copyright-strong {
+    .theory-item__index {
+      font-size: 0.6875rem;
       font-weight: 700;
-      color: var(--text-light);
-      font-size: 0.68rem;
-      margin-top: 4px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
     }
 
-    /* ---- 响应式 ---- */
+    /* Hero subtitle adjustment */
     @media (max-width: 374px) {
-      .hero-screen h1 { font-size: 1.3rem; }
-      .metric-item__num { font-size: 1.05rem; }
-    }
-    @media (min-width: 414px) {
-      .hero-screen h1 { font-size: 1.55rem; }
-      .hero-screen { padding: 36px 0 24px; }
-    }
-    @media (min-width: 680px) {
-      .hero-screen h1 { font-size: 1.75rem; }
-      .hero-cta .btn { max-width: 360px; margin: 0 auto; }
+      .title-candidate {
+        font-size: 0.6875rem;
+        padding: 4px 10px;
+      }
     }
   </style>
 </head>
 <body data-page="index">
-  <div class="page">
-    <div class="page-content">
 
-      <!-- ========== 首屏：一屏决策区 ========== -->
-      <div class="hero-screen anim-fade-in-up">
-        <!-- 品牌标识 -->
-        <div class="brand-badge">
-          <span class="brand-badge__dot"></span>
-          OPC 一人公司孵化器 · 专业评估工具
+<div class="page">
+
+  <div class="page-content">
+
+    <!-- ============ Brand Header ============ -->
+    <header class="brand-header anim-fade-in-up">
+      <div class="brand-header__logo">OPC</div>
+      <div class="brand-header__tagline">一人公司适配度测评系统</div>
+    </header>
+
+    <!-- ============ Hero Section ============ -->
+    <section class="glass-card anim-slide-up anim-delay-1" style="margin-bottom: 24px;">
+
+      <!-- Title Switcher -->
+      <div class="title-switcher">
+        <button class="title-candidate active" data-title="测一测，你有多适合成为「一人公司」？">A</button>
+        <button class="title-candidate" data-title="你的基因里，藏着一人公司的天赋密码">B</button>
+        <button class="title-candidate" data-title="不做螺丝钉：找到你的一人公司适配度">C</button>
+        <button class="title-candidate" data-title="告别职场内卷，测测你的一人公司潜力">D</button>
+        <button class="title-candidate" data-title="从打工人到超级个体，你只差这一步">E</button>
+      </div>
+
+      <!-- Headline -->
+      <div class="hero__title-group">
+        <h1 class="hero__title mb-2" id="hero-title">
+          测一测，你有多适合成为「一人公司」？
+        </h1>
+        <p class="hero__subtitle">
+          基于《纳瓦尔宝典》《一人公司共识》《超级个体》三大理论框架，
+          从 6 个核心维度科学评估你的独立经营适配度。
+          128 道精选题项，15 分钟发现你的天赋商业基因。
+        </p>
+      </div>
+
+      <!-- Primary CTA -->
+      <a href="profile.html" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 20px;">
+        开始免费评估
+      </a>
+
+      <!-- Social Proof -->
+      <div class="social-proof" style="display: flex; justify-content: center;">
+        <div class="social-proof__avatars">
+          <span class="social-proof__avatar"></span>
+          <span class="social-proof__avatar"></span>
+          <span class="social-proof__avatar"></span>
         </div>
+        <span><span class="social-proof__count">1,283</span> 人已完成评估</span>
+      </div>
 
-        <!-- 主标题（学术调性） -->
-        <div class="hero__title-group">
-          <h1 id="hero-title" class="acad-title">一人公司适配度测评</h1>
-          <div class="hero__title-candidates">
-            <button class="title-candidate active" data-title="一人公司适配度测评">默认标题</button>
-            <button class="title-candidate" data-title="你能靠自己赚钱吗？">备选A</button>
-            <button class="title-candidate" data-title="一人公司起步体检">备选B</button>
-            <button class="title-candidate" data-title="别凭感觉创业">备选C</button>
-            <button class="title-candidate" data-title="你适合单干吗？">备选D</button>
-          </div>
-        </div>
+    </section>
 
-        <!-- 副标题 -->
-        <p class="hero__subtitle">基于 OPC 一人公司孵化器方法论与案例实践，为你输出适配度评估与赛道建议</p>
+    <!-- ============ Bento Value Grid ============ -->
+    <div class="bento-grid bento-grid--3col" style="margin-bottom: 32px;">
 
-        <!-- 主CTA按钮 -->
-        <div class="hero-cta anim-fade-in-up anim-delay-1">
-          <a href="profile.html" class="btn btn-primary btn-lg">开始评估</a>
-        </div>
-
-        <!-- 社会证明 -->
-        <div class="social-proof-compact">
-          <div class="social-proof-compact__dots">
-            <span class="social-proof-compact__dot"></span>
-            <span class="social-proof-compact__dot"></span>
-            <span class="social-proof-compact__dot"></span>
-          </div>
-          <span>已有 <strong>1,283</strong> 人完成评估</span>
+      <!-- Span2: Value Proposition (accent) -->
+      <div class="bento-item bento-item--span2 bento-item--accent anim-fade-in-up anim-delay-2">
+        <div class="bento-item__icon">OP</div>
+        <div class="bento-item__title">你的独立经营适配度，一测便知</div>
+        <div class="bento-item__desc">
+          OPC 测评系统融合行为心理学与商业方法论，通过六大维度（独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力）建立完整的人物画像。这不是一份简单的性格测试，而是一份可落地的个人商业路线图。
         </div>
       </div>
 
-      <!-- ========== 下方信息区（可选滚动） ========== -->
-      <div class="below-fold anim-fade-in-up anim-delay-2">
-        <!-- 权威短句 -->
-        <div class="trust-strip">
-          <div class="trust-item">
-            <span class="trust-item__index">I</span>
-            <span><strong>评估框架</strong> — 围绕核心禀赋、商业闭环、落地执行、内容能力、产品化能力、持续运营 6 个维度，对一人公司适配度进行结构化量化评估。</span>
-          </div>
-          <div class="trust-item">
-            <span class="trust-item__index">II</span>
-            <span><strong>方法论来源</strong> — 评估体系基于 OPC 一人公司孵化器在实际孵化过程中沉淀的方法论、测评模型与案例复盘，用于帮助用户进行自我能力诊断与起步方向筛选。</span>
-          </div>
-          <div class="trust-item">
-            <span class="trust-item__index">III</span>
-            <span><strong>输出目标</strong> — 不是泛泛的性格测试，而是输出你的能力画像、阶段短板，以及更适合你当前条件的一人公司赛道建议。</span>
-          </div>
+      <!-- Item: Assessment Framework -->
+      <div class="bento-item anim-fade-in-up anim-delay-3">
+        <div class="bento-item__icon">A</div>
+        <div class="bento-item__title">六大维度评估</div>
+        <div class="bento-item__desc">
+          独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力 — 全面扫描你的创业者基因。
         </div>
+      </div>
 
-        <!-- 经典著作（权威依据） -->
-        <div class="theory-section">
-          <div class="theory-section__title">理论依据</div>
-          <div class="theory-list">
-            <div class="theory-item">
-              <span class="theory-item__source">纳瓦尔《纳瓦尔宝典》</span>
-              <span class="theory-item__core">个体财富公式：<strong>专长 × 杠杆 × 责任感</strong></span>
-            </div>
-            <div class="theory-item">
-              <span class="theory-item__source">《一人公司》行业共识</span>
-              <span class="theory-item__core"><strong>小规模、高利润、强闭环、抗风险</strong>、绝对职业主权</span>
-            </div>
-            <div class="theory-item">
-              <span class="theory-item__source">古典《超级个体》</span>
-              <span class="theory-item__core">聚焦<strong>个体不可替代性</strong>、复利能力、职业主权</span>
-            </div>
-          </div>
+      <!-- Item: Methodology -->
+      <div class="bento-item anim-fade-in-up anim-delay-4">
+        <div class="bento-item__icon">M</div>
+        <div class="bento-item__title">科学方法体系</div>
+        <div class="bento-item__desc">
+          基于 Likert 量表与行为事件访谈法（BEI）设计，每个维度 20+ 精选题项，确保信效度达到专业测评标准。
         </div>
+      </div>
 
-        <!-- 免责声明（弱化排版） -->
-        <div class="disclaimer-compact">
-          <div class="disclaimer-compact__title">测评流程与结果说明</div>
-          <div class="disclaimer-compact__text">
-            本测评为辅助型自我评估工具，不构成职业测评、心理咨询、投资建议或经营承诺。测评结果会受答题时的状态与自我判断影响，仅作为阶段性参考。本系统不承诺收入、创业成功率、回本周期或任何形式的收益保障。如你在阅读结果后做出重大决策，请结合自身情况独立判断。继续参与即视为你已阅读并理解以上说明。
-          </div>
-        </div>
-
-        <!-- 著作权声明 -->
-        <div class="footer-compact">
-          <div>本测评基于 OPC 一人公司孵化器的方法论与案例实践整理</div>
-          <div class="copyright-strong">&#169; 2026 OPC 一人公司孵化器. All rights reserved.</div>
-          <div style="margin-top:4px;">本网站内容及相关测评模型受著作权法保护；未经权利人许可，不得擅自复制、改编、转载或用于商业用途。</div>
+      <!-- Item: Output Targets (sits below in 2-col, becomes right column on 3-col) -->
+      <div class="bento-item anim-fade-in-up anim-delay-5">
+        <div class="bento-item__icon">R</div>
+        <div class="bento-item__title">可执行报告</div>
+        <div class="bento-item__desc">
+          测评结果不仅给出适配度评分，更提供个性化发展建议、能力提升路径与推荐赛道方向，让认知转化为行动。
         </div>
       </div>
 
     </div>
+
+    <!-- ============ Theory Foundation ============ -->
+    <section class="section">
+      <div class="accent-line"></div>
+      <h2 class="section-title">理论根基</h2>
+      <p class="section-subtitle">三大经典著作奠定评估系统的理论底座</p>
+
+      <div class="bento-grid bento-grid--theory">
+
+        <!-- Book 1: 纳瓦尔宝典 -->
+        <div class="bento-item theory-item anim-fade-in-up anim-delay-2">
+          <div class="theory-item__index">01</div>
+          <div class="book-card__title">纳瓦尔宝典</div>
+          <div class="book-card__author">Naval Ravikant</div>
+          <div class="book-card__desc">
+            关于财富与幸福的底层逻辑。核心启发：杠杆效应、产品化自我、复利思维是衡量一人公司适配度的关键指标。
+          </div>
+        </div>
+
+        <!-- Book 2: 一人公司共识 -->
+        <div class="bento-item theory-item anim-fade-in-up anim-delay-3">
+          <div class="theory-item__index">02</div>
+          <div class="book-card__title">一人公司共识</div>
+          <div class="book-card__author">Paul Jarvis</div>
+          <div class="book-card__desc">
+            重新定义成功：规模适度、利润优先、生活方式优先。评估系统的「系统运营力」与「抗风险韧性」维度直接引用此框架。
+          </div>
+        </div>
+
+        <!-- Book 3: 超级个体 -->
+        <div class="bento-item theory-item anim-fade-in-up anim-delay-4">
+          <div class="theory-item__index">03</div>
+          <div class="book-card__title">超级个体</div>
+          <div class="book-card__author">徐静波 / 古典</div>
+          <div class="book-card__desc">
+            从组织人到自由人的能力迁移模型。核心关注品牌构建力、资源整合力与持续学习力，是一人公司能力的实践指南。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CTA Section ============ -->
+    <section class="cta-section">
+      <div class="glass-card anim-fade-in-up anim-delay-3">
+        <h2 class="mb-4">现在开始，发现你的一人公司潜力</h2>
+        <p class="hero__subtitle">
+          15 分钟完成评估，即刻获得专属适配度报告与行动路线图。
+          已有 <strong style="color: var(--primary);">1,283</strong> 位创业者完成自我认知升级。
+        </p>
+        <a href="profile.html" class="btn btn-accent btn-lg btn-block">
+          开始免费评估
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ Footer ============ -->
+    <div class="divider"></div>
+
+    <footer class="footer">
+      <div class="footer-brand__name" style="margin-bottom: 4px;">OPC 一人公司适配度测评系统</div>
+      <div class="footer-brand__ts">科学评估 · 认知升级 · 行动指引</div>
+
+      <div class="ip-footer">
+        OPC 测评系统 2.0 &copy; 2026 版权所有。<br>
+        系统框架引用《纳瓦尔宝典》《一人公司共识》《超级个体》等公开理论资源。<br>
+        本测评结果仅供参考，不构成任何商业决策建议。
+      </div>
+    </footer>
+
   </div>
-  <script src="app.js"></script>
+  <!-- /page-content -->
+
+</div>
+<!-- /page -->
+
+<script src="app.js"></script>
 </body>
 </html>

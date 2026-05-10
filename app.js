@@ -1731,11 +1731,17 @@ function showSubmitProof() {
   if (progEl) progEl.style.display = "none";
   $("#fb-close").style.display = "";
   $("#fb-close").textContent = "知道了";
-  $("#fb-title").textContent = "请发送付款截图";
+  $("#fb-title").textContent = "扫码支付 ¥19.9";
   $("#fb-text").innerHTML =
-    '请将微信付款截图发送给客服，确认后即可查看完整报告：<br><br>' +
-    '<img src="assets/wechat-qr.png" alt="微信二维码" style="width:160px;height:160px;border-radius:10px;border:2px solid var(--border);margin:4px 0;">' +
-    '<div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">微信扫码添加，发送付款截图</div>';
+    '<div style="text-align:center;">' +
+      '<div style="font-weight:700;font-size:1.125rem;color:var(--primary);margin-bottom:12px;">⬇ 第一步：扫码付款 ⬇</div>' +
+      '<img src="assets/wechat-pay.jpg" alt="微信收款码" style="width:180px;height:180px;border-radius:10px;border:2px solid var(--border);margin:4px 0;object-fit:cover;">' +
+      '<div style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:4px;">扫码支付 ¥19.9</div>' +
+      '<div class="divider" style="margin:16px auto;max-width:200px;"></div>' +
+      '<div style="font-weight:700;font-size:1rem;color:var(--text);margin-bottom:8px;">⬇ 第二步：加客服发截图 ⬇</div>' +
+      '<img src="assets/wechat-qr.png" alt="客服微信二维码" style="width:160px;height:160px;border-radius:10px;border:2px solid var(--border);margin:4px 0;">' +
+      '<div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">付款后添加客服微信，发送付款截图</div>' +
+    '</div>';
   requestAnimationFrame(function() {
     overlay.classList.add("active");
   });
