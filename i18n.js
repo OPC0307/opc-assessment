@@ -81,11 +81,14 @@
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       var key = el.getAttribute("data-i18n");
-      var isHTML = el.getAttribute("data-i18n-html") !== null;
-      if (isHTML) {
-        el.innerHTML = translate(key);
-      } else {
-        el.textContent = translate(key);
+      var translated = translate(key);
+      if (translated !== key) {
+        var isHTML = el.getAttribute("data-i18n-html") !== null;
+        if (isHTML) {
+          el.innerHTML = translated;
+        } else {
+          el.textContent = translated;
+        }
       }
       el.style.opacity = "1";
     }
