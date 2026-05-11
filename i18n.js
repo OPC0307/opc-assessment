@@ -61,7 +61,7 @@
     if (document.querySelector("#i18n-noscript")) return;
     var style = document.createElement("style");
     style.id = "i18n-noscript";
-    style.textContent = "[data-i18n] { visibility: hidden; }";
+    style.textContent = "[data-i18n] { opacity: 0; }";
     document.head.appendChild(style);
   }
 
@@ -87,7 +87,7 @@
       } else {
         el.textContent = translate(key);
       }
-      el.style.visibility = "visible";
+      el.style.opacity = "1";
     }
 
     /* data-i18n-placeholder */

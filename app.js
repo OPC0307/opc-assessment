@@ -1422,7 +1422,7 @@ function renderClosing(el) {
   el.innerHTML =
     '<div class="report-closing">' +
       '<div class="report-closing__title">' + _t("closing.title", "结语") + '</div>' +
-      '<div class="report-closing__text">' + _t("closing.text", "一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。") + '</div>' +
+      '<div class="report-closing__text">' + _t("closing.text", "一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为'全能型选手'，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。") + '</div>' +
     '</div>';
 }
 
@@ -1821,74 +1821,72 @@ document.addEventListener("DOMContentLoaded", function() {
     initPayPage();
   }
 
-  // ---- 全局语言切换器 ----
-  var langBtn = document.querySelector(".lang-toggle");
-  if (langBtn) {
-    function updateLangBtn() {
-      var currentLang = localStorage.getItem("preferredLang") || "zh";
-      langBtn.textContent = currentLang === "en" ? "中文" : "EN";
-      langBtn.setAttribute("data-lang", currentLang);
-      if (currentLang === "en") {
-        langBtn.classList.add("lang-toggle--active");
-      } else {
-        langBtn.classList.remove("lang-toggle--active");
-      }
-    }
-    updateLangBtn();
+  // 语言切换由 i18n.js 统一管理，此处不再重复绑定
+  // 仅做初始按钮文本同步（i18n.js updateDOM 也会处理，此处为兜底）
+  i18n.onReady(function(lang) {
+    var btn = document.querySelector(".lang-toggle");
+    if (btn) btn.textContent = lang === "zh" ? "EN" : "中文";
+  });
 
-    langBtn.addEventListener("click", function() {
-      var currentLang = localStorage.getItem("preferredLang") || "zh";
-      var nextLang = currentLang === "zh" ? "en" : "zh";
-      localStorage.setItem("preferredLang", nextLang);
-      if (window.i18n) {
-        i18n.switchLang(nextLang);
-      }
-      updateLangBtn();
-    });
-  }
+  // ---- 动态统计数据（基于时间增长 + 唯一访问 + 测评完成）----
+  var STAT_STORAGE_KEY = "opc_stat_count";
+  var STAT_SESSION_KEY = "opc_session_counted";
+  var STAT_BASE = 1283;
+  var STAT_LAUNCH = new Date("2026-04-01").getTime();
 
-  // ---- 动态统计数据（模拟站长统计增长）----
   function loadRealTimeStat() {
-    var STORAGE_KEY = "opc_stat_count";
-    var BASE_COUNT = 1283;
-    var stored = localStorage.getItem(STORAGE_KEY);
+    var stored = localStorage.getItem(STAT_STORAGE_KEY);
     var count;
 
     if (stored) {
       count = parseInt(stored, 10);
     } else {
-      // 首次访问：基数 + 随机增长 0~3
-      count = BASE_COUNT + Math.floor(Math.random() * 4);
-      localStorage.setItem(STORAGE_KEY, count);
+      var daysSinceLaunch = Math.max(0, Math.floor((Date.now() - STAT_LAUNCH) / 86400000));
+      count = STAT_BASE + daysSinceLaunch * 38 + Math.floor(Math.random() * 12);
+      localStorage.setItem(STAT_STORAGE_KEY, count);
     }
 
-    // 每秒微增长（模拟实时）
-    setInterval(function() {
-      if (Math.random() < 0.15) { // 约15%概率每秒增长
-        count += 1;
-        localStorage.setItem(STORAGE_KEY, count);
-        updateStatDisplay(count);
-      }
-    }, 1000);
+    // 每个浏览器会话只计一次
+    if (!sessionStorage.getItem(STAT_SESSION_KEY)) {
+      count += 1;
+      localStorage.setItem(STAT_STORAGE_KEY, count);
+      sessionStorage.setItem(STAT_SESSION_KEY, "1");
+    }
 
     updateStatDisplay(count);
   }
 
+  // 测评完成时真实 +1
+  window.incrementCompletionCounter = function() {
+    var stored = localStorage.getItem(STAT_STORAGE_KEY);
+    var count = stored ? parseInt(stored, 10) : STAT_BASE;
+    count += 1;
+    localStorage.setItem(STAT_STORAGE_KEY, count);
+    updateStatDisplay(count);
+  };
+
   function updateStatDisplay(count) {
-    // 首页
-    var el = document.getElementById("realtime-stat");
-    if (el) {
-      el.textContent = count.toLocaleString();
+    var formatted = count.toLocaleString();
+    var ids = ["realtime-stat", "realtime-stat-pay", "realtime-stat-profile", "realtime-stat-quiz", "realtime-stat-cta"];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el) el.textContent = formatted;
     }
-    // 支付页
-    var payEl = document.getElementById("realtime-stat-pay");
-    if (payEl) {
-      payEl.textContent = count.toLocaleString();
+    var classEls = document.querySelectorAll(".stat-count");
+    for (var j = 0; j < classEls.length; j++) {
+      classEls[j].textContent = formatted;
     }
   }
 
-  // 在 index 和 pay 页面加载动态统计
-  if (page === "index" || page === "pay" || page === "report-free" || page === "report-paid") {
-    loadRealTimeStat();
+  // 所有页面加载统计计数
+  loadRealTimeStat();
+
+  // 报告页完成时自动递增
+  if (page === "report-free" || page === "report-paid") {
+    var completedKey = "opc_quiz_completed_at";
+    if (!sessionStorage.getItem(completedKey)) {
+      sessionStorage.setItem(completedKey, Date.now().toString());
+      window.incrementCompletionCounter();
+    }
   }
 });
