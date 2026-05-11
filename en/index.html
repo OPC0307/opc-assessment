@@ -107,7 +107,7 @@
       <h1 data-i18n="hero.titleA">Start Your Business Journey in China</h1>
       <p class="hero-sub" data-i18n="hero.subtitle">Discover if a One Person Company is right for you — and get up to ¥60,000 in government subsidies.</p>
       <div class="hero-actions">
-        <a href="../quiz.html" class="btn btn-primary" data-i18n="hero.cta">Take Free Assessment</a>
+        <a href="../profile.html" class="btn btn-primary" data-i18n="hero.cta">Take Free Assessment</a>
         <a href="#services" class="btn btn-secondary" data-i18n="services.nav_services">Our Services</a>
       </div>
     </div>
@@ -171,7 +171,7 @@
         <h3 data-i18n="services.cta_title">Ready to Get Started?</h3>
         <p data-i18n="services.cta_desc">Take the free OPC fit assessment first, or contact us for a consultation.</p>
         <div class="hero-actions">
-          <a href="../quiz.html" class="btn btn-primary" data-i18n="services.cta_btn1">Free Assessment</a>
+          <a href="../profile.html" class="btn btn-primary" data-i18n="services.cta_btn1">Free Assessment</a>
           <a href="../profile.html" class="btn btn-secondary" data-i18n="services.cta_btn2">Contact Us</a>
         </div>
       </div>
@@ -204,7 +204,7 @@
     <div class="container">
       <h2 data-i18n="cta.title">Find Out If OPC Is Right for You</h2>
       <p data-i18n="cta.subtitle">15 questions, 9 dimensions, instant results</p>
-      <a href="../quiz.html" class="btn btn-primary btn-large" data-i18n="cta.button">Start Assessment — It's Free</a>
+      <a href="../profile.html" class="btn btn-primary btn-large" data-i18n="cta.button">Start Assessment — It's Free</a>
     </div>
   </section>
 
@@ -234,6 +234,9 @@
       link.addEventListener('click', function(e) {
         const lang = this.getAttribute('href') === '../index.html' ? 'zh' : 'en';
         localStorage.setItem('preferredLang', lang);
+        if (window.i18n) {
+          i18n.switchLang(lang);
+        }
       });
     });
 

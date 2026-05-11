@@ -9,7 +9,7 @@
   var SUPPORTED = ["zh", "en"];
   var DEFAULT = "zh";
   var STORAGE_KEY = "opc_lang";
-  var DICT_PATH = "i18n/";
+  var DICT_PATH = "/i18n/";
   var currentLang = DEFAULT;
   var dictionary = {};
   var onReadyCallbacks = [];
