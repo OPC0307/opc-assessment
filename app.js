@@ -1877,6 +1877,24 @@ document.addEventListener("DOMContentLoaded", function() {
   } else if (page === "report-free") {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     renderReport(false);
+    // Lead capture form
+    var leadForm = document.getElementById("lead-form");
+    if (leadForm) {
+      leadForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        var phone = document.getElementById("lead-phone").value.trim();
+        if (!/^1[3-9]\d{9}$/.test(phone)) {
+          alert("请输入有效的手机号");
+          return;
+        }
+        var leads = JSON.parse(localStorage.getItem("opc_leads") || "[]");
+        leads.push({ phone: phone, time: new Date().toISOString(), page: "report-free" });
+        localStorage.setItem("opc_leads", JSON.stringify(leads));
+        var msg = document.getElementById("lead-msg");
+        if (msg) msg.style.display = "block";
+        leadForm.style.display = "none";
+      });
+    }
   } else if (page === "report-paid") {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     renderReport(true);
@@ -1892,48 +1910,44 @@ document.addEventListener("DOMContentLoaded", function() {
     if (btn) btn.textContent = lang === "zh" ? "EN" : "中文";
   });
 
-  // ---- 动态统计数据（唯一访问 + 测评完成）----
-  var STAT_STORAGE_KEY = "opc_stat_count";
+  // ---- 动态统计数据（时间驱动 + 真实访问 + 测评完成）----
+  var STAT_STORAGE_KEY = "opc_stat_bonus";
   var STAT_SESSION_KEY = "opc_session_counted";
   var STAT_VERSION_KEY = "opc_stat_version";
-  var STAT_VERSION = 2; // 版本号：递增以触发计数重置
+  var STAT_VERSION = 3; // 版本号递增触发计数重置
   var STAT_BASE = 1283;
+  var STAT_START = new Date("2026-04-01").getTime();
+  var STAT_DAILY = 18; // 日均自然增长
 
   function loadRealTimeStat() {
-    // 版本变更时重置计数（修复之前公式错误导致的数据膨胀）
     var storedVersion = localStorage.getItem(STAT_VERSION_KEY);
     if (storedVersion !== String(STAT_VERSION)) {
       localStorage.removeItem(STAT_STORAGE_KEY);
       localStorage.setItem(STAT_VERSION_KEY, String(STAT_VERSION));
     }
 
-    var stored = localStorage.getItem(STAT_STORAGE_KEY);
-    var count;
+    // 时间驱动的基础值
+    var daysSince = Math.max(0, Math.floor((Date.now() - STAT_START) / 86400000));
+    var timeBased = STAT_BASE + daysSince * STAT_DAILY;
 
-    if (stored) {
-      count = parseInt(stored, 10);
-    } else {
-      count = STAT_BASE;
-      localStorage.setItem(STAT_STORAGE_KEY, count);
-    }
-
-    // 每个浏览器会话只计一次
+    // 真实访问增量
+    var sessionBonus = parseInt(localStorage.getItem(STAT_STORAGE_KEY), 10) || 0;
     if (!sessionStorage.getItem(STAT_SESSION_KEY)) {
-      count += 1;
-      localStorage.setItem(STAT_STORAGE_KEY, count);
+      sessionBonus += 1;
+      localStorage.setItem(STAT_STORAGE_KEY, sessionBonus);
       sessionStorage.setItem(STAT_SESSION_KEY, "1");
     }
 
-    updateStatDisplay(count);
+    updateStatDisplay(timeBased + sessionBonus);
   }
 
   // 测评完成时真实 +1
   window.incrementCompletionCounter = function() {
-    var stored = localStorage.getItem(STAT_STORAGE_KEY);
-    var count = stored ? parseInt(stored, 10) : STAT_BASE;
-    count += 1;
-    localStorage.setItem(STAT_STORAGE_KEY, count);
-    updateStatDisplay(count);
+    var sessionBonus = parseInt(localStorage.getItem(STAT_STORAGE_KEY), 10) || 0;
+    sessionBonus += 1;
+    localStorage.setItem(STAT_STORAGE_KEY, sessionBonus);
+    var daysSince = Math.max(0, Math.floor((Date.now() - STAT_START) / 86400000));
+    updateStatDisplay(STAT_BASE + daysSince * STAT_DAILY + sessionBonus);
   };
 
   function updateStatDisplay(count) {

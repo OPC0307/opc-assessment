@@ -62,6 +62,16 @@
     "q3_title": "What Businesses Can an OPC Run?",
     "q3_desc": "OPC businesses span a wide range: AI content creation, personal branding, digital products, e-commerce dropshipping, social media management, consulting, and more. Based on your capability profile, OPC recommends your top 3 business tracks with a 30-day actionable SOP plan."
   },
+  "trust": {
+    "title": "They Found Their Direction with OPC",
+    "s1_title": "\"The assessment showed me my blind spots\"",
+    "s1_desc": "Xiao Wang, a 28-year-old designer, wanted to start his own studio but hesitated to quit his job. The assessment revealed 'Decision-Making' at A-level and 'Brand Building' at A-level — the track ranking gave him confidence. Three months later, his monthly income exceeded $3,000.",
+    "s2_title": "\"From side hustle to full-time in 4 months\"",
+    "s2_desc": "Programmer Jay took the assessment before being laid off, discovering 'AI Leverage' and 'Productization' were his strongest dimensions. Following the report's recommended 'Knowledge Commerce' track, he created AI programming courses. Four months later, his side income surpassed his salary.",
+    "s3_title": "\"Saved me 3 months of trial and error\"",
+    "s3_desc": "Lin, a 35-year-old HR veteran, wanted to pivot but didn't know where to start. The report highlighted 'Content Ability' and 'Continuous Operations' as her hidden strengths, suggesting a 'Personal Brand + Consulting' path. She followed the 30-day SOP and landed her first paid consulting client within a month.",
+    "media": "Media coverage: "
+  },
   "cta": {
     "title": "Start Now — Discover Your One-Person Company Potential",
     "subtitle": "Complete the assessment in 15 minutes. Get your personalized fitness report and action roadmap instantly. <strong style=\"color: var(--primary);\">1,283</strong> entrepreneurs have already upgraded their self-awareness.",
@@ -158,7 +168,12 @@
     "share_desc": "Share with friends and start your solo-business journey together",
     "share_wechat": "WeChat",
     "share_weibo": "Weibo",
-    "share_copy": "Copy Link"
+    "share_copy": "Copy Link",
+    "lead_title": "Don't want to pay? Leave your number, we'll send it for free",
+    "lead_desc": "We'll send the full report via text, plus a free Solo-Business Startup Checklist PDF",
+    "lead_btn": "Send to me →",
+    "lead_success": "Got it! Your report will arrive by text message shortly.",
+    "lead_privacy": "* Only used to send your report, never shared"
   },
   "report_paid": {
     "badge_paid": "Full Version",
