@@ -329,6 +329,13 @@ h3 {
   border-radius: var(--radius-sm);
 }
 
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .btn-lg {
   padding: 16px 36px;
   font-size: 1.125rem;

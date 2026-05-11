@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <link rel="stylesheet" href="style.css">
-  <script src="i18n.js"></script>
+  <script src="i18n.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -170,7 +171,7 @@
             <span class="price-tag" style="font-size:2rem;" data-i18n="report_paid.price_1v1">¥99</span>
             <span class="price-original" style="margin-left:8px;" data-i18n="report_paid.price_original">原价 ¥299</span>
           </div>
-          <button class="btn btn-primary btn-lg btn-block disabled" disabled data-i18n="report_paid.cta_btn">立即预约1v1诊断</button>
+          <button id="btn-1v1" class="btn btn-primary btn-lg btn-block" data-i18n="report_paid.cta_btn">立即预约1v1诊断</button>
           <div class="text-xs text-muted mt-2" data-i18n="report_paid.cta_disclaimer">* 完整版购买者可享 ¥19.9 抵扣</div>
         </div>
       </div>

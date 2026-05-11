@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
@@ -195,7 +196,7 @@
 <link rel="sitemap" type="application/xml" href="https://fhopc.top/sitemap.xml">
 
 <!-- i18n Engine -->
-<script src="i18n.js"></script>
+<script src="i18n.js" defer></script>
 
 <!-- JSON-LD: FAQPage -->
 <script type="application/ld+json">
@@ -459,7 +460,7 @@
     <section class="cta-section">
       <div class="glass-card anim-fade-in-up anim-delay-3">
         <h2 class="mb-4" data-i18n="cta.title">现在开始，发现你的一人公司潜力</h2>
-        <p class="hero__subtitle" data-i18n-html="true" data-i18n="cta.subtitle">
+        <p class="hero__subtitle" data-i18n-html data-i18n="cta.subtitle">
           15 分钟完成评估，即刻获得专属适配度报告与行动路线图。
           已有 <strong style="color: var(--primary);"><span class="stat-count" id="realtime-stat-cta">1,283</span></strong> 位创业者完成自我认知升级。
         </p>
@@ -476,10 +477,13 @@
       <div class="footer-brand__name" style="margin-bottom: 4px;" data-i18n="footer.name">OPC 一人公司适配度测评系统</div>
       <div class="footer-brand__ts" data-i18n="footer.tagline">科学评估 · 认知升级 · 行动指引</div>
 
-      <div class="ip-footer" data-i18n-html="true" data-i18n="footer.copyright">
+      <div class="ip-footer" data-i18n-html data-i18n="footer.copyright">
         OPC 测评系统 2.0 &copy; 2026 版权所有。<br>
         系统框架引用《纳瓦尔宝典》《一人公司共识》《超级个体》等公开理论资源。<br>
         本测评结果仅供参考，不构成任何商业决策建议。
+      </div>
+      <div style="margin-top:12px;font-size:0.75rem;">
+        <a href="privacy.html" style="color:var(--text-muted);text-decoration:underline;">隐私政策</a>
       </div>
     </footer>
 

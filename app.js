@@ -1644,6 +1644,36 @@ document.addEventListener("DOMContentLoaded", function() {
   } else if (page === "report-paid") {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     renderReport(true);
+    // 1v1 深度诊断按钮
+    var btn1v1 = document.getElementById("btn-1v1");
+    if (btn1v1) {
+      btn1v1.addEventListener("click", function() {
+        var overlay = document.querySelector(".modal-overlay");
+        if (!overlay) {
+          overlay = document.createElement("div");
+          overlay.className = "modal-overlay";
+          overlay.innerHTML = '<div class=\"modal\">' +
+            '<div class=\"modal__icon\" style=\"display:none;\"></div>' +
+            '<div class=\"modal__title\" id=\"fb-title\"></div>' +
+            '<div class=\"modal__text\" id=\"fb-text\"></div>' +
+            '<button class=\"btn btn-primary btn-sm\" id=\"fb-close\">' + _t("modal.close", "关闭") + '</button>' +
+            '</div>';
+          document.body.appendChild(overlay);
+          document.getElementById("fb-close").addEventListener("click", function() {
+            overlay.classList.remove("active");
+          });
+          overlay.addEventListener("click", function(e) {
+            if (e.target === overlay) overlay.classList.remove("active");
+          });
+        }
+        document.getElementById("fb-title").textContent = _t("report_paid.cta_title", "需要更深入的诊断？");
+        document.getElementById("fb-text").innerHTML =
+          _t("modal.scan_wechat", '扫描下方微信，获取「{track}」完整启动方案：').replace('{track}', '1v1深度诊断') + '<br><br>' +
+          '<img src=\"assets/wechat-qr.png\" alt=\"微信二维码\" style=\"width:160px;height:160px;border-radius:10px;border:2px solid var(--border);margin:4px 0;\">' +
+          '<br><span style=\"font-size:0.8125rem;color:var(--text-muted);\">发送「1v1诊断」</span>';
+        overlay.classList.add("active");
+      });
+    }
   } else if (page === "pay") {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     initPayPage();
