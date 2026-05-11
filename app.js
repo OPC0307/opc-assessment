@@ -1763,8 +1763,71 @@ function showSubmitProof() {
 // ==========================================
 // 页面初始化
 // ==========================================
+// ---- Site Navigation (injected globally) ----
+var SITE_NAV = [
+  { key: "home",   href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
+  { key: "quiz",   href: "/quiz.html",                label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
+  { key: "subsidy",href: "/subsidy/",                 label: "补贴查询",   enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
+  { key: "service",href: "/services/subsidy.html",    label: "补贴代办",   enLabel: "Service",         match: ["services-subsidy"] },
+  { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] }
+];
+
+function injectSiteNav(currentPage) {
+  if (document.getElementById("site-nav")) return;
+  var pageContent = document.querySelector(".page-content");
+  if (!pageContent) return;
+
+  var currentLang = window.i18n ? i18n.getLang() : "zh";
+
+  var nav = document.createElement("nav");
+  nav.className = "site-nav";
+  nav.id = "site-nav";
+
+  var inner = document.createElement("div");
+  inner.className = "site-nav__inner";
+
+  var brand = document.createElement("a");
+  brand.href = "/";
+  brand.className = "site-nav__brand";
+  brand.textContent = "OPC";
+
+  var links = document.createElement("div");
+  links.className = "site-nav__links";
+
+  for (var i = 0; i < SITE_NAV.length; i++) {
+    var item = SITE_NAV[i];
+    var a = document.createElement("a");
+    a.href = item.href;
+    a.setAttribute("data-i18n", "nav." + item.key);
+    a.textContent = currentLang === "en" ? item.enLabel : item.label;
+    if (item.match.indexOf(currentPage) !== -1) {
+      a.classList.add("active");
+    }
+    links.appendChild(a);
+  }
+
+  var langBtn = document.createElement("button");
+  langBtn.className = "lang-toggle";
+  langBtn.textContent = currentLang === "zh" ? "EN" : "中文";
+
+  inner.appendChild(brand);
+  inner.appendChild(links);
+  inner.appendChild(langBtn);
+  nav.appendChild(inner);
+
+  var existing = pageContent.querySelector(".lang-toggle");
+  if (existing) existing.remove();
+
+  pageContent.insertBefore(nav, pageContent.firstChild);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   var page = document.body.getAttribute("data-page");
+
+  // Inject global nav on all content pages
+  if (document.querySelector(".page-content")) {
+    injectSiteNav(page);
+  }
 
   if (page === "index") {
     var titleEl = document.getElementById("hero-title");
