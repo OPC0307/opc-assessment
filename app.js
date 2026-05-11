@@ -1769,7 +1769,8 @@ var SITE_NAV = [
   { key: "quiz",   href: "/quiz.html",                label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
   { key: "subsidy",href: "/subsidy/",                 label: "补贴查询",   enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
   { key: "service",href: "/services/subsidy.html",    label: "补贴代办",   enLabel: "Service",         match: ["services-subsidy"] },
-  { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] }
+  { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] },
+  { key: "blog",   href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] }
 ];
 
 function injectSiteNav(currentPage) {
