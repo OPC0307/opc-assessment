@@ -1828,21 +1828,28 @@ document.addEventListener("DOMContentLoaded", function() {
     if (btn) btn.textContent = lang === "zh" ? "EN" : "中文";
   });
 
-  // ---- 动态统计数据（基于时间增长 + 唯一访问 + 测评完成）----
+  // ---- 动态统计数据（唯一访问 + 测评完成）----
   var STAT_STORAGE_KEY = "opc_stat_count";
   var STAT_SESSION_KEY = "opc_session_counted";
+  var STAT_VERSION_KEY = "opc_stat_version";
+  var STAT_VERSION = 2; // 版本号：递增以触发计数重置
   var STAT_BASE = 1283;
-  var STAT_LAUNCH = new Date("2026-04-01").getTime();
 
   function loadRealTimeStat() {
+    // 版本变更时重置计数（修复之前公式错误导致的数据膨胀）
+    var storedVersion = localStorage.getItem(STAT_VERSION_KEY);
+    if (storedVersion !== String(STAT_VERSION)) {
+      localStorage.removeItem(STAT_STORAGE_KEY);
+      localStorage.setItem(STAT_VERSION_KEY, String(STAT_VERSION));
+    }
+
     var stored = localStorage.getItem(STAT_STORAGE_KEY);
     var count;
 
     if (stored) {
       count = parseInt(stored, 10);
     } else {
-      var daysSinceLaunch = Math.max(0, Math.floor((Date.now() - STAT_LAUNCH) / 86400000));
-      count = STAT_BASE + daysSinceLaunch * 38 + Math.floor(Math.random() * 12);
+      count = STAT_BASE;
       localStorage.setItem(STAT_STORAGE_KEY, count);
     }
 
