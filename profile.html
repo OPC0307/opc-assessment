@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <link rel="stylesheet" href="style.css">
+  <script src="i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,89 +53,89 @@
 
       <!-- Brand Header -->
       <div class="brand-header anim-fade-in-up">
-        <div class="brand-header__logo">OPC 一人公司孵化器</div>
-        <div class="brand-header__tagline">专业评估工具</div>
+        <div class="brand-header__logo" data-i18n="brand.header_logo">OPC 一人公司孵化器</div>
+        <div class="brand-header__tagline" data-i18n="brand.header_tagline">专业评估工具</div>
       </div>
 
       <!-- Title -->
       <div class="anim-fade-in-up anim-delay-1">
-        <h2 class="section-title">先简单认识一下</h2>
-        <p class="section-subtitle">5个基础信息，帮助更精准地匹配你的测评题目</p>
+        <h2 class="section-title" data-i18n="profile.title">先简单认识一下</h2>
+        <p class="section-subtitle" data-i18n="profile.subtitle">5个基础信息，帮助更精准地匹配你的测评题目</p>
       </div>
 
       <!-- Profile Form -->
       <div class="card anim-fade-in-up anim-delay-2">
         <div class="form-group">
-          <label class="form-label" for="pf-age">年龄段</label>
+          <label class="form-label" for="pf-age" data-i18n="profile.age_label">年龄段</label>
           <select id="pf-age" class="form-select">
-            <option value="">请选择</option>
-            <option value="18-22">18-22 岁</option>
-            <option value="23-27">23-27 岁</option>
-            <option value="28-35">28-35 岁</option>
-            <option value="36-45">36-45 岁</option>
-            <option value="46+">46 岁及以上</option>
+            <option value="" data-i18n="profile.select_default">请选择</option>
+            <option value="18-22" data-i18n="profile.age_18_22">18-22 岁</option>
+            <option value="23-27" data-i18n="profile.age_23_27">23-27 岁</option>
+            <option value="28-35" data-i18n="profile.age_28_35">28-35 岁</option>
+            <option value="36-45" data-i18n="profile.age_36_45">36-45 岁</option>
+            <option value="46+" data-i18n="profile.age_46_plus">46 岁及以上</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="pf-gender">性别</label>
+          <label class="form-label" for="pf-gender" data-i18n="profile.gender_label">性别</label>
           <select id="pf-gender" class="form-select">
-            <option value="">请选择</option>
-            <option value="male">男</option>
-            <option value="female">女</option>
-            <option value="other">其他</option>
+            <option value="" data-i18n="profile.select_default">请选择</option>
+            <option value="male" data-i18n="profile.gender_male">男</option>
+            <option value="female" data-i18n="profile.gender_female">女</option>
+            <option value="other" data-i18n="profile.gender_other">其他</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="pf-occupation">当前身份</label>
+          <label class="form-label" for="pf-occupation" data-i18n="profile.occupation_label">当前身份</label>
           <select id="pf-occupation" class="form-select">
-            <option value="">请选择</option>
-            <option value="在职员工">在职员工</option>
-            <option value="自由职业">自由职业</option>
-            <option value="创业者">创业者</option>
-            <option value="个体经营者">个体经营者</option>
-            <option value="学生">学生</option>
-            <option value="待业/转行中">待业转行</option>
-            <option value="全职主理人">全职主理人</option>
-            <option value="其他">其他</option>
+            <option value="" data-i18n="profile.select_default">请选择</option>
+            <option value="在职员工" data-i18n="profile.occ_employee">在职员工</option>
+            <option value="自由职业" data-i18n="profile.occ_freelance">自由职业</option>
+            <option value="创业者" data-i18n="profile.occ_entrepreneur">创业者</option>
+            <option value="个体经营者" data-i18n="profile.occ_selfemployed">个体经营者</option>
+            <option value="学生" data-i18n="profile.occ_student">学生</option>
+            <option value="待业/转行中" data-i18n="profile.occ_transition">待业转行</option>
+            <option value="全职主理人" data-i18n="profile.occ_fulltime">全职主理人</option>
+            <option value="其他" data-i18n="profile.occ_other">其他</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="pf-edu">最高学历</label>
+          <label class="form-label" for="pf-edu" data-i18n="profile.edu_label">最高学历</label>
           <select id="pf-edu" class="form-select">
-            <option value="">请选择</option>
-            <option value="高中及以下">高中及以下</option>
-            <option value="大专">大专</option>
-            <option value="本科">本科</option>
-            <option value="硕士及以上">硕士及以上</option>
+            <option value="" data-i18n="profile.select_default">请选择</option>
+            <option value="高中及以下" data-i18n="profile.edu_highschool">高中及以下</option>
+            <option value="大专" data-i18n="profile.edu_college">大专</option>
+            <option value="本科" data-i18n="profile.edu_bachelor">本科</option>
+            <option value="硕士及以上" data-i18n="profile.edu_master">硕士及以上</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="pf-channel">来源渠道</label>
+          <label class="form-label" for="pf-channel" data-i18n="profile.channel_label">来源渠道</label>
           <select id="pf-channel" class="form-select">
-            <option value="">请选择</option>
-            <option value="小红书">小红书</option>
-            <option value="微信私域">微信私域</option>
-            <option value="公众号">公众号</option>
-            <option value="视频号抖音">视频号/抖音</option>
-            <option value="朋友推荐">朋友推荐</option>
-            <option value="搜索平台">搜索平台</option>
-            <option value="其他">其他</option>
+            <option value="" data-i18n="profile.select_default">请选择</option>
+            <option value="小红书" data-i18n="profile.ch_xhs">小红书</option>
+            <option value="微信私域" data-i18n="profile.ch_wechat">微信私域</option>
+            <option value="公众号" data-i18n="profile.ch_gzh">公众号</option>
+            <option value="视频号抖音" data-i18n="profile.ch_video">视频号/抖音</option>
+            <option value="朋友推荐" data-i18n="profile.ch_friend">朋友推荐</option>
+            <option value="搜索平台" data-i18n="profile.ch_search">搜索平台</option>
+            <option value="其他" data-i18n="profile.ch_other">其他</option>
           </select>
         </div>
       </div>
 
       <!-- Submit -->
       <div class="anim-fade-in-up anim-delay-3" style="margin-top:8px;">
-        <button id="pf-submit" class="btn btn-accent btn-block btn-lg">开始答题</button>
+        <button id="pf-submit" class="btn btn-accent btn-block btn-lg" data-i18n="profile.submit">开始答题</button>
       </div>
 
       <!-- Footer -->
       <div class="footer" style="margin-top:32px;">
-        <div>信息仅用于题目匹配，不会存储或分享</div>
+        <div data-i18n="profile.footer">信息仅用于题目匹配，不会存储或分享</div>
       </div>
 
     </div>

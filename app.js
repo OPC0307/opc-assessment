@@ -22,6 +22,17 @@ var AUTHORITY_FOUNDATION = {
   ]
 };
 
+// ---- i18n 辅助函数：尝试翻译，失败回退到原始中文 ----
+function _t(key, fallback) {
+  try {
+    if (window.i18n) {
+      var result = i18n.t(key);
+      if (result !== key) return result;
+    }
+  } catch(e) {}
+  return fallback;
+}
+
 // ---- 画像题库（总池，30题） ----
 var QUESTION_POOL = [
   {
@@ -590,98 +601,98 @@ var DIMENSIONS = {
 
 // ---- 等级配置 ----
 var GRADES = {
-  A: { min: 85, label: "A · 一人公司潜力股", color: "var(--grade-a)" },
-  B: { min: 70, label: "B · 基础扎实待突破", color: "var(--grade-b)" },
-  C: { min: 55, label: "C · 需要系统提升", color: "var(--grade-c)" },
-  D: { min: 0,  label: "D · 建议先打基础",  color: "var(--grade-d)" }
+  A: { min: 85, label: _t("grade.A", "A · 一人公司潜力股"), color: "var(--grade-a)" },
+  B: { min: 70, label: _t("grade.B", "B · 基础扎实待突破"), color: "var(--grade-b)" },
+  C: { min: 55, label: _t("grade.C", "C · 需要系统提升"), color: "var(--grade-c)" },
+  D: { min: 0,  label: _t("grade.D", "D · 建议先打基础"),  color: "var(--grade-d)" }
 };
 
 // ---- 正反馈弹窗文案 ----
 var FEEDBACK_MESSAGES = [
-  { icon: "", title: "太棒了！已经完成1/5！", text: "继续保持，你的答案将帮助我们精准定位你的优势领域。" },
-  { icon: "", title: "已完成2/5！", text: "你已经走过了一半的路程，坚持就是胜利！" },
-  { icon: "", title: "快完成了！3/5！", text: "最后几题了，你的专属报告即将生成！" },
-  { icon: "", title: "4/5！即将到达终点！", text: "再回答几道题，就能查看你的完整诊断报告了！" },
-  { icon: "", title: "全部完成！", text: "太棒了！你的专属报告正在生成中…" }
+  { icon: "", title: _t("feedback.t1_title", "太棒了！已经完成1/5！"), text: _t("feedback.t1_text", "继续保持，你的答案将帮助我们精准定位你的优势领域。") },
+  { icon: "", title: _t("feedback.t2_title", "已完成2/5！"), text: _t("feedback.t2_text", "你已经走过了一半的路程，坚持就是胜利！") },
+  { icon: "", title: _t("feedback.t3_title", "快完成了！3/5！"), text: _t("feedback.t3_text", "最后几题了，你的专属报告即将生成！") },
+  { icon: "", title: _t("feedback.t4_title", "4/5！即将到达终点！"), text: _t("feedback.t4_text", "再回答几道题，就能查看你的完整诊断报告了！") },
+  { icon: "", title: _t("feedback.t5_title", "全部完成！"), text: _t("feedback.t5_text", "太棒了！你的专属报告正在生成中…") }
 ];
 
 // ---- 赛道匹配规则 ----
 var TRACK_RULES = [
   {
-    name: "知识付费赛道",
-    desc: "适合有专业技能和内容输出能力的人，通过课程、训练营、咨询等方式变现。",
+    name: _t("track.name_0", "知识付费赛道"),
+    desc: _t("track.desc_0", "适合有专业技能和内容输出能力的人，通过课程、训练营、咨询等方式变现。"),
     conditions: function(scores) {
       return scores["核心禀赋"] >= 70 && scores["内容能力"] >= 60;
     },
     priority: 1
   },
   {
-    name: "咨询服务赛道",
-    desc: "适合有深度专业能力和客户资源的人，提供1v1或小团队咨询服务。",
+    name: _t("track.name_1", "咨询服务赛道"),
+    desc: _t("track.desc_1", "适合有深度专业能力和客户资源的人，提供1v1或小团队咨询服务。"),
     conditions: function(scores) {
       return scores["核心禀赋"] >= 75 && scores["商业闭环"] >= 65 && scores["影响力"] >= 50;
     },
     priority: 1
   },
   {
-    name: "自媒体IP赛道",
-    desc: "适合内容创作能力强、有持续输出习惯的人，通过流量变现。",
+    name: _t("track.name_2", "自媒体IP赛道"),
+    desc: _t("track.desc_2", "适合内容创作能力强、有持续输出习惯的人，通过流量变现。"),
     conditions: function(scores) {
       return scores["内容能力"] >= 70 && scores["持续运营"] >= 60;
     },
     priority: 2
   },
   {
-    name: "技术外包赛道",
-    desc: "适合有技术能力且执行力强的人，提供外包开发/设计等服务。",
+    name: _t("track.name_3", "技术外包赛道"),
+    desc: _t("track.desc_3", "适合有技术能力且执行力强的人，提供外包开发/设计等服务。"),
     conditions: function(scores) {
       return scores["核心禀赋"] >= 70 && scores["落地执行"] >= 65 && scores["产品化能力"] >= 50;
     },
     priority: 2
   },
   {
-    name: "私域电商赛道",
-    desc: "适合有社交资源和运营能力的人，通过私域流量复购实现高利润。",
+    name: _t("track.name_4", "私域电商赛道"),
+    desc: _t("track.desc_4", "适合有社交资源和运营能力的人，通过私域流量复购实现高利润。"),
     conditions: function(scores) {
       return scores["商业闭环"] >= 60 && scores["影响力"] >= 55 && scores["持续运营"] >= 55;
     },
     priority: 2
   },
   {
-    name: "AI+效率工具赛道",
-    desc: "适合对AI工具有认知、产品化能力强的人，打造AI驱动的效率产品。",
+    name: _t("track.name_5", "AI+效率工具赛道"),
+    desc: _t("track.desc_5", "适合对AI工具有认知、产品化能力强的人，打造AI驱动的效率产品。"),
     conditions: function(scores) {
       return scores["产品化能力"] >= 65 && scores["AI杠杆"] >= 60;
     },
     priority: 2
   },
   {
-    name: "轻服务型OPC",
-    desc: "适合擅长社交和有一对一服务能力的人，通过咨询、陪跑、代运营变现。",
+    name: _t("track.name_6", "轻服务型OPC"),
+    desc: _t("track.desc_6", "适合擅长社交和有一对一服务能力的人，通过咨询、陪跑、代运营变现。"),
     conditions: function(scores) {
       return scores["影响力"] >= 60 && scores["核心禀赋"] >= 55 && scores["商业闭环"] >= 50;
     },
     priority: 3
   },
   {
-    name: "数字产品型OPC",
-    desc: "适合有产品化思维和内容能力的人，打造模板、工具、数字产品。",
+    name: _t("track.name_7", "数字产品型OPC"),
+    desc: _t("track.desc_7", "适合有产品化思维和内容能力的人，打造模板、工具、数字产品。"),
     conditions: function(scores) {
       return scores["产品化能力"] >= 65 && scores["内容能力"] >= 50;
     },
     priority: 3
   },
   {
-    name: "自由职业接单赛道",
-    desc: "适合有一定技能基础、执行能力强的人，先通过接单积累经验和收入。",
+    name: _t("track.name_8", "自由职业接单赛道"),
+    desc: _t("track.desc_8", "适合有一定技能基础、执行能力强的人，先通过接单积累经验和收入。"),
     conditions: function(scores) {
       return scores["核心禀赋"] >= 50 && scores["落地执行"] >= 55 && scores["商业闭环"] >= 50;
     },
     priority: 3
   },
   {
-    name: "创业预备队",
-    desc: "适合有一定准备度和风险承受能力的转型者，建议先做副业验证。",
+    name: _t("track.name_9", "创业预备队"),
+    desc: _t("track.desc_9", "适合有一定准备度和风险承受能力的转型者，建议先做副业验证。"),
     conditions: function(scores) {
       return scores["财务感知"] >= 50 && scores["持续运营"] >= 50 && scores["落地执行"] >= 50;
     },
@@ -862,9 +873,9 @@ function showFeedback(index) {
       '<div class="modal__text" id="fb-text"></div>' +
       '<div class="modal__progress" id="fb-progress" style="display:none;">' +
         '<div class="modal__progress-bar"><div class="modal__progress-fill" id="fb-progress-fill"></div></div>' +
-        '<div class="modal__progress-text" id="fb-progress-text">正在生成报告… 0%</div>' +
+        '<div class="modal__progress-text" id="fb-progress-text">' + _t("feedback.progress_prefix", "正在生成报告… ") + '0%</div>' +
       '</div>' +
-      '<button class="btn btn-primary btn-sm" id="fb-close">继续答题</button>' +
+      '<button class="btn btn-primary btn-sm" id="fb-close">' + _t("feedback.continue_quiz", "继续答题") + '</button>' +
       '</div>';
     document.body.appendChild(overlay);
 
@@ -879,8 +890,8 @@ function showFeedback(index) {
   if (isLast) {
     // 最后一题完成：显示进度条，隐藏按钮
     $("#fb-icon").style.display = "none";
-    $("#fb-title").textContent = "全部完成！";
-    $("#fb-text").textContent = "正在为你生成专属诊断报告…";
+    $("#fb-title").textContent = _t("feedback.all_done", "全部完成！");
+    $("#fb-text").textContent = _t("feedback.generating", "正在为你生成专属诊断报告…");
     $("#fb-progress").style.display = "block";
     $("#fb-close").style.display = "none";
     // 启动进度条动画
@@ -897,7 +908,7 @@ function showFeedback(index) {
     }
     $("#fb-progress").style.display = "none";
     $("#fb-close").style.display = "";
-    $("#fb-close").textContent = "继续答题";
+    $("#fb-close").textContent = _t("feedback.continue_quiz", "继续答题");
   }
 
   requestAnimationFrame(function() {
@@ -917,12 +928,12 @@ function animateProgressBar(callback) {
     if (pct >= 100) {
       pct = 100;
       fill.style.width = "100%";
-      text.textContent = "报告生成完成！";
+      text.textContent = _t("feedback.complete_text", "报告生成完成！");
       clearInterval(interval);
       setTimeout(callback, 400);
     } else {
       fill.style.width = pct + "%";
-      text.textContent = "正在生成报告… " + Math.round(pct) + "%";
+      text.textContent = _t("feedback.progress_prefix", "正在生成报告… ") + Math.round(pct) + "%";
     }
   }, 120);
 }
@@ -1001,16 +1012,18 @@ function renderQuestion(index) {
   updateProgressBar();
 
   // 题号和维度标签（使用画像化题目顺序）
-  questionCard.querySelector(".question-num").textContent = "第 " + (q.displayOrder || index + 1) + " 题";
-  questionCard.querySelector(".question-dim").textContent = q.dimension;
-  questionCard.querySelector(".question-text").textContent = q.question;
+  var qNumKey = "quiz_q.q" + q.id + ".question";
+  var qHintKey = "quiz_q.q" + q.id + ".hint";
+  questionCard.querySelector(".question-num").textContent = _t("quiz.question_num_prefix", "第 ") + (q.displayOrder || index + 1) + _t("quiz.question_num_suffix", " 题");
+  questionCard.querySelector(".question-dim").textContent = _t("dim." + q.dimension, q.dimension);
+  questionCard.querySelector(".question-text").textContent = _t(qNumKey, q.question);
 
   // 渲染题目说明（帮助用户缩短判断时间）
   var hintEl = questionCard.querySelector(".question-hint");
   if (hintEl) {
     if (q.hint) {
       hintEl.style.display = "block";
-      hintEl.textContent = q.hint;
+      hintEl.textContent = _t(qHintKey, q.hint);
     } else {
       hintEl.style.display = "none";
       hintEl.textContent = "";
@@ -1026,8 +1039,9 @@ function renderQuestion(index) {
   q.options.forEach(function(opt, i) {
     var div = document.createElement("div");
     div.className = "option" + (existing && existing.optionIndex === i ? " selected" : "");
+    var optText = _t("quiz_q.q" + q.id + "." + ["a","b","c","d","e"][i] + "_text", opt.text);
     div.innerHTML = '<span class="option__letter">' + opt.letter + '</span>' +
-                    '<span class="option__text">' + opt.text + '</span>';
+                    '<span class="option__text">' + optText + '</span>';
     div.addEventListener("click", function() {
       // 移除之前的选中
       optionsWrap.querySelectorAll(".option").forEach(function(el) {
@@ -1070,9 +1084,9 @@ function showResultButton() {
 
   questionCard.innerHTML =
     '<div class="text-center" style="padding: 40px 0;">' +
-      '<h2 style="margin-bottom: 8px;">全部答完啦！</h2>' +
-      '<p class="subtitle" style="margin-bottom: 24px;">你的专属诊断报告已准备就绪</p>' +
-      '<a href="report-free.html" class="btn btn-primary btn-lg" id="view-result-btn">查看我的报告 →</a>' +
+      '<h2 style="margin-bottom: 8px;">' + _t("quiz.all_done", "全部答完啦！") + '</h2>' +
+      '<p class="subtitle" style="margin-bottom: 24px;">' + _t("quiz.ready_for_report", "你的专属诊断报告已准备就绪") + '</p>' +
+      '<a href="report-free.html" class="btn btn-primary btn-lg" id="view-result-btn">' + _t("quiz.view_report_btn", "查看我的报告 →") + '</a>' +
     '</div>';
 
   document.getElementById("view-result-btn").addEventListener("click", function(e) {
@@ -1111,7 +1125,7 @@ function renderReport(isPaid) {
   }
 
   var gradeLabelEl = $(".grade-label");
-  if (gradeLabelEl) gradeLabelEl.textContent = result.gradeLabel;
+  if (gradeLabelEl) gradeLabelEl.textContent = _t("grade." + result.grade, result.gradeLabel);
 
   // 核心优势
   var strengthsList = $(".strengths-list");
@@ -1119,7 +1133,7 @@ function renderReport(isPaid) {
     strengthsList.innerHTML = "";
     result.strengths.forEach(function(name) {
       var li = document.createElement("li");
-      li.textContent = name + "（" + result.dimScores[name] + "分）— 你的核心竞争力";
+      li.textContent = _t("dim." + name, name) + "（" + result.dimScores[name] + _t("report.score_suffix", "分）— 你的核心竞争力");
       strengthsList.appendChild(li);
     });
   }
@@ -1130,7 +1144,7 @@ function renderReport(isPaid) {
     painList.innerHTML = "";
     result.painPoints.forEach(function(name) {
       var li = document.createElement("li");
-      li.textContent = name + "（" + result.dimScores[name] + "分）— 需要重点提升";
+      li.textContent = _t("dim." + name, name) + "（" + result.dimScores[name] + _t("report.pain_suffix", "分）— 需要重点提升");
       painList.appendChild(li);
     });
   }
@@ -1167,7 +1181,6 @@ function renderDimensionDetails(result) {
 
   wrap.innerHTML = "";
   var dimNames = ["核心禀赋", "商业闭环", "落地执行", "内容能力", "产品化能力", "持续运营", "财务感知", "AI杠杆", "影响力"];
-
   dimNames.forEach(function(name) {
     var score = result.dimScores[name] || 0;
     var level = score >= 75 ? "high" : (score >= 55 ? "mid" : "low");
@@ -1176,8 +1189,8 @@ function renderDimensionDetails(result) {
     div.className = "dim-item";
     div.innerHTML =
       '<div class="dim-header">' +
-        '<span class="dim-name">' + name + '</span>' +
-        '<span class="dim-score">' + score + '分</span>' +
+        '<span class="dim-name">' + _t("dim." + name, name) + '</span>' +
+        '<span class="dim-score">' + score + _t("report.dim_score_suffix", "分") + '</span>' +
       '</div>' +
       '<div class="dim-bar">' +
         '<div class="dim-bar__fill dim-bar__fill--' + level + '" style="width: 0%"></div>' +
@@ -1197,7 +1210,7 @@ function renderTracks(result, isPaid) {
 
   wrap.innerHTML = "";
   if (result.tracks.length === 0) {
-    wrap.innerHTML = '<p class="text-muted">根据你的测评结果，建议先提升基础能力。</p>';
+    wrap.innerHTML = '<p class="text-muted">' + _t("report.no_tracks", "根据你的测评结果，建议先提升基础能力。") + '</p>';
     return;
   }
 
@@ -1207,10 +1220,10 @@ function renderTracks(result, isPaid) {
       var div = document.createElement("div");
       div.className = "track-card";
       div.innerHTML =
-        '<span class="track-card__rank">定制 ' + (i + 1) + '</span>' +
+        '<span class="track-card__rank">' + _t("report.track_prefix", "定制 ") + (i + 1) + '</span>' +
         '<div class="track-card__name">' + track.name + '</div>' +
         '<div class="track-card__desc">' + track.desc + '</div>' +
-        '<div class="track-card__action"><button class="track-card__btn" data-track="' + track.name + '">我要定制</button></div>';
+        '<div class="track-card__action"><button class="track-card__btn" data-track="' + track.name + '">' + _t("report.track_cta", "我要定制") + '</button></div>';
       wrap.appendChild(div);
     });
     bindTrackButtons();
@@ -1225,12 +1238,12 @@ function renderTracks(result, isPaid) {
   result.tracks.slice(0, showCount).forEach(function(track, i) {
     var div = document.createElement("div");
     div.className = "track-card";
-    var rankLabel = "定制 " + (i + 1);
+    var rankLabel = _t("report.track_prefix", "定制 ") + (i + 1);
     div.innerHTML =
       '<span class="track-card__rank">' + rankLabel + '</span>' +
       '<div class="track-card__name">' + track.name + '</div>' +
       '<div class="track-card__desc">' + track.desc + '</div>' +
-      '<div class="track-card__action"><button class="track-card__btn" data-track="' + track.name + '">我要定制</button></div>';
+      '<div class="track-card__action"><button class="track-card__btn" data-track="' + track.name + '">' + _t("report.track_cta", "我要定制") + '</button></div>';
     wrap.appendChild(div);
   });
   bindTrackButtons();
@@ -1240,8 +1253,8 @@ function renderTracks(result, isPaid) {
     var locked = document.createElement("div");
     locked.className = "track-card track-card--locked";
     locked.innerHTML =
-      '<div class="track-card__lock">分享后解锁第3条定制赛道</div>' +
-      '<div class="track-card__hint">分享给朋友即可查看为你定制的第3条赛道</div>';
+      '<div class="track-card__lock">' + _t("report.locked_track_title", "分享后解锁第3条定制赛道") + '</div>' +
+      '<div class="track-card__hint">' + _t("report.locked_track_hint", "分享给朋友即可查看为你定制的第3条赛道") + '</div>';
     wrap.appendChild(locked);
     var pd = $(".private-domain-wrap");
     if (pd) pd.style.display = "none";
@@ -1286,12 +1299,12 @@ function showCustomModal(trackName) {
   var progEl = $("#fb-progress");
   if (progEl) progEl.style.display = "none";
   $("#fb-close").style.display = "";
-  $("#fb-close").textContent = "关闭";
-  $("#fb-title").textContent = trackName + " — 定制你的落地方案";
+  $("#fb-close").textContent = _t("modal.close", "关闭");
+  $("#fb-title").textContent = trackName + _t("modal.customize_title_suffix", " — 定制你的落地方案");
   $("#fb-text").innerHTML =
-    '扫描下方微信，获取「' + trackName + '」完整启动方案：<br><br>' +
+    _t("modal.scan_wechat", '扫描下方微信，获取「' + trackName + '」完整启动方案：') + '<br><br>' +
     '<img src="assets/wechat-qr.png" alt="微信二维码" style="width:160px;height:160px;border-radius:10px;border:2px solid var(--border);margin:4px 0;">' +
-    '<div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">微信扫码添加，发送「' + trackName + '」</div>';
+    '<div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">' + _t("modal.scan_tip", "微信扫码添加，发送「" + trackName + "」") + '</div>';
   requestAnimationFrame(function() {
     overlay.classList.add("active");
   });
@@ -1305,16 +1318,16 @@ function renderPrivateDomainCTA(el) {
   el.style.display = "block";
   el.innerHTML =
     '<div class="private-domain-card">' +
-      '<div class="private-domain__title">你的3条定制赛道方案已备好</div>' +
-      '<div class="private-domain__body">上面的赛道是系统的初步判断。扫描下方微信，可获取你的3条赛道完整落地方案：</div>' +
+      '<div class="private-domain__title">' + _t("cta.tracks_ready", "你的3条定制赛道方案已备好") + '</div>' +
+      '<div class="private-domain__body">' + _t("cta.tracks_intro", "上面的赛道是系统的初步判断。扫描下方微信，可获取你的3条赛道完整落地方案：") + '</div>' +
       '<ul class="private-domain__list">' +
-        '<li>每一条赛道的具体启动步骤</li>' +
-        '<li>适合你当前阶段的第一个MVP设计</li>' +
-        '<li>3天内可执行的起步规划</li>' +
+        '<li>' + _t("cta.benefit_1", "每一条赛道的具体启动步骤") + '</li>' +
+        '<li>' + _t("cta.benefit_2", "适合你当前阶段的第一个MVP设计") + '</li>' +
+        '<li>' + _t("cta.benefit_3", "3天内可执行的起步规划") + '</li>' +
       '</ul>' +
       '<div class="private-domain__cta">' +
         '<img src="assets/wechat-qr.png" alt="微信二维码" style="width:180px;height:180px;border-radius:12px;border:2px solid var(--border);margin:8px 0;">' +
-        '<div class="private-domain__tip">微信扫码添加，发送「赛道方案」</div>' +
+        '<div class="private-domain__tip">' + _t("cta.scan_tip", "微信扫码添加，发送「赛道方案」") + '</div>' +
       '</div>' +
     '</div>';
 }
@@ -1324,36 +1337,36 @@ function renderSOP(result) {
   if (!wrap) return;
 
   var sopItems = [
-    { week: "第1周", content: "自我定位梳理：明确你的核心禀赋和差异化优势" },
-    { week: "第2周", content: "产品设计：确定你的第一个最小可行产品（MVP）" },
-    { week: "第3周", content: "渠道搭建：选择1-2个核心平台，建立获客入口" },
-    { week: "第4周", content: "内容启动：产出第一批内容，验证市场反馈" }
+    { week: _t("sop.week1", "第1周"), content: _t("sop.week1_content", "自我定位梳理：明确你的核心禀赋和差异化优势") },
+    { week: _t("sop.week2", "第2周"), content: _t("sop.week2_content", "产品设计：确定你的第一个最小可行产品（MVP）") },
+    { week: _t("sop.week3", "第3周"), content: _t("sop.week3_content", "渠道搭建：选择1-2个核心平台，建立获客入口") },
+    { week: _t("sop.week4", "第4周"), content: _t("sop.week4_content", "内容启动：产出第一批内容，验证市场反馈") }
   ];
 
   // 根据短板定制补充
   if (result.painPoints.includes("内容能力")) {
-    sopItems.push({ week: "第5周", content: "内容能力专项突破：每天练习1篇短文案输出" });
+    sopItems.push({ week: _t("sop.week5", "第5周"), content: _t("sop.content_boost", "内容能力专项突破：每天练习1篇短文案输出") });
   }
   if (result.painPoints.includes("商业闭环")) {
-    sopItems.push({ week: "第5周", content: "商业闭环补强：学习定价策略和客户沟通技巧" });
+    sopItems.push({ week: _t("sop.week5", "第5周"), content: _t("sop.biz_loop", "商业闭环补强：学习定价策略和客户沟通技巧") });
   }
   if (result.painPoints.includes("持续运营")) {
-    sopItems.push({ week: "第5周", content: "持续运营规划：建立每日/每周运营SOP" });
+    sopItems.push({ week: _t("sop.week5", "第5周"), content: _t("sop.ops_planning", "持续运营规划：建立每日/每周运营SOP") });
   }
   if (result.painPoints.includes("财务感知")) {
-    sopItems.push({ week: "第5周", content: "财务规划：建立收入成本记账习惯" });
+    sopItems.push({ week: _t("sop.week5", "第5周"), content: _t("sop.finance_planning", "财务规划：建立收入成本记账习惯") });
   }
   if (result.painPoints.includes("AI杠杆")) {
-    sopItems.push({ week: "第6周", content: "AI工具流程：搭建AI辅助工作流" });
+    sopItems.push({ week: _t("sop.week6", "第6周"), content: _t("sop.ai_workflow", "AI工具流程：搭建AI辅助工作流") });
   }
   if (result.painPoints.includes("影响力")) {
-    sopItems.push({ week: "第6周", content: "人脉拓展：建立转介绍网络和社群运营" });
+    sopItems.push({ week: _t("sop.week6", "第6周"), content: _t("sop.network", "人脉拓展：建立转介绍网络和社群运营") });
   }
   if (result.painPoints.includes("产品化能力")) {
-    sopItems.push({ week: "第6周", content: "产品化打磨：整理技能为可售卖形态" });
+    sopItems.push({ week: _t("sop.week6", "第6周"), content: _t("sop.productize", "产品化打磨：整理技能为可售卖形态") });
   }
   if (result.painPoints.includes("落地执行")) {
-    sopItems.push({ week: "第6周", content: "执行强化：建立每日启动机制和复盘习惯" });
+    sopItems.push({ week: _t("sop.week6", "第6周"), content: _t("sop.execution", "执行强化：建立每日启动机制和复盘习惯") });
   }
 
   wrap.innerHTML = "";
@@ -1379,16 +1392,16 @@ function getUserTitle() {
       var p = JSON.parse(raw);
       var occ = p.occupation || "";
       var age = p.age || "";
-      if (age === "18-22") return "亲爱的年轻人";
-      if (age === "23-27") return "亲爱的潜力股";
-      if (occ === "学生") return "亲爱的同学";
-      if (occ === "自由职业") return "亲爱的自由人";
-      if (occ === "创业者" || occ === "个体经营者") return "尊敬的CEO";
-      if (occ === "在职员工" || occ === "全职主理人") return "尊敬的CEO";
-      return "亲爱的测评用户";
+      if (age === "18-22") return _t("title.youth", "亲爱的年轻人");
+      if (age === "23-27") return _t("title.talent", "亲爱的潜力股");
+      if (occ === "学生") return _t("title.student", "亲爱的同学");
+      if (occ === "自由职业") return _t("title.freelancer", "亲爱的自由人");
+      if (occ === "创业者" || occ === "个体经营者") return _t("title.ceo", "尊敬的CEO");
+      if (occ === "在职员工" || occ === "全职主理人") return _t("title.ceo", "尊敬的CEO");
+      return _t("title.default", "亲爱的测评用户");
     }
   } catch(e) {}
-  return "亲爱的测评用户";
+  return _t("title.default", "亲爱的测评用户");
 }
 
 // 渲染个性化问候语
@@ -1397,10 +1410,10 @@ function renderGreeting(el) {
   var title = getUserTitle();
   var now = new Date();
   var hour = now.getHours();
-  var timeWord = hour < 12 ? "上午好" : (hour < 18 ? "下午好" : "晚上好");
+  var timeWord = hour < 12 ? _t("greeting.morning", "上午好") : (hour < 18 ? _t("greeting.afternoon", "下午好") : _t("greeting.evening", "晚上好"));
   el.innerHTML =
     '<div class="report-greeting">' + title + '，' + timeWord + '</div>' +
-    '<div class="report-thanks">感谢你完成 OPC 一人公司适配度测评。以下报告基于你的15道答题数据生成，定位你的优势领域与成长方向。测评结果不构成职业建议或收益承诺，请结合自身情况独立判断。</div>';
+    '<div class="report-thanks">' + _t("greeting.thanks", "感谢你完成 OPC 一人公司适配度测评。以下报告基于你的15道答题数据生成，定位你的优势领域与成长方向。测评结果不构成职业建议或收益承诺，请结合自身情况独立判断。") + '</div>';
 }
 
 // 渲染结语
@@ -1408,8 +1421,8 @@ function renderClosing(el) {
   if (!el) return;
   el.innerHTML =
     '<div class="report-closing">' +
-      '<div class="report-closing__title">结语</div>' +
-      '<div class="report-closing__text">一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。</div>' +
+      '<div class="report-closing__title">' + _t("closing.title", "结语") + '</div>' +
+      '<div class="report-closing__text">' + _t("closing.text", "一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。") + '</div>' +
     '</div>';
 }
 
@@ -1417,15 +1430,15 @@ function renderClosing(el) {
 function renderGlossary(el) {
   if (!el) return;
   var terms = [
-    { term: "一人公司", def: "以个人或极简团队为核心的小规模商业组织，追求高利润、强闭环、抗风险、绝对职业主权。" },
-    { term: "核心禀赋", def: "你被他人和市场验证的、具有差异化优势的个人能力，是一人公司最底层的竞争壁垒。" },
-    { term: "商业闭环", def: "从获客、成交、交付到售后的完整变现链路，闭环越完整，收入越稳定。" },
-    { term: "产品化", def: "将个人经验、技能或服务转化为标准化、可售卖的产品形态，实现从「卖时间」到「卖产品」的跃迁。" },
-    { term: "定制赛道", def: "根据你的能力画像，量身定制最适合你当前阶段的一人公司经营方向与启动方案。" },
-    { term: "SOP", def: "Standard Operating Procedure，标准操作流程。将重复性工作流程化，提升执行效率。" }
+    { term: _t("glossary OPC", "一人公司"), def: _t("glossary.opc_def", "以个人或极简团队为核心的小规模商业组织，追求高利润、强闭环、抗风险、绝对职业主权。") },
+    { term: _t("glossary core_gift", "核心禀赋"), def: _t("glossary.core_gift_def", "你被他人和市场验证的、具有差异化优势的个人能力，是一人公司最底层的竞争壁垒。") },
+    { term: _t("glossary biz_loop", "商业闭环"), def: _t("glossary.biz_loop_def", "从获客、成交、交付到售后的完整变现链路，闭环越完整，收入越稳定。") },
+    { term: _t("glossary productize", "产品化"), def: _t("glossary.productize_def", "将个人经验、技能或服务转化为标准化、可售卖的产品形态，实现从「卖时间」到「卖产品」的跃迁。") },
+    { term: _t("glossary custom_track", "定制赛道"), def: _t("glossary.custom_track_def", "根据你的能力画像，量身定制最适合你当前阶段的一人公司经营方向与启动方案。") },
+    { term: _t("glossary SOP", "SOP"), def: _t("glossary.SOP_def", "Standard Operating Procedure，标准操作流程。将重复性工作流程化，提升执行效率。") }
   ];
   var html = '<div class="glossary-section">' +
-    '<div class="glossary-section__title">专业词汇注释</div>';
+    '<div class="glossary-section__title">' + _t("glossary.section_title", "专业词汇注释") + '</div>';
   terms.forEach(function(t) {
     html += '<div class="glossary-item"><span class="glossary-item__term">' + t.term + '</span><span class="glossary-item__def">' + t.def + '</span></div>';
   });
@@ -1444,8 +1457,8 @@ function renderFooterBrand(el) {
     String(now.getMinutes()).padStart(2, '0');
   el.innerHTML =
     '<div class="footer-brand">' +
-      '<div class="footer-brand__name">孵化OPC</div>' +
-      '<div class="footer-brand__ts">报告生成时间：' + ts + '</div>' +
+      '<div class="footer-brand__name">' + _t("footer.brand_name", "孵化OPC") + '</div>' +
+      '<div class="footer-brand__ts">' + _t("footer.timestamp", "报告生成时间：") + ts + '</div>' +
     '</div>';
 }
 
@@ -1456,7 +1469,7 @@ function renderWatermark() {
   var wm = document.createElement("div");
   wm.className = "watermark";
   var lines = [];
-  for (var i = 0; i < 8; i++) lines.push("OPC 一人公司孵化器");
+  for (var i = 0; i < 8; i++) lines.push(_t("footer.watermark", "OPC 一人公司孵化器"));
   wm.innerHTML = '<div class="watermark__text">' + lines.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;") + '</div>';
   document.body.appendChild(wm);
 }
@@ -1482,12 +1495,12 @@ function initShareButtons() {
       // 显示分享成功反馈
       var overlay = $(".modal-overlay");
       if (overlay) {
-        $("#fb-title").textContent = "分享成功！";
-        $("#fb-text").textContent = "第3条定制赛道已解锁，查看下方你的完整方案。";
+        $("#fb-title").textContent = _t("share.success_title", "分享成功！");
+        $("#fb-text").textContent = _t("share.success_text", "第3条定制赛道已解锁，查看下方你的完整方案。");
         $("#fb-icon").style.display = "none";
         $("#fb-progress").style.display = "none";
         $("#fb-close").style.display = "";
-        $("#fb-close").textContent = "查看方案";
+        $("#fb-close").textContent = _t("share.view_plan", "查看方案");
         overlay.classList.add("active");
         $("#fb-close").onclick = function() {
           overlay.classList.remove("active");
@@ -1650,7 +1663,7 @@ function initPayPage() {
   // 反爬检测：阻止非正常浏览器访问
   var ua = navigator.userAgent.toLowerCase();
   if (/bot|spider|crawler|headless|phantom|curl|wget/i.test(ua)) {
-    document.body.innerHTML = '<div style="text-align:center;padding:80px 20px;color:#999;">访问受限</div>';
+    document.body.innerHTML = '<div style="text-align:center;padding:80px 20px;color:#999;">' + _t("pay.access_denied", "访问受限") + '</div>';
     return;
   }
 
@@ -1680,13 +1693,13 @@ function showPaySuccess() {
   overlay.className = "modal-overlay active";
   overlay.innerHTML =
     '<div class="modal">' +
-      '<div class="modal__title">等待确认</div>' +
-      '<div class="modal__text">请将付款截图发送给客服确认，确认后即可查看完整报告。</div>' +
+      '<div class="modal__title">' + _t("pay.waiting_title", "等待确认") + '</div>' +
+      '<div class="modal__text">' + _t("pay.waiting_text", "请将付款截图发送给客服确认，确认后即可查看完整报告。") + '</div>' +
       '<div style="margin:16px 0;">' +
         '<img src="assets/wechat-qr.png" alt="微信二维码" style="width:150px;height:150px;border-radius:10px;border:2px solid var(--border);margin:4px 0;">' +
       '</div>' +
-      '<div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:16px;">微信扫码添加客服，发送截图</div>' +
-      '<button class="btn btn-primary btn-sm" id="go-report" style="opacity:0.5;pointer-events:none;">已确认，查看完整报告</button>' +
+      '<div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:16px;">' + _t("pay.scan_service", "微信扫码添加客服，发送截图") + '</div>' +
+      '<button class="btn btn-primary btn-sm" id="go-report" style="opacity:0.5;pointer-events:none;">' + _t("pay.confirmed_view", "已确认，查看完整报告") + '</button>' +
     '</div>';
   document.body.appendChild(overlay);
 
@@ -1730,17 +1743,17 @@ function showSubmitProof() {
   var progEl = $("#fb-progress");
   if (progEl) progEl.style.display = "none";
   $("#fb-close").style.display = "";
-  $("#fb-close").textContent = "知道了";
-  $("#fb-title").textContent = "扫码支付 ¥19.9";
+  $("#fb-close").textContent = _t("pay.got_it", "知道了");
+  $("#fb-title").textContent = _t("pay.scan_price", "扫码支付 ¥19.9");
   $("#fb-text").innerHTML =
     '<div style="text-align:center;">' +
-      '<div style="font-weight:700;font-size:1.125rem;color:var(--primary);margin-bottom:12px;">⬇ 第一步：扫码付款 ⬇</div>' +
+      '<div style="font-weight:700;font-size:1.125rem;color:var(--primary);margin-bottom:12px;">' + _t("pay.step1", "⬇ 第一步：扫码付款 ⬇") + '</div>' +
       '<img src="assets/wechat-pay.jpg" alt="微信收款码" style="width:180px;height:180px;border-radius:10px;border:2px solid var(--border);margin:4px 0;object-fit:cover;">' +
-      '<div style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:4px;">扫码支付 ¥19.9</div>' +
+      '<div style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-top:4px;">' + _t("pay.scan_price", "扫码支付 ¥19.9") + '</div>' +
       '<div class="divider" style="margin:16px auto;max-width:200px;"></div>' +
-      '<div style="font-weight:700;font-size:1rem;color:var(--text);margin-bottom:8px;">⬇ 第二步：加客服发截图 ⬇</div>' +
+      '<div style="font-weight:700;font-size:1rem;color:var(--text);margin-bottom:8px;">' + _t("pay.step2", "⬇ 第二步：加客服发截图 ⬇") + '</div>' +
       '<img src="assets/wechat-qr.png" alt="客服微信二维码" style="width:160px;height:160px;border-radius:10px;border:2px solid var(--border);margin:4px 0;">' +
-      '<div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">付款后添加客服微信，发送付款截图</div>' +
+      '<div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">' + _t("pay.send_proof", "付款后添加客服微信，发送付款截图") + '</div>' +
     '</div>';
   requestAnimationFrame(function() {
     overlay.classList.add("active");
@@ -1775,7 +1788,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var edu = document.getElementById("pf-edu").value;
         var channel = document.getElementById("pf-channel").value;
         if (!age || !gender || !occupation || !edu || !channel) {
-          alert("请完整填写所有选项后再继续。");
+          alert(_t("profile.alert_incomplete", "请完整填写所有选项后再继续。"));
           return;
         }
         var profile = {

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <link rel="stylesheet" href="style.css">
+  <script src="i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,8 +72,8 @@
 
       <!-- Brand Header -->
       <div class="brand-header anim-fade-in-up">
-        <div class="brand-header__logo">OPC 一人公司孵化器</div>
-        <div class="brand-header__tagline">专业评估工具</div>
+        <div class="brand-header__logo" data-i18n="brand.report_free_logo">OPC 一人公司孵化器</div>
+        <div class="brand-header__tagline" data-i18n="brand.report_free_tagline">专业评估工具</div>
       </div>
 
       <!-- Report Greeting (dynamic) -->
@@ -89,8 +90,8 @@
 
       <!-- Strengths (dynamic) -->
       <section class="section anim-fade-in-up">
-        <h2 class="section-title">核心优势</h2>
-        <p class="section-subtitle">你已经具备的一人公司基因</p>
+        <h2 class="section-title" data-i18n="report_free.strengths_title">核心优势</h2>
+        <p class="section-subtitle" data-i18n="report_free.strengths_subtitle">你已经具备的一人公司基因</p>
         <div class="card">
           <ul class="strengths-list check-list"></ul>
         </div>
@@ -98,8 +99,8 @@
 
       <!-- Pain Points (dynamic) -->
       <section class="section anim-fade-in-up">
-        <h2 class="section-title">核心卡点</h2>
-        <p class="section-subtitle">阻碍你前进的关键瓶颈</p>
+        <h2 class="section-title" data-i18n="report_free.pain_title">核心卡点</h2>
+        <p class="section-subtitle" data-i18n="report_free.pain_subtitle">阻碍你前进的关键瓶颈</p>
         <div class="card">
           <ul class="pain-list cross-list"></ul>
         </div>
@@ -109,52 +110,52 @@
 
       <!-- Compare: Free vs Paid -->
       <section class="section anim-fade-in-up">
-        <h2 class="section-title">免费版 vs 完整版</h2>
-        <p class="section-subtitle">升级完整版，解锁你的全部潜力</p>
+        <h2 class="section-title" data-i18n="report_free.compare_title">免费版 vs 完整版</h2>
+        <p class="section-subtitle" data-i18n="report_free.compare_subtitle">升级完整版，解锁你的全部潜力</p>
         <div class="card">
           <table class="compare-table">
             <thead>
               <tr>
-                <th>功能对比</th>
-                <th>免费版</th>
-                <th>完整版</th>
+                <th data-i18n="report_free.compare_feature">功能对比</th>
+                <th data-i18n="report_free.compare_free">免费版</th>
+                <th data-i18n="report_free.compare_paid">完整版</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>总分 + 等级</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
+                <td data-i18n="report_free.cf_score">总分 + 等级</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
               </tr>
               <tr>
-                <td>核心优势/卡点</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
+                <td data-i18n="report_free.cf_strengths">核心优势/卡点</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
               </tr>
               <tr>
-                <td>6维度全拆解</td>
-                <td style="color:var(--danger);">无</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
+                <td data-i18n="report_free.cf_dimensions">6维度全拆解</td>
+                <td style="color:var(--danger);" data-i18n="report_free.cf_no">无</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
               </tr>
               <tr>
-                <td>定制赛道</td>
-                <td>2条</td>
-                <td style="color:var(--success);font-weight:700;">3条</td>
+                <td data-i18n="report_free.cf_tracks">定制赛道</td>
+                <td data-i18n="report_free.cf_2">2条</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_3">3条</td>
               </tr>
               <tr>
-                <td>30天SOP计划</td>
-                <td style="color:var(--danger);">无</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
+                <td data-i18n="report_free.cf_sop">30天SOP计划</td>
+                <td style="color:var(--danger);" data-i18n="report_free.cf_no">无</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
               </tr>
               <tr>
-                <td>避坑指南</td>
-                <td style="color:var(--danger);">无</td>
-                <td style="color:var(--success);font-weight:700;">有</td>
+                <td data-i18n="report_free.cf_pitfalls">避坑指南</td>
+                <td style="color:var(--danger);" data-i18n="report_free.cf_no">无</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_yes">有</td>
               </tr>
               <tr>
-                <td>1v1诊断抵扣</td>
-                <td style="color:var(--danger);">无</td>
-                <td style="color:var(--success);font-weight:700;">¥19.9可抵扣</td>
+                <td data-i18n="report_free.cf_diagnosis">1v1诊断抵扣</td>
+                <td style="color:var(--danger);" data-i18n="report_free.cf_no">无</td>
+                <td style="color:var(--success);font-weight:700;" data-i18n="report_free.cf_diagnosis_price">¥19.9可抵扣</td>
               </tr>
             </tbody>
           </table>
@@ -165,46 +166,46 @@
 
       <!-- Upgrade Banner -->
       <div class="upgrade-banner anim-fade-in-up">
-        <div class="upgrade-banner__title">解锁完整版报告</div>
-        <div class="upgrade-banner__body">
+        <div class="upgrade-banner__title" data-i18n="report_free.upgrade_title">解锁完整版报告</div>
+        <div class="upgrade-banner__body" data-i18n="report_free.upgrade_body">
           获取6大维度全方位能力拆解、3条定制赛道排名、30天SOP行动计划
         </div>
-        <div class="upgrade-banner__price">限时特惠 ¥19.9</div>
-        <a href="pay.html" class="btn btn-accent btn-lg btn-block">立即解锁完整报告</a>
+        <div class="upgrade-banner__price" data-i18n="report_free.upgrade_price">限时特惠 ¥19.9</div>
+        <a href="pay.html" class="btn btn-accent btn-lg btn-block" data-i18n="report_free.upgrade_btn">立即解锁完整报告</a>
       </div>
 
       <div class="divider"></div>
 
       <!-- Tracks (dynamic) -->
       <section class="section anim-fade-in-up">
-        <h2 class="section-title">定制赛道</h2>
-        <p class="section-subtitle">基于你的测评数据，推荐最适合的一人公司方向</p>
+        <h2 class="section-title" data-i18n="report_free.tracks_title">定制赛道</h2>
+        <p class="section-subtitle" data-i18n="report_free.tracks_subtitle">基于你的测评数据，推荐最适合的一人公司方向</p>
         <div class="tracks-wrap"></div>
         <div class="private-domain-wrap"></div>
       </section>
 
       <!-- Share Section -->
       <section class="share-section anim-fade-in-up">
-        <div class="share-section__title">分享你的测评报告</div>
-        <div class="share-section__desc">分享给朋友，一起开启一人公司之路</div>
+        <div class="share-section__title" data-i18n="report_free.share_title">分享你的测评报告</div>
+        <div class="share-section__desc" data-i18n="report_free.share_desc">分享给朋友，一起开启一人公司之路</div>
         <div class="share-btns">
           <div class="share-item">
             <button class="share-btn" data-platform="wechat">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/><path d="M17.826 8.223c-2.13 0-4.05.786-5.523 2.057-1.67 1.44-2.74 3.74-2.74 6.22 0 .818.107 1.613.307 2.373-.076.026-.155.042-.23.042-.436 0-.86-.08-1.26-.226l-1.503.88a.275.275 0 0 1-.132.043.194.194 0 0 1-.194-.194c0-.057.024-.113.038-.168l.308-1.17a.388.388 0 0 0-.14-.438C5.497 16.256 4.5 14.72 4.5 12.94c0-2.93 2.928-5.227 6.456-5.227 2.79 0 5.164 1.633 6.02 3.893.225-.107.46-.2.706-.278a.3.3 0 0 1 .144-.01c-1.16-1.857-3.338-3.095-6-3.095"/></svg>
             </button>
-            <span class="share-label">微信</span>
+            <span class="share-label" data-i18n="report_free.share_wechat">微信</span>
           </div>
           <div class="share-item">
             <button class="share-btn" data-platform="weibo">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443z"/><path d="M13.939 1.788c4.973 0 8.854 2.645 8.854 5.93 0 0-1.173 3.725-5.094 6.694 0 0 .714-1.698-.005-3.139-.74-1.482-2.891-2.084-4.828-2.054 0 0 5.502-3.137 2.818-6.129 0 0-2.404-1.322-6.435-.92 0 0 1.163-.773 2.562-1.239.934-.31 1.659-.404 2.128-.403z"/></svg>
             </button>
-            <span class="share-label">微博</span>
+            <span class="share-label" data-i18n="report_free.share_weibo">微博</span>
           </div>
           <div class="share-item">
             <button class="share-btn" data-platform="url">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             </button>
-            <span class="share-label">复制链接</span>
+            <span class="share-label" data-i18n="report_free.share_copy">复制链接</span>
           </div>
         </div>
       </section>

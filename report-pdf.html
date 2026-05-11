@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <script src="i18n.js"></script>
 <style>
 @page {
   size: A4;
@@ -178,26 +179,26 @@ body {
 <body>
 
 <div class="cover">
-  <div class="cover__badge">OPC 专业测评系统</div>
-  <div class="cover__title">一人公司适配度诊断报告</div>
-  <div class="cover__subtitle">__GRADE_LABEL__</div>
+  <div class="cover__badge" data-i18n="report_pdf.cover_badge">OPC 专业测评系统</div>
+  <div class="cover__title" data-i18n="report_pdf.cover_title">一人公司适配度诊断报告</div>
+  <div class="cover__subtitle" data-i18n="report_pdf.cover_subtitle">__GRADE_LABEL__</div>
   <div class="cover__line"></div>
   <div class="cover__info">
-    <div>测评对象：__USER_NAME__</div>
-    <div>报告编号：__REPORT_ID__</div>
-    <div>生成时间：__TIMESTAMP__</div>
-    <div>测评版本：OPC 专业测评系统 V2.0</div>
+    <div data-i18n="report_pdf.cover_user">测评对象：__USER_NAME__</div>
+    <div data-i18n="report_pdf.cover_id">报告编号：__REPORT_ID__</div>
+    <div data-i18n="report_pdf.cover_time">生成时间：__TIMESTAMP__</div>
+    <div data-i18n="report_pdf.cover_version">测评版本：OPC 专业测评系统 V2.0</div>
   </div>
-  <div class="cover__brand">孵化OPC</div>
+  <div class="cover__brand" data-i18n="report_pdf.cover_brand">孵化OPC</div>
 </div>
 
 <!-- 总览 -->
 <div class="section">
-  <div class="section__title">综合评估</div>
+  <div class="section__title" data-i18n="report_pdf.score_title">综合评估</div>
   <div class="score-row">
     <div>
       <div class="score-num">__TOTAL_SCORE__</div>
-      <div class="score-label">综合得分 / 100</div>
+      <div class="score-label" data-i18n="report_pdf.score_label">综合得分 / 100</div>
     </div>
     <div>
       <div class="score-grade">__GRADE__</div>
@@ -208,7 +209,7 @@ body {
 
 <!-- 维度得分 -->
 <div class="section">
-  <div class="section__title">九大维度评估</div>
+  <div class="section__title" data-i18n="report_pdf.dim_title">九大维度评估</div>
   <table class="dim-table">
 __DIM_ROWS__
   </table>
@@ -216,40 +217,40 @@ __DIM_ROWS__
 
 <!-- 核心优势与卡点 -->
 <div class="section">
-  <div class="section__title">核心优势</div>
+  <div class="section__title" data-i18n="report_pdf.strengths_title">核心优势</div>
   <div class="section__body">__STRENGTHS__</div>
 </div>
 <div class="section">
-  <div class="section__title">待提升领域</div>
+  <div class="section__title" data-i18n="report_pdf.pain_title">待提升领域</div>
   <div class="section__body">__PAIN_POINTS__</div>
 </div>
 
 <!-- 定制赛道 -->
 <div class="section">
-  <div class="section__title">定制赛道</div>
+  <div class="section__title" data-i18n="report_pdf.tracks_title">定制赛道</div>
   __TRACKS__
 </div>
 
 <!-- 结语 -->
 <div class="closing">
-  <div class="closing__title">结语</div>
-  <div class="closing__text">一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。</div>
+  <div class="closing__title" data-i18n="report_pdf.closing_title">结语</div>
+  <div class="closing__text" data-i18n-html="true" data-i18n="report_pdf.closing_text">一人公司的本质，是用最小的资源撬动最大的个人价值。你不是需要成为"全能型选手"，而是找到你最能打的那一个点，持续投入，持续交付，持续增长。这份报告是你的起点，不是终点。真正的答案，在你的下一次行动里。</div>
 </div>
 
 <!-- 词汇注释 -->
 <div class="glossary">
-  <div class="glossary__title">专业词汇注释</div>
-  <div class="glossary-item"><span class="glossary-item__term">一人公司</span><span class="glossary-item__def">以个人或极简团队为核心的小规模商业组织。</span></div>
-  <div class="glossary-item"><span class="glossary-item__term">核心禀赋</span><span class="glossary-item__def">被市场验证的、具有差异化优势的个人能力。</span></div>
-  <div class="glossary-item"><span class="glossary-item__term">商业闭环</span><span class="glossary-item__def">从获客到售后的完整变现链路。</span></div>
-  <div class="glossary-item"><span class="glossary-item__term">定制赛道</span><span class="glossary-item__def">根据能力画像量身定制的经营方向与启动方案。</span></div>
-  <div class="glossary-item"><span class="glossary-item__term">SOP</span><span class="glossary-item__def">标准操作流程，将重复性工作流程化。</span></div>
+  <div class="glossary__title" data-i18n="report_pdf.glossary_title">专业词汇注释</div>
+  <div class="glossary-item"><span class="glossary-item__term" data-i18n="report_pdf.glossary_term_1">一人公司</span><span class="glossary-item__def" data-i18n="report_pdf.glossary_def_1">以个人或极简团队为核心的小规模商业组织。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term" data-i18n="report_pdf.glossary_term_2">核心禀赋</span><span class="glossary-item__def" data-i18n="report_pdf.glossary_def_2">被市场验证的、具有差异化优势的个人能力。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term" data-i18n="report_pdf.glossary_term_3">商业闭环</span><span class="glossary-item__def" data-i18n="report_pdf.glossary_def_3">从获客到售后的完整变现链路。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term" data-i18n="report_pdf.glossary_term_4">定制赛道</span><span class="glossary-item__def" data-i18n="report_pdf.glossary_def_4">根据能力画像量身定制的经营方向与启动方案。</span></div>
+  <div class="glossary-item"><span class="glossary-item__term" data-i18n="report_pdf.glossary_term_5">SOP</span><span class="glossary-item__def" data-i18n="report_pdf.glossary_def_5">标准操作流程，将重复性工作流程化。</span></div>
 </div>
 
 <div class="footer-page">
-  <div>本报告由 OPC 一人公司孵化器测评系统自动生成</div>
-  <div>报告内容及相关测评模型受著作权法保护，未经许可不得擅自复制、改编、转载</div>
-  <div style="margin-top:8px;font-weight:700;letter-spacing:0.2em;">孵化OPC</div>
+  <div data-i18n="report_pdf.footer_line1">本报告由 OPC 一人公司孵化器测评系统自动生成</div>
+  <div data-i18n="report_pdf.footer_line2">报告内容及相关测评模型受著作权法保护，未经许可不得擅自复制、改编、转载</div>
+  <div data-i18n="report_pdf.footer_brand" style="margin-top:8px;font-weight:700;letter-spacing:0.2em;">孵化OPC</div>
 </div>
 
 </body>

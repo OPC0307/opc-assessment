@@ -191,6 +191,9 @@
 <link rel="canonical" href="https://fhopc.top/">
 <link rel="sitemap" type="application/xml" href="https://fhopc.top/sitemap.xml">
 
+<!-- i18n Engine -->
+<script src="i18n.js"></script>
+
 <!-- JSON-LD: FAQPage -->
 <script type="application/ld+json">
 {
@@ -233,28 +236,31 @@
 
     <!-- ============ Brand Header ============ -->
     <header class="brand-header anim-fade-in-up">
-      <div class="brand-header__logo">OPC</div>
-      <div class="brand-header__tagline">一人公司适配度测评系统</div>
+      <div class="brand-header__logo" data-i18n="brand.logo">OPC</div>
+      <div class="brand-header__tagline" data-i18n="brand.tagline">一人公司适配度测评系统</div>
     </header>
+
+    <!-- Language Toggle -->
+    <button class="lang-toggle">EN</button>
 
     <!-- ============ Hero Section ============ -->
     <section class="glass-card anim-slide-up anim-delay-1" style="margin-bottom: 24px;">
 
       <!-- Title Switcher -->
       <div class="title-switcher">
-        <button class="title-candidate active" data-title="测一测，你有多适合成为「一人公司」？">A</button>
-        <button class="title-candidate" data-title="你的基因里，藏着一人公司的天赋密码">B</button>
-        <button class="title-candidate" data-title="不做螺丝钉：找到你的一人公司适配度">C</button>
-        <button class="title-candidate" data-title="告别职场内卷，测测你的一人公司潜力">D</button>
-        <button class="title-candidate" data-title="从打工人到超级个体，你只差这一步">E</button>
+        <button class="title-candidate active" data-title="测一测，你有多适合成为「一人公司」？" data-i18n-attr="data-title:hero.titleA">A</button>
+        <button class="title-candidate" data-title="你的基因里，藏着一人公司的天赋密码" data-i18n-attr="data-title:hero.titleB">B</button>
+        <button class="title-candidate" data-title="不做螺丝钉：找到你的一人公司适配度" data-i18n-attr="data-title:hero.titleC">C</button>
+        <button class="title-candidate" data-title="告别职场内卷，测测你的一人公司潜力" data-i18n-attr="data-title:hero.titleD">D</button>
+        <button class="title-candidate" data-title="从打工人到超级个体，你只差这一步" data-i18n-attr="data-title:hero.titleE">E</button>
       </div>
 
       <!-- Headline -->
       <div class="hero__title-group">
-        <h1 class="hero__title mb-2" id="hero-title">
+        <h1 class="hero__title mb-2" id="hero-title" data-i18n="hero.titleA">
           测一测，你有多适合成为「一人公司」？
         </h1>
-        <p class="hero__subtitle">
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
           基于《纳瓦尔宝典》《一人公司共识》《超级个体》三大理论框架，
           从 6 个核心维度科学评估你的独立经营适配度。
           128 道精选题项，15 分钟发现你的天赋商业基因。
@@ -262,7 +268,7 @@
       </div>
 
       <!-- Primary CTA -->
-      <a href="profile.html" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 20px;">
+      <a href="profile.html" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 20px;" data-i18n="hero.cta">
         开始免费评估
       </a>
 
@@ -273,23 +279,23 @@
           <span class="social-proof__avatar"></span>
           <span class="social-proof__avatar"></span>
         </div>
-        <span><span class="social-proof__count">1,283</span> 人已完成评估</span>
+        <span><span class="social-proof__count">1,283</span><span data-i18n="hero.social_prefix"> 人已完成评估</span></span>
       </div>
 
     </section>
 
     <!-- ============ Bento Value Grid ============ -->
     <section class="section">
-      <h2 class="section-title">一人公司测评体系</h2>
-      <p class="section-subtitle">从6个核心维度科学评估你的独立经营适配度，找到从打工人到超级个体的最佳路径</p>
+      <h2 class="section-title" data-i18n="value.title">一人公司测评体系</h2>
+      <p class="section-subtitle" data-i18n="value.subtitle">从6个核心维度科学评估你的独立经营适配度，找到从打工人到超级个体的最佳路径</p>
     </section>
     <div class="bento-grid bento-grid--3col" style="margin-bottom: 32px;">
 
       <!-- Span2: Value Proposition (accent) -->
       <div class="bento-item bento-item--span2 bento-item--accent anim-fade-in-up anim-delay-2">
         <div class="bento-item__icon">OP</div>
-        <div class="bento-item__title">你的独立经营适配度，一测便知</div>
-        <div class="bento-item__desc">
+        <div class="bento-item__title" data-i18n="value.main_title">你的独立经营适配度，一测便知</div>
+        <div class="bento-item__desc" data-i18n="value.main_desc">
           OPC 测评系统融合行为心理学与商业方法论，通过六大维度（独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力）建立完整的人物画像。这不是一份简单的性格测试，而是一份可落地的个人商业路线图。
         </div>
       </div>
@@ -297,8 +303,8 @@
       <!-- Item: Assessment Framework -->
       <div class="bento-item anim-fade-in-up anim-delay-3">
         <div class="bento-item__icon">A</div>
-        <div class="bento-item__title">六大维度评估</div>
-        <div class="bento-item__desc">
+        <div class="bento-item__title" data-i18n="value.item1_title">六大维度评估</div>
+        <div class="bento-item__desc" data-i18n="value.item1_desc">
           独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力 — 全面扫描你的创业者基因。
         </div>
       </div>
@@ -306,17 +312,17 @@
       <!-- Item: Methodology -->
       <div class="bento-item anim-fade-in-up anim-delay-4">
         <div class="bento-item__icon">M</div>
-        <div class="bento-item__title">科学方法体系</div>
-        <div class="bento-item__desc">
+        <div class="bento-item__title" data-i18n="value.item2_title">科学方法体系</div>
+        <div class="bento-item__desc" data-i18n="value.item2_desc">
           基于 Likert 量表与行为事件访谈法（BEI）设计，每个维度 20+ 精选题项，确保信效度达到专业测评标准。
         </div>
       </div>
 
-      <!-- Item: Output Targets (sits below in 2-col, becomes right column on 3-col) -->
+      <!-- Item: Output Targets -->
       <div class="bento-item anim-fade-in-up anim-delay-5">
         <div class="bento-item__icon">R</div>
-        <div class="bento-item__title">可执行报告</div>
-        <div class="bento-item__desc">
+        <div class="bento-item__title" data-i18n="value.item3_title">可执行报告</div>
+        <div class="bento-item__desc" data-i18n="value.item3_desc">
           测评结果不仅给出适配度评分，更提供个性化发展建议、能力提升路径与推荐赛道方向，让认知转化为行动。
         </div>
       </div>
@@ -326,17 +332,17 @@
     <!-- ============ Theory Foundation ============ -->
     <section class="section">
       <div class="accent-line"></div>
-      <h2 class="section-title">理论根基</h2>
-      <p class="section-subtitle">三大经典著作奠定评估系统的理论底座</p>
+      <h2 class="section-title" data-i18n="theory.title">理论根基</h2>
+      <p class="section-subtitle" data-i18n="theory.subtitle">三大经典著作奠定评估系统的理论底座</p>
 
       <div class="bento-grid bento-grid--theory">
 
         <!-- Book 1: 纳瓦尔宝典 -->
         <div class="bento-item theory-item anim-fade-in-up anim-delay-2">
           <div class="theory-item__index">01</div>
-          <div class="book-card__title">纳瓦尔宝典</div>
-          <div class="book-card__author">Naval Ravikant</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="theory.book1_title">纳瓦尔宝典</div>
+          <div class="book-card__author" data-i18n="theory.book1_author">Naval Ravikant</div>
+          <div class="book-card__desc" data-i18n="theory.book1_desc">
             关于财富与幸福的底层逻辑。核心启发：杠杆效应、产品化自我、复利思维是衡量一人公司适配度的关键指标。
           </div>
         </div>
@@ -344,9 +350,9 @@
         <!-- Book 2: 一人公司共识 -->
         <div class="bento-item theory-item anim-fade-in-up anim-delay-3">
           <div class="theory-item__index">02</div>
-          <div class="book-card__title">一人公司共识</div>
-          <div class="book-card__author">Paul Jarvis</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="theory.book2_title">一人公司共识</div>
+          <div class="book-card__author" data-i18n="theory.book2_author">Paul Jarvis</div>
+          <div class="book-card__desc" data-i18n="theory.book2_desc">
             重新定义成功：规模适度、利润优先、生活方式优先。评估系统的「系统运营力」与「抗风险韧性」维度直接引用此框架。
           </div>
         </div>
@@ -354,9 +360,9 @@
         <!-- Book 3: 超级个体 -->
         <div class="bento-item theory-item anim-fade-in-up anim-delay-4">
           <div class="theory-item__index">03</div>
-          <div class="book-card__title">超级个体</div>
-          <div class="book-card__author">徐静波 / 古典</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="theory.book3_title">超级个体</div>
+          <div class="book-card__author" data-i18n="theory.book3_author">徐静波 / 古典</div>
+          <div class="book-card__desc" data-i18n="theory.book3_desc">
             从组织人到自由人的能力迁移模型。核心关注品牌构建力、资源整合力与持续学习力，是一人公司能力的实践指南。
           </div>
         </div>
@@ -367,30 +373,30 @@
     <!-- ============ SEO FAQ Section ============ -->
     <section class="section">
       <div class="accent-line"></div>
-      <h2 class="section-title">关于一人公司，你需要知道的</h2>
+      <h2 class="section-title" data-i18n="faq.title">关于一人公司，你需要知道的</h2>
 
       <div class="bento-grid bento-grid--theory">
 
         <div class="bento-item theory-item anim-fade-in-up">
           <div class="theory-item__index">Q1</div>
-          <div class="book-card__title">什么是一人公司（OPC）？</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="faq.q1_title">什么是一人公司（OPC）？</div>
+          <div class="book-card__desc" data-i18n="faq.q1_desc">
             一人公司（One Person Company）是2026年最热的创业趋势。一个人借助AI工具和自动化系统，独立完成传统需要团队才能完成的商业活动。从自由职业、副业到全职创业，一人公司正成为越来越多人的选择。人民日报、36氪等权威媒体均有专题报道。
           </div>
         </div>
 
         <div class="bento-item theory-item anim-fade-in-up anim-delay-2">
           <div class="theory-item__index">Q2</div>
-          <div class="book-card__title">我适合成为一人公司吗？</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="faq.q2_title">我适合成为一人公司吗？</div>
+          <div class="book-card__desc" data-i18n="faq.q2_desc">
             不是每个人都适合独立经营。OPC测评系统从独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力6大维度科学评估你的一人公司适配度。15分钟完成测试，即刻获得你的专属评估报告和行动路线图。已有超过1000人通过测评完成自我认知升级。
           </div>
         </div>
 
         <div class="bento-item theory-item anim-fade-in-up anim-delay-3">
           <div class="theory-item__index">Q3</div>
-          <div class="book-card__title">一人公司能做什么业务？</div>
-          <div class="book-card__desc">
+          <div class="book-card__title" data-i18n="faq.q3_title">一人公司能做什么业务？</div>
+          <div class="book-card__desc" data-i18n="faq.q3_desc">
             一人公司业务覆盖广泛：AI内容创作、个人IP打造、知识付费、电商代运营、自媒体、咨询顾问、数字产品开发等。OPC测评将根据你的能力画像推荐最适合的3个赛道方向，并提供30天可执行SOP行动计划，让你的创业之路有章可循。
           </div>
         </div>
@@ -403,12 +409,12 @@
     <!-- ============ CTA Section ============ -->
     <section class="cta-section">
       <div class="glass-card anim-fade-in-up anim-delay-3">
-        <h2 class="mb-4">现在开始，发现你的一人公司潜力</h2>
-        <p class="hero__subtitle">
+        <h2 class="mb-4" data-i18n="cta.title">现在开始，发现你的一人公司潜力</h2>
+        <p class="hero__subtitle" data-i18n-html="true" data-i18n="cta.subtitle">
           15 分钟完成评估，即刻获得专属适配度报告与行动路线图。
           已有 <strong style="color: var(--primary);">1,283</strong> 位创业者完成自我认知升级。
         </p>
-        <a href="profile.html" class="btn btn-accent btn-lg btn-block">
+        <a href="profile.html" class="btn btn-accent btn-lg btn-block" data-i18n="cta.button">
           开始免费评估
         </a>
       </div>
@@ -418,10 +424,10 @@
     <div class="divider"></div>
 
     <footer class="footer">
-      <div class="footer-brand__name" style="margin-bottom: 4px;">OPC 一人公司适配度测评系统</div>
-      <div class="footer-brand__ts">科学评估 · 认知升级 · 行动指引</div>
+      <div class="footer-brand__name" style="margin-bottom: 4px;" data-i18n="footer.name">OPC 一人公司适配度测评系统</div>
+      <div class="footer-brand__ts" data-i18n="footer.tagline">科学评估 · 认知升级 · 行动指引</div>
 
-      <div class="ip-footer">
+      <div class="ip-footer" data-i18n-html="true" data-i18n="footer.copyright">
         OPC 测评系统 2.0 &copy; 2026 版权所有。<br>
         系统框架引用《纳瓦尔宝典》《一人公司共识》《超级个体》等公开理论资源。<br>
         本测评结果仅供参考，不构成任何商业决策建议。

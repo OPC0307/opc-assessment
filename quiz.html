@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <link rel="stylesheet" href="style.css">
+  <script src="i18n.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,7 +53,7 @@
 
       <!-- Brand Header -->
       <div class="brand-header">
-        <div class="brand-header__logo">OPC 一人公司适配度测评</div>
+        <div class="brand-header__logo" data-i18n="brand.quiz_logo">OPC 一人公司适配度测评</div>
       </div>
 
       <!-- Progress Bar -->
@@ -60,18 +61,18 @@
         <div class="progress-bar">
           <div class="progress-bar__fill"></div>
         </div>
-        <div class="progress-text">
-          <span>已完成 <span class="progress-current">0</span> / <span class="progress-total">15</span> 题</span>
-          <span>约3分钟</span>
+        <div class="progress-text" id="progress-text">
+          <span data-i18n="quiz.progress_prefix">已完成 </span><span class="progress-current">0</span><span data-i18n="quiz.progress_middle"> / </span><span class="progress-total">15</span><span data-i18n="quiz.progress_suffix"> 题</span>
+          <span data-i18n="quiz.time_estimate">约3分钟</span>
         </div>
       </div>
 
       <!-- Question Card -->
       <div class="card question-card anim-fade-in-up">
-        <div class="question-num">第 1 题</div>
-        <div class="question-dim">核心禀赋</div>
-        <div class="question-text">题目加载中...</div>
-        <div class="question-hint">加载题目提示...</div>
+        <div class="question-num" data-i18n="quiz.question_num">第 1 题</div>
+        <div class="question-dim" data-i18n="quiz.question_dim">核心禀赋</div>
+        <div class="question-text" data-i18n="quiz.loading">题目加载中...</div>
+        <div class="question-hint" data-i18n="quiz.hint_loading">加载题目提示...</div>
         <div class="options-wrap"></div>
       </div>
 
