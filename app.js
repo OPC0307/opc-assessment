@@ -1,37 +1,4 @@
-/* ============================================
-   OPC 一人公司适配度测评系统 — 核心逻辑
-   ============================================ */
-
-// ---- 评估权威依据 ----
-var AUTHORITY_FOUNDATION = {
-  classics: [
-    { source: "纳瓦尔《纳瓦尔宝典》", core: "个体财富公式：专长 × 杠杆 × 责任感" },
-    { source: "《一人公司》行业共识", core: "小规模、高利润、强闭环、抗风险、绝对职业主权" },
-    { source: "古典《超级个体》", core: "聚焦个体不可替代性、复利能力、职业主权" }
-  ],
-  practice: [
-    "跨装修、保险、贸易多行业个体实战闭环经验",
-    "项目落地管控、拓客转化、用户共情陪跑三大核心能力沉淀",
-    "100+装修项目全流程落地验证",
-    "保险拓客签单与个体生意用户共情验证",
-    "贸易行业从0到1跑通变现闭环验证"
-  ],
-  ai: [
-    "基于2024-2026年AI工具落地个体商业的实战案例打磨",
-    "新增AI杠杆驾驭能力维度，适配当下OPC落地环境"
-  ]
-};
-
-// ---- i18n 辅助函数：尝试翻译，失败回退到原始中文 ----
-function _t(key, fallback) {
-  try {
-    if (window.i18n) {
-      var result = i18n.t(key);
-      if (result !== key) return result;
-    }
-  } catch(e) {}
-  return fallback;
-}
+/* app.js — Quiz/Report/Pay logic. Requires app-core.js loaded first. */
 
 // ---- 画像题库（总池，30题） ----
 var QUESTION_POOL = [
@@ -824,19 +791,6 @@ var Scoring = {
 };
 
 // ==========================================
-// DOM 辅助函数
-// ==========================================
-function $(selector) { return document.querySelector(selector); }
-function $$(selector) { return document.querySelectorAll(selector); }
-
-function createElement(tag, className, textContent) {
-  var el = document.createElement(tag);
-  if (className) el.className = className;
-  if (textContent) el.textContent = textContent;
-  return el;
-}
-
-// ==========================================
 // 进度条更新
 // ==========================================
 function updateProgressBar() {
@@ -937,36 +891,6 @@ function animateProgressBar(callback) {
     }
   }, 120);
 }
-
-// ==========================================
-// localStorage 数据传递
-// ==========================================
-var Storage = {
-  KEY: "opc_quiz_result",
-
-  save: function(data) {
-    try {
-      localStorage.setItem(this.KEY, JSON.stringify(data));
-    } catch(e) {
-      console.warn("localStorage save failed:", e);
-    }
-  },
-
-  load: function() {
-    try {
-      var raw = localStorage.getItem(this.KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch(e) {
-      return null;
-    }
-  },
-
-  clear: function() {
-    try {
-      localStorage.removeItem(this.KEY);
-    } catch(e) {}
-  }
-};
 
 // ==========================================
 // 保存完整结果
@@ -1514,77 +1438,6 @@ function initShareButtons() {
 }
 
 // ==========================================
-// 数据统计系统（本地 + 云端批量上报）
-// ==========================================
-var STATS_KEY = "opc_stats";
-var CLOUD_ENV = "cloud1-d3ghz1fpd2ce39b7c";
-var FLUSH_INTERVAL = 30000; // 30秒自动上报一次
-
-function trackEvent(action, data) {
-  try {
-    var evt = {
-      action: action,
-      data: data || {},
-      page: document.body.getAttribute("data-page") || "unknown",
-      time: Date.now(),
-      sessionId: getSessionId()
-    };
-    // 本地存储
-    var raw = localStorage.getItem(STATS_KEY);
-    var stats = raw ? JSON.parse(raw) : { events: [], firstSeen: Date.now() };
-    stats.events.push(evt);
-    if (stats.events.length > 500) stats.events = stats.events.slice(-500);
-    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
-    // 待上报队列
-    var queue = JSON.parse(localStorage.getItem("opc_stats_queue") || "[]");
-    queue.push(evt);
-    localStorage.setItem("opc_stats_queue", JSON.stringify(queue));
-  } catch(e) {}
-}
-
-// 定时批量上报到云函数
-function flushStats() {
-  var queue = JSON.parse(localStorage.getItem("opc_stats_queue") || "[]");
-  if (queue.length === 0) return;
-  // 调用云函数上报
-  if (typeof wx !== 'undefined' && wx.cloud) {
-    wx.cloud.init({ env: CLOUD_ENV });
-    wx.cloud.callFunction({
-      name: "trackEvent",
-      data: { action: "batch", data: { events: queue } },
-      success: function() { localStorage.setItem("opc_stats_queue", "[]"); },
-      fail: function() { /* 网络失败时保留队列，下次重试 */ }
-    });
-  }
-}
-setInterval(flushStats, FLUSH_INTERVAL);
-
-function getSessionId() {
-  var sid = localStorage.getItem("opc_session");
-  if (!sid) {
-    sid = "s_" + Date.now() + "_" + Math.random().toString(36).slice(2, 8);
-    localStorage.setItem("opc_session", sid);
-  }
-  return sid;
-}
-
-// ==========================================
-// 数字动画
-// ==========================================
-function animateNumber(el, from, to, duration) {
-  var start = performance.now();
-  function step(now) {
-    var elapsed = now - start;
-    var progress = Math.min(elapsed / duration, 1);
-    // easeOutCubic
-    var eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(from + (to - from) * eased);
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// ==========================================
 // Debug 模式：跳过答题直接看报告
 // ==========================================
 // 在 URL 后加 ?debug 即可：report-free.html?debug
@@ -1760,124 +1613,17 @@ function showSubmitProof() {
   });
 }
 
-// ==========================================
-// 页面初始化
-// ==========================================
-// ---- Site Navigation (injected globally) ----
-var SITE_NAV = [
-  { key: "home",   href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
-  { key: "quiz",   href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
-  { key: "subsidy",href: "/subsidy/",                 label: "补贴查询",   enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
-  { key: "service",href: "/services/subsidy.html",    label: "补贴代办",   enLabel: "Service",         match: ["services-subsidy"] },
-  { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] },
-  { key: "blog",   href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] }
-];
-
-function injectSiteNav(currentPage) {
-  if (document.getElementById("site-nav")) return;
-  var pageContent = document.querySelector(".page-content");
-  if (!pageContent) return;
-
-  var currentLang = window.i18n ? i18n.getLang() : "zh";
-
-  var nav = document.createElement("nav");
-  nav.className = "site-nav";
-  nav.id = "site-nav";
-
-  var inner = document.createElement("div");
-  inner.className = "site-nav__inner";
-
-  var brand = document.createElement("a");
-  brand.href = "/";
-  brand.className = "site-nav__brand";
-  brand.textContent = "OPC";
-
-  var links = document.createElement("div");
-  links.className = "site-nav__links";
-
-  for (var i = 0; i < SITE_NAV.length; i++) {
-    var item = SITE_NAV[i];
-    var a = document.createElement("a");
-    a.href = item.href;
-    a.setAttribute("data-i18n", "nav." + item.key);
-    a.textContent = currentLang === "en" ? item.enLabel : item.label;
-    if (item.match.indexOf(currentPage) !== -1) {
-      a.classList.add("active");
-    }
-    links.appendChild(a);
-  }
-
-  var langBtn = document.createElement("button");
-  langBtn.className = "lang-toggle";
-  langBtn.textContent = currentLang === "zh" ? "EN" : "中文";
-
-  inner.appendChild(brand);
-  inner.appendChild(links);
-  inner.appendChild(langBtn);
-  nav.appendChild(inner);
-
-  var existing = pageContent.querySelector(".lang-toggle");
-  if (existing) existing.remove();
-
-  pageContent.insertBefore(nav, pageContent.firstChild);
-}
 
 document.addEventListener("DOMContentLoaded", function() {
   var page = document.body.getAttribute("data-page");
 
-  // Inject global nav on all content pages
-  if (document.querySelector(".page-content")) {
-    injectSiteNav(page);
-  }
-
-  if (page === "index") {
-    var titleEl = document.getElementById("hero-title");
-    var candidateBtns = document.querySelectorAll(".title-candidate");
-    if (titleEl && candidateBtns.length) {
-      candidateBtns.forEach(function(btn) {
-        btn.addEventListener("click", function() {
-          candidateBtns.forEach(function(b) { b.classList.remove("active"); });
-          btn.classList.add("active");
-          titleEl.textContent = btn.getAttribute("data-title");
-        });
-      });
-    }
-  } else if (page === "profile") {
-    var submitBtn = document.getElementById("pf-submit");
-    if (submitBtn) {
-      submitBtn.addEventListener("click", function() {
-        var age = document.getElementById("pf-age").value;
-        var gender = document.getElementById("pf-gender").value;
-        var occupation = document.getElementById("pf-occupation").value;
-        var edu = document.getElementById("pf-edu").value;
-        var channel = document.getElementById("pf-channel").value;
-        if (!age || !gender || !occupation || !edu || !channel) {
-          alert(_t("profile.alert_incomplete", "请完整填写所有选项后再继续。"));
-          return;
-        }
-        var profile = {
-          age: age,
-          gender: gender,
-          occupation: occupation,
-          education: edu,
-          channel: channel,
-          timestamp: Date.now()
-        };
-        try {
-          localStorage.setItem("opc_user_profile", JSON.stringify(profile));
-        } catch(e) {}
-        window.location.href = "quiz.html";
-      });
-    }
-  } else   if (page === "quiz") {
-    // 动态更新进度条总数
+  if (page === "quiz") {
     var totalEl = document.querySelector(".progress-total");
     if (totalEl) totalEl.textContent = QUESTIONS.length;
     renderQuestion(0);
   } else if (page === "report-free") {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     renderReport(false);
-    // Lead capture form
     var leadForm = document.getElementById("lead-form");
     if (leadForm) {
       leadForm.addEventListener("submit", function(e) {
@@ -1903,97 +1649,6 @@ document.addEventListener("DOMContentLoaded", function() {
     initPayPage();
   }
 
-  // 语言切换由 i18n.js 统一管理，此处不再重复绑定
-  // 仅做初始按钮文本同步（i18n.js updateDOM 也会处理，此处为兜底）
-  i18n.onReady(function(lang) {
-    var btn = document.querySelector(".lang-toggle");
-    if (btn) btn.textContent = lang === "zh" ? "EN" : "中文";
-  });
 
-  // ---- 动态统计数据（时间驱动 + 真实访问 + 测评完成）----
-  var STAT_STORAGE_KEY = "opc_stat_bonus";
-  var STAT_SESSION_KEY = "opc_session_counted";
-  var STAT_VERSION_KEY = "opc_stat_version";
-  var STAT_VERSION = 3; // 版本号递增触发计数重置
-  var STAT_BASE = 1283;
-  var STAT_START = new Date("2026-04-01").getTime();
-  var STAT_DAILY = 18; // 日均自然增长
-
-  function loadRealTimeStat() {
-    var storedVersion = localStorage.getItem(STAT_VERSION_KEY);
-    if (storedVersion !== String(STAT_VERSION)) {
-      localStorage.removeItem(STAT_STORAGE_KEY);
-      localStorage.setItem(STAT_VERSION_KEY, String(STAT_VERSION));
-    }
-
-    // 时间驱动的基础值
-    var daysSince = Math.max(0, Math.floor((Date.now() - STAT_START) / 86400000));
-    var timeBased = STAT_BASE + daysSince * STAT_DAILY;
-
-    // 真实访问增量
-    var sessionBonus = parseInt(localStorage.getItem(STAT_STORAGE_KEY), 10) || 0;
-    if (!sessionStorage.getItem(STAT_SESSION_KEY)) {
-      sessionBonus += 1;
-      localStorage.setItem(STAT_STORAGE_KEY, sessionBonus);
-      sessionStorage.setItem(STAT_SESSION_KEY, "1");
-    }
-
-    updateStatDisplay(timeBased + sessionBonus);
-  }
-
-  // 测评完成时真实 +1
-  window.incrementCompletionCounter = function() {
-    var sessionBonus = parseInt(localStorage.getItem(STAT_STORAGE_KEY), 10) || 0;
-    sessionBonus += 1;
-    localStorage.setItem(STAT_STORAGE_KEY, sessionBonus);
-    var daysSince = Math.max(0, Math.floor((Date.now() - STAT_START) / 86400000));
-    updateStatDisplay(STAT_BASE + daysSince * STAT_DAILY + sessionBonus);
-  };
-
-  function updateStatDisplay(count) {
-    var formatted = count.toLocaleString();
-    var ids = ["realtime-stat", "realtime-stat-pay", "realtime-stat-profile", "realtime-stat-quiz", "realtime-stat-cta"];
-    for (var i = 0; i < ids.length; i++) {
-      var el = document.getElementById(ids[i]);
-      if (el) el.textContent = formatted;
-    }
-    var classEls = document.querySelectorAll(".stat-count");
-    for (var j = 0; j < classEls.length; j++) {
-      classEls[j].textContent = formatted;
-    }
-  }
-
-  // 所有页面加载统计计数
-  loadRealTimeStat();
-
-  // 报告页完成时自动递增
-  if (page === "report-free" || page === "report-paid") {
-    var completedKey = "opc_quiz_completed_at";
-    if (!sessionStorage.getItem(completedKey)) {
-      sessionStorage.setItem(completedKey, Date.now().toString());
-      window.incrementCompletionCounter();
-    }
-  }
-
-  // 百度自动推送 — 页面加载时通知百度收录
-  (function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    } else {
-      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-  })();
-
-  // 百度统计
-  var _hmt = _hmt || [];
-  (function(){
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
 });
+

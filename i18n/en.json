@@ -7,6 +7,39 @@
     "tax": "Tax Guide",
     "blog": "Blog"
   },
+  "grade": {
+    "A": "A · OPC Potential Star",
+    "B": "B · Solid Foundation, Ready to Break Through",
+    "C": "C · Needs Systematic Improvement",
+    "D": "D · Build Your Foundation First"
+  },
+  "dim": {
+    "核心禀赋": "Core Aptitude",
+    "商业闭环": "Business Loop",
+    "落地执行": "Execution",
+    "内容能力": "Content Ability",
+    "产品化能力": "Productization",
+    "持续运营": "Continuous Operations",
+    "财务感知": "Financial Awareness",
+    "AI杠杆": "AI Leverage",
+    "影响力": "Influence"
+  },
+  "report": {
+    "score_suffix": " pts) — Your Core Competitive Edge",
+    "pain_suffix": " pts) — Key Areas for Improvement",
+    "dim_score_suffix": " pts",
+    "no_tracks": "Based on your assessment, we recommend building foundational capabilities first.",
+    "track_prefix": "Custom ",
+    "track_cta": "I Want This",
+    "locked_track_title": "Share to Unlock the 3rd Custom Track",
+    "locked_track_hint": "Share with a friend to view your 3rd customized track"
+  },
+  "modal": {
+    "close": "Close",
+    "customize_title_suffix": " — Customize Your Launch Plan",
+    "scan_wechat": "Scan the WeChat QR code below to get the complete launch plan for \"{track}\":",
+    "scan_tip": "Scan to add on WeChat, send \"{track}\""
+  },
   "brand": {
     "logo": "OPC",
     "tagline": "One-Person Company Fitness Assessment",
@@ -24,7 +57,7 @@
     "titleC": "Stop Being a Cog: Find Your Solo-Business Fit",
     "titleD": "Escape the Rat Race: Assess Your Solo-Preneur Potential",
     "titleE": "From Employee to Super Individual — One Assessment Away",
-    "subtitle": "Built on three foundational frameworks — The Almanack of Naval Ravikant, Company of One, and Super Individual — this assessment evaluates your independent business fitness across 6 core dimensions. 128 carefully curated questions. Discover your entrepreneurial blueprint in 15 minutes.",
+    "subtitle": "Built on three foundational frameworks — The Almanack of Naval Ravikant, Company of One, and Super Individual — this assessment evaluates your independent business fitness across 6 core dimensions. 30 carefully curated questions. Discover your entrepreneurial blueprint in 15 minutes.",
     "cta": "Start Free Assessment",
     "social_prefix": "people have taken this assessment"
   },
@@ -75,12 +108,78 @@
   "cta": {
     "title": "Start Now — Discover Your One-Person Company Potential",
     "subtitle": "Complete the assessment in 15 minutes. Get your personalized fitness report and action roadmap instantly. <strong style=\"color: var(--primary);\">1,283</strong> entrepreneurs have already upgraded their self-awareness.",
-    "button": "Start Free Assessment"
+    "button": "Start Free Assessment",
+    "tracks_ready": "Your 3 Custom Track Plans Are Ready",
+    "tracks_intro": "The tracks above are the system's preliminary assessment. Scan the WeChat QR below for your complete 3-track launch plan:",
+    "benefit_1": "Detailed launch steps for each track",
+    "benefit_2": "Your first MVP design for your current stage",
+    "benefit_3": "A 3-day actionable launch plan",
+    "scan_tip": "Scan to add on WeChat, send \"Track Plan\""
   },
-  "footer": {
-    "name": "OPC One-Person Company Fitness Assessment",
-    "tagline": "Scientific Assessment · Self-Awareness · Action Guide",
-    "copyright": "OPC Assessment 2.0 © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice."
+  "sop": {
+    "week1": "Week 1",
+    "week2": "Week 2",
+    "week3": "Week 3",
+    "week4": "Week 4",
+    "week5": "Week 5",
+    "week6": "Week 6",
+    "week1_content": "Self-positioning: clarify your core aptitude and differentiating strengths",
+    "week2_content": "Product design: define your first minimum viable product (MVP)",
+    "week3_content": "Channel setup: choose 1-2 core platforms, establish customer acquisition",
+    "week4_content": "Content launch: produce your first batch of content, validate market feedback",
+    "content_boost": "Content sprint: practice writing one short copy daily",
+    "biz_loop": "Business loop reinforcement: learn pricing strategy and client communication",
+    "ops_planning": "Operations planning: establish daily/weekly operations SOP",
+    "finance_planning": "Financial planning: build an income-expense tracking habit",
+    "ai_workflow": "AI workflow: set up AI-assisted work processes",
+    "network": "Networking: build referral networks and community operations",
+    "productize": "Productization: package your skills into sellable formats",
+    "execution": "Execution boost: establish daily launch routines and review habits"
+  },
+  "title": {
+    "youth": "Dear Young Explorer",
+    "talent": "Dear Rising Star",
+    "student": "Dear Student",
+    "freelancer": "Dear Free Spirit",
+    "ceo": "Dear CEO",
+    "default": "Dear Assessment User"
+  },
+  "greeting": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "thanks": "Thank you for completing the OPC One-Person Company Fitness Assessment. This report is generated based on your 15-question responses, identifying your strengths and growth areas. Results are for reference only and do not constitute career advice or income guarantees. Please make independent judgments."
+  },
+  "closing": {
+    "title": "Closing Thoughts",
+    "text": "The essence of a one-person company is leveraging minimal resources to maximize personal value. You don't need to be a \"versatile player\" — find your strongest point, invest consistently, deliver consistently, and grow consistently. This report is your starting point, not your destination. The real answer lies in your next action."
+  },
+  "glossary": {
+    "section_title": "Glossary",
+    "OPC": "One-Person Company",
+    "opc_def": "A small-scale business centered around an individual or minimal team, pursuing high profit, strong business loops, risk resilience, and absolute career sovereignty.",
+    "core_gift": "Core Aptitude",
+    "core_gift_def": "Your individually verified capability with differentiated market advantages — the foundational competitive moat of a one-person company.",
+    "biz_loop": "Business Loop",
+    "biz_loop_def": "The complete monetization chain from customer acquisition, sales, delivery, to after-sales. The more complete the loop, the more stable the income.",
+    "productize": "Productization",
+    "productize_def": "Transforming personal experience, skills, or services into standardized, sellable product formats — the leap from 'selling time' to 'selling products.'",
+    "custom_track": "Custom Track",
+    "custom_track_def": "Business direction and launch plan tailored to your capability profile and current stage.",
+    "SOP": "SOP",
+    "SOP_def": "Standard Operating Procedure — streamlining repetitive work into repeatable processes for improved execution efficiency."
+  },
+  "feedback": {
+    "progress_prefix": "Generating report… ",
+    "continue_quiz": "Continue Assessment",
+    "all_done": "All Done!",
+    "generating": "Generating your personalized diagnostic report…",
+    "complete_text": "Report generated!"
+  },
+  "share": {
+    "success_title": "Shared Successfully!",
+    "success_text": "Your 3rd custom track is now unlocked. Check your full plan below.",
+    "view_plan": "View Plan"
   },
   "profile": {
     "header_logo": "OPC",
@@ -121,7 +220,28 @@
     "ch_search": "Search Engine",
     "ch_other": "Other",
     "submit": "Start Assessment",
-    "footer": "Information is only used for question matching and will not be stored or shared."
+    "footer": "Information is only used for question matching and will not be stored or shared.",
+    "alert_incomplete": "Please complete all fields before continuing."
+  },
+  "footer": {
+    "name": "OPC One-Person Company Fitness Assessment",
+    "tagline": "Scientific Assessment · Self-Awareness · Action Guide",
+    "copyright": "OPC Assessment 2.0 © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice.",
+    "brand_name": "OPC Incubator",
+    "timestamp": "Report generated: ",
+    "watermark": "OPC Incubator"
+  },
+  "pay": {
+    "access_denied": "Access Restricted",
+    "waiting_title": "Awaiting Confirmation",
+    "waiting_text": "Please send your payment screenshot to customer service for verification. Your full report will be available once confirmed.",
+    "scan_service": "Scan to add customer service on WeChat, send screenshot",
+    "confirmed_view": "Confirmed, View Full Report",
+    "got_it": "Got It",
+    "scan_price": "Scan to Pay ¥19.9",
+    "step1": "⬇ Step 1: Scan to Pay ⬇",
+    "step2": "⬇ Step 2: Add Customer Service ⬇",
+    "send_proof": "After payment, add customer service on WeChat and send your payment screenshot"
   },
   "quiz": {
     "logo": "OPC Assessment",
