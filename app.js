@@ -1987,4 +1987,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
   })();
+
+  // 百度统计
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 });
