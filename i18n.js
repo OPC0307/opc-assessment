@@ -96,20 +96,28 @@
     /* data-i18n-placeholder */
     var inputs = document.querySelectorAll("[data-i18n-placeholder]");
     for (var j = 0; j < inputs.length; j++) {
-      inputs[j].placeholder = translate(inputs[j].getAttribute("data-i18n-placeholder"));
+      var phKey = inputs[j].getAttribute("data-i18n-placeholder");
+      var phTranslated = translate(phKey);
+      if (phTranslated !== phKey) {
+        inputs[j].placeholder = phTranslated;
+      }
     }
 
     /* data-i18n-alt 图片 alt 属性 */
     var imgs = document.querySelectorAll("[data-i18n-alt]");
     for (var k = 0; k < imgs.length; k++) {
-      imgs[k].alt = translate(imgs[k].getAttribute("data-i18n-alt"));
+      var altKey = imgs[k].getAttribute("data-i18n-alt");
+      var altTranslated = translate(altKey);
+      if (altTranslated !== altKey) {
+        imgs[k].alt = altTranslated;
+      }
     }
 
-    /* data-i18n-attr-* 通用属性翻译 */
+    /* data-i18n-attr 通用属性翻译 */
     var attrEls = document.querySelectorAll("[data-i18n-attr]");
     for (var a = 0; a < attrEls.length; a++) {
-      var el = attrEls[a];
-      var raw = el.getAttribute("data-i18n-attr");
+      var attrEl = attrEls[a];
+      var raw = attrEl.getAttribute("data-i18n-attr");
       if (!raw) continue;
       var pairs = raw.split(",");
       for (var p = 0; p < pairs.length; p++) {
@@ -117,7 +125,10 @@
         if (parts.length === 2) {
           var attrName = parts[0].trim();
           var transKey = parts[1].trim();
-          el.setAttribute(attrName, translate(transKey));
+          var translated = translate(transKey);
+          if (translated !== transKey) {
+            attrEl.setAttribute(attrName, translated);
+          }
         }
       }
     }
