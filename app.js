@@ -1766,7 +1766,7 @@ function showSubmitProof() {
 // ---- Site Navigation (injected globally) ----
 var SITE_NAV = [
   { key: "home",   href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
-  { key: "quiz",   href: "/quiz.html",                label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
+  { key: "quiz",   href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
   { key: "subsidy",href: "/subsidy/",                 label: "补贴查询",   enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
   { key: "service",href: "/services/subsidy.html",    label: "补贴代办",   enLabel: "Service",         match: ["services-subsidy"] },
   { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] },
