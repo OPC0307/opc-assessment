@@ -1820,4 +1820,75 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.location.search.indexOf("debug") !== -1 || window.location.hash === "#debug" || localStorage.getItem("opc_debug") === "1") { localStorage.removeItem("opc_debug"); debugInit(); }
     initPayPage();
   }
+
+  // ---- 全局语言切换器 ----
+  var langBtn = document.querySelector(".lang-toggle");
+  if (langBtn) {
+    function updateLangBtn() {
+      var currentLang = localStorage.getItem("preferredLang") || "zh";
+      langBtn.textContent = currentLang === "en" ? "中文" : "EN";
+      langBtn.setAttribute("data-lang", currentLang);
+      if (currentLang === "en") {
+        langBtn.classList.add("lang-toggle--active");
+      } else {
+        langBtn.classList.remove("lang-toggle--active");
+      }
+    }
+    updateLangBtn();
+
+    langBtn.addEventListener("click", function() {
+      var currentLang = localStorage.getItem("preferredLang") || "zh";
+      var nextLang = currentLang === "zh" ? "en" : "zh";
+      localStorage.setItem("preferredLang", nextLang);
+      if (window.i18n) {
+        i18n.switchLang(nextLang);
+      }
+      updateLangBtn();
+    });
+  }
+
+  // ---- 动态统计数据（模拟站长统计增长）----
+  function loadRealTimeStat() {
+    var STORAGE_KEY = "opc_stat_count";
+    var BASE_COUNT = 1283;
+    var stored = localStorage.getItem(STORAGE_KEY);
+    var count;
+
+    if (stored) {
+      count = parseInt(stored, 10);
+    } else {
+      // 首次访问：基数 + 随机增长 0~3
+      count = BASE_COUNT + Math.floor(Math.random() * 4);
+      localStorage.setItem(STORAGE_KEY, count);
+    }
+
+    // 每秒微增长（模拟实时）
+    setInterval(function() {
+      if (Math.random() < 0.15) { // 约15%概率每秒增长
+        count += 1;
+        localStorage.setItem(STORAGE_KEY, count);
+        updateStatDisplay(count);
+      }
+    }, 1000);
+
+    updateStatDisplay(count);
+  }
+
+  function updateStatDisplay(count) {
+    // 首页
+    var el = document.getElementById("realtime-stat");
+    if (el) {
+      el.textContent = count.toLocaleString();
+    }
+    // 支付页
+    var payEl = document.getElementById("realtime-stat-pay");
+    if (payEl) {
+      payEl.textContent = count.toLocaleString();
+    }
+  }
+
+  // 在 index 和 pay 页面加载动态统计
+  if (page === "index" || page === "pay" || page === "report-free" || page === "report-paid") {
+    loadRealTimeStat();
+  }
 });
