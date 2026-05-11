@@ -240,17 +240,6 @@
   <script src="../i18n.js"></script>
   <script src="../app-core.js"></script>
   <script>
-    // Language switcher
-    document.querySelectorAll('.footer-links a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const lang = this.getAttribute('href') === '../index.html' ? 'zh' : 'en';
-        localStorage.setItem('preferredLang', lang);
-        if (window.i18n) {
-          i18n.switchLang(lang);
-        }
-      });
-    });
-
     // Update timestamp
     const ts = document.querySelector('.timestamp');
     if (ts) {
