@@ -42,7 +42,7 @@
   },
   "brand": {
     "logo": "OPC",
-    "tagline": "One-Person Company Fitness Assessment",
+    "tagline": "Professional Assessment Tool",
     "header_logo": "OPC Incubator",
     "header_tagline": "Professional Assessment Tool",
     "quiz_logo": "OPC One-Person Company Assessment",
@@ -224,9 +224,9 @@
     "alert_incomplete": "Please complete all fields before continuing."
   },
   "footer": {
-    "name": "OPC One-Person Company Fitness Assessment",
+    "name": "OPC Incubator",
     "tagline": "Scientific Assessment · Self-Awareness · Action Guide",
-    "copyright": "OPC Assessment 2.0 © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice.",
+    "copyright": "OPC Incubator © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice.",
     "brand_name": "OPC Incubator",
     "timestamp": "Report generated: ",
     "watermark": "OPC Incubator"
