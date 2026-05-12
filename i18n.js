@@ -24,8 +24,7 @@
       /* localStorage 不可用时回退 */
     }
     if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
-    var navLang = (navigator.language || "").slice(0, 2);
-    return SUPPORTED.indexOf(navLang) !== -1 ? navLang : DEFAULT;
+    return DEFAULT;
   }
 
   /* ---- 加载字典 ---- */
