@@ -346,12 +346,14 @@ document.addEventListener("DOMContentLoaded", function() {
     s.parentNode.insertBefore(bp, s);
   })();
 
-  // 百度统计
-  var _hmt = _hmt || [];
-  (function(){
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+  // 百度统计 (静态埋点已放 index.html head，此处仅做 backup)
+  if (!document.querySelector('script[src*="hm.baidu.com/hm.js"]')) {
+    var _hmt = _hmt || [];
+    (function(){
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  }
 });
