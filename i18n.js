@@ -136,7 +136,7 @@
     /* 语言切换按钮 */
     var toggle = document.querySelector(".lang-toggle");
     if (toggle) {
-      toggle.textContent = currentLang === "zh" ? "EN" : "中文";
+      toggle.textContent = "中 / EN";
     }
 
     removeNoFlashCSS();
