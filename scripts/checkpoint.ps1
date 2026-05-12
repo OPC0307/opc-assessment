@@ -1,26 +1,19 @@
-<#
-.SYNOPSIS
-    OPC Session Checkpoint — runs every 30 min via Windows Task Scheduler
-    Appends git status snapshot to Obsidian checkpoint log
-#>
+# OPC Session Checkpoint
+# Writes git status to Obsidian log every 30 min
+# All paths in ASCII-safe form
 
-$LogDir = [System.IO.Path]::Combine($env:USERPROFILE, "..", "..", "言堇知识库", "言堇知识库", "ClaudeCode")
-$LogFile = [System.IO.Path]::Combine($LogDir, "checkpoint.md")
+$RepoPath = "F:\OPC测评系统\deploy"
 
-# Fallback: if the Chinese path doesn't resolve, try direct path
-if (-not (Test-Path $LogDir)) {
-    $LogDir = "F:\言堇知识库\言堇知识库\ClaudeCode"
-    $LogFile = "$LogDir\checkpoint.md"
-}
+# Build log path from components to avoid PS encoding issues
+$BaseDir = (Get-Item "F:\").FullName
+$LogDir = Join-Path $BaseDir "言堇知识库\言堇知识库\ClaudeCode"
+$LogFile = Join-Path $LogDir "checkpoint.md"
 
 if (-not (Test-Path $LogDir)) {
     New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
 }
 
-$RepoPath = "F:\OPC测评系统\deploy"
-if (-not (Test-Path $RepoPath)) {
-    exit 1
-}
+if (-not (Test-Path $RepoPath)) { exit 1 }
 
 $Time = Get-Date -Format "yyyy-MM-dd HH:mm"
 
@@ -31,9 +24,7 @@ try {
     $UntrackedFiles = git ls-files --others --exclude-standard 2>&1 | Out-String
 
     $Entry = "`n### $Time · checkpoint`n`n**Recent commits:**`n"
-
-    $lines = $CommitLog -split "`n" | Where-Object { $_ -match '\S' }
-    foreach ($line in $lines) {
+    foreach ($line in ($CommitLog -split "`n" | Where-Object { $_ -match '\S' })) {
         $Entry += "- $line`n"
     }
 
