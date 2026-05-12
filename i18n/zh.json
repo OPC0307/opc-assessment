@@ -48,7 +48,7 @@
     "benefit_3": "3天内可执行的起步规划",
     "scan_tip": "微信扫码添加，发送「赛道方案」",
     "button": "开始免费评估",
-    "subtitle": "15 分钟完成评估，即刻获得专属适配度报告与行动路线图。\n          已有 1,283",
+    "subtitle": "15 分钟完成评估，即刻获得专属适配度报告与行动路线图。\n          已有 <strong style=\"color: var(--primary);\"><span class=\"stat-count\" id=\"realtime-stat-cta\">1,283</span></strong> 位创业者完成自我认知升级。",
     "title": "现在开始，发现你的一人公司潜力"
   },
   "sop": {

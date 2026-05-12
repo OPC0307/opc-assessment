@@ -107,7 +107,7 @@
   },
   "cta": {
     "title": "Start Now — Discover Your One-Person Company Potential",
-    "subtitle": "Complete the assessment in 15 minutes. Get your personalized fitness report and action roadmap instantly. <strong style=\"color: var(--primary);\">1,283</strong> entrepreneurs have already upgraded their self-awareness.",
+    "subtitle": "Complete the assessment in 15 minutes. Get your personalized fitness report and action roadmap instantly. <strong style=\"color: var(--primary);\"><span class=\"stat-count\" id=\"realtime-stat-cta\">1,283</span></strong> entrepreneurs have already upgraded their self-awareness.",
     "button": "Start Free Assessment",
     "tracks_ready": "Your 3 Custom Track Plans Are Ready",
     "tracks_intro": "The tracks above are the system's preliminary assessment. Scan the WeChat QR below for your complete 3-track launch plan:",
