@@ -61,6 +61,11 @@
     "cta": "Start Free Assessment",
     "social_prefix": "people have taken this assessment"
   },
+  "index": {
+    "subsidy_banner_title": "20-City Startup Subsidy Lookup",
+    "subsidy_banner_desc": "National + local subsidies, up to ¥35,000+/year. Check your city →",
+    "subsidy_banner_cta": "Look Up →"
+  },
   "value": {
     "title": "The OPC Assessment Framework",
     "subtitle": "A scientific evaluation across 6 core dimensions to find your optimal path from employee to super individual",
@@ -103,7 +108,11 @@
     "s2_desc": "Programmer Jay took the assessment before being laid off, discovering 'AI Leverage' and 'Productization' were his strongest dimensions. Following the report's recommended 'Knowledge Commerce' track, he created AI programming courses. Four months later, his side income surpassed his salary.",
     "s3_title": "\"Saved me 3 months of trial and error\"",
     "s3_desc": "Lin, a 35-year-old HR veteran, wanted to pivot but didn't know where to start. The report highlighted 'Content Ability' and 'Continuous Operations' as her hidden strengths, suggesting a 'Personal Brand + Consulting' path. She followed the 30-day SOP and landed her first paid consulting client within a month.",
-    "media": "Media coverage: "
+    "media": "Media coverage: ",
+    "media_list": "People's Daily · 36Kr · Science Daily · Economic Daily · Peking University",
+    "s1_tag": "28 · Designer · OPC Grade A",
+    "s2_tag": "32 · Programmer · OPC Grade A",
+    "s3_tag": "35 · Former HR · OPC Grade B+"
   },
   "cta": {
     "title": "Start Now — Discover Your One-Person Company Potential",
@@ -226,6 +235,7 @@
   "footer": {
     "name": "OPC Incubator",
     "tagline": "Scientific Assessment · Self-Awareness · Action Guide",
+    "privacy": "Privacy Policy",
     "copyright": "OPC Incubator © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice.",
     "brand_name": "OPC Incubator",
     "timestamp": "Report generated: ",
@@ -293,7 +303,8 @@
     "lead_desc": "We'll send the full report via text, plus a free Solo-Business Startup Checklist PDF",
     "lead_btn": "Send to me →",
     "lead_success": "Got it! Your report will arrive by text message shortly.",
-    "lead_privacy": "* Only used to send your report, never shared"
+    "lead_privacy": "* Only used to send your report, never shared",
+    "print": "Print Report"
   },
   "report_paid": {
     "badge_paid": "Full Version",
@@ -326,7 +337,8 @@
     "share_desc": "Share with friends and start your solo-business journey together",
     "share_wechat": "WeChat",
     "share_weibo": "Weibo",
-    "share_copy": "Copy Link"
+    "share_copy": "Copy Link",
+    "print": "Print Report"
   },
   "report_pdf": {
     "cover_badge": "OPC Professional Assessment",
@@ -457,9 +469,16 @@
     "back_registration": "Foreigner OPC Registration"
   },
   "subsidy": {
+    "brand_tagline": "Startup Subsidy Lookup",
     "title": "20-City Startup Subsidy Lookup",
     "subtitle": "National + local subsidies combined, up to ¥35,000+/year. Select your city to see what you qualify for.",
     "national_title": "National Benefits (available regardless of city)",
+    "benefit_vat_title": "VAT Exemption",
+    "benefit_vat_desc": "Monthly revenue under ¥100,000: zero VAT. Automatically applied, no application needed.",
+    "benefit_tax_title": "50% Income Tax Cut",
+    "benefit_tax_desc": "Annual profit under ¥2,000,000: individual income tax halved.",
+    "benefit_fees_title": "Six Taxes + Two Fees Halved",
+    "benefit_fees_desc": "Urban construction tax, stamp duty, property tax and more — all reduced by 50%.",
     "city_pick": "Select your city for detailed subsidies",
     "cta_title": "Want to claim your subsidies?",
     "cta_desc": "Not sure if you qualify? Don't want to deal with paperwork? We connect you with local agents.",
