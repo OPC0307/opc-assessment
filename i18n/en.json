@@ -251,10 +251,18 @@
     "name": "OPC Incubator",
     "tagline": "Scientific Assessment · Self-Awareness · Action Guide",
     "privacy": "Privacy Policy",
+    "home_link": "← Home",
+    "subsidy_link": "Startup Subsidies",
+    "blog_link": "OPC Blog",
     "copyright": "OPC Incubator © 2026. Framework references: The Almanack of Naval Ravikant, Company of One, Super Individual. This assessment is for reference only and does not constitute business advice.",
     "brand_name": "OPC Incubator",
     "timestamp": "Report generated: ",
     "watermark": "OPC Incubator"
+  },
+  "footer_nav": {
+    "home": "← Home",
+    "subsidy": "Startup Subsidies",
+    "blog": "OPC Blog"
   },
   "pay": {
     "access_denied": "Access Restricted",

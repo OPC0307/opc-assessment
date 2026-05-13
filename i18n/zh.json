@@ -165,7 +165,15 @@
     "copyright": "OPC 一人公司孵化器 © 2026 版权所有。 系统框架引用《纳瓦尔宝典》《一人公司共识》《超级个体》等公开理论资源。 本测评结果仅供参考，不构成任何商业决策建议。",
     "name": "OPC 一人公司孵化器",
     "tagline": "科学评估 · 认知升级 · 行动指引",
-    "privacy": "隐私政策"
+    "privacy": "隐私政策",
+    "home_link": "← 返回首页",
+    "subsidy_link": "创业补贴查询",
+    "blog_link": "OPC 博客"
+  },
+  "footer_nav": {
+    "home": "← 返回首页",
+    "subsidy": "创业补贴查询",
+    "blog": "OPC 博客"
   },
   "pay": {
     "access_denied": "访问受限",

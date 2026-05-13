@@ -212,13 +212,57 @@ function injectSiteNav(currentPage) {
   pageContent.insertBefore(nav, pageContent.firstChild);
 }
 
+var SITE_FOOTER_LINKS = [
+  { key: "home",    href: "/",              label: "← 返回首页",          enLabel: "← Home" },
+  { key: "subsidy", href: "/subsidy/",      label: "创业补贴查询",         enLabel: "Startup Subsidies" },
+  { key: "blog",    href: "/blog/",         label: "OPC 博客",            enLabel: "OPC Blog" }
+];
+
+function injectSiteFooter() {
+  if (document.getElementById("site-footer-nav")) return;
+  var pageContent = document.querySelector(".page-content");
+  if (!pageContent) return;
+
+  var currentLang = window.i18n ? i18n.getLang() : "zh";
+
+  var footerNav = document.createElement("div");
+  footerNav.id = "site-footer-nav";
+  footerNav.style.cssText = "text-align:center;padding:20px 16px 8px;font-size:0.8125rem;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;";
+
+  for (var i = 0; i < SITE_FOOTER_LINKS.length; i++) {
+    var item = SITE_FOOTER_LINKS[i];
+    var a = document.createElement("a");
+    a.href = item.href;
+    a.setAttribute("data-i18n", "footer_nav." + item.key);
+    a.textContent = currentLang === "en" ? item.enLabel : item.label;
+    a.style.cssText = "color:var(--text-muted);text-decoration:none;white-space:nowrap;";
+    if (i > 0) {
+      // Add separator before each link after the first
+      var sep = document.createElement("span");
+      sep.style.cssText = "color:var(--border);";
+      sep.textContent = "|";
+      footerNav.appendChild(sep);
+    }
+    footerNav.appendChild(a);
+  }
+
+  // Insert before the first footer element inside page-content
+  var footer = pageContent.querySelector("footer, .footer");
+  if (footer) {
+    footer.parentNode.insertBefore(footerNav, footer);
+  } else {
+    pageContent.appendChild(footerNav);
+  }
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
   var page = document.body.getAttribute("data-page");
 
-  // Inject global nav on all content pages
+  // Inject global nav + footer on all content pages
   if (document.querySelector(".page-content")) {
     injectSiteNav(page);
+    injectSiteFooter();
   }
 
   if (page === "index") {
