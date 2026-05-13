@@ -1650,27 +1650,32 @@ h3 {
 .fw-inner {
   max-width: 980px;
   margin: 0 auto;
+  text-align: left;
 }
 
 /* ---- Hero ---- */
 .fw-hero {
   background: #fff;
-  padding: 140px 32px 100px;
+  padding: 160px 32px 120px;
+  text-align: left;
 }
 .fw-hero__title {
-  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 600;
   letter-spacing: -0.04em;
   color: #1d1d1f;
-  line-height: 1.05;
-  margin-bottom: 28px;
+  line-height: 1.02;
+  margin-bottom: 32px;
 }
 .fw-hero__sub {
-  font-size: clamp(1.0625rem, 2vw, 1.3125rem);
-  color: #86868b;
-  max-width: 560px;
-  line-height: 1.5;
-  margin-bottom: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: #6e6e73;
+  max-width: 540px;
+  line-height: 1.45;
+  margin-bottom: 56px;
 }
 .fw-hero__cta {
   display: inline-flex;
@@ -1690,48 +1695,57 @@ h3 {
 }
 .fw-hero__note {
   display: block;
-  font-size: 0.875rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 0.9375rem;
   color: #86868b;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 /* ---- Data ---- */
 .fw-data {
   background: #fff;
-  padding: 0 32px 120px;
+  padding: 0 32px 140px;
+  text-align: left;
 }
 .fw-data__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   max-width: 600px;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 .fw-data__num {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: clamp(3.5rem, 7vw, 5rem);
   font-weight: 300;
   color: #1d1d1f;
   line-height: 1;
-  letter-spacing: -0.03em;
-  margin-bottom: 6px;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
 }
 .fw-data__label {
-  font-size: 0.9375rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   color: #86868b;
 }
 .fw-data__note {
-  font-size: 1.125rem;
-  color: #86868b;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: #6e6e73;
   max-width: 480px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* ---- Cases ---- */
 .fw-cases__head {
-  font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.75rem;
   font-weight: 600;
   color: #1d1d1f;
-  margin-bottom: 48px;
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
 }
 .case-grid {
   display: grid;
@@ -1744,40 +1758,52 @@ h3 {
   display: block;
 }
 .case-card__meta {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 0.8125rem;
+  font-weight: 400;
   color: #86868b;
   margin-bottom: 8px;
 }
 .case-card__track {
-  font-size: 1.1875rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #1d1d1f;
-  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
 }
 .case-card__income {
-  font-size: 0.9375rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   color: #6e6e73;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .case-card__desc {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 0.9375rem;
+  font-weight: 400;
   color: #86868b;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ---- Services ---- */
 .fw-services__head {
-  font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.75rem;
   font-weight: 600;
   color: #1d1d1f;
-  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
 }
 .fw-services__sub {
-  font-size: 1.125rem;
-  color: #86868b;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: #6e6e73;
   max-width: 520px;
-  line-height: 1.5;
-  margin-bottom: 64px;
+  line-height: 1.45;
+  margin-bottom: 72px;
 }
 .service-grid {
   display: grid;
@@ -1785,29 +1811,37 @@ h3 {
   gap: 56px;
 }
 .service-card__num {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   color: #86868b;
-  margin-bottom: 20px;
-}
-.service-card__title {
-  font-size: 1.3125rem;
-  font-weight: 600;
-  color: #1d1d1f;
-  margin-bottom: 6px;
-}
-.service-card__price {
-  font-size: 1.0625rem;
-  color: #6e6e73;
-  margin-bottom: 18px;
-}
-.service-card__desc {
-  font-size: 0.9375rem;
-  color: #86868b;
-  line-height: 1.6;
   margin-bottom: 24px;
 }
+.service-card__title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.service-card__price {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #6e6e73;
+  margin-bottom: 20px;
+}
+.service-card__desc {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #86868b;
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
 .service-card__link {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   color: #1d1d1f;
   font-weight: 500;
@@ -1832,6 +1866,7 @@ h3 {
   font-size: 0.8125rem;
   line-height: 2;
   border-top: 1px solid #e5e5e5;
+  text-align: left;
 }
 .fw-footer a {
   color: #86868b;
