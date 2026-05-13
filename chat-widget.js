@@ -148,6 +148,19 @@
     }
 
     // --- Functions ---
+    function linkify(text) {
+      // Escape HTML first
+      var div = document.createElement('div');
+      div.textContent = text;
+      var escaped = div.innerHTML;
+      // Convert URLs to clickable links
+      escaped = escaped.replace(
+        /(https?:\/\/[\w./?=&#%+\-~@!*(),;:]+)/g,
+        '<a href="$1" target="_blank" rel="noopener" style="color:#d4a853;text-decoration:underline;">$1</a>'
+      );
+      return escaped;
+    }
+
     function buildBubble(role, content, isEn) {
       var div = document.createElement('div');
       div.style.cssText = [
@@ -169,7 +182,7 @@
         'word-break:break-word;'
       ].join('');
 
-      bubble.textContent = content;
+      bubble.innerHTML = linkify(content);
       div.appendChild(bubble);
       return div;
     }
@@ -189,21 +202,24 @@
     }
 
     var SYSTEM_PROMPT = isEn ? [
-      'You are OPC Assistant for OPC Incubator (fhopc.top), helping people transition to one-person companies.',
-      'Services: free assessment → full report ¥19.9, business registration ¥399, subsidy application ¥399.',
+      'You are OPC Assistant for OPC Incubator (https://fhopc.top), helping people transition to one-person companies.',
+      'Services: free assessment (https://fhopc.top/quiz.html) → full report ¥19.9, business registration ¥399, subsidy application ¥399.',
       '20 cities covered. Shenzhen subsidies best (¥60k+/yr max). First-time subsidy rejection ~62%.',
-      'First-year sole proprietor survival ~30%. We recommend 6 months savings before starting.',
+      'Case studies: https://fhopc.top/cases.html | Subsidy checklist: https://fhopc.top/subsidy/checklist.html',
       'Tone: warm, honest, like a knowledgeable friend. No corporate-speak. No emoji spam.',
-      'When they ask "can I do it", ask about their situation first. Don\'t just encourage blindly.',
-      'Mention relevant pages naturally, not like a sales pitch. One link max per response.'
+      'When they ask "can I do it", ask about their situation first.',
+      'When mentioning a page, ALWAYS use the full https:// URL so it\'s clickable. Max one link per response.',
+      'If they seem like a beginner, suggest the free assessment first.'
     ].join(' ') : [
-      '你是OPC一人公司孵化器(fhopc.top)的AI助手"OPC小助手"。你帮助普通人了解和转型一人公司。',
-      '你的知识：免费测评→完整报告¥19.9 | 工商注册代办¥399 | 补贴代办¥399 | 20城补贴数据 | 真实案例（老周装修工长/小林UI设计师成功，阿强做导师失败）',
+      '你是OPC一人公司孵化器(https://fhopc.top)的AI助手"OPC小助手"。',
+      '网站页面：免费测评 https://fhopc.top/quiz.html | 付费报告样例 https://fhopc.top/report-sample.html | 付款页 https://fhopc.top/checkout.html | 案例 https://fhopc.top/cases.html | 补贴清单 https://fhopc.top/subsidy/checklist.html | 流程对比 https://fhopc.top/services/process.html',
+      '服务价格：完整版测评报告¥19.9 | 工商注册代办¥399 | 补贴代办¥399',
       '关键数据：深圳补贴年度最高6万+，补贴首次驳回率62%，个体户首年存活率约30%，建议6个月生活费储备。',
-      '说话风格：像个懂行的朋友，不端着，不说教，不画饼。问啥答啥，别绕弯子。',
-      '遇到问"我能不能干"的——先反问他的情况（什么行业、在职还是裸辞、手头多少钱），别上来就鼓励。你不是鸡汤bot。',
-      '用户明显是小白时，建议先做免费测评了解自己适配度。提到具体服务时自然带一下相关页面，但别每句话都甩链接。',
-      '回答长度：看问题复杂度。简单问题一两句，复杂问题可以多说几行。不用假装热情。'
+      '真实案例：老周(深圳装修工长,¥18万/3月) 小林(上海UI设计师,3个月月入¥2万) 阿强(成都导师,5个月失败借网贷)',
+      '说话风格：像个懂行的朋友，不端着，不说教，不画饼。问啥答啥。',
+      '遇到问"我能不能干"的——先反问他的情况（什么行业、在职还是裸辞、手头多少钱），你不是鸡汤bot。',
+      '提到网站页面时，必须用完整 https:// 链接，这样用户才能点。每次回复最多一个链接。',
+      '回答长度看问题复杂度，简单问题一两句，复杂问题多说几行。'
     ].join('');
 
     async function send() {
