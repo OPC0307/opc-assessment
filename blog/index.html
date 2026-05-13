@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>OPC 博客 — 一人公司实操指南 | 注册·报税·补贴·工具</title>
@@ -11,9 +10,6 @@
   <link rel="canonical" href="https://fhopc.top/blog/">
   <meta property="og:title" content="OPC 博客 — 一人公司实操指南">
   <meta property="og:description" content="个体户注册流程、季度报税实操、创业补贴攻略、AI工具推荐、一人公司案例故事。">
-  <meta property="og:image" content="https://fhopc.top/assets/opc-qr-code.png">
-  <meta property="og:image:width" content="200">
-  <meta property="og:image:height" content="200">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fhopc.top/blog/">
   <meta property="og:site_name" content="OPC 一人公司孵化器">
@@ -23,149 +19,45 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="blog.css">
-  <style>
-    /* Category filter bar */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-    .filter-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .filter-pill {
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border: 1px solid var(--blog-border);
-      background: #fff;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      white-space: nowrap;
-    }
-    .filter-pill:hover {
-      border-color: var(--accent);
-      color: var(--accent-dark);
-    }
-    .filter-pill.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
-    }
-    /* Search */
-    .search-wrap {
-      position: relative;
-      flex: 1;
-      min-width: 200px;
-      max-width: 320px;
-    }
-    .search-input {
-      width: 100%;
-      padding: 8px 12px 8px 36px;
-      border: 1px solid var(--blog-border);
-      border-radius: 100px;
-      font-size: 0.8125rem;
-      color: var(--text);
-      background: #fff;
-      outline: none;
-      transition: border-color 0.15s ease;
-    }
-    .search-input:focus { border-color: var(--accent); }
-    .search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    .search-empty {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      display: none;
-      grid-column: 1 / -1;
-    }
-    /* Article card hidden state */
-    .article-card.hidden,
-    .featured-post.hidden {
-      display: none;
-    }
-  </style>
-  <script src="../i18n.js" defer></script>
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
+  <script src="../i18n.js"></script>
 </head>
 <body data-page="blog-index">
   <div class="page blog-page">
     <div class="page-content">
-
       <div class="brand-header anim-fade-in-up">
         <div class="brand-header__logo">OPC 一人公司孵化器</div>
         <div class="brand-header__tagline">知识博客</div>
       </div>
-
-      <button class="lang-toggle">中 / EN</button>
-
+      <button class="lang-toggle">EN</button>
       <div class="blog-container">
-
-        <!-- Filter + Search -->
-        <div class="filter-bar anim-fade-in-up anim-delay-1">
-          <div class="filter-pills">
-            <button class="filter-pill active" data-filter="all">全部</button>
-            <button class="filter-pill" data-filter="registration-tax">注册报税</button>
-            <button class="filter-pill" data-filter="subsidy">补贴攻略</button>
-            <button class="filter-pill" data-filter="tools-case">工具案例</button>
-            <button class="filter-pill" data-filter="policy-trend">政策趋势</button>
-          </div>
-          <div class="search-wrap">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" placeholder="搜索文章..." id="blog-search">
+    <section class="featured-post anim-fade-in-up anim-delay-1">
+      <a href="posts/opc-survival-guide-2026.html" class="featured-post__card">
+        <div class="featured-post__image"><span class="featured-post__image-icon">📖</span></div>
+        <div class="featured-post__body">
+          <span class="featured-post__category">案例故事</span>
+          <h2 class="featured-post__title">超1200万人入局一人公司，但只有20%在赚钱：2026年真实生存法则</h2>
+          <p class="featured-post__desc">人民日报、科技日报密集报道，全国超1200万人选择OPC模式。但真实数据显示仅20%稳定盈利。本文拆解AI浪潮下一人公司的三条生存分水岭。</p>
+          <div class="featured-post__meta">
+            <span>2026年5月12日</span>
+            <span>约 5 分钟阅读</span>
           </div>
         </div>
-
-        <!-- Featured Post -->
-        <section class="featured-post anim-fade-in-up anim-delay-1" data-category="tools-case">
-          <a href="posts/opc-survival-guide-2026.html" class="featured-post__card">
-            <div class="featured-post__image">
-              <span class="featured-post__image-icon">📖</span>
-            </div>
-            <div class="featured-post__body">
-              <span class="featured-post__category">案例故事</span>
-              <h2 class="featured-post__title">超1200万人入局一人公司，但只有20%在赚钱：2026年真实生存法则</h2>
-              <p class="featured-post__desc">人民日报、科技日报密集报道，全国超1200万人选择OPC模式。但真实数据显示仅20%稳定盈利。本文拆解AI浪潮下一人公司的三条生存分水岭。</p>
-              <div class="featured-post__meta">
-                <span>2026年5月12日</span>
-                <span>约 5 分钟阅读</span>
-              </div>
+      </a>
+    </section>
+  </div>
+      <div class="blog-container">
+        <div class="blog-section-title">最新文章</div>
+        <div class="article-grid">
+          <a href="posts/opc-bank-loan-revolution.html" class="article-card">
+            <div class="article-card__image">📖</div>
+            <div class="article-card__body">
+              <span class="article-card__category">案例故事</span>
+              <h3 class="article-card__title">OPC创业者终于能贷款了！银行砸掉旧尺子，信贷逻辑从"看资产"变成"看人才"</h3>
+              <p class="article-card__desc">工商银行、江苏银行、南京银行等多家银行2026年5月密集推出OPC专属信贷产品。信贷逻辑发生根本性转变——从抵押资产到评估人才。本文拆解5款OPC贷款产品、申请条件和背后的金融变革信号。</p>
+              <div class="article-card__meta">2026年5月13日 · 约 6 分钟阅读</div>
             </div>
           </a>
-        </section>
-
-        <!-- Chinese Articles -->
-        <div class="blog-section-title">最新文章</div>
-        <div class="article-grid" id="article-grid">
-          <a href="posts/individual-business-registration-2026.html" class="article-card" data-category="registration-tax">
+          <a href="posts/individual-business-registration-2026.html" class="article-card">
             <div class="article-card__image">📋</div>
             <div class="article-card__body">
               <span class="article-card__category">注册实操</span>
@@ -174,16 +66,7 @@
               <div class="article-card__meta">2026年5月12日 · 约 3 分钟阅读</div>
             </div>
           </a>
-          <a href="posts/hacr-72x-ai-leverage.html" class="article-card" data-category="tools-case">
-            <div class="article-card__image">🛠</div>
-            <div class="article-card__body">
-              <span class="article-card__category">工具推荐</span>
-              <h3 class="article-card__title">1元AI成本撬动72倍人力杠杆：2026一人公司经济学</h3>
-              <p class="article-card__desc">最新《2026一人公司洞察报告》提出HACR（人机成本比）指标：每投入1元AI成本可替代72元人力支出。拆解真实经济账，含工具成本清单与决策框架。</p>
-              <div class="article-card__meta">2026年5月12日 · 约 7 分钟阅读</div>
-            </div>
-          </a>
-          <a href="posts/hangzhou-vs-ningbo-opc-policy-2026.html" class="article-card" data-category="subsidy">
+          <a href="posts/hangzhou-vs-ningbo-opc-policy-2026.html" class="article-card">
             <div class="article-card__image">💰</div>
             <div class="article-card__body">
               <span class="article-card__category">补贴攻略</span>
@@ -192,7 +75,34 @@
               <div class="article-card__meta">2026年5月12日 · 约 5 分钟阅读</div>
             </div>
           </a>
-          <a href="posts/quarterly-tax-filing-guide-2026.html" class="article-card" data-category="registration-tax">
+          <a href="posts/hacr-72x-ai-leverage.html" class="article-card">
+            <div class="article-card__image">🛠</div>
+            <div class="article-card__body">
+              <span class="article-card__category">工具推荐</span>
+              <h3 class="article-card__title">1元AI成本撬动72倍人力杠杆：2026一人公司经济学</h3>
+              <p class="article-card__desc">最新《2026一人公司洞察报告》提出HACR（人机成本比）指标：每投入1元AI成本可替代72元人力支出。本文拆解一人公司的真实经济账，包括工具成本清单、杠杆公式与三个关键决策框架。</p>
+              <div class="article-card__meta">2026年5月12日 · 约 6 分钟阅读</div>
+            </div>
+          </a>
+          <a href="posts/china-whole-nation-opc-push-2026.html" class="article-card">
+            <div class="article-card__image">📖</div>
+            <div class="article-card__body">
+              <span class="article-card__category">案例故事</span>
+              <h3 class="article-card__title">China's Whole-Nation Push to Build the OPC Economy: 20+ Cities, Billions in Funding, One Goal</h3>
+              <p class="article-card__desc">China is deploying an unprecedented nationwide strategy to support One Person Companies (OPCs). From Beijing's model vouchers to Hangzhou's sandbox regulation, 20+ cities are competing with billions in funding to attract solo AI entrepreneurs. Here's what's happening and why it matters globally.</p>
+              <div class="article-card__meta">2026年5月12日 · 约 11 分钟阅读</div>
+            </div>
+          </a>
+          <a href="posts/china-super-individuals-rise-2026.html" class="article-card">
+            <div class="article-card__image">📖</div>
+            <div class="article-card__body">
+              <span class="article-card__category">案例故事</span>
+              <h3 class="article-card__title">The Rise of China's Super Individuals: How AI Is Creating a New Class of One-Person Unicorns</h3>
+              <p class="article-card__desc">Sam Altman predicts the first one-person unicorn is coming. Dario Amodei gives it a 70-80% chance by end of 2026. But the most fertile ground for super individuals may not be in Silicon Valley — it's in China. Here's why.</p>
+              <div class="article-card__meta">2026年5月12日 · 约 14 分钟阅读</div>
+            </div>
+          </a>
+          <a href="posts/quarterly-tax-filing-guide-2026.html" class="article-card">
             <div class="article-card__image">📊</div>
             <div class="article-card__body">
               <span class="article-card__category">税务指南</span>
@@ -201,7 +111,7 @@
               <div class="article-card__meta">2026年5月10日 · 约 3 分钟阅读</div>
             </div>
           </a>
-          <a href="posts/shenzhen-subsidy-pitfalls-2026.html" class="article-card" data-category="subsidy">
+          <a href="posts/shenzhen-subsidy-pitfalls-2026.html" class="article-card">
             <div class="article-card__image">💰</div>
             <div class="article-card__body">
               <span class="article-card__category">补贴攻略</span>
@@ -210,7 +120,7 @@
               <div class="article-card__meta">2026年5月9日 · 约 3 分钟阅读</div>
             </div>
           </a>
-          <a href="posts/free-ai-tools-solo-founder-2026.html" class="article-card" data-category="tools-case">
+          <a href="posts/free-ai-tools-solo-founder-2026.html" class="article-card">
             <div class="article-card__image">🛠</div>
             <div class="article-card__body">
               <span class="article-card__category">工具推荐</span>
@@ -219,7 +129,7 @@
               <div class="article-card__meta">2026年5月8日 · 约 3 分钟阅读</div>
             </div>
           </a>
-          <a href="posts/solo-founder-case-study-40w.html" class="article-card" data-category="tools-case">
+          <a href="posts/solo-founder-case-study-40w.html" class="article-card">
             <div class="article-card__image">📖</div>
             <div class="article-card__body">
               <span class="article-card__category">案例故事</span>
@@ -229,32 +139,7 @@
             </div>
           </a>
         </div>
-
-        <!-- English Articles -->
-        <div class="blog-section-title" data-section="english">英文文章 · English</div>
-        <div class="article-grid" id="english-grid">
-          <a href="posts/china-whole-nation-opc-push-2026.html" class="article-card" lang="en" hreflang="en" data-category="policy-trend">
-            <div class="article-card__image">📖</div>
-            <div class="article-card__body">
-              <span class="article-card__category">English</span>
-              <h3 class="article-card__title">China's Whole-Nation Push to Build the OPC Economy: 20+ Cities, Billions in Funding, One Goal</h3>
-              <p class="article-card__desc">China is deploying an unprecedented nationwide strategy to support One Person Companies (OPCs). From Beijing's model vouchers to Hangzhou's sandbox regulation, 20+ cities are competing with billions in funding to attract solo AI entrepreneurs. Here's what's happening and why it matters globally.</p>
-              <div class="article-card__meta">2026年5月12日 · 约 11 分钟阅读</div>
-            </div>
-          </a>
-          <a href="posts/china-super-individuals-rise-2026.html" class="article-card" lang="en" hreflang="en" data-category="policy-trend">
-            <div class="article-card__image">📖</div>
-            <div class="article-card__body">
-              <span class="article-card__category">English</span>
-              <h3 class="article-card__title">The Rise of China's Super Individuals: How AI Is Creating a New Class of One-Person Unicorns</h3>
-              <p class="article-card__desc">Sam Altman predicts the first one-person unicorn is coming. Dario Amodei gives it a 70-80% chance by end of 2026. But the most fertile ground for super individuals may not be in Silicon Valley — it's in China. Here's why.</p>
-              <div class="article-card__meta">2026年5月12日 · 约 14 分钟阅读</div>
-            </div>
-          </a>
-        </div>
-
       </div>
-
       <div class="blog-footer">
         <div class="blog-footer__cta">
           <h3>从打工人到一人公司，只差一次测评</h3>
@@ -262,73 +147,12 @@
           <a href="/profile.html" class="btn btn-accent btn-lg">免费测评 →</a>
         </div>
       </div>
-
       <footer class="footer">
         <div class="footer-brand__name">OPC 一人公司孵化器</div>
-        <div class="ip-footer">OPC 一人公司孵化器 &copy; 2026</div>
+        <div class="ip-footer">OPC 测评系统 &copy; 2026</div>
       </footer>
-
     </div>
   </div>
-
-  <script>
-  (function() {
-    var pills = document.querySelectorAll('.filter-pill');
-    var searchInput = document.getElementById('blog-search');
-    var featured = document.querySelector('.featured-post');
-    var articleGrid = document.getElementById('article-grid');
-    var englishGrid = document.getElementById('english-grid');
-    var currentFilter = 'all';
-
-    function getCards() {
-      var cards = [];
-      if (featured && !featured.classList.contains('perma-hidden')) cards.push(featured);
-      articleGrid.querySelectorAll('.article-card').forEach(function(c) { cards.push(c); });
-      englishGrid.querySelectorAll('.article-card').forEach(function(c) { cards.push(c); });
-      return cards;
-    }
-
-    function applyFilters() {
-      var query = searchInput.value.toLowerCase().trim();
-      var cards = getCards();
-      var visibleCount = 0;
-
-      cards.forEach(function(card) {
-        var cat = card.getAttribute('data-category') || '';
-        var title = (card.querySelector('.article-card__title, .featured-post__title') || {}).textContent || '';
-        var desc = (card.querySelector('.article-card__desc, .featured-post__desc') || {}).textContent || '';
-        var matchCat = currentFilter === 'all' || cat === currentFilter;
-        var matchSearch = !query || title.toLowerCase().indexOf(query) !== -1 || desc.toLowerCase().indexOf(query) !== -1;
-
-        if (matchCat && matchSearch) {
-          card.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      // Show/hide English section header
-      var engSection = document.querySelector('[data-section="english"]');
-      if (engSection) {
-        var engVisible = englishGrid.querySelectorAll('.article-card:not(.hidden)').length > 0;
-        engSection.style.display = engVisible ? '' : 'none';
-        englishGrid.style.display = engVisible ? '' : 'none';
-      }
-    }
-
-    pills.forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        pills.forEach(function(p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        currentFilter = pill.getAttribute('data-filter');
-        applyFilters();
-      });
-    });
-
-    searchInput.addEventListener('input', applyFilters);
-  })();
-  </script>
-  <script src="../app-core.js"></script>
+  <script src="../app.js"></script>
 </body>
 </html>
