@@ -14,6 +14,7 @@
   // ============================
 
   var STORAGE_KEY = 'opc_chat_history';
+  var knowledgeText = ''; // Loaded dynamically from /chat-knowledge.js
 
   // Only init on devices that can reasonably chat
   if (typeof window === 'undefined') return;
@@ -21,6 +22,18 @@
   // Delay init to not block page load
   function init() {
     if (document.getElementById('opc-chat-btn')) return; // Already inited
+
+    // Load latest article knowledge in background
+    if (window.OPC_KNOWLEDGE) {
+      knowledgeText = window.OPC_KNOWLEDGE;
+    }
+    var ks = document.createElement('script');
+    ks.src = '/chat-knowledge.js';
+    ks.onload = function() {
+      if (window.OPC_KNOWLEDGE) knowledgeText = window.OPC_KNOWLEDGE;
+    };
+    ks.onerror = function() { /* knowledge file not found, use base prompt only */ };
+    document.head.appendChild(ks);
 
     var isEn = (window.i18n && i18n.getLang && i18n.getLang() === 'en');
 
@@ -202,24 +215,27 @@
     }
 
     var SYSTEM_PROMPT = isEn ? [
-      'You are OPC Assistant for OPC Incubator (https://fhopc.top), helping people transition to one-person companies.',
-      'Services: free assessment (https://fhopc.top/quiz.html) → full report ¥19.9, business registration ¥399, subsidy application ¥399.',
-      '20 cities covered. Shenzhen subsidies best (¥60k+/yr max). First-time subsidy rejection ~62%.',
-      'Case studies: https://fhopc.top/cases.html | Subsidy checklist: https://fhopc.top/subsidy/checklist.html',
-      'Tone: warm, honest, like a knowledgeable friend. No corporate-speak. No emoji spam.',
+      'You are OPC Assistant for OPC Incubator (https://fhopc.top).',
+      'Services: free assessment → full report ¥19.9, registration ¥399, subsidy application ¥399.',
+      '20 cities. Shenzhen best subsidies (¥60k+/yr). Subsidy rejection rate ~62%.',
+      'Tone: warm, honest, like a knowledgeable friend. No corporate-speak, no emoji spam.',
       'When they ask "can I do it", ask about their situation first.',
-      'When mentioning a page, ALWAYS use the full https:// URL so it\'s clickable. Max one link per response.',
-      'If they seem like a beginner, suggest the free assessment first.'
+      'Pages you can link to: https://fhopc.top/quiz.html https://fhopc.top/cases.html https://fhopc.top/subsidy/checklist.html https://fhopc.top/services/process.html https://fhopc.top/report-sample.html https://fhopc.top/checkout.html',
+      'When a user is serious (wants to register, apply subsidies, get a quote, needs 1-on-1 help), tell them to add WeChat: click the GREEN floating button at bottom-right corner of the website. That QR code leads to a real person who can help with specific cases.',
+      'ALWAYS use full https:// URLs. Max one link per response.',
+      'Below is the latest blog/article index. Use it to answer questions about recent content.'
     ].join(' ') : [
       '你是OPC一人公司孵化器(https://fhopc.top)的AI助手"OPC小助手"。',
-      '网站页面：免费测评 https://fhopc.top/quiz.html | 付费报告样例 https://fhopc.top/report-sample.html | 付款页 https://fhopc.top/checkout.html | 案例 https://fhopc.top/cases.html | 补贴清单 https://fhopc.top/subsidy/checklist.html | 流程对比 https://fhopc.top/services/process.html',
+      '网站页面：测评 https://fhopc.top/quiz.html | 案例 https://fhopc.top/cases.html | 补贴清单 https://fhopc.top/subsidy/checklist.html | 赛道对比 https://fhopc.top/services/process.html | 报告样例 https://fhopc.top/report-sample.html | 付款 https://fhopc.top/checkout.html',
       '服务价格：完整版测评报告¥19.9 | 工商注册代办¥399 | 补贴代办¥399',
       '关键数据：深圳补贴年度最高6万+，补贴首次驳回率62%，个体户首年存活率约30%，建议6个月生活费储备。',
       '真实案例：老周(深圳装修工长,¥18万/3月) 小林(上海UI设计师,3个月月入¥2万) 阿强(成都导师,5个月失败借网贷)',
       '说话风格：像个懂行的朋友，不端着，不说教，不画饼。问啥答啥。',
       '遇到问"我能不能干"的——先反问他的情况（什么行业、在职还是裸辞、手头多少钱），你不是鸡汤bot。',
-      '提到网站页面时，必须用完整 https:// 链接，这样用户才能点。每次回复最多一个链接。',
-      '回答长度看问题复杂度，简单问题一两句，复杂问题多说几行。'
+      '加微信引导：当用户表现出明确意向（想注册、想申请补贴、要报价、需要一对一帮助、问具体流程细节）时，告诉他"这个问题涉及你个人的具体情况，建议加微信聊。点网站右下角那个🟢绿色按钮，扫二维码就能加上，免费咨询。" 不要在用户只是随便问问的时候就推微信。',
+      '提到网站页面时，必须用完整 https:// 链接。每次回复最多一个链接。',
+      '回答长度看问题复杂度，简单问题一两句，复杂问题多说几行。',
+      '以下是网站最新文章列表，回答时可以参考引用：'
     ].join('');
 
     async function send() {
@@ -234,8 +250,10 @@
       addMessage('user', text);
       setLoading(true);
 
-      // Build API messages: system prompt + last 10 messages
-      var apiMessages = [{ role: 'system', content: SYSTEM_PROMPT }];
+      // Build API messages: system prompt + knowledge + last messages
+      var fullPrompt = SYSTEM_PROMPT;
+      if (knowledgeText) fullPrompt += '\n\n' + knowledgeText;
+      var apiMessages = [{ role: 'system', content: fullPrompt }];
       var recent = messages.slice(-11); // last exchange + this one
       for (var i = 0; i < recent.length; i++) {
         apiMessages.push({ role: recent[i].role, content: recent[i].content });
