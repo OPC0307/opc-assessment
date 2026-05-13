@@ -163,7 +163,6 @@ var SITE_NAV = [
 function injectSiteNav(currentPage) {
   if (document.getElementById("site-nav")) return;
   var pageContent = document.querySelector(".page-content");
-  if (!pageContent) return;
 
   var currentLang = window.i18n ? i18n.getLang() : "zh";
 
@@ -203,13 +202,17 @@ function injectSiteNav(currentPage) {
   inner.appendChild(langBtn);
   nav.appendChild(inner);
 
-  var existingToggle = pageContent.querySelector(".lang-toggle");
+  var existingToggle = pageContent ? pageContent.querySelector(".lang-toggle") : document.querySelector(".lang-toggle");
   if (existingToggle) existingToggle.remove();
 
-  var oldBrand = pageContent.querySelector(".brand-header");
+  var oldBrand = pageContent ? pageContent.querySelector(".brand-header") : null;
   if (oldBrand) oldBrand.remove();
 
-  pageContent.insertBefore(nav, pageContent.firstChild);
+  if (pageContent) {
+    pageContent.insertBefore(nav, pageContent.firstChild);
+  } else {
+    document.body.insertBefore(nav, document.body.firstChild);
+  }
 }
 
 var SITE_FOOTER_LINKS = [
@@ -341,9 +344,9 @@ function injectWeChatQR() {
 document.addEventListener("DOMContentLoaded", function() {
   var page = document.body.getAttribute("data-page");
 
-  // Inject global nav + footer + WeChat on all content pages
+  // Inject global nav on all pages, footer only on legacy .page-content pages
+  injectSiteNav(page);
   if (document.querySelector(".page-content")) {
-    injectSiteNav(page);
     injectSiteFooter();
   }
   injectWeChatQR();
@@ -354,19 +357,7 @@ document.addEventListener("DOMContentLoaded", function() {
   chatScript.defer = true;
   document.head.appendChild(chatScript);
 
-  if (page === "index") {
-    var titleEl = document.getElementById("hero-title");
-    var candidateBtns = document.querySelectorAll(".title-candidate");
-    if (titleEl && candidateBtns.length) {
-      candidateBtns.forEach(function(btn) {
-        btn.addEventListener("click", function() {
-          candidateBtns.forEach(function(b) { b.classList.remove("active"); });
-          btn.classList.add("active");
-          titleEl.textContent = btn.getAttribute("data-title");
-        });
-      });
-    }
-  } else if (page === "profile") {
+  if (page === "profile") {
     var submitBtn = document.getElementById("pf-submit");
     if (submitBtn) {
       submitBtn.addEventListener("click", function() {
