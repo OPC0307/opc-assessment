@@ -44,20 +44,20 @@
     // Floating button (bottom-left)
     var btn = document.createElement('button');
     btn.id = 'opc-chat-btn';
-    btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
-    btn.title = isEn ? 'AI Assistant' : 'OPC小助手 · AI客服';
+    btn.textContent = isEn ? 'AI' : 'AI客服';
+    btn.title = isEn ? 'AI Assistant' : '点我提问，秒回';
     btn.style.cssText = [
       'position:fixed;bottom:88px;left:24px;z-index:9998;',
-      'width:48px;height:48px;border-radius:50%;',
+      'padding:10px 18px;border-radius:24px;',
       'background:linear-gradient(135deg,#1a365d,#2c5282);',
       'color:#d4a853;border:2px solid #d4a853;',
-      'font-size:1.25rem;cursor:pointer;',
+      'font-size:0.9375rem;font-weight:700;cursor:pointer;',
       'box-shadow:0 4px 20px rgba(26,54,93,0.35);',
       'transition:transform 0.2s ease,box-shadow 0.2s ease;',
-      'display:flex;align-items:center;justify-content:center;'
+      'letter-spacing:0.05em;'
     ].join('');
 
-    btn.addEventListener('mouseenter', function() { this.style.transform = 'scale(1.08)'; });
+    btn.addEventListener('mouseenter', function() { this.style.transform = 'scale(1.06)'; });
     btn.addEventListener('mouseleave', function() { this.style.transform = 'scale(1)'; });
 
     // Chat panel
