@@ -340,6 +340,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   injectWeChatQR();
 
+  // Load AI chat widget (bottom-left, opposite to WeChat QR)
+  var chatScript = document.createElement('script');
+  chatScript.src = '/chat-widget.js';
+  chatScript.defer = true;
+  document.head.appendChild(chatScript);
+
   if (page === "index") {
     var titleEl = document.getElementById("hero-title");
     var candidateBtns = document.querySelectorAll(".title-candidate");
