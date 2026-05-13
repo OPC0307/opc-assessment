@@ -1,243 +1,180 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title data-i18n="services.registration.title">一人公司工商注册代办 — 个体户/OPC营业执照办理 | OPC 孵化器</title>
-  <meta name="description" data-i18n-attr="content:services.registration.desc" content="OPC 一人公司孵化器提供个体工商户和一人有限责任公司注册代办服务。全国20城覆盖，最快半天拿执照，补贴申请一站式搞定。">
+  <title>一人公司工商注册代办 — 个体户/OPC营业执照办理 | OPC 孵化器</title>
+  <meta name="description" content="OPC 一人公司孵化器提供个体工商户和一人有限责任公司注册代办服务。全国20城覆盖，最快半天拿执照，补贴申请一站式搞定。">
   <meta name="keywords" content="工商注册代办,个体户注册,一人公司注册,营业执照办理,OPC注册,创业注册公司">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fhopc.top/services/registration.html">
-  <meta property="og:title" data-i18n-attr="content:services.registration.og_title" content="一人公司工商注册代办 — OPC 孵化器">
-  <meta property="og:description" data-i18n-attr="content:services.registration.desc" content="全国20城覆盖，最快半天拿执照，补贴申请一站式搞定。">
+  <meta property="og:title" content="一人公司工商注册代办 — OPC 孵化器">
+  <meta property="og:description" content="全国20城覆盖，最快半天拿执照，补贴申请一站式搞定。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fhopc.top/services/registration.html">
   <meta property="og:site_name" content="OPC 一人公司孵化器">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    .svc-hero {
-      background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
-      padding: 60px 20px 40px;
-      text-align: center;
-      margin-top: 12px;
-      border-radius: var(--radius-lg);
-    }
-    .svc-hero h1 { font-size: 1.75rem; color: #fff; margin-bottom: 8px; }
-    .svc-hero p { font-size: 0.9375rem; color: #a0aec0; max-width: 520px; margin: 0 auto; line-height: 1.6; }
-    .svc-section { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
-    .svc-section h2 { font-size: 1.25rem; color: var(--text); margin-bottom: 16px; text-align: center; }
-    .info-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-    .info-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px 16px;
-      text-align: center;
-    }
-    .info-card .label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; }
-    .info-card .value { font-size: 1.25rem; font-weight: 700; color: var(--text); }
-    .step-list { display: flex; flex-direction: column; gap: 16px; }
-    .step-item { display: flex; gap: 16px; background: #fff; border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border); }
-    .step-num {
-      width: 44px; height: 44px; background: linear-gradient(135deg, var(--accent), #c9a227);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 700; font-size: 1.125rem; flex-shrink: 0;
-    }
-    .step-body h3 { font-size: 1rem; color: var(--text); margin-bottom: 6px; }
-    .step-body p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
-    .step-body ul { margin: 0; padding-left: 18px; font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.8; }
-    .req-section { background: #f8f6f0; }
-    .req-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 10px; border: 1px solid var(--border); }
-    .req-icon { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; margin-top: 2px; }
-    .req-body h4 { font-size: 0.9375rem; color: var(--text); margin-bottom: 4px; }
-    .req-body p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
-    .cta-svc {
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      text-align: center;
-    }
-    .cta-svc h2 { font-size: 1.25rem; color: var(--accent); margin-bottom: 8px; }
-    .cta-svc p { font-size: 0.9375rem; color: #a0aec0; max-width: 480px; margin: 0 auto 20px; line-height: 1.6; }
-    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  </style>
-  <script src="../i18n.js" defer></script>
-<script>
-(function(){
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+  (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
+    if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
+    else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(bp, s);
-})();
-</script>
+  })();
+  </script>
 </head>
 <body data-page="services-registration">
 
-<div class="page">
-  <div class="page-content">
-
-    <!-- Hero -->
-    <section class="svc-hero anim-fade-in-up">
-      <h1 data-i18n="services.registration.hero_title">一人公司工商注册代办</h1>
-      <p data-i18n="services.registration.hero_desc">全国 20 城覆盖 · 最快半天拿执照 · 补贴申请一站式搞定</p>
-    </section>
-
-    <!-- Key Info -->
-    <section class="svc-section anim-fade-in-up anim-delay-1">
-      <div class="info-cards">
-        <div class="info-card">
-          <div class="label" data-i18n="services.registration.card_capital_label">最低注册资本</div>
-          <div class="value" data-i18n="services.registration.card_capital_value">1 万元</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="services.registration.card_time_label">办理周期</div>
-          <div class="value" data-i18n="services.registration.card_time_value">最快半天</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="services.registration.card_subsidy_label">可申领补贴</div>
-          <div class="value" data-i18n="services.registration.card_subsidy_value">最高 6 万+</div>
-        </div>
-        <div class="info-card">
-          <div class="label" data-i18n="services.registration.card_type_label">可注册类型</div>
-          <div class="value" data-i18n="services.registration.card_type_value">个体户 / OPC</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3-Step Process -->
-    <section class="svc-section anim-fade-in-up anim-delay-2">
-      <h2 data-i18n="services.registration.process_title">注册流程：三步拿执照</h2>
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h3 data-i18n="services.registration.step1_title">准备材料</h3>
-            <p data-i18n="services.registration.step1_desc">收集注册所需材料，不同城市和注册类型要求略有差异，我们帮你逐一核对。</p>
-            <ul>
-              <li data-i18n="services.registration.step1_li1">身份证 / 护照</li>
-              <li data-i18n="services.registration.step1_li2">注册地址证明（租赁合同或虚拟地址）</li>
-              <li data-i18n="services.registration.step1_li3">公司名称（建议准备 3 个备选）</li>
-              <li data-i18n="services.registration.step1_li4">经营范围说明</li>
-              <li data-i18n="services.registration.step1_li5">注册资金声明</li>
-            </ul>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h3 data-i18n="services.registration.step2_title">提交审核</h3>
-            <p data-i18n="services.registration.step2_desc">向当地市场监督管理局提交注册申请。我们代你办理全流程，包括跟进和补正。</p>
-            <ul>
-              <li data-i18n="services.registration.step2_li1">线上名称核准（1-3 个工作日）</li>
-              <li data-i18n="services.registration.step2_li2">提交注册材料</li>
-              <li data-i18n="services.registration.step2_li3">市监局审核（5-10 个工作日）</li>
-              <li data-i18n="services.registration.step2_li4">领取营业执照</li>
-              <li data-i18n="services.registration.step2_li5">刻制公章</li>
-            </ul>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h3 data-i18n="services.registration.step3_title">银行开户 + 税务登记</h3>
-            <p data-i18n="services.registration.step3_desc">拿到执照后，开立银行对公账户并完成税务登记。这是很多创业者卡住的环节——我们全程指导。</p>
-            <ul>
-              <li data-i18n="services.registration.step3_li1">开立银行对公账户</li>
-              <li data-i18n="services.registration.step3_li2">税务登记和发票申领</li>
-              <li data-i18n="services.registration.step3_li3">申请符合条件的创业补贴</li>
-              <li data-i18n="services.registration.step3_li4">后续记账报税服务</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Who Can Register -->
-    <section class="req-section" style="padding:40px 20px;">
-      <div class="svc-section" style="padding:0;">
-        <h2 data-i18n="services.registration.req_title" style="margin-bottom:20px;">注册条件</h2>
-        <div class="req-item anim-fade-in-up">
-          <div class="req-icon">✓</div>
-          <div class="req-body">
-            <h4 data-i18n="services.registration.req1_title">年满 18 周岁</h4>
-            <p data-i18n="services.registration.req1_desc">具有完全民事行为能力的中国公民，或持有有效居留许可的外籍人士均可注册。</p>
-          </div>
-        </div>
-        <div class="req-item anim-fade-in-up anim-delay-1">
-          <div class="req-icon">✓</div>
-          <div class="req-body">
-            <h4 data-i18n="services.registration.req2_title">注册地址</h4>
-            <p data-i18n="services.registration.req2_desc">需要提供商用或办公地址。大多数城市支持虚拟地址或挂靠地址注册，成本低至 500 元/年。</p>
-          </div>
-        </div>
-        <div class="req-item anim-fade-in-up anim-delay-2">
-          <div class="req-icon">✓</div>
-          <div class="req-body">
-            <h4 data-i18n="services.registration.req3_title">经营范围合规</h4>
-            <p data-i18n="services.registration.req3_desc">大部分行业均可注册一人公司。特殊行业（金融、医疗、教育等）需前置审批，我们帮你确认。</p>
-          </div>
-        </div>
-        <div class="req-item anim-fade-in-up anim-delay-3">
-          <div class="req-icon">✓</div>
-          <div class="req-body">
-            <h4 data-i18n="services.registration.req4_title">无不良信用记录</h4>
-            <p data-i18n="services.registration.req4_desc">法定代表人不能是被列入失信被执行人名单的人员，我们帮你提前筛查。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="svc-section anim-fade-in-up" style="text-align:center;">
-      <div class="price-card" style="background: linear-gradient(135deg, #0d1b2a, #1b263b); color: #fff; border-radius: 12px; padding: 32px 24px; margin-bottom: 24px;">
-        <div style="font-size: 2.5rem; font-weight: 800; color: #d4a853;">¥399</div>
-        <div style="font-size: 0.875rem; color: #a0aec0; margin-top: 4px;">工商注册代办服务</div>
-        <div style="font-size: 0.75rem; color: #718096; margin-top: 12px;">含注册地址 · 刻章 · 税务登记 · 补贴入口指导</div>
-      </div>
-      <a href="../checkout.html" class="btn btn-accent btn-lg">立即办理 ¥399</a>
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;">
-        或先完成<a href="../quiz.html">免费测评</a>，了解适配度
-      </p>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-svc anim-fade-in-up">
-      <h2 data-i18n="services.registration.cta_title">准备好注册你的一人公司了吗？</h2>
-      <p data-i18n="services.registration.cta_desc">无论你是想自己注册需要指导，还是想全权委托代办——先测测你的适配度，获取专属注册方案。</p>
-      <div class="cta-actions">
-        <a href="../profile.html" class="btn btn-accent btn-lg" data-i18n="services.registration.cta_btn1">免费测评适配度</a>
-        <a href="../subsidy/" class="btn btn-primary btn-lg" data-i18n="services.registration.cta_btn2">查看创业补贴 →</a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="divider"></div>
-    <footer class="footer">
-      <div class="footer-brand__name" data-i18n="footer.name">OPC 一人公司孵化器</div>
-      <div class="footer-brand__ts" data-i18n="footer.tagline">科学评估 · 认知升级 · 行动指引</div>
-      <div class="ip-footer" data-i18n-html data-i18n="footer.copyright">
-        OPC 一人公司孵化器 &copy; 2026 版权所有。<br>
-        系统框架引用《纳瓦尔宝典》《一人公司共识》《超级个体》等公开理论资源。<br>
-        本测评结果仅供参考，不构成任何商业决策建议。
-      </div>
-    </footer>
-
+<section class="fw-hero" style="padding:100px 32px 80px;">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">一人公司<br>工商注册代办</h1>
+    <p class="fw-hero__sub">全国 20 城覆盖 · 最快半天拿执照 · 补贴申请一站式搞定</p>
   </div>
-</div>
+</section>
 
-<script src="../app-core.js"></script>
+<section class="fw-section" style="padding-top:0;">
+  <div class="fw-inner">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+      <div>
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">1 万</div>
+        <div style="font-size:0.75rem;color:#86868b;margin-top:4px;">最低注册资本</div>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">最快半天</div>
+        <div style="font-size:0.75rem;color:#86868b;margin-top:4px;">办理周期</div>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">6 万+</div>
+        <div style="font-size:0.75rem;color:#86868b;margin-top:4px;">可申领补贴</div>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">个体户/OPC</div>
+        <div style="font-size:0.75rem;color:#86868b;margin-top:4px;">可注册类型</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:32px;letter-spacing:-0.02em;">注册流程：三步拿执照</h2>
+
+    <div style="display:flex;flex-direction:column;gap:32px;margin-bottom:48px;">
+
+      <div style="display:flex;gap:20px;">
+        <div style="font-size:3rem;font-weight:300;color:#1d1d1f;line-height:1;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-size:1rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">准备材料</div>
+          <p style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:8px;">收集注册所需材料，不同城市和注册类型要求略有差异，我们帮你逐一核对。</p>
+          <ul style="font-size:0.8125rem;color:#6e6e73;line-height:2;padding-left:18px;">
+            <li>身份证 / 护照</li>
+            <li>注册地址证明（租赁合同或虚拟地址）</li>
+            <li>公司名称（建议准备 3 个备选）</li>
+            <li>经营范围说明</li>
+            <li>注册资金声明</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:20px;">
+        <div style="font-size:3rem;font-weight:300;color:#1d1d1f;line-height:1;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-size:1rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">提交审核</div>
+          <p style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:8px;">向当地市场监督管理局提交注册申请。我们代你办理全流程，包括跟进和补正。</p>
+          <ul style="font-size:0.8125rem;color:#6e6e73;line-height:2;padding-left:18px;">
+            <li>线上名称核准（1-3 个工作日）</li>
+            <li>提交注册材料</li>
+            <li>市监局审核（5-10 个工作日）</li>
+            <li>领取营业执照</li>
+            <li>刻制公章</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:20px;">
+        <div style="font-size:3rem;font-weight:300;color:#1d1d1f;line-height:1;flex-shrink:0;">3</div>
+        <div>
+          <div style="font-size:1rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">银行开户 + 税务登记</div>
+          <p style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:8px;">拿到执照后，开立银行对公账户并完成税务登记。这是很多创业者卡住的环节——我们全程指导。</p>
+          <ul style="font-size:0.8125rem;color:#6e6e73;line-height:2;padding-left:18px;">
+            <li>开立银行对公账户</li>
+            <li>税务登记和发票申领</li>
+            <li>申请符合条件的创业补贴</li>
+            <li>后续记账报税服务</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:24px;letter-spacing:-0.02em;">注册条件</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;">
+      <div style="display:flex;gap:14px;">
+        <div style="font-size:0.875rem;font-weight:600;color:#1d1d1f;flex-shrink:0;">✓</div>
+        <div>
+          <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:2px;">年满 18 周岁</div>
+          <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">具有完全民事行为能力的中国公民，或持有有效居留许可的外籍人士均可注册。</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;">
+        <div style="font-size:0.875rem;font-weight:600;color:#1d1d1f;flex-shrink:0;">✓</div>
+        <div>
+          <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:2px;">注册地址</div>
+          <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">需要提供商用或办公地址。大多数城市支持虚拟地址或挂靠地址注册，成本低至 500 元/年。</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;">
+        <div style="font-size:0.875rem;font-weight:600;color:#1d1d1f;flex-shrink:0;">✓</div>
+        <div>
+          <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:2px;">经营范围合规</div>
+          <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">大部分行业均可注册一人公司。特殊行业（金融、医疗、教育等）需前置审批，我们帮你确认。</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;">
+        <div style="font-size:0.875rem;font-weight:600;color:#1d1d1f;flex-shrink:0;">✓</div>
+        <div>
+          <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:2px;">无不良信用记录</div>
+          <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">法定代表人不能是被列入失信被执行人名单的人员，我们帮你提前筛查。</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#1d1d1f;color:#fff;padding:40px;margin-bottom:32px;">
+      <div style="font-size:3rem;font-weight:300;line-height:1;margin-bottom:8px;">¥399</div>
+      <div style="font-size:0.9375rem;opacity:0.7;margin-bottom:12px;">工商注册代办服务</div>
+      <div style="font-size:0.75rem;opacity:0.5;">含注册地址 · 刻章 · 税务登记 · 补贴入口指导</div>
+    </div>
+
+    <a href="/checkout.html" class="fw-hero__cta">立即办理 ¥399</a>
+    <p style="font-size:0.8125rem;color:#86868b;margin-top:16px;">或先完成<a href="/quiz.html" style="color:#1d1d1f;">免费测评</a>，了解适配度</p>
+  </div>
+</section>
+
+<section class="fw-section" style="text-align:left;">
+  <div class="fw-inner">
+    <div style="border-top:1px solid #e5e5e5;padding-top:48px;">
+      <p style="font-size:1.1875rem;color:#1d1d1f;font-weight:600;margin-bottom:12px;letter-spacing:-0.02em;">准备好注册你的一人公司了吗？</p>
+      <p style="font-size:1rem;color:#6e6e73;margin-bottom:28px;line-height:1.5;">无论你是想自己注册需要指导，还是想全权委托代办——先测测你的适配度，获取专属注册方案。</p>
+      <a href="/profile.html" class="fw-hero__cta" style="margin-right:12px;">免费测评适配度</a>
+      <a href="/subsidy/" style="font-size:0.9375rem;color:#1d1d1f;text-decoration:none;border-bottom:1px solid #1d1d1f;padding-bottom:2px;">查看创业补贴 →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="fw-footer">
+  <div class="fw-inner">
+    一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/">首页</a> <span class="fw-footer__sep">|</span> <a href="/privacy.html">隐私政策</a>
+  </div>
+</footer>
+
+<script src="/app-core.js"></script>
 </body>
 </html>

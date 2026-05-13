@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>一人公司创业补贴查询 — 全国20城个体工商户补贴政策</title>
   <meta name="description" content="查询你所在城市的个体工商户/一人公司创业补贴政策。覆盖深圳、广州、上海、北京、杭州等20城，一次性创业补贴、社保补贴、场租补贴、创业担保贷款全收录。">
   <meta name="keywords" content="创业补贴,个体工商户补贴,一人公司补贴,创业担保贷款,社保补贴,场租补贴">
@@ -23,277 +22,89 @@
     "@type": "WebPage",
     "name": "一人公司创业补贴查询",
     "description": "查询你所在城市的个体工商户/一人公司创业补贴政策。覆盖深圳、广州、上海等20城。",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "OPC 一人公司孵化器",
-      "url": "https://fhopc.top/"
-    }
+    "isPartOf": { "@type": "WebSite", "name": "OPC 一人公司孵化器", "url": "https://fhopc.top/" }
   }
   </script>
-  <link rel="stylesheet" href="../style.css">
-  <script src="../i18n.js" defer></script>
-  <style>
-    .subsidy-hero {
-      background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a2d1f 100%);
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .subsidy-hero h1 {
-      font-size: 1.75rem;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .subsidy-hero p {
-      font-size: 0.9375rem;
-      color: #a0aec0;
-      max-width: 520px;
-      margin: 0 auto 24px;
-    }
-    .city-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 10px;
-      max-width: 720px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-    }
-    .city-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 14px 12px;
-      text-align: center;
-      text-decoration: none;
-      color: var(--text);
-      transition: all var(--duration-fast) var(--ease-out);
-      cursor: pointer;
-    }
-    .city-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(212,168,83,0.15);
-    }
-    .city-card__name {
-      font-weight: 700;
-      font-size: 0.9375rem;
-      margin-bottom: 2px;
-    }
-    .city-card__max {
-      font-size: 0.6875rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .city-card--top {
-      border-color: var(--accent);
-      background: rgba(212,168,83,0.04);
-    }
-    .national-section {
-      max-width: 720px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-    }
-    .national-section h2 {
-      font-size: 1.25rem;
-      margin-bottom: 16px;
-    }
-    .benefit-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      margin-bottom: 10px;
-    }
-    .benefit-card__title {
-      font-weight: 700;
-      font-size: 0.9375rem;
-      margin-bottom: 4px;
-    }
-    .benefit-card__desc {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .cta-subsidy {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(180deg, #f8f6f0 0%, #fff 100%);
-    }
-    .cta-subsidy h2 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
-  </style>
-<script>
-(function(){
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+  (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
+    if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
+    else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(bp, s);
-})();
-</script>
+  })();
+  </script>
 </head>
 <body data-page="subsidy">
-  <div class="page">
-    <div class="page-content">
 
-      <!-- Brand Header -->
-      <div class="brand-header anim-fade-in-up">
-        <div class="brand-header__logo">OPC 一人公司孵化器</div>
-        <div class="brand-header__tagline">创业补贴查询工具</div>
+<section class="fw-hero" style="padding:100px 32px 80px;">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,4rem);">全国20城<br>创业补贴查询</h1>
+    <p class="fw-hero__sub">国家 + 地方双重补贴，一年最多可领 3-5 万+。选你的城市，看能拿多少钱。</p>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:20px;letter-spacing:-0.02em;">全国普惠（不管你哪个城市，这些先拿到）</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px;">
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">增值税免征</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">月销售额 10 万以下，免征增值税。不用申请，报税自动免。</div>
       </div>
-
-      <!-- Language Toggle -->
-      <button class="lang-toggle">中 / EN</button>
-
-      <!-- Hero -->
-      <section class="subsidy-hero anim-fade-in-up anim-delay-1">
-        <h1>全国 20 城创业补贴查询</h1>
-        <p>国家 + 地方双重补贴，一年最多可领 3-5 万+。选你的城市，看能拿多少钱。</p>
-        <img src="../assets/images/opc-subsidy-hero.jpg" alt="一人公司创业补贴查询 — 全国20城补贴计划" style="max-width:100%;height:auto;margin-top:20px;border-radius:8px;">
-      </section>
-
-      <!-- National Policy -->
-      <section class="national-section anim-fade-in-up anim-delay-2">
-        <h2>全国普惠（不管你哪个城市，这些先拿到）</h2>
-
-        <div class="benefit-card">
-          <div class="benefit-card__title">增值税免征</div>
-          <div class="benefit-card__desc">月销售额 10 万以下，免征增值税。不用申请，报税自动免。</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__title">个税减半</div>
-          <div class="benefit-card__desc">年利润 200 万以内，个人所得税减半征收。</div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__title">六税两费减半</div>
-          <div class="benefit-card__desc">城建税、印花税、房产税等六项税费 + 两项附加费，全部减半。</div>
-        </div>
-      </section>
-
-      <!-- City Grid -->
-      <h2 style="text-align:center;font-size:1.25rem;margin-bottom:16px;" class="anim-fade-in-up anim-delay-2">选城市，查看具体补贴</h2>
-      <div class="city-grid anim-fade-in-up anim-delay-3">
-
-        <!-- Tier 1 -->
-        <a href="city/shenzhen.html" class="city-card city-card--top">
-          <div class="city-card__name">深圳</div>
-          <div class="city-card__max">最高 6 万+</div>
-        </a>
-        <a href="city/suzhou.html" class="city-card city-card--top">
-          <div class="city-card__name">苏州</div>
-          <div class="city-card__max">最高 3.5 万+</div>
-        </a>
-
-        <!-- Tier 1.5 -->
-        <a href="city/guangzhou.html" class="city-card">
-          <div class="city-card__name">广州</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/shanghai.html" class="city-card">
-          <div class="city-card__name">上海</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/beijing.html" class="city-card">
-          <div class="city-card__name">北京</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/hangzhou.html" class="city-card">
-          <div class="city-card__name">杭州</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-
-        <!-- Tier 2 -->
-        <a href="city/chengdu.html" class="city-card">
-          <div class="city-card__name">成都</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/chongqing.html" class="city-card">
-          <div class="city-card__name">重庆</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/wuhan.html" class="city-card">
-          <div class="city-card__name">武汉</div>
-          <div class="city-card__max">5,000</div>
-        </a>
-
-        <!-- Other cities -->
-        <a href="city/nanjing.html" class="city-card">
-          <div class="city-card__name">南京</div>
-          <div class="city-card__max">5,000</div>
-        </a>
-        <a href="city/xian.html" class="city-card">
-          <div class="city-card__name">西安</div>
-          <div class="city-card__max">5,000+</div>
-        </a>
-        <a href="city/changsha.html" class="city-card">
-          <div class="city-card__name">长沙</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/zhengzhou.html" class="city-card">
-          <div class="city-card__name">郑州</div>
-          <div class="city-card__max">5,000</div>
-        </a>
-        <a href="city/jinan.html" class="city-card">
-          <div class="city-card__name">济南</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/xiamen.html" class="city-card">
-          <div class="city-card__name">厦门</div>
-          <div class="city-card__max">5,000</div>
-        </a>
-        <a href="city/qingdao.html" class="city-card">
-          <div class="city-card__name">青岛</div>
-          <div class="city-card__max">最高 1 万</div>
-        </a>
-        <a href="city/dongguan.html" class="city-card">
-          <div class="city-card__name">东莞</div>
-          <div class="city-card__max">1 万</div>
-        </a>
-        <a href="city/foshan.html" class="city-card">
-          <div class="city-card__name">佛山</div>
-          <div class="city-card__max">1 万</div>
-        </a>
-        <a href="city/hefei.html" class="city-card">
-          <div class="city-card__name">合肥</div>
-          <div class="city-card__max">5,000</div>
-        </a>
-        <a href="city/kunming.html" class="city-card">
-          <div class="city-card__name">昆明</div>
-          <div class="city-card__max">5,000</div>
-        </a>
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">个税减半</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">年利润 200 万以内，个人所得税减半征收。</div>
       </div>
-
-      <!-- Policy Comparison Table -->
-      <div style="max-width:600px;margin:0 auto 40px;padding:0 20px;" class="anim-fade-in-up anim-delay-4">
-        <img src="../assets/images/opc-policy-table.jpg" alt="各地OPC引导扶持政策 — 10城补贴对比表" style="max-width:100%;height:auto;border-radius:8px;">
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">六税两费减半</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">城建税、印花税、房产税等六项税费 + 两项附加费，全部减半。</div>
       </div>
+    </div>
 
-      <!-- CTA -->
-      <section class="cta-subsidy anim-fade-in-up anim-delay-4">
-        <h2>想把补贴拿到手？</h2>
-        <p style="color:var(--text-muted);margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.6;">
-          不确定自己符不符合条件？不想自己跑流程？我们帮你对接到当地代办渠道。
-        </p>
-        <a href="../profile.html" class="btn btn-accent btn-lg" style="margin-right:12px;">免费测评适配度</a>
-        <a href="../services/subsidy.html" class="btn btn-primary btn-lg">补贴代办服务 →</a>
-      </section>
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:20px;letter-spacing:-0.02em;">选城市，查看具体补贴</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:48px;">
+      <a href="city/shenzhen.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #1d1d1f;font-size:0.875rem;font-weight:600;">深圳 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 6 万+</span></a>
+      <a href="city/suzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #1d1d1f;font-size:0.875rem;font-weight:600;">苏州 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 3.5 万+</span></a>
+      <a href="city/guangzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">广州 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/shanghai.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">上海 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/beijing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">北京 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/hangzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">杭州 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/chengdu.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">成都 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/chongqing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">重庆 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/wuhan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">武汉 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+      <a href="city/nanjing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">南京 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+      <a href="city/xian.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">西安 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000+</span></a>
+      <a href="city/changsha.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">长沙 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/zhengzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">郑州 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+      <a href="city/jinan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">济南 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/xiamen.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">厦门 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+      <a href="city/qingdao.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">青岛 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">最高 1 万</span></a>
+      <a href="city/dongguan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">东莞 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">1 万</span></a>
+      <a href="city/foshan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">佛山 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">1 万</span></a>
+      <a href="city/hefei.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">合肥 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+      <a href="city/kunming.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">昆明 <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">5,000</span></a>
+    </div>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-brand__name">OPC 一人公司孵化器</div>
-        <p style="font-size:0.75rem;color:var(--text-muted);margin:4px 0;">以上数据来源：各城市人社局、市场监管局官网。政策可能调整，以当地最新公告为准。</p>
-        <div class="ip-footer">OPC 一人公司孵化器 &copy; 2026</div>
-      </footer>
-
+    <div style="border-top:1px solid #e5e5e5;padding-top:48px;">
+      <p style="font-size:1.1875rem;color:#1d1d1f;font-weight:600;margin-bottom:12px;letter-spacing:-0.02em;">想把补贴拿到手？</p>
+      <p style="font-size:1rem;color:#6e6e73;margin-bottom:28px;line-height:1.5;">不确定自己符不符合条件？不想自己跑流程？我们帮你对接到当地代办渠道。</p>
+      <a href="/profile.html" class="fw-hero__cta" style="margin-right:12px;">免费测评适配度</a>
+      <a href="/services/subsidy.html" style="font-size:0.9375rem;color:#1d1d1f;text-decoration:none;border-bottom:1px solid #1d1d1f;padding-bottom:2px;">补贴代办服务 →</a>
     </div>
   </div>
+</section>
 
-  <script src="../app-core.js"></script>
+<footer class="fw-footer">
+  <div class="fw-inner">
+    一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/">首页</a> <span class="fw-footer__sep">|</span> <a href="/privacy.html">隐私政策</a>
+    <div style="font-size:0.6875rem;color:#86868b;margin-top:4px;">以上数据来源：各城市人社局、市场监管局官网。政策可能调整，以当地最新公告为准。</div>
+  </div>
+</footer>
+
+<script src="/app-core.js"></script>
 </body>
 </html>

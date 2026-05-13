@@ -8,129 +8,65 @@
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .checkout-hero {
-      text-align: center;
-      padding: 48px 20px 32px;
-    }
-    .checkout-hero h1 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .checkout-hero .sub {
-      font-size: 0.9375rem;
-      color: var(--text-muted);
-      max-width: 420px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .qr-card {
-      max-width: 400px;
-      margin: 0 auto 48px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    }
-    .qr-card .price {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 4px;
-      letter-spacing: -0.02em;
-    }
-    .qr-card .price-label {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .qr-card img {
-      width: 240px;
-      height: 240px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      margin-bottom: 20px;
-    }
-    .qr-card .steps {
-      text-align: left;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-    .qr-card .steps .num {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
-      text-align: center;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 50%;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      margin-right: 8px;
-    }
-    .guarantee-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .guarantee-tag {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      padding: 6px 16px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      background: #fff;
-    }
-  </style>
+  <script>
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
+    else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
 </head>
 <body data-page="checkout">
-  <div class="page">
-    <div class="page-content">
 
-      <div class="brand-header">
-        <div class="brand-header__logo">OPC 一人公司孵化器</div>
-        <div class="brand-header__tagline">服务付款</div>
+<section class="fw-hero" style="padding:100px 32px 48px;">
+  <div class="fw-inner" style="max-width:480px;">
+    <h1 class="fw-hero__title" style="font-size:clamp(2rem,4vw,2.5rem);">扫码支付，开始办理</h1>
+    <p class="fw-hero__sub" style="font-size:1rem;color:#6e6e73;line-height:1.6;">支付完成后截图发送客服微信，我们立即启动你的服务流程</p>
+  </div>
+</section>
+
+<section class="fw-section" style="padding:0 32px 48px;">
+  <div class="fw-inner" style="max-width:400px;">
+    <div style="border:1px solid #e5e5e5;padding:40px 32px;text-align:center;">
+      <div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;font-size:3.5rem;font-weight:600;color:#1d1d1f;letter-spacing:-0.03em;">¥399</div>
+      <div style="font-size:0.8125rem;color:#86868b;margin-bottom:32px;">工商注册代办 / 补贴申请代办</div>
+
+      <img src="assets/images/wechat-qr.jpg" alt="微信收款码" loading="eager" style="width:240px;height:240px;display:block;margin:0 auto 24px;border:1px solid #e5e5e5;">
+
+      <div style="text-align:left;font-size:0.875rem;color:#6e6e73;line-height:2;">
+        <p><span style="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#1d1d1f;color:#fff;border-radius:50%;font-size:0.6875rem;font-weight:600;margin-right:8px;">1</span> 打开微信扫一扫，识别二维码</p>
+        <p><span style="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#1d1d1f;color:#fff;border-radius:50%;font-size:0.6875rem;font-weight:600;margin-right:8px;">2</span> 支付 <strong style="color:#1d1d1f;">¥399</strong>（备注你的姓名）</p>
+        <p><span style="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#1d1d1f;color:#fff;border-radius:50%;font-size:0.6875rem;font-weight:600;margin-right:8px;">3</span> 截图付款成功页面</p>
+        <p><span style="display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#1d1d1f;color:#fff;border-radius:50%;font-size:0.6875rem;font-weight:600;margin-right:8px;">4</span> 添加客服微信发送截图，立即开始办理</p>
       </div>
+    </div>
 
-      <section class="checkout-hero">
-        <h1>扫码支付，开始办理</h1>
-        <p class="sub">支付完成后截图发送客服微信，我们立即启动你的服务流程</p>
-      </section>
-
-      <div class="qr-card">
-        <div class="price">¥399</div>
-        <div class="price-label">工商注册代办 / 补贴申请代办</div>
-
-        <img src="assets/images/wechat-qr.jpg" alt="微信收款码" loading="eager">
-
-        <div class="steps">
-          <p><span class="num">1</span> 打开微信扫一扫，识别二维码</p>
-          <p><span class="num">2</span> 支付 <strong>¥399</strong>（备注你的姓名）</p>
-          <p><span class="num">3</span> 截图付款成功页面</p>
-          <p><span class="num">4</span> 添加客服微信发送截图，立即开始办理</p>
-        </div>
-      </div>
-
-      <div class="guarantee-row">
-        <span class="guarantee-tag">不成功全额退款</span>
-        <span class="guarantee-tag">低于服务费不收费</span>
-        <span class="guarantee-tag">全程跟进到账</span>
-      </div>
-
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+      <span style="font-size:0.75rem;color:#86868b;padding:6px 16px;border:1px solid #e5e5e5;">不成功全额退款</span>
+      <span style="font-size:0.75rem;color:#86868b;padding:6px 16px;border:1px solid #e5e5e5;">低于服务费不收费</span>
+      <span style="font-size:0.75rem;color:#86868b;padding:6px 16px;border:1px solid #e5e5e5;">全程跟进到账</span>
     </div>
   </div>
+</section>
 
-  <script src="app-core.js"></script>
+<footer class="fw-footer">
+  <div class="fw-inner">
+    一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/">首页</a> <span class="fw-footer__sep">|</span> <a href="/privacy.html">隐私政策</a>
+  </div>
+</footer>
+
+<script src="app-core.js"></script>
 </body>
 </html>

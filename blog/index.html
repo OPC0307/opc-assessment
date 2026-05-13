@@ -22,15 +22,15 @@
   <script src="../i18n.js"></script>
 </head>
 <body data-page="blog-index">
-  <div class="page blog-page">
-    <div class="page-content">
-      <div class="brand-header anim-fade-in-up">
-        <div class="brand-header__logo">OPC 一人公司孵化器</div>
-        <div class="brand-header__tagline">知识博客</div>
-      </div>
-      <button class="lang-toggle">EN</button>
-      <div class="blog-container">
-    <section class="featured-post anim-fade-in-up anim-delay-1">
+  <section class="fw-hero" style="padding:100px 32px 80px;">
+    <div class="fw-inner">
+      <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,4rem);">OPC 博客</h1>
+      <p class="fw-hero__sub">个体户注册流程、季度报税实操、创业补贴攻略、AI工具推荐——一人公司实操指南。</p>
+    </div>
+  </section>
+  <section class="fw-section" style="padding-top:0;">
+    <div class="fw-inner">
+      <div class="featured-post">
       <a href="posts/why-shenzhen-subsidies-most-2026.html" class="featured-post__card">
         <div class="featured-post__image"><img src="/assets/images/blog-covers/why-shenzhen-subsidies-most-2026.png" alt="为什么深圳的补贴最多？"></div>
         <div class="featured-post__body">
@@ -43,12 +43,10 @@
           </div>
         </div>
       </a>
-    </section>
-  </div>
-      <div class="blog-container">
-        <div class="blog-section-title">最新文章</div>
-        <div class="article-grid">
-          <a href="posts/three-rumors-opc-truth-2026.html" class="article-card">
+    </div>
+      <div class="blog-section-title">最新文章</div>
+      <div class="article-grid">
+        <a href="posts/three-rumors-opc-truth-2026.html" class="article-card">
             <div class="article-card__image"><img src="/assets/images/blog-covers/three-rumors-opc-truth-2026.png" alt="这3个谣言害了多少人" loading="lazy"></div>
             <div class="article-card__body">
               <span class="article-card__category">案例故事</span>
@@ -210,21 +208,23 @@
               <div class="article-card__meta">2026年5月7日 · 约 3 分钟阅读</div>
             </div>
           </a>
-        </div>
       </div>
-      <div class="blog-footer">
-        <div class="blog-footer__cta">
-          <h3>从打工人到一人公司，只差一次测评</h3>
-          <p>6大维度 · 15道精选题 · 免费获得专属商业路线图</p>
-          <a href="/profile.html" class="btn btn-accent btn-lg">免费测评 →</a>
-        </div>
-      </div>
-      <footer class="footer">
-        <div class="footer-brand__name">OPC 一人公司孵化器</div>
-        <div class="ip-footer">OPC 测评系统 &copy; 2026</div>
-      </footer>
     </div>
-  </div>
-  <script src="../app-core.js"></script>
+  </section>
+  <section class="fw-section" style="text-align:left;">
+    <div class="fw-inner">
+      <div style="border-top:1px solid #e5e5e5;padding-top:48px;">
+        <p style="font-size:1.1875rem;color:#1d1d1f;font-weight:600;margin-bottom:12px;letter-spacing:-0.02em;">从打工人到一人公司，只差一次测评</p>
+        <p style="font-size:1rem;color:#6e6e73;margin-bottom:28px;line-height:1.5;">6大维度 · 15道精选题 · 免费获得专属商业路线图</p>
+        <a href="/profile.html" class="fw-hero__cta">免费测评 →</a>
+      </div>
+    </div>
+  </section>
+  <footer class="fw-footer">
+    <div class="fw-inner">
+      一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/">首页</a> <span class="fw-footer__sep">|</span> <a href="/privacy.html">隐私政策</a>
+    </div>
+  </footer>
+  <script src="/app-core.js"></script>
 </body>
 </html>
