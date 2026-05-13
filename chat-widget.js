@@ -1,15 +1,16 @@
 /**
  * OPC AI Chat Widget
  * Embedded via app-core.js — appears on all pages
- * Replace CHAT_WORKER_URL with your deployed Cloudflare Worker URL
+ * Direct call to SenseNova API (token.sensenova.cn)
  */
 
 (function() {
   'use strict';
 
   // ========== CONFIG ==========
-  // !! Replace with your deployed Worker URL after `npx wrangler deploy` !!
-  var CHAT_WORKER_URL = 'https://opc-chat.YOUR-SUBDOMAIN.workers.dev';
+  var API_URL = 'https://token.sensenova.cn/v1/chat/completions';
+  var API_KEY = 'sk-v9Ig2HymT3vWmFPYJomLXqcoXuU9YW25';
+  var MODEL = 'deepseek-v4-flash';
   // ============================
 
   var STORAGE_KEY = 'opc_chat_history';
@@ -187,6 +188,22 @@
       scrollBottom();
     }
 
+    var SYSTEM_PROMPT = isEn ? [
+      'You are OPC Assistant, AI customer support for OPC (One Person Company) Incubator (fhopc.top).',
+      'Services: assessment (free→¥19.9), business registration (¥399), subsidy application (¥399), tax guide.',
+      'Cover 20 cities in China. Shenzhen has best subsidies (up to ¥60k+/year).',
+      'Key facts: 30% first-year survival rate for sole proprietors. Subsidy rejection rate ~62%.',
+      'Brand tone: honest, data-driven, no hype. Recommend assessment before committing.',
+      'Be concise. Max 3 sentences unless asked for details.'
+    ].join(' ') : [
+      '你是OPC一人公司孵化器(fhopc.top)的AI客服"OPC小助手"。',
+      '服务：免费适配度测评→完整版¥19.9、工商注册代办¥399、创业补贴代办¥399、税务指南。',
+      '覆盖全国20城。深圳补贴最强(年度最高6万+)。补贴首次驳回率约62%。',
+      '品牌调性：说实话、不忽悠。个体户首年存活率约30%，建议至少存6个月生活费再启动。',
+      '回答风格：简洁直接，3句内说完。用数据说话。用户问能不能做时先了解他情况。',
+      '如果用户适合，引导去做免费测评(quiz.html)或查看服务详情。'
+    ].join('');
+
     async function send() {
       var text = input.value.trim();
       if (!text) return;
@@ -199,22 +216,37 @@
       addMessage('user', text);
       setLoading(true);
 
+      // Build API messages: system prompt + last 10 messages
+      var apiMessages = [{ role: 'system', content: SYSTEM_PROMPT }];
+      var recent = messages.slice(-11); // last exchange + this one
+      for (var i = 0; i < recent.length; i++) {
+        apiMessages.push({ role: recent[i].role, content: recent[i].content });
+      }
+
       try {
-        var resp = await fetch(CHAT_WORKER_URL, {
+        var resp = await fetch(API_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: messages })
+          headers: {
+            'Authorization': 'Bearer ' + API_KEY,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            model: MODEL,
+            messages: apiMessages,
+            max_tokens: 600,
+            temperature: 0.7
+          })
         });
 
         if (!resp.ok) {
-          throw new Error('HTTP ' + resp.status);
+          var errText = await resp.text();
+          throw new Error('API ' + resp.status + ': ' + errText.substring(0, 100));
         }
 
         var data = await resp.json();
-        if (data.error) {
-          throw new Error(data.error);
-        }
-        addMessage('assistant', data.reply);
+        var reply = data.choices?.[0]?.message?.content || (isEn ? 'Sorry, no response.' : '抱歉，没有收到回复。');
+
+        addMessage('assistant', reply);
 
       } catch (e) {
         console.error('OPC Chat error:', e);

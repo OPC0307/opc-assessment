@@ -1,9 +1,0 @@
-name = "opc-chat"
-main = "chat-proxy.js"
-compatibility_date = "2025-01-01"
-
-# Deploy with: npx wrangler deploy
-# Then set secret: npx wrangler secret put SN_API_KEY
-
-[vars]
-# Set via secret, not here: npx wrangler secret put SN_API_KEY
