@@ -155,7 +155,7 @@ var SITE_NAV = [
   { key: "home",     href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
   { key: "quiz",     href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
   { key: "subsidy",  href: "/subsidy/",                 label: "补贴",       enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
-  { key: "services", href: "/services/registration.html",label: "服务",      enLabel: "Services",        match: ["services-subsidy", "services-tax", "services-registration"] },
+  { key: "services", href: "/services/",             label: "服务",       enLabel: "Services",        match: ["services-index", "services-subsidy", "services-tax", "services-registration"] },
   { key: "blog",     href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] },
   { key: "about",    href: "/about.html",              label: "关于",       enLabel: "About",           match: ["about"] }
 ];
@@ -255,15 +255,90 @@ function injectSiteFooter() {
   }
 }
 
+function injectWeChatQR() {
+  if (document.getElementById("wechat-float")) return;
+  var pageContent = document.querySelector(".page-content");
+  if (!pageContent) return;
+
+  var currentLang = window.i18n ? i18n.getLang() : "zh";
+  var isEn = currentLang === "en";
+
+  // Floating button
+  var floatBtn = document.createElement("button");
+  floatBtn.id = "wechat-float";
+  floatBtn.innerHTML = "💬";
+  floatBtn.title = isEn ? "Add on WeChat" : "加微信咨询";
+  floatBtn.style.cssText = "position:fixed;bottom:24px;right:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#07c160,#06ad56);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 16px rgba(7,193,96,0.35);transition:transform var(--duration-fast) var(--ease-out);display:flex;align-items:center;justify-content:center;";
+  floatBtn.addEventListener("mouseenter", function() { this.style.transform = "scale(1.1)"; });
+  floatBtn.addEventListener("mouseleave", function() { this.style.transform = "scale(1)"; });
+
+  // Modal overlay
+  var overlay = document.createElement("div");
+  overlay.id = "wechat-overlay";
+  overlay.style.cssText = "display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;";
+
+  // Modal card
+  var card = document.createElement("div");
+  card.style.cssText = "background:#fff;border-radius:16px;padding:32px 24px 24px;text-align:center;max-width:300px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,0.25);position:relative;";
+
+  var closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "✕";
+  closeBtn.style.cssText = "position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.125rem;color:#999;cursor:pointer;";
+  closeBtn.addEventListener("click", function() { overlay.style.display = "none"; });
+
+  var title = document.createElement("div");
+  title.style.cssText = "font-size:1.0625rem;font-weight:700;color:#1a1a1a;margin-bottom:4px;";
+  title.textContent = isEn ? "Add on WeChat" : "加微信，领补贴清单";
+
+  var sub = document.createElement("div");
+  sub.style.cssText = "font-size:0.8125rem;color:#666;margin-bottom:16px;line-height:1.5;";
+  sub.textContent = isEn ? "Free startup subsidy checklist + 1-on-1 consultation" : "免费获取《一人公司创业补贴清单》+ 一对一咨询";
+
+  var qrImg = document.createElement("img");
+  qrImg.src = "/assets/images/wechat-qr.jpg";
+  qrImg.alt = "WeChat QR";
+  qrImg.style.cssText = "width:180px;height:180px;border-radius:8px;border:1px solid #eee;object-fit:contain;";
+  qrImg.onerror = function() {
+    this.style.display = "none";
+    var fallback = document.createElement("div");
+    fallback.style.cssText = "width:180px;height:180px;margin:0 auto 8px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#999;font-size:0.75rem;";
+    fallback.textContent = isEn ? "QR code not loaded" : "请替换 /assets/images/wechat-qr.jpg";
+    this.parentNode.insertBefore(fallback, this);
+  };
+
+  var tip = document.createElement("div");
+  tip.style.cssText = "font-size:0.6875rem;color:#999;margin-top:8px;";
+  tip.textContent = isEn ? "Scan or long-press to add" : "扫一扫或长按识别添加";
+
+  card.appendChild(closeBtn);
+  card.appendChild(title);
+  card.appendChild(sub);
+  card.appendChild(qrImg);
+  card.appendChild(tip);
+  overlay.appendChild(card);
+
+  // Open modal
+  floatBtn.addEventListener("click", function() {
+    overlay.style.display = "flex";
+  });
+  overlay.addEventListener("click", function(e) {
+    if (e.target === overlay) overlay.style.display = "none";
+  });
+
+  document.body.appendChild(floatBtn);
+  document.body.appendChild(overlay);
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
   var page = document.body.getAttribute("data-page");
 
-  // Inject global nav + footer on all content pages
+  // Inject global nav + footer + WeChat on all content pages
   if (document.querySelector(".page-content")) {
     injectSiteNav(page);
     injectSiteFooter();
   }
+  injectWeChatQR();
 
   if (page === "index") {
     var titleEl = document.getElementById("hero-title");
