@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>¥399 办理付款 — OPC 一人公司孵化器</title>
+  <meta name="description" content="OPC一人公司孵化器服务付款。扫码支付¥399，截图发送客服，立即开始办理。">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .checkout-hero {
+      text-align: center;
+      padding: 48px 20px 32px;
+    }
+    .checkout-hero h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .checkout-hero .sub {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .qr-card {
+      max-width: 400px;
+      margin: 0 auto 48px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .qr-card .price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .qr-card .price-label {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .qr-card img {
+      width: 240px;
+      height: 240px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .qr-card .steps {
+      text-align: left;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .qr-card .steps .num {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .guarantee-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .guarantee-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body data-page="checkout">
+  <div class="page">
+    <div class="page-content">
+
+      <div class="brand-header">
+        <div class="brand-header__logo">OPC 一人公司孵化器</div>
+        <div class="brand-header__tagline">服务付款</div>
+      </div>
+
+      <section class="checkout-hero">
+        <h1>扫码支付，开始办理</h1>
+        <p class="sub">支付完成后截图发送客服微信，我们立即启动你的服务流程</p>
+      </section>
+
+      <div class="qr-card">
+        <div class="price">¥399</div>
+        <div class="price-label">工商注册代办 / 补贴申请代办</div>
+
+        <img src="assets/images/wechat-qr.jpg" alt="微信收款码" loading="eager">
+
+        <div class="steps">
+          <p><span class="num">1</span> 打开微信扫一扫，识别二维码</p>
+          <p><span class="num">2</span> 支付 <strong>¥399</strong>（备注你的姓名）</p>
+          <p><span class="num">3</span> 截图付款成功页面</p>
+          <p><span class="num">4</span> 添加客服微信发送截图，立即开始办理</p>
+        </div>
+      </div>
+
+      <div class="guarantee-row">
+        <span class="guarantee-tag">不成功全额退款</span>
+        <span class="guarantee-tag">低于服务费不收费</span>
+        <span class="guarantee-tag">全程跟进到账</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app-core.js"></script>
+</body>
+</html>

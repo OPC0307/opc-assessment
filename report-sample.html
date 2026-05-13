@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>完整版测评报告样例 — 6维度全拆解 | OPC 孵化器</title>
+  <meta name="description" content="OPC一人公司适配度完整版测评报告样例。查看6大维度能力拆解、3条定制赛道排名、30天SOP行动计划和行业避坑指南。">
+  <meta name="keywords" content="一人公司测评报告,OPC完整报告,创业能力评估,个人商业路线图,适配度报告">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fhopc.top/report-sample.html">
+  <meta property="og:title" content="OPC完整版测评报告样例 — 6维度全拆解">
+  <meta property="og:description" content="查看OPC完整版测评报告包含什么：6大维度能力拆解、3条定制赛道排名、30天SOP行动计划。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fhopc.top/report-sample.html">
+  <meta property="og:site_name" content="OPC 一人公司孵化器">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .report-hero {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      padding: 48px 20px 36px;
+      text-align: center;
+      margin-top: 12px;
+      border-radius: 12px;
+    }
+    .report-hero .badge { display: inline-block; background: rgba(212,168,83,0.15); color: #d4a853; padding: 4px 12px; border-radius: 100px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .report-hero h1 { font-size: 1.625rem; color: #fff; margin-bottom: 8px; }
+    .report-hero p { font-size: 0.875rem; color: #a0aec0; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+    .report-body { max-width: 720px; margin: 0 auto; padding: 32px 20px; }
+
+    .score-hero {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .score-hero .big-score { font-size: 4rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; line-height: 1; }
+    .score-hero .grade-badge { display: inline-block; width: 56px; height: 56px; line-height: 56px; border-radius: 50%; background: linear-gradient(135deg, #2e7d32, #43a047); color: #fff; font-size: 2rem; font-weight: 800; margin: 8px 0; }
+    .score-hero .label { font-size: 1.125rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+
+    .dim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .dim-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .dim-card .dim-bar {
+      height: 6px;
+      background: var(--bg);
+      border-radius: 3px;
+      margin: 8px 0;
+      overflow: hidden;
+    }
+    .dim-card .dim-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+    .dim-card .dim-name { font-size: 0.8125rem; font-weight: 600; color: var(--text); }
+    .dim-card .dim-score { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+    .track-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .track-card .rank { width: 36px; height: 36px; line-height: 36px; text-align: center; border-radius: 50%; font-weight: 800; font-size: 1rem; }
+    .track-card .rank-1 { background: #e8c97a; color: #6d4c00; }
+    .track-card .rank-2 { background: #e0e0e0; color: #555; }
+    .track-card .rank-3 { background: #f5e1cc; color: #8d5524; }
+    .track-card .track-name { font-weight: 700; font-size: 0.9375rem; }
+    .track-card .track-fit { font-size: 0.75rem; color: var(--text-muted); }
+
+    .sop-section { margin-bottom: 32px; }
+    .sop-section h2 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+    .sop-week { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 8px; }
+    .sop-week h4 { font-size: 0.875rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .sop-week p { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; }
+
+    .risk-warning {
+      background: #fff8e1;
+      border: 1px solid #ffc107;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .risk-warning h3 { font-size: 1rem; color: #e65100; margin-bottom: 8px; }
+    .risk-warning p { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.7; }
+
+    .price-cta {
+      text-align: center;
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      color: #fff;
+      padding: 32px 20px;
+      border-radius: 12px;
+      margin-top: 32px;
+    }
+    .price-cta .price { font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+  </style>
+</head>
+<body data-page="report-sample">
+  <div class="page">
+    <div class="page-content">
+
+      <section class="report-hero">
+        <div class="badge">完整版测评报告样例</div>
+        <h1>你的专属个人商业路线图</h1>
+        <p>基于15道答题数据，生成6大维度能力拆解 + 3条定制赛道 + 30天SOP行动计划。以下是真实报告格式预览。</p>
+      </section>
+
+      <div class="report-body">
+
+        <!-- Overall Score -->
+        <div class="score-hero">
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:8px;">总评分 · 百分制</div>
+          <div class="big-score">88</div>
+          <div class="grade-badge">A</div>
+          <div class="label">一人公司潜力股</div>
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">适合立即启动，建议6周内完成赛道验证</div>
+        </div>
+
+        <!-- 6 Dimensions -->
+        <h2 style="font-size:1.125rem;margin-bottom:12px;">6大维度能力拆解</h2>
+        <div class="dim-grid">
+          <div class="dim-card">
+            <div class="dim-name">专业技能</div>
+            <div class="dim-score">92</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:92%;background:linear-gradient(90deg,#43a047,#66bb6a);"></div></div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-name">商业认知</div>
+            <div class="dim-score">78</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:78%;background:linear-gradient(90deg,#2c5282,#4a7ab5);"></div></div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-name">执行力</div>
+            <div class="dim-score">85</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:85%;background:linear-gradient(90deg,#43a047,#66bb6a);"></div></div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-name">获客能力</div>
+            <div class="dim-score">23</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:23%;background:linear-gradient(90deg,#e53935,#ef5350);"></div></div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-name">风险管理</div>
+            <div class="dim-score">61</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:61%;background:linear-gradient(90deg,#ff8f00,#ffa726);"></div></div>
+          </div>
+          <div class="dim-card">
+            <div class="dim-name">学习适应</div>
+            <div class="dim-score">90</div>
+            <div class="dim-bar"><div class="dim-fill" style="width:90%;background:linear-gradient(90deg,#43a047,#66bb6a);"></div></div>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:24px;">
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--text);margin-bottom:8px;">核心优势</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.7;">专业技能堪比行业前10%，学习适应能力极强——这是你从打工人转向一人公司的最大底气。你不需要补专业，需要补的是获客和销售思维。</p>
+          <h3 style="font-size:0.9375rem;font-weight:700;color:var(--text);margin:16px 0 8px;">核心卡点</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.7;">获客能力仅23分——典型手艺人思维。你以为作品好就有人来找你，但现实是：你的作品没人看。这是你从月薪到一人公司的最大瓶颈。</p>
+        </div>
+
+        <!-- Tracks -->
+        <h2 style="font-size:1.125rem;margin-bottom:12px;">3条定制赛道排名</h2>
+        <div class="track-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rank rank-1">1</div>
+            <div>
+              <div class="track-name">AI产品UI/UX设计外包</div>
+              <div class="track-fit">匹配度 94% · 建议立即启动</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--accent);">推荐</div>
+        </div>
+        <div class="track-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rank rank-2">2</div>
+            <div>
+              <div class="track-name">内容驱动的设计咨询</div>
+              <div class="track-fit">匹配度 81% · 需6周内容积累</div>
+            </div>
+          </div>
+        </div>
+        <div class="track-card" style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rank rank-3">3</div>
+            <div>
+              <div class="track-name">SaaS工具独立开发</div>
+              <div class="track-fit">匹配度 67% · 需补技术栈</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30-Day SOP -->
+        <div class="sop-section">
+          <h2>30天SOP行动计划（节选）</h2>
+          <div class="sop-week">
+            <h4>第1周：定位与基础建设</h4>
+            <p>确定赛道方向（AI产品UI）→ 注册个体户 → 准备作品集（5个项目）→ 注册小红书/Boss/知乎 → 设置微信名片页</p>
+          </div>
+          <div class="sop-week">
+            <h4>第2周：内容引擎启动</h4>
+            <p>按选题库发布第一批内容（3条拆解+1条工作流+1条资源）→ 每天回复5条相关评论 → 建立选题日历</p>
+          </div>
+          <div class="sop-week">
+            <h4>第3周：获客管道搭建</h4>
+            <p>主动私信30个AI创业公司（有模板）→ 在猪八戒上架2个服务 → 加入2个AI创业者社群 → 发一条案例拆解</p>
+          </div>
+          <div class="sop-week">
+            <h4>第4周：转化与复盘</h4>
+            <p>跟进前3周的询盘 → 成交第一单（报价¥3,500起）→ 月度复盘 → 调整下月赛道策略</p>
+          </div>
+        </div>
+
+        <!-- Risk Warning -->
+        <div class="risk-warning">
+          <h3>风险提示（不加滤镜）</h3>
+          <p>• 个体户首年存活率约30%，多数人不是败在专业上而是败在获客上<br>
+          • 你的获客能力仅23分——前3个月收入可能只有¥0-2,000<br>
+          • 建议至少保留6个月生活费的存款，不要裸辞启动<br>
+          • 补贴首次申请驳回率62%，需要耐心和二次提交<br>
+          • 如果以上任何一条让你犹豫——别急着干，先兼职验证6周</p>
+        </div>
+
+        <!-- Pricing CTA -->
+        <div class="price-cta">
+          <div style="font-size:0.75rem;color:#a0aec0;margin-bottom:8px;">获取你的真实报告</div>
+          <div class="price">¥19.9</div>
+          <div style="font-size:0.8125rem;color:#a0aec0;margin:8px 0 20px;">永久查看 · 24小时不满意全额退款</div>
+          <a href="quiz.html" class="btn btn-accent btn-lg">开始免费测评 →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="app-core.js"></script>
+</body>
+</html>

@@ -1414,27 +1414,64 @@ function initShareButtons() {
   var btns = document.querySelectorAll(".share-btn");
   btns.forEach(function(btn) {
     btn.addEventListener("click", function() {
-      trackEvent("share_click", { title: this.title });
-      localStorage.setItem("opc_shared", "1");
-      // 显示分享成功反馈
-      var overlay = $(".modal-overlay");
-      if (overlay) {
-        $("#fb-title").textContent = _t("share.success_title", "分享成功！");
-        $("#fb-text").textContent = _t("share.success_text", "第3条定制赛道已解锁，查看下方你的完整方案。");
-        $("#fb-icon").style.display = "none";
-        $("#fb-progress").style.display = "none";
-        $("#fb-close").style.display = "";
-        $("#fb-close").textContent = _t("share.view_plan", "查看方案");
-        overlay.classList.add("active");
-        $("#fb-close").onclick = function() {
-          overlay.classList.remove("active");
-          // 刷新赛道和私域导流区
-          var result = Storage.load();
-          if (result) renderTracks(result, false);
-        };
+      var platform = this.getAttribute("data-platform");
+      var pageUrl = window.location.href;
+      var pageTitle = document.title;
+      var pageDesc = document.querySelector('meta[name="description"]')?.content || '';
+
+      if (platform === "url") {
+        // 复制链接
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(pageUrl).then(function() {
+            showShareToast("链接已复制，去粘贴给朋友吧！");
+          }).catch(function() {
+            showShareToast("复制失败，请手动复制地址栏链接");
+          });
+        } else {
+          // Fallback
+          var ta = document.createElement('textarea');
+          ta.value = pageUrl;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          showShareToast("链接已复制，去粘贴给朋友吧！");
+        }
+      } else if (platform === "wechat") {
+        // 微信：显示二维码提示
+        showShareToast("请点击右上角 ··· 选择「分享给朋友」或「分享到朋友圈」");
+      } else if (platform === "weibo") {
+        // 微博分享
+        var wbUrl = 'https://service.weibo.com/share/share.php?url=' + encodeURIComponent(pageUrl) + '&title=' + encodeURIComponent(pageTitle);
+        window.open(wbUrl, '_blank', 'width=600,height=500');
       }
+
+      // 记录分享标记（用于解锁内容）
+      trackEvent("share_click", { platform: platform });
+      localStorage.setItem("opc_shared", "1");
+
+      // 如果有锁定内容，刷新
+      setTimeout(function() {
+        var result = Storage.load();
+        if (result) renderTracks(result, false);
+      }, 500);
     });
   });
+}
+
+// 分享提示 toast
+function showShareToast(msg) {
+  var toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(26,54,93,0.95);color:#fff;padding:14px 24px;border-radius:10px;font-size:0.875rem;z-index:9999;text-align:center;max-width:280px;line-height:1.5;pointer-events:none;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(function() {
+    toast.style.transition = 'opacity 0.4s';
+    toast.style.opacity = '0';
+    setTimeout(function() { document.body.removeChild(toast); }, 400);
+  }, 2000);
 }
 
 // ==========================================
