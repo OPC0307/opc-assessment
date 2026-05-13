@@ -5,7 +5,9 @@
     "subsidy": "补贴查询",
     "service": "补贴代办",
     "tax": "税务指南",
-    "blog": "博客"
+    "blog": "博客",
+    "services": "服务",
+    "about": "关于"
   },
   "grade": {
     "A": "A · 一人公司潜力股",
@@ -224,7 +226,18 @@
   "index": {
     "subsidy_banner_title": "全国 20 城创业补贴查询",
     "subsidy_banner_desc": "国家 + 地方双重补贴，一年最多可领 3-5 万+。查查你的城市 →",
-    "subsidy_banner_cta": "立即查询 →"
+    "subsidy_banner_cta": "立即查询 →",
+    "services_title": "OPC 服务体系",
+    "services_subtitle": "从自我认知到落地执行，覆盖一人公司全流程",
+    "services_quiz_title": "适配度测评",
+    "services_quiz_desc": "6大维度 · 15分钟 · 免费评估你的一人公司潜力，获取专属行动路线图",
+    "services_subsidy_title": "20城补贴查询",
+    "services_subsidy_desc": "国家 + 地方双重补贴，最高可领 6 万+。覆盖深圳、杭州、上海等全国主要城市",
+    "services_agent_title": "代办服务",
+    "services_agent_desc": "工商注册 · 补贴申请 · 税务代办 · 全程一对一专业服务",
+    "blog_highlight_title": "最新文章",
+    "blog_highlight_subtitle": "一人公司实操干货，从注册到盈利的完整知识体系",
+    "blog_highlight_more": "查看全部文章 →"
   },
   "quiz": {
     "hint_loading": "加载题目提示...",

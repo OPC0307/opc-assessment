@@ -5,7 +5,11 @@
     "subsidy": "Subsidies",
     "service": "Service",
     "tax": "Tax Guide",
-    "blog": "Blog"
+    "blog": "Blog",
+    "services": "Services",
+    "about": "About",
+    "services": "Services",
+    "about": "About"
   },
   "grade": {
     "A": "A · OPC Potential Star",
@@ -64,7 +68,18 @@
   "index": {
     "subsidy_banner_title": "20-City Startup Subsidy Lookup",
     "subsidy_banner_desc": "National + local subsidies, up to ¥35,000+/year. Check your city →",
-    "subsidy_banner_cta": "Look Up →"
+    "subsidy_banner_cta": "Look Up →",
+    "services_title": "OPC Services",
+    "services_subtitle": "Complete one-person company support, from self-assessment to execution",
+    "services_quiz_title": "OPC Fitness Assessment",
+    "services_quiz_desc": "6 dimensions · 15 minutes · Free evaluation of your solo founder potential with action roadmap",
+    "services_subsidy_title": "20-City Subsidy Search",
+    "services_subsidy_desc": "National + local subsidies, up to 60,000+ RMB. Covering Shenzhen, Hangzhou, Shanghai and more",
+    "services_agent_title": "Agent Services",
+    "services_agent_desc": "Business registration · Subsidy application · Tax filing · One-on-one professional service",
+    "blog_highlight_title": "Latest Articles",
+    "blog_highlight_subtitle": "Practical guides for solo founders, from registration to profitability",
+    "blog_highlight_more": "View All Articles →"
   },
   "value": {
     "title": "The OPC Assessment Framework",
