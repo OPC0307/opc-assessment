@@ -8,64 +8,6 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== Site Navigation ===== */
-    .site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 16px;
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.92);
-    }
-
-    .site-nav__logo {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .site-nav__links {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .site-nav__links::-webkit-scrollbar { display: none; }
-
-    .site-nav__links a {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      white-space: nowrap;
-      transition: all var(--duration-fast) var(--ease-out);
-    }
-
-    .site-nav__links a:hover,
-    .site-nav__links a.active {
-      color: var(--primary);
-      background: rgba(26,54,93,0.06);
-    }
-
-    @media (max-width: 480px) {
-      .site-nav__logo { font-size: 0.875rem; }
-      .site-nav__links a { padding: 5px 8px; font-size: 0.75rem; }
-    }
-
     /* ===== Hero container tweaks ===== */
     .hero-wrapper { margin-top: 24px; }
 
@@ -257,21 +199,7 @@
 
   <div class="page-content">
 
-    <!-- ============ Site Navigation ============ -->
-    <nav class="site-nav anim-fade-in-up">
-      <a href="/" class="site-nav__logo">OPC 孵化器</a>
-      <div class="site-nav__links">
-        <a href="/" class="active" data-i18n="nav.home">首页</a>
-        <a href="quiz.html" data-i18n="nav.quiz">测评</a>
-        <a href="subsidy/" data-i18n="nav.subsidy">补贴</a>
-        <a href="services/registration.html" data-i18n="nav.services">服务</a>
-        <a href="blog/" data-i18n="nav.blog">博客</a>
-        <a href="about.html" data-i18n="nav.about">关于</a>
-      </div>
-      <button class="lang-toggle" data-i18n="lang.zh">中 / EN</button>
-    </nav>
-
-    <!-- ============ Hero Section ============ -->
+<!-- ============ Hero Section ============ -->
     <section class="glass-card hero-wrapper anim-slide-up anim-delay-1" style="margin-bottom: 24px;">
 
       <!-- Title Switcher -->

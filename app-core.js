@@ -152,12 +152,12 @@ function animateNumber(el, from, to, duration) {
 // ==========================================
 // ---- Site Navigation (injected globally) ----
 var SITE_NAV = [
-  { key: "home",   href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
-  { key: "quiz",   href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
-  { key: "subsidy",href: "/subsidy/",                 label: "补贴查询",   enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
-  { key: "service",href: "/services/subsidy.html",    label: "补贴代办",   enLabel: "Service",         match: ["services-subsidy"] },
-  { key: "tax",    href: "/services/tax-basics.html", label: "税务指南",   enLabel: "Tax Guide",       match: ["services-tax"] },
-  { key: "blog",   href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] }
+  { key: "home",     href: "/",                         label: "首页",       enLabel: "Home",            match: ["index"] },
+  { key: "quiz",     href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
+  { key: "subsidy",  href: "/subsidy/",                 label: "补贴",       enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
+  { key: "services", href: "/services/registration.html",label: "服务",      enLabel: "Services",        match: ["services-subsidy", "services-tax", "services-registration"] },
+  { key: "blog",     href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] },
+  { key: "about",    href: "/about.html",              label: "关于",       enLabel: "About",           match: ["about"] }
 ];
 
 function injectSiteNav(currentPage) {
@@ -203,8 +203,11 @@ function injectSiteNav(currentPage) {
   inner.appendChild(langBtn);
   nav.appendChild(inner);
 
-  var existing = pageContent.querySelector(".lang-toggle");
-  if (existing) existing.remove();
+  var existingToggle = pageContent.querySelector(".lang-toggle");
+  if (existingToggle) existingToggle.remove();
+
+  var oldBrand = pageContent.querySelector(".brand-header");
+  if (oldBrand) oldBrand.remove();
 
   pageContent.insertBefore(nav, pageContent.firstChild);
 }
