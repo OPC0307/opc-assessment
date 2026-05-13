@@ -8,71 +8,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== Hero container tweaks ===== */
     .hero-wrapper { margin-top: 24px; }
-
-    /* ===== Blog highlight cards ===== */
-    .blog-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .blog-card {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      text-decoration: none;
-      transition: all var(--duration-fast) var(--ease-out);
-    }
-
-    .blog-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .blog-card__tag {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: var(--accent-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
-    }
-
-    .blog-card__title {
-      font-size: 0.9375rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-
-    .blog-card__desc {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      flex: 1;
-    }
-
-    .blog-card__link {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent-dark);
-      margin-top: 12px;
-    }
-
-    /* Services overview */
-    .service-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+    .service-link { text-decoration: none; color: inherit; display: block; }
+    .trust-compact { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin: 0 16px; }
   </style>
 
 <script type="application/ld+json">
@@ -173,9 +111,7 @@
   "name": "OPC 一人公司孵化器",
   "url": "https://fhopc.top",
   "description": "AI Agent 驱动的个体创业基础设施，提供一人公司适配度测评、全国20城创业补贴查询、工商注册与税务代办服务。",
-  "sameAs": [
-    "https://fhopc.top"
-  ]
+  "sameAs": ["https://fhopc.top"]
 }
 </script>
 <script>
@@ -196,13 +132,11 @@
 <body data-page="index">
 
 <div class="page">
-
   <div class="page-content">
 
-<!-- ============ Hero Section ============ -->
+    <!-- ============ Hero ============ -->
     <section class="glass-card hero-wrapper anim-slide-up anim-delay-1" style="margin-bottom: 24px;">
 
-      <!-- Title Switcher -->
       <div class="title-switcher">
         <button class="title-candidate active" data-title="测一测，你有多适合成为「一人公司」？" data-i18n-attr="data-title:hero.titleA">A</button>
         <button class="title-candidate" data-title="你的基因里，藏着一人公司的天赋密码" data-i18n-attr="data-title:hero.titleB">B</button>
@@ -211,7 +145,6 @@
         <button class="title-candidate" data-title="从打工人到超级个体，你只差这一步" data-i18n-attr="data-title:hero.titleE">E</button>
       </div>
 
-      <!-- Headline -->
       <div class="hero__title-group">
         <h1 class="hero__title mb-2" id="hero-title" data-i18n="hero.titleA">
           测一测，你有多适合成为「一人公司」？
@@ -223,12 +156,10 @@
         </p>
       </div>
 
-      <!-- Primary CTA -->
-      <a href="profile.html" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 20px;" data-i18n="hero.cta">
+      <a href="profile.html" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 16px;" data-i18n="hero.cta">
         开始免费评估
       </a>
 
-      <!-- Social Proof -->
       <div class="social-proof" style="display: flex; justify-content: center;">
         <div class="social-proof__avatars">
           <span class="social-proof__avatar"></span>
@@ -240,14 +171,13 @@
 
     </section>
 
-    <!-- ============ Services Overview ============ -->
+    <!-- ============ Services ============ -->
     <section class="section anim-fade-in-up anim-delay-2">
       <h2 class="section-title" data-i18n="index.services_title">OPC 服务体系</h2>
-      <p class="section-subtitle" data-i18n="index.services_subtitle">从自我认知到落地执行，覆盖一人公司全流程</p>
 
-      <div class="bento-grid bento-grid--3col" style="margin-bottom: 8px;">
+      <div class="bento-grid bento-grid--3col">
 
-        <a href="quiz.html" class="bento-item service-link anim-fade-in-up anim-delay-2">
+        <a href="quiz.html" class="bento-item service-link">
           <div class="bento-item__icon">测</div>
           <div class="bento-item__title" data-i18n="index.services_quiz_title">适配度测评</div>
           <div class="bento-item__desc" data-i18n="index.services_quiz_desc">
@@ -255,7 +185,7 @@
           </div>
         </a>
 
-        <a href="subsidy/" class="bento-item service-link anim-fade-in-up anim-delay-3">
+        <a href="subsidy/" class="bento-item service-link">
           <div class="bento-item__icon">补</div>
           <div class="bento-item__title" data-i18n="index.services_subsidy_title">20城补贴查询</div>
           <div class="bento-item__desc" data-i18n="index.services_subsidy_desc">
@@ -263,7 +193,7 @@
           </div>
         </a>
 
-        <a href="services/registration.html" class="bento-item service-link anim-fade-in-up anim-delay-4">
+        <a href="services/registration.html" class="bento-item service-link">
           <div class="bento-item__icon">办</div>
           <div class="bento-item__title" data-i18n="index.services_agent_title">代办服务</div>
           <div class="bento-item__desc" data-i18n="index.services_agent_desc">
@@ -274,215 +204,13 @@
       </div>
     </section>
 
-    <!-- ============ Subsidy Quick Entry ============ -->
-    <section class="anim-fade-in-up anim-delay-2" style="margin: 0 16px 32px;">
-      <a href="subsidy/" style="text-decoration:none;display:block;background:linear-gradient(135deg, #f8f6f0 0%, #fff 100%);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;transition:all var(--duration-fast) var(--ease-out);">
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:1.5rem;">💰</span>
-          <div style="flex:1;min-width:200px;">
-            <div style="font-weight:700;font-size:0.9375rem;color:var(--text);margin-bottom:2px;" data-i18n="index.subsidy_banner_title">全国 20 城创业补贴查询</div>
-            <div style="font-size:0.8125rem;color:var(--text-muted);" data-i18n="index.subsidy_banner_desc">国家 + 地方双重补贴，一年最多可领 3-5 万+。查查你的城市 →</div>
-          </div>
-          <span style="color:var(--accent);font-weight:700;font-size:0.875rem;white-space:nowrap;" data-i18n="index.subsidy_banner_cta">立即查询 →</span>
-        </div>
-      </a>
-    </section>
-
-    <!-- ============ Bento Value Grid ============ -->
-    <section class="section">
-      <h2 class="section-title" data-i18n="value.title">一人公司测评体系</h2>
-      <p class="section-subtitle" data-i18n="value.subtitle">从6个核心维度科学评估你的独立经营适配度，找到从打工人到超级个体的最佳路径</p>
-    </section>
-    <div class="bento-grid bento-grid--3col" style="margin-bottom: 32px;">
-
-      <!-- Span2: Value Proposition (accent) -->
-      <div class="bento-item bento-item--span2 bento-item--accent anim-fade-in-up anim-delay-2">
-        <div class="bento-item__icon">OP</div>
-        <div class="bento-item__title" data-i18n="value.main_title">你的独立经营适配度，一测便知</div>
-        <div class="bento-item__desc" data-i18n="value.main_desc">
-          OPC 测评系统融合行为心理学与商业方法论，通过六大维度（独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力）建立完整的人物画像。这不是一份简单的性格测试，而是一份可落地的个人商业路线图。
-        </div>
-      </div>
-
-      <!-- Item: Assessment Framework -->
-      <div class="bento-item anim-fade-in-up anim-delay-3">
-        <div class="bento-item__icon">A</div>
-        <div class="bento-item__title" data-i18n="value.item1_title">六大维度评估</div>
-        <div class="bento-item__desc" data-i18n="value.item1_desc">
-          独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力 — 全面扫描你的创业者基因。
-        </div>
-      </div>
-
-      <!-- Item: Methodology -->
-      <div class="bento-item anim-fade-in-up anim-delay-4">
-        <div class="bento-item__icon">M</div>
-        <div class="bento-item__title" data-i18n="value.item2_title">科学方法体系</div>
-        <div class="bento-item__desc" data-i18n="value.item2_desc">
-          结合行为心理学与商业实战方法论，从真实创业场景提炼关键问题，帮你精准识别自己的优势和盲区。
-        </div>
-      </div>
-
-      <!-- Item: Output Targets -->
-      <div class="bento-item anim-fade-in-up anim-delay-5">
-        <div class="bento-item__icon">R</div>
-        <div class="bento-item__title" data-i18n="value.item3_title">可执行报告</div>
-        <div class="bento-item__desc" data-i18n="value.item3_desc">
-          测评结果不仅给出适配度评分，更提供个性化发展建议、能力提升路径与推荐赛道方向，让认知转化为行动。
-        </div>
-      </div>
-
+    <!-- ============ Trust (compact) ============ -->
+    <div class="trust-compact anim-fade-in-up">
+      <span data-i18n="trust.media">媒体报道：</span>
+      <span data-i18n="trust.media_list">人民日报 · 36氪 · 科技日报 · 经济日报 · 北京大学光华管理学院</span>
     </div>
 
-    <!-- ============ Theory Foundation ============ -->
-    <section class="section">
-      <div class="accent-line"></div>
-      <h2 class="section-title" data-i18n="theory.title">理论根基</h2>
-      <p class="section-subtitle" data-i18n="theory.subtitle">三大经典著作奠定评估系统的理论底座</p>
-
-      <div class="bento-grid bento-grid--theory">
-
-        <!-- Book 1: 纳瓦尔宝典 -->
-        <div class="bento-item theory-item anim-fade-in-up anim-delay-2">
-          <div class="theory-item__index">01</div>
-          <div class="book-card__title" data-i18n="theory.book1_title">纳瓦尔宝典</div>
-          <div class="book-card__author" data-i18n="theory.book1_author">Naval Ravikant</div>
-          <div class="book-card__desc" data-i18n="theory.book1_desc">
-            关于财富与幸福的底层逻辑。核心启发：杠杆效应、产品化自我、复利思维是衡量一人公司适配度的关键指标。
-          </div>
-        </div>
-
-        <!-- Book 2: 一人公司共识 -->
-        <div class="bento-item theory-item anim-fade-in-up anim-delay-3">
-          <div class="theory-item__index">02</div>
-          <div class="book-card__title" data-i18n="theory.book2_title">一人公司共识</div>
-          <div class="book-card__author" data-i18n="theory.book2_author">Paul Jarvis</div>
-          <div class="book-card__desc" data-i18n="theory.book2_desc">
-            重新定义成功：规模适度、利润优先、生活方式优先。评估系统的「系统运营力」与「抗风险韧性」维度直接引用此框架。
-          </div>
-        </div>
-
-        <!-- Book 3: 超级个体 -->
-        <div class="bento-item theory-item anim-fade-in-up anim-delay-4">
-          <div class="theory-item__index">03</div>
-          <div class="book-card__title" data-i18n="theory.book3_title">超级个体</div>
-          <div class="book-card__author" data-i18n="theory.book3_author">徐静波 / 古典</div>
-          <div class="book-card__desc" data-i18n="theory.book3_desc">
-            从组织人到自由人的能力迁移模型。核心关注品牌构建力、资源整合力与持续学习力，是一人公司能力的实践指南。
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ Latest Blog Posts ============ -->
-    <section class="section anim-fade-in-up">
-      <div class="accent-line"></div>
-      <h2 class="section-title" data-i18n="index.blog_highlight_title">最新文章</h2>
-      <p class="section-subtitle" data-i18n="index.blog_highlight_subtitle">一人公司实操干货，从注册到盈利的完整知识体系</p>
-
-      <div class="blog-highlights">
-
-        <a href="blog/posts/solo-founder-case-study-40w.html" class="blog-card">
-          <div class="blog-card__tag">案例</div>
-          <div class="blog-card__title">从月薪8K到一人公司年入40万，他的转型之路</div>
-          <div class="blog-card__desc">一位90后从普通文员到年入40万的一人公司老板的完整转型经历。包括他踩过的坑、做对的决策，以及给想转型的人的具体建议。</div>
-          <span class="blog-card__link">阅读全文 →</span>
-        </a>
-
-        <a href="blog/posts/free-ai-tools-solo-founder-2026.html" class="blog-card">
-          <div class="blog-card__tag">工具</div>
-          <div class="blog-card__title">一人公司必备：6个免费AI工具，省下3名员工</div>
-          <div class="blog-card__desc">一人公司不需要雇佣就能干3个人的活。这6个免费AI工具覆盖数据分析、设计、编程、客服、内容创作，零成本起步。</div>
-          <span class="blog-card__link">阅读全文 →</span>
-        </a>
-
-        <a href="blog/posts/individual-business-registration-2026.html" class="blog-card">
-          <div class="blog-card__tag">实操</div>
-          <div class="blog-card__title">个体工商户注册流程2026：从0到拿营业执照全攻略</div>
-          <div class="blog-card__desc">手把手教你完成个体工商户注册全流程。材料清单、线上操作步骤、常见问题解答，一篇搞定。</div>
-          <span class="blog-card__link">阅读全文 →</span>
-        </a>
-
-      </div>
-
-      <div style="text-align:center;margin-top:20px;">
-        <a href="blog/" class="btn btn-outline" data-i18n="index.blog_highlight_more">查看全部文章 →</a>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ============ SEO FAQ Section ============ -->
-    <section class="section">
-      <div class="accent-line"></div>
-      <h2 class="section-title" data-i18n="faq.title">关于一人公司，你需要知道的</h2>
-
-      <div class="bento-grid bento-grid--theory">
-
-        <div class="bento-item theory-item anim-fade-in-up">
-          <div class="theory-item__index">Q1</div>
-          <div class="book-card__title" data-i18n="faq.q1_title">什么是一人公司（OPC）？</div>
-          <div class="book-card__desc" data-i18n="faq.q1_desc">
-            一人公司（One Person Company）是2026年最热的创业趋势。一个人借助AI工具和自动化系统，独立完成传统需要团队才能完成的商业活动。从自由职业、副业到全职创业，一人公司正成为越来越多人的选择。人民日报、36氪等权威媒体均有专题报道。
-          </div>
-        </div>
-
-        <div class="bento-item theory-item anim-fade-in-up anim-delay-2">
-          <div class="theory-item__index">Q2</div>
-          <div class="book-card__title" data-i18n="faq.q2_title">我适合成为一人公司吗？</div>
-          <div class="book-card__desc" data-i18n="faq.q2_desc">
-            不是每个人都适合独立经营。OPC测评系统从独立决策力、资源整合力、抗风险韧性、品牌构建力、系统运营力、持续学习力6大维度科学评估你的一人公司适配度。15分钟完成测试，即刻获得你的专属评估报告和行动路线图。已有超过1000人通过测评完成自我认知升级。
-          </div>
-        </div>
-
-        <div class="bento-item theory-item anim-fade-in-up anim-delay-3">
-          <div class="theory-item__index">Q3</div>
-          <div class="book-card__title" data-i18n="faq.q3_title">一人公司能做什么业务？</div>
-          <div class="book-card__desc" data-i18n="faq.q3_desc">
-            一人公司业务覆盖广泛：AI内容创作、个人IP打造、知识付费、电商代运营、自媒体、咨询顾问、数字产品开发等。OPC测评将根据你的能力画像推荐最适合的3个赛道方向，并提供30天可执行SOP行动计划，让你的创业之路有章可循。
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ============ Trust Signals ============ -->
-    <section class="section anim-fade-in-up">
-      <div class="accent-line"></div>
-      <h2 class="section-title" data-i18n="trust.title">他们都在用OPC找到方向</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px;">
-
-        <div class="glass-card" style="padding:20px 24px;">
-          <div style="font-size:0.9375rem;font-weight:700;margin-bottom:6px;" data-i18n="trust.s1_title">"测评让我看清了自己的短板"</div>
-          <div style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.6;margin-bottom:8px;" data-i18n="trust.s1_desc">28岁的设计师小王，一直想自己做设计工作室但不敢辞职。测评显示他的"独立决策力"A级，"品牌构建力"A级——报告给出的赛道排名帮他下定了决心。3个月后，月收入超过2万。</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);" data-i18n="trust.s1_tag">28岁 · 设计师 · OPC测评 A级</div>
-        </div>
-
-        <div class="glass-card" style="padding:20px 24px;">
-          <div style="font-size:0.9375rem;font-weight:700;margin-bottom:6px;" data-i18n="trust.s2_title">"从副业到全职，只花了4个月"</div>
-          <div style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.6;margin-bottom:8px;" data-i18n="trust.s2_desc">程序员阿杰在被裁前完成测评，发现"AI杠杆"和"产品化能力"是自己最强的维度。他用报告推荐的"知识付费赛道"方向，结合编程技能做了AI编程教学课程，4个月后副业收入超过主业。</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);" data-i18n="trust.s2_tag">32岁 · 程序员 · OPC测评 A级</div>
-        </div>
-
-        <div class="glass-card" style="padding:20px 24px;">
-          <div style="font-size:0.9375rem;font-weight:700;margin-bottom:6px;" data-i18n="trust.s3_title">"帮我省了3个月的试错时间"</div>
-          <div style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.6;margin-bottom:8px;" data-i18n="trust.s3_desc">35岁的林姐做了10年HR，想转型但不知道从何入手。测评报告指出她的"内容能力"和"持续运营力"是最大潜力点，建议她走"个人IP+咨询"路线。她按30天SOP一步步执行，第一个月就接到了付费咨询。</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);" data-i18n="trust.s3_tag">35岁 · 前HR · OPC测评 B+级</div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:16px;font-size:0.75rem;color:var(--text-muted);">
-        <span data-i18n="trust.media">媒体报道：</span>
-        <span data-i18n="trust.media_list">人民日报 · 36氪 · 科技日报 · 经济日报 · 北京大学光华管理学院</span>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ============ CTA Section ============ -->
+    <!-- ============ CTA ============ -->
     <section class="cta-section">
       <div class="glass-card anim-fade-in-up anim-delay-3">
         <h2 class="mb-4" data-i18n="cta.title">现在开始，发现你的一人公司潜力</h2>
@@ -515,10 +243,7 @@
     </footer>
 
   </div>
-  <!-- /page-content -->
-
 </div>
-<!-- /page -->
 
 <script src="app-core.js"></script>
 </body>
