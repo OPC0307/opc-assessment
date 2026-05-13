@@ -1639,49 +1639,49 @@ h3 {
 }
 
 /* ============================================
-   Full-Width Section System — Jobs / Apple aesthetic
-   White backgrounds, massive type, extreme whitespace
+   Full-Width Section System — Apple style
+   Pure white, left-aligned, extreme whitespace
    ============================================ */
 .fw-section {
   width: 100%;
-  padding: 100px 32px;
+  padding: 120px 32px;
+  background: #fff;
 }
 .fw-inner {
-  max-width: 1040px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 /* ---- Hero ---- */
 .fw-hero {
   background: #fff;
-  padding: 120px 32px 100px;
-  text-align: center;
+  padding: 140px 32px 100px;
 }
 .fw-hero__title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: #111;
-  line-height: 1.1;
-  margin-bottom: 24px;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #1d1d1f;
+  line-height: 1.05;
+  margin-bottom: 28px;
 }
 .fw-hero__sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
+  font-size: clamp(1.0625rem, 2vw, 1.3125rem);
+  color: #86868b;
+  max-width: 560px;
+  line-height: 1.5;
+  margin-bottom: 48px;
 }
 .fw-hero__cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 14px 32px;
-  background: #111;
+  gap: 8px;
+  padding: 16px 36px;
+  background: #1d1d1f;
   color: #fff;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 32px;
   text-decoration: none;
   transition: background 0.2s;
 }
@@ -1690,55 +1690,48 @@ h3 {
 }
 .fw-hero__note {
   display: block;
-  font-size: 0.8125rem;
-  color: #999;
-  margin-top: 16px;
+  font-size: 0.875rem;
+  color: #86868b;
+  margin-top: 18px;
 }
 
 /* ---- Data ---- */
 .fw-data {
   background: #fff;
-  padding: 0 32px 100px;
-  text-align: center;
+  padding: 0 32px 120px;
 }
 .fw-data__grid {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 600px;
+  margin-bottom: 48px;
 }
 .fw-data__num {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 300;
-  color: #111;
+  color: #1d1d1f;
   line-height: 1;
   letter-spacing: -0.03em;
+  margin-bottom: 6px;
 }
 .fw-data__label {
-  font-size: 0.875rem;
-  color: #999;
-  margin-top: 8px;
+  font-size: 0.9375rem;
+  color: #86868b;
 }
 .fw-data__note {
-  font-size: 1rem;
-  color: #666;
-  max-width: 520px;
-  margin: 0 auto;
-  line-height: 1.7;
+  font-size: 1.125rem;
+  color: #86868b;
+  max-width: 480px;
+  line-height: 1.5;
 }
 
 /* ---- Cases ---- */
-.fw-cases {
-  background: #fafafa;
-}
 .fw-cases__head {
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #999;
-  text-transform: uppercase;
-  margin-bottom: 40px;
+  color: #1d1d1f;
+  margin-bottom: 48px;
 }
 .case-grid {
   display: grid;
@@ -1751,45 +1744,40 @@ h3 {
   display: block;
 }
 .case-card__meta {
-  font-size: 0.75rem;
-  color: #999;
-  margin-bottom: 12px;
+  font-size: 0.8125rem;
+  color: #86868b;
+  margin-bottom: 8px;
 }
 .case-card__track {
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
   font-weight: 600;
-  color: #111;
+  color: #1d1d1f;
   margin-bottom: 4px;
 }
 .case-card__income {
   font-size: 0.9375rem;
-  color: #666;
-  margin-bottom: 12px;
+  color: #6e6e73;
+  margin-bottom: 14px;
 }
 .case-card__desc {
-  font-size: 0.875rem;
-  color: #888;
-  line-height: 1.7;
+  font-size: 0.9375rem;
+  color: #86868b;
+  line-height: 1.6;
 }
 
 /* ---- Services ---- */
-.fw-services {
-  background: #fff;
-}
 .fw-services__head {
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #999;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  color: #1d1d1f;
+  margin-bottom: 16px;
 }
 .fw-services__sub {
-  font-size: 1.0625rem;
-  color: #666;
-  max-width: 560px;
-  line-height: 1.7;
-  margin-bottom: 56px;
+  font-size: 1.125rem;
+  color: #86868b;
+  max-width: 520px;
+  line-height: 1.5;
+  margin-bottom: 64px;
 }
 .service-grid {
   display: grid;
@@ -1797,75 +1785,80 @@ h3 {
   gap: 56px;
 }
 .service-card__num {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #999;
-  margin-bottom: 16px;
-}
-.service-card__title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 4px;
-}
-.service-card__price {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 16px;
-}
-.service-card__desc {
-  font-size: 0.875rem;
-  color: #888;
-  line-height: 1.7;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #86868b;
   margin-bottom: 20px;
 }
-.service-card__link {
-  font-size: 0.9375rem;
-  color: #111;
+.service-card__title {
+  font-size: 1.3125rem;
   font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 6px;
+}
+.service-card__price {
+  font-size: 1.0625rem;
+  color: #6e6e73;
+  margin-bottom: 18px;
+}
+.service-card__desc {
+  font-size: 0.9375rem;
+  color: #86868b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.service-card__link {
+  font-size: 1rem;
+  color: #1d1d1f;
+  font-weight: 500;
   text-decoration: none;
-  border-bottom: 2px solid #111;
-  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: opacity 0.15s;
 }
+.service-card__link::after {
+  content: '→';
+}
 .service-card__link:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* ---- Footer ---- */
 .fw-footer {
-  background: #111;
-  padding: 48px 32px;
-  text-align: center;
-  color: #666;
+  background: #fff;
+  padding: 40px 32px;
+  color: #86868b;
   font-size: 0.8125rem;
   line-height: 2;
+  border-top: 1px solid #e5e5e5;
 }
 .fw-footer a {
-  color: #999;
+  color: #86868b;
   text-decoration: none;
 }
 .fw-footer a:hover {
-  color: #fff;
+  color: #1d1d1f;
 }
 .fw-footer__sep {
-  color: #444;
+  color: #d2d2d7;
   margin: 0 10px;
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 860px) {
   .fw-section {
-    padding: 64px 24px;
+    padding: 80px 24px;
   }
   .fw-hero {
-    padding: 80px 24px 64px;
+    padding: 100px 24px 64px;
   }
   .fw-data {
-    padding: 0 24px 64px;
+    padding: 0 24px 80px;
   }
   .fw-data__grid {
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
   .case-grid,
   .service-grid {
