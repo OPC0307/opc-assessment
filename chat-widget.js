@@ -48,13 +48,13 @@
     btn.title = isEn ? 'AI Assistant' : '点我提问，秒回';
     btn.style.cssText = [
       'position:fixed;bottom:88px;right:max(8px, calc((100vw - 980px) / 2 - 60px));z-index:9998;',
-      'padding:10px 18px;border-radius:24px;',
-      'background:linear-gradient(135deg,#1a365d,#2c5282);',
-      'color:#d4a853;border:2px solid #d4a853;',
-      'font-size:0.9375rem;font-weight:700;cursor:pointer;',
-      'box-shadow:0 4px 20px rgba(26,54,93,0.35);',
+      'padding:10px 18px;border-radius:4px;',
+      'background:#1d1d1f;',
+      'color:#fff;border:1px solid #e5e5e5;',
+      'font-size:0.8125rem;font-weight:600;cursor:pointer;',
+      'box-shadow:0 2px 12px rgba(0,0,0,0.10);',
       'transition:transform 0.2s ease,box-shadow 0.2s ease;',
-      'letter-spacing:0.05em;'
+      'letter-spacing:0.04em;'
     ].join('');
 
     btn.addEventListener('mouseenter', function() { this.style.transform = 'scale(1.06)'; });
@@ -66,7 +66,7 @@
     panel.style.cssText = [
       'display:none;position:fixed;bottom:92px;right:max(8px, calc((100vw - 980px) / 2 - 60px));z-index:9999;',
       'width:360px;max-width:calc(100vw - 48px);max-height:520px;',
-      'background:#fff;border-radius:16px;',
+      'background:#fff;border-radius:8px;',
       'box-shadow:0 8px 40px rgba(0,0,0,0.18);',
       'overflow:hidden;',
       'flex-direction:column;'
@@ -74,22 +74,22 @@
 
     // Panel header
     var header = document.createElement('div');
-    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:linear-gradient(135deg,#1a365d,#2c5282);color:#fff;';
+    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#1d1d1f;color:#fff;';
     header.innerHTML = [
       '<div style="display:flex;align-items:center;gap:8px;">',
-        '<div style="width:32px;height:32px;border-radius:50%;background:rgba(212,168,83,0.2);display:flex;align-items:center;justify-content:center;font-size:0.875rem;">🤖</div>',
+        '<div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:0.875rem;">AI</div>',
         '<div>',
-          '<div style="font-weight:700;font-size:0.875rem;line-height:1.2;">OPC小助手</div>',
-          '<div style="font-size:0.6875rem;color:#a0aec0;line-height:1.2;">' + (isEn ? 'AI Customer Service' : 'AI智能客服') + '</div>',
+          '<div style="font-weight:600;font-size:0.875rem;line-height:1.2;">OPC小助手</div>',
+          '<div style="font-size:0.6875rem;color:#86868b;line-height:1.2;">' + (isEn ? 'AI Customer Service' : 'AI智能客服') + '</div>',
         '</div>',
       '</div>',
-      '<button id="opc-chat-close" style="background:none;border:none;color:#a0aec0;cursor:pointer;font-size:1.25rem;padding:4px;line-height:1;">✕</button>'
+      '<button id="opc-chat-close" style="background:none;border:none;color:#86868b;cursor:pointer;font-size:1.25rem;padding:4px;line-height:1;">✕</button>'
     ].join('');
 
     // Messages area
     var msgArea = document.createElement('div');
     msgArea.id = 'opc-chat-msgs';
-    msgArea.style.cssText = 'flex:1;overflow-y:auto;padding:16px;min-height:200px;max-height:340px;background:#faf8f4;';
+    msgArea.style.cssText = 'flex:1;overflow-y:auto;padding:16px;min-height:200px;max-height:340px;background:#f5f5f7;';
 
     // Render saved messages
     messages.forEach(function(m) { msgArea.appendChild(buildBubble(m.role, m.content, isEn)); });
@@ -98,23 +98,23 @@
     // Typing indicator
     var typing = document.createElement('div');
     typing.id = 'opc-chat-typing';
-    typing.style.cssText = 'display:none;padding:0 16px 8px;background:#faf8f4;';
-    typing.innerHTML = '<div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:50%;background:#1a365d;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">🤖</div><div style="display:flex;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#d4a853;animation:opc-dot 1.4s infinite;"></span><span style="width:6px;height:6px;border-radius:50%;background:#d4a853;animation:opc-dot 1.4s infinite 0.2s;"></span><span style="width:6px;height:6px;border-radius:50%;background:#d4a853;animation:opc-dot 1.4s infinite 0.4s;"></span></div></div>';
+    typing.style.cssText = 'display:none;padding:0 16px 8px;background:#f5f5f7;';
+    typing.innerHTML = '<div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:50%;background:#1d1d1f;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#fff;">AI</div><div style="display:flex;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#86868b;animation:opc-dot 1.4s infinite;"></span><span style="width:6px;height:6px;border-radius:50%;background:#86868b;animation:opc-dot 1.4s infinite 0.2s;"></span><span style="width:6px;height:6px;border-radius:50%;background:#86868b;animation:opc-dot 1.4s infinite 0.4s;"></span></div></div>';
 
     // Input area
     var inputArea = document.createElement('div');
-    inputArea.style.cssText = 'display:flex;gap:8px;padding:12px 16px;border-top:1px solid #e8e4dc;background:#fff;';
+    inputArea.style.cssText = 'display:flex;gap:8px;padding:12px 16px;border-top:1px solid #e5e5e5;background:#fff;';
     var input = document.createElement('input');
     input.type = 'text';
     input.id = 'opc-chat-input';
     input.placeholder = isEn ? 'Ask me anything...' : '输入你的问题...';
-    input.style.cssText = 'flex:1;padding:10px 14px;border:1px solid #e8e4dc;border-radius:20px;font-size:0.8125rem;outline:none;font-family:inherit;';
+    input.style.cssText = 'flex:1;padding:10px 14px;border:1px solid #e5e5e5;font-size:0.8125rem;outline:none;font-family:inherit;';
     input.addEventListener('keydown', function(e) { if (e.key === 'Enter') send(); });
 
     var sendBtn = document.createElement('button');
     sendBtn.id = 'opc-chat-send';
     sendBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>';
-    sendBtn.style.cssText = 'width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1a365d,#2c5282);color:#d4a853;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;';
+    sendBtn.style.cssText = 'width:36px;height:36px;background:#1d1d1f;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;';
     sendBtn.addEventListener('click', send);
 
     inputArea.appendChild(input);
@@ -151,10 +151,10 @@
       style.id = 'opc-chat-style';
       style.textContent = [
         '@keyframes opc-dot { 0%,80%,100% { opacity:0.3;transform:scale(0.8); } 40% { opacity:1;transform:scale(1); } }',
-        '#opc-chat-btn:hover { box-shadow:0 4px 24px rgba(212,168,83,0.4); }',
+        '#opc-chat-btn:hover { box-shadow:0 4px 20px rgba(0,0,0,0.15); }',
         '#opc-chat-msgs::-webkit-scrollbar { width:4px; }',
         '#opc-chat-msgs::-webkit-scrollbar-track { background:transparent; }',
-        '#opc-chat-msgs::-webkit-scrollbar-thumb { background:#d4a853;border-radius:2px; }',
+        '#opc-chat-msgs::-webkit-scrollbar-thumb { background:#86868b;border-radius:2px; }',
         '@media (max-width:860px) { #opc-chat-btn { right:8px !important; } #opc-chat-panel { width:calc(100vw - 32px);right:8px !important;bottom:84px;max-height:420px; } }'
       ].join('\n');
       document.head.appendChild(style);
@@ -169,7 +169,7 @@
       // Convert URLs to clickable links
       escaped = escaped.replace(
         /(https?:\/\/[\w./?=&#%+\-~@!*(),;:]+)/g,
-        '<a href="$1" target="_blank" rel="noopener" style="color:#d4a853;text-decoration:underline;">$1</a>'
+        '<a href="$1" target="_blank" rel="noopener" style="color:#1d1d1f;text-decoration:underline;">$1</a>'
       );
       return escaped;
     }
@@ -183,15 +183,15 @@
 
       var bubble = document.createElement('div');
       bubble.style.cssText = role === 'user' ? [
-        'background:linear-gradient(135deg,#1a365d,#2c5282);color:#fff;',
-        'padding:10px 14px;border-radius:18px 18px 4px 18px;',
+        'background:#1d1d1f;color:#fff;',
+        'padding:10px 14px;border-radius:12px 12px 4px 12px;',
         'max-width:85%;font-size:0.8125rem;line-height:1.55;',
         'word-break:break-word;'
       ].join('') : [
-        'background:#fff;color:#1a1a2e;',
-        'padding:10px 14px;border-radius:18px 18px 18px 4px;',
+        'background:#fff;color:#1d1d1f;',
+        'padding:10px 14px;border-radius:12px 12px 12px 4px;',
         'max-width:85%;font-size:0.8125rem;line-height:1.55;',
-        'border:1px solid #e8e4dc;',
+        'border:1px solid #e5e5e5;',
         'word-break:break-word;'
       ].join('');
 

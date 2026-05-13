@@ -27,7 +27,7 @@
     return DEFAULT;
   }
 
-  /* ---- 加载字典 ---- */
+  /* ---- 加载字典（异步，用于切换语言） ---- */
   function loadDictionary(lang) {
     return fetch(DICT_PATH + lang + ".json")
       .then(function (r) {
@@ -38,6 +38,21 @@
         console.warn("[i18n] Failed to load dictionary:", lang, e);
         return {};
       });
+  }
+
+  /* ---- 同步加载字典（用于初始化，确保 i18n 在 app.js 之前就绪） ---- */
+  function loadDictionarySync(lang) {
+    try {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", DICT_PATH + lang + ".json", false);
+      xhr.send();
+      if (xhr.status >= 200 && xhr.status < 300) {
+        return JSON.parse(xhr.responseText);
+      }
+    } catch(e) {
+      console.warn("[i18n] Sync load failed:", lang, e);
+    }
+    return {};
   }
 
   /* ---- 翻译 key（支持点号路径） ---- */
@@ -135,8 +150,13 @@
     /* 语言切换按钮 */
     var toggle = document.querySelector(".lang-toggle");
     if (toggle) {
-      toggle.textContent = "中 / EN";
+      toggle.textContent = currentLang === "zh" ? "EN" : "中文";
     }
+
+    /* 通知其他脚本语言已就绪 */
+    try {
+      window.dispatchEvent(new CustomEvent("i18n-ready", { detail: { lang: currentLang } }));
+    } catch(e) {}
 
     removeNoFlashCSS();
     isReady = true;
@@ -150,33 +170,30 @@
   function switchLang(lang) {
     if (lang === currentLang) return Promise.resolve();
     if (SUPPORTED.indexOf(lang) === -1) lang = DEFAULT;
-    currentLang = lang;
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (e) {}
-    return loadDictionary(lang).then(function (dict) {
-      dictionary = dict;
-      updateDOM();
-    });
+    // 重新加载页面以确保所有动态内容以新语言渲染
+    window.location.reload();
   }
 
   /* ---- 初始化 ---- */
   function init() {
     currentLang = detectLang();
     injectNoFlashCSS();
-    loadDictionary(currentLang).then(function (dict) {
-      dictionary = dict;
-      updateDOM();
 
-      /* 绑定切换按钮（事件委托，支持动态生成） */
-      document.addEventListener("click", function (e) {
-        var toggle = e.target.closest(".lang-toggle");
-        if (toggle) {
-          e.preventDefault();
-          var next = currentLang === "zh" ? "en" : "zh";
-          switchLang(next);
-        }
-      });
+    // 同步加载当前语言字典，确保在 app-core.js/app.js 之前就绪
+    dictionary = loadDictionarySync(currentLang);
+    updateDOM();
+
+    /* 绑定切换按钮（事件委托，支持动态生成） */
+    document.addEventListener("click", function (e) {
+      var toggle = e.target.closest(".lang-toggle");
+      if (toggle) {
+        e.preventDefault();
+        var next = currentLang === "zh" ? "en" : "zh";
+        switchLang(next);
+      }
     });
   }
 
