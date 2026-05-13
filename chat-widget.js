@@ -47,7 +47,7 @@
     btn.textContent = isEn ? 'AI' : 'AI客服';
     btn.title = isEn ? 'AI Assistant' : '点我提问，秒回';
     btn.style.cssText = [
-      'position:fixed;bottom:88px;left:24px;z-index:9998;',
+      'position:fixed;bottom:88px;left:max(16px, calc((100vw - 760px) / 2));z-index:9998;',
       'padding:10px 18px;border-radius:24px;',
       'background:linear-gradient(135deg,#1a365d,#2c5282);',
       'color:#d4a853;border:2px solid #d4a853;',
@@ -64,7 +64,7 @@
     var panel = document.createElement('div');
     panel.id = 'opc-chat-panel';
     panel.style.cssText = [
-      'display:none;position:fixed;bottom:92px;left:24px;z-index:9999;',
+      'display:none;position:fixed;bottom:92px;left:max(16px, calc((100vw - 760px) / 2));z-index:9999;',
       'width:360px;max-width:calc(100vw - 48px);max-height:520px;',
       'background:#fff;border-radius:16px;',
       'box-shadow:0 8px 40px rgba(0,0,0,0.18);',
@@ -155,7 +155,7 @@
         '#opc-chat-msgs::-webkit-scrollbar { width:4px; }',
         '#opc-chat-msgs::-webkit-scrollbar-track { background:transparent; }',
         '#opc-chat-msgs::-webkit-scrollbar-thumb { background:#d4a853;border-radius:2px; }',
-        '@media (max-width:480px) { #opc-chat-panel { width:calc(100vw - 40px);left:20px;bottom:84px;max-height:420px; } }'
+        '@media (max-width:860px) { #opc-chat-btn { left:16px !important; } #opc-chat-panel { width:calc(100vw - 32px);left:16px !important;bottom:84px;max-height:420px; } }'
       ].join('\n');
       document.head.appendChild(style);
     }

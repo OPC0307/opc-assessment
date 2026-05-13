@@ -268,7 +268,7 @@ function injectWeChatQR() {
   floatBtn.id = "wechat-float";
   floatBtn.innerHTML = "💬";
   floatBtn.title = isEn ? "Add on WeChat" : "加微信咨询";
-  floatBtn.style.cssText = "position:fixed;bottom:24px;right:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#07c160,#06ad56);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 16px rgba(7,193,96,0.35);transition:transform var(--duration-fast) var(--ease-out);display:flex;align-items:center;justify-content:center;";
+  floatBtn.style.cssText = "position:fixed;bottom:24px;right:max(16px, calc((100vw - 760px) / 2));z-index:9999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#07c160,#06ad56);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 16px rgba(7,193,96,0.35);transition:transform var(--duration-fast) var(--ease-out);display:flex;align-items:center;justify-content:center;";
   floatBtn.addEventListener("mouseenter", function() { this.style.transform = "scale(1.1)"; });
   floatBtn.addEventListener("mouseleave", function() { this.style.transform = "scale(1)"; });
 
@@ -327,6 +327,14 @@ function injectWeChatQR() {
 
   document.body.appendChild(floatBtn);
   document.body.appendChild(overlay);
+
+  // Mobile fallback: reset to edge positioning
+  if (!document.getElementById('wechat-float-style')) {
+    var ws = document.createElement('style');
+    ws.id = 'wechat-float-style';
+    ws.textContent = '@media (max-width:860px) { #wechat-float { right:16px !important; } }';
+    document.head.appendChild(ws);
+  }
 }
 
 
