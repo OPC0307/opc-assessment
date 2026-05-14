@@ -11,10 +11,11 @@
   <meta name="keywords" content="OPC,one person company,China business registration,sole proprietor China,startup assessment,expat business China,AI entrepreneurship">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fhopc.top/en/">
-  <link rel="alternate" hreflang="zh" href="https://fhopc.top/">
+  
   <link rel="alternate" hreflang="en" href="https://fhopc.top/en/">
+  <link rel="alternate" hreflang="zh" href="https://fhopc.top/">
 
-  <meta property="og:site_name" content="OPC Incubator">
+  <meta property="og:site_name" content="OPC One-Person Company Incubator">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fhopc.top/en/">
@@ -64,22 +65,20 @@
 </head>
 <body data-page="index">
 
-<!-- ============ Nav ============ -->
 <nav class="site-nav" id="site-nav">
   <div class="site-nav__inner">
     <a href="/en/" class="site-nav__brand">OPC</a>
     <div class="site-nav__links">
-      <a href="/profile.html">Assessment</a>
-      <a href="/subsidy/">Subsidies</a>
-      <a href="/services/">Services</a>
-      <a href="/blog/">Blog</a>
+      <a href="/en/quiz.html">Assessment</a>
+      <a href="/en/subsidy/">Subsidies</a>
+      <a href="/en/services/">Services</a>
+      <a href="/en/blog/">Blog</a>
       <a href="/en/about.html">About</a>
     </div>
     <a href="/" class="lang-toggle">中文</a>
   </div>
 </nav>
 
-<!-- ============ Hero ============ -->
 <section class="fw-hero">
   <div class="fw-inner">
     <h1 class="fw-hero__title">One Person Company<br>Incubator</h1>
@@ -89,154 +88,88 @@
   </div>
 </section>
 
-
-
-
-<!-- ============ Value Props (EN) ============ -->
-<section class="fw-section">
+<section class="fw-data">
   <div class="fw-inner">
-    <h2 class="fw-services__head">Why OPC in China?</h2>
-    <p class="fw-services__sub">A legal business structure designed for solo entrepreneurs</p>
-    <div class="service-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="fw-data__grid">
       <div>
-        <div class="service-card__num">🏢</div>
-        <div class="service-card__title">Lowest Barrier</div>
-        <div class="service-card__desc">Start with minimal capital requirements and streamlined registration.</div>
+        <div class="fw-data__num"><span class="stat-count" id="realtime-stat">2,040</span></div>
+        <div class="fw-data__label">' + c.city + ' · ' + c.role + '</div>
       </div>
-      <div>
-        <div class="service-card__num">💰</div>
-        <div class="service-card__title">Government Subsidies</div>
-        <div class="service-card__desc">Qualify for local subsidies up to ¥60,000 based on your city and industry.</div>
-      </div>
-      <div>
-        <div class="service-card__num">⚡</div>
-        <div class="service-card__title">Fast Setup</div>
-        <div class="service-card__desc">Complete registration in as little as 2-3 weeks with the right guidance.</div>
-      </div>
-      <div>
-        <div class="service-card__num">🌍</div>
-        <div class="service-card__title">Foreigner-Friendly</div>
-        <div class="service-card__desc">Legal pathways available for foreign nationals to establish OPCs in China.</div>
-      </div>
+      <div><div class="fw-data__num">' + c.income + '</div><div class="fw-data__label">' + c.desc + '</div></div>
+      <div><div class="fw-data__num">⚡</div><div class="fw-data__label">Fast Setup</div></div>
+      <div><div class="fw-data__num">🌍</div><div class="fw-data__label">Foreigner-Friendly</div></div>
     </div>
   </div>
 </section>
 
-
-<!-- ============ Cases ============ -->
 <section class="fw-section">
   <div class="fw-inner">
-    <h2 class="fw-cases__head">Industry Cases</h2>
-    <div class="case-grid" id="case-grid"></div>
-  </div>
-</section>
-
-<!-- ============ Services ============ -->
-<section class="fw-section">
-  <div class="fw-inner">
-    <h2 class="fw-services__head">Infrastructure</h2>
-    <p class="fw-services__sub">Completing the free assessment is the only prerequisite for using our services. 92% of people don't need our services — they get their answers during the assessment. The remaining 8% need a more efficient path than going it alone.</p>
-    <div class="service-grid">
-      <div>
-        <div class="service-card__num">01</div>
-        <div class="service-card__title">OPC Fit Assessment</div>
-        <div class="service-card__price">Free</div>
-        <div class="service-card__desc">6 dimensions · 15 minutes. Find out if your track is right for you.</div>
-        <a href="/profile.html" class="service-card__link">Start →</a>
-      </div>
-      <div>
-        <div class="service-card__num">02</div>
-        <div class="service-card__title">OPC Launch Pack</div>
-        <div class="service-card__price">¥399</div>
-        <div class="service-card__desc">Industry report · path planning · subsidy SOP · toolkit. The price of one market report, or one-tenth the cost of heading in the wrong direction.</div>
-        <a href="/checkout.html" class="service-card__link">Get It →</a>
-      </div>
-      <div>
-        <div class="service-card__num">03</div>
-        <div class="service-card__title">Deep Incubation</div>
-        <div class="service-card__price">¥999 / 3 months</div>
-        <div class="service-card__desc">Track diagnosis · system setup · monthly review · subsidy processing. For those with direction who need an execution system.</div>
-        <a href="/checkout.html" class="service-card__link">Learn More →</a>
-      </div>
+    <h2 class="fw-section__title">Industry Cases</h2>
+    <div class="fw-services-grid">
+      <a href="/profile.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">01</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">OPC Fitness Assessment</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">OPC Fit Assessment</div>
+        <span style="font-size:0.75rem;color:#86868b;">Start →</span>
+      </a>
+      <a href="/subsidy/" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">02</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">6 dimensions · 15 minutes. Find out if your track is right for you.</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">Industry report, roadmap, subsidy SOP, toolkit</div>
+        <span style="font-size:0.75rem;color:#86868b;">Get →</span>
+      </a>
+      <a href="/services/" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">03</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">¥399</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">Industry report · path planning · subsidy SOP · toolkit. The price of one market report, or one-tenth the cost of heading in the wrong direction.</div>
+        <span style="font-size:0.75rem;color:#86868b;">Learn →</span>
+      </a>
     </div>
   </div>
 </section>
 
-
-<!-- ============ FAQ (EN) ============ -->
 <section class="fw-section">
   <div class="fw-inner">
-    <h2 class="fw-services__head">What You Need to Know About OPC</h2>
-    <div style="max-width:760px;margin:0 auto;">
-      <div style="margin-bottom:32px;border-bottom:1px solid #e5e5e5;padding-bottom:24px;">
-        <h3 style="font-size:1.0625rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">What is a One-Person Company (OPC)?</h3>
-        <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.7;">A One-Person Company (OPC) is the hottest entrepreneurial trend of 2026. One person, empowered by AI tools and automation systems, independently executes what traditionally required a full team. From freelancing and side hustles to full-time entrepreneurship, OPC is becoming the choice of millions. Covered by People's Daily and 36Kr.</p>
-      </div>
-      <div style="margin-bottom:32px;border-bottom:1px solid #e5e5e5;padding-bottom:24px;">
-        <h3 style="font-size:1.0625rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">Am I Suited to Be a One-Person Company?</h3>
-        <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.7;">Not everyone is cut out for independent business. The OPC Assessment evaluates your fitness across 6 dimensions — Decision-Making, Resource Integration, Risk Resilience, Brand Building, Systems Operations, Continuous Learning. Complete the test in 15 minutes and receive your personalized assessment report and action roadmap. Over 1,000 people have used it to upgrade their self-awareness.</p>
-      </div>
-      <div style="margin-bottom:32px;border-bottom:1px solid #e5e5e5;padding-bottom:24px;">
-        <h3 style="font-size:1.0625rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">What Businesses Can an OPC Run?</h3>
-        <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.7;">OPC businesses span a wide range: AI content creation, personal branding, digital products, e-commerce dropshipping, social media management, consulting, and more. Based on your capability profile, OPC recommends your top 3 business tracks with a 30-day actionable SOP plan.</p>
-      </div>
+    <h2 class="fw-section__title">Industry Cases</h2>
+    <div class="fw-services-grid">
+      <a href="/cases.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">01</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">Deep Incubation</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">¥999 / 3 months</div>
+        <span style="font-size:0.75rem;color:#86868b;">Full Case →</span>
+      </a>
+      <a href="/services/process.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">02</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">Shanghai · UI Designer</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">From layoff to monthly retainer contracts</div>
+        <span style="font-size:0.75rem;color:#86868b;">Full Case →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA Banner (EN) ============ -->
-<section class="fw-section" style="text-align:center;">
-  <div class="fw-inner" style="background:linear-gradient(135deg,#0d1b2a,#1b263b);padding:48px 40px;">
-    <h2 style="color:#d4af27;font-size:1.5rem;font-weight:600;margin-bottom:12px;letter-spacing:-0.02em;">Find Out If OPC Is Right for You</h2>
-    <p style="color:#a0aec0;font-size:1rem;margin-bottom:24px;">15 questions, 9 dimensions, instant results</p>
-    <a href="/profile.html" class="fw-hero__cta" style="display:inline-block;">Start Assessment — It's Free</a>
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 class="fw-section__title">Find Out If OPC Is Right for You</h2>
+    <div class="trust-compact">OPC Incubator | fhopc.top | Assess → Launch → Incubate &nbsp;&nbsp;&nbsp;</div>
   </div>
 </section>
 
+<section class="fw-section">
+  <div class="fw-inner">
+    <div style="background:#1d1d1f;padding:48px 40px;text-align:left;">
+      <h3 style="font-size:1.375rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.02em;">Why OPC in China?</h3>
+      <p style="font-size:0.9375rem;color:#86868b;margin-bottom:24px;line-height:1.6;">Free assessment, about three minutes</p>
+      <a href="/profile.html" style="display:inline-block;background:#fff;color:#1d1d1f;padding:12px 28px;font-size:0.9375rem;font-weight:600;text-decoration:none;">Start Assessment</a>
+    </div>
+  </div>
+</section>
 
-<!-- ============ Footer ============ -->
 <footer class="fw-footer">
   <div class="fw-inner">
-    OPC Incubator | fhopc.top | Assess → Launch → Incubate
-    &nbsp;&nbsp;&nbsp;<a href="/en/about.html">About OPC</a> <span class="fw-footer__sep">|</span> <a href="/en/privacy.html">Privacy Policy</a>
+    OPC Incubator <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/en/">Home</a> <span class="fw-footer__sep">|</span> <a href="/en/privacy.html">Privacy Policy</a>
   </div>
 </footer>
-
-<!-- ============ Case Data + Render ============ -->
-<script>
-(function(){
-
-
-  var CASES = [
-    {city:"Shenzhen",role:"Contractor",track:"Independent Renovation",income:"$200-400/mo",desc:"Left agency to take independent projects. Key: property channel + subsidies.",slug:"decoration"},
-    {city:"Shanghai",role:"UI Designer",track:"AI Product UI",income:"$200-300/mo",desc:"From layoff to monthly retainer. Key: content model + pricing strategy.",slug:"ui-design"},
-    {city:"Chengdu",role:"Content Creator",track:"Industry Analysis Channel",income:"$100-200/mo",desc:"One-person niche channel with ads + paid subscriptions.",slug:"content-ops"},
-    {city:"Hangzhou",role:"E-commerce",track:"Single-Product Distribution",income:"$150-400/mo",desc:"Managing 3 product supply chains solo, 1688 dropship model.",slug:"ecommerce"},
-    {city:"Guangzhou",role:"Photographer",track:"Product Photography",income:"$150-350/mo",desc:"Solo e-commerce product shoots, AI-assisted editing.",slug:"photography"},
-    {city:"Beijing",role:"Translator",track:"Niche Localization",income:"$100-200/mo",desc:"Serving 3 overseas teams. Key: toolchain efficiency.",slug:"translation"},
-    {city:"Wuhan",role:"Developer",track:"AI Workflow Templates",income:"$300-700/mo",desc:"Packaging industry workflow templates for Gumroad and domestic platforms.",slug:"developer"},
-    {city:"Nanjing",role:"Accountant",track:"Solo Bookkeeping",income:"$80-160/mo",desc:"Monthly bookkeeping for sole proprietors. Key: batch acquisition.",slug:"accounting"},
-    {city:"Suzhou",role:"Coach",track:"Online Private Coaching",income:"$150-300/mo",desc:"Fitness coach goes online: recorded courses + community.",slug:"coaching"},
-    {city:"Chongqing",role:"Realtor",track:"Independent Consulting",income:"$150-400/mo",desc:"Left platform to do independent housing consulting.",slug:"realestate"},
-    {city:"Xi'an",role:"Craftsperson",track:"Custom Gift E-commerce",income:"$70-200/mo",desc:"Design + orders + shipping solo. AI-assisted design expansion.",slug:"crafts"},
-    {city:"Changsha",role:"Video Editor",track:"Short-Video Agency",income:"$100-300/mo",desc:"Short video clipping for merchants, per-item or monthly billing.",slug:"video-editing"},
-    {city:"Qingdao",role:"Trade Agent",track:"Cross-Border Sourcing",income:"$150-300/mo",desc:"Connecting factories with overseas buyers as sole proprietor.",slug:"trading"},
-    {city:"Xiamen",role:"Nutritionist",track:"Meal Plan Subscription",income:"$80-160/mo",desc:"Custom meal plans with AI-generated personalized menus.",slug:"nutrition"},
-    {city:"Kunming",role:"Travel Designer",track:"Niche Travel Routes",income:"$70-200/mo",desc:"Designing niche routes solo. XiaoHongShu for discovery, WeChat for sales.",slug:"travel"}
-  ];
-
-
-  var shuffled = CASES.slice().sort(function(){ return Math.random() - 0.5; });
-  var picked = shuffled.slice(0, 3);
-  var grid = document.getElementById('case-grid');
-  var html = '';
-  for (var i = 0; i < picked.length; i++) {
-    var c = picked[i];
-    html += '<a href="/cases/' + c.slug + '.html" class="case-card"><div class="case-card__meta">' + c.city + ' · ' + c.role + '</div><div class="case-card__track">' + c.track + '</div><div class="case-card__income">' + c.income + '</div><div class="case-card__desc">' + c.desc + '</div></a>';
-  }
-  grid.innerHTML = html;
-})();
-</script>
 
 <script src="/app-core.js"></script>
 </body>

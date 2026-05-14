@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{#if zh}}zh-CN{{/if}}{{#if en}}en{{/if}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{t.services_index.title}}</title>
+  <meta name="description" content="{{t.services_index.meta_desc}}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{t.services_index.canonical}}">
+  <meta property="og:title" content="{{t.services_index.og_title}}">
+  <meta property="og:description" content="{{t.services_index.og_desc}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{t.services_index.og_url}}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="services-index">
+
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="{{t.nav.brand_url}}" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="{{t.nav.quiz_url}}">{{t.nav.quiz}}</a>
+      <a href="{{t.nav.subsidy_url}}">{{t.nav.subsidy}}</a>
+      <a href="{{t.nav.services_url}}">{{t.nav.services}}</a>
+      <a href="{{t.nav.blog_url}}">{{t.nav.blog}}</a>
+      <a href="{{t.nav.about_url}}">{{t.nav.about}}</a>
+    </div>
+    <a href="{{t.services_index.lang_switch_url}}" class="lang-toggle">{{t.services_index.lang_toggle}}</a>
+  </div>
+</nav>
+
+<section class="fw-hero" style="padding:100px 32px 80px;">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,4rem);">{{t.services_index.hero_title}}</h1>
+    <p class="fw-hero__sub">{{t.services_index.hero_sub}}</p>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+      <a href="registration.html" style="text-decoration:none;color:inherit;">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;margin-bottom:16px;">01</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.services_index.s1_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.services_index.s1_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.services_index.s1_cta}}</span>
+      </a>
+      <a href="subsidy.html" style="text-decoration:none;color:inherit;">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;margin-bottom:16px;">02</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.services_index.s2_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.services_index.s2_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.services_index.s2_cta}}</span>
+      </a>
+      <a href="tax-basics.html" style="text-decoration:none;color:inherit;">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;margin-bottom:16px;">03</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.services_index.s3_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.services_index.s3_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.services_index.s3_cta}}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="fw-footer">
+  <div class="fw-inner">
+    {{t.footer.brand}} <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="{{t.footer.home_url}}">{{t.footer.home}}</a> <span class="fw-footer__sep">|</span> <a href="{{t.footer.privacy_url}}">{{t.footer.privacy}}</a>
+  </div>
+</footer>
+
+<script src="/app-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="{{#if zh}}zh-CN{{/if}}{{#if en}}en{{/if}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/svg+xml" href="{{#if zh}}favicon.svg{{/if}}{{#if en}}/favicon.svg{{/if}}">
+  <link rel="stylesheet" href="{{#if zh}}style.css{{/if}}{{#if en}}/style.css{{/if}}">
+
+  <title>{{t.index.title}}</title>
+  <meta name="description" content="{{t.index.meta_desc}}">
+  <meta name="keywords" content="{{t.index.keywords}}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{t.index.canonical}}">
+  {{#if zh}}<link rel="alternate" hreflang="zh" href="https://fhopc.top/">
+  <link rel="alternate" hreflang="en" href="https://fhopc.top/en/">{{/if}}
+  {{#if en}}<link rel="alternate" hreflang="en" href="https://fhopc.top/en/">
+  <link rel="alternate" hreflang="zh" href="https://fhopc.top/">{{/if}}
+
+  <meta property="og:site_name" content="{{t.brand.og_site_name}}">
+  <meta property="og:locale" content="{{t.index.og_locale}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{t.index.og_url}}">
+  <meta property="og:title" content="{{t.index.og_title}}">
+  <meta property="og:description" content="{{t.index.og_desc}}">
+  <meta property="og:image" content="https://fhopc.top/assets/opc-qr-code.png">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{t.index.twitter_title}}">
+  <meta name="twitter:description" content="{{t.index.twitter_desc}}">
+  <meta name="twitter:image" content="https://fhopc.top/assets/opc-qr-code.png">
+
+  <style>
+    .hero-wrapper { margin-top: 24px; }
+    .service-link { text-decoration: none; color: inherit; display: block; }
+    .trust-compact { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin: 0 16px; }
+  </style>
+
+  <script type="application/ld+json">{{t.index.ld_website}}</script>
+  <script type="application/ld+json">{{t.index.ld_faq}}</script>
+  <script type="application/ld+json">{{t.index.ld_org}}</script>
+
+  <script>
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+</head>
+<body data-page="index">
+
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="{{t.nav.brand_url}}" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="{{t.nav.quiz_url}}">{{t.nav.quiz}}</a>
+      <a href="{{t.nav.subsidy_url}}">{{t.nav.subsidy}}</a>
+      <a href="{{t.nav.services_url}}">{{t.nav.services}}</a>
+      <a href="{{t.nav.blog_url}}">{{t.nav.blog}}</a>
+      <a href="{{t.nav.about_url}}">{{t.nav.about}}</a>
+    </div>
+    <a href="{{t.index.lang_switch_url}}" class="lang-toggle">{{t.index.lang_toggle}}</a>
+  </div>
+</nav>
+
+<section class="fw-hero">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title">{{t.index.hero_title}}</h1>
+    <p class="fw-hero__sub">{{t.index.hero_sub}}</p>
+    <a href="/profile.html" class="fw-hero__cta">{{t.index.hero_cta}}</a>
+    <div class="fw-hero__note">{{t.index.hero_note}}</div>
+  </div>
+</section>
+
+<section class="fw-data">
+  <div class="fw-inner">
+    <div class="fw-data__grid">
+      <div>
+        <div class="fw-data__num"><span class="stat-count" id="realtime-stat">2,040</span></div>
+        <div class="fw-data__label">{{t.index.stat_assessments}}</div>
+      </div>
+      <div><div class="fw-data__num">{{t.index.stat_cities}}</div><div class="fw-data__label">{{t.index.stat_cities_label}}</div></div>
+      <div><div class="fw-data__num">{{t.index.stat_rate}}</div><div class="fw-data__label">{{t.index.stat_rate_label}}</div></div>
+      <div><div class="fw-data__num">{{t.index.stat_income}}</div><div class="fw-data__label">{{t.index.stat_income_label}}</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 class="fw-section__title">{{t.index.services_heading}}</h2>
+    <div class="fw-services-grid">
+      <a href="/profile.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">01</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.index.service1_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.index.service1_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.index.service1_cta}}</span>
+      </a>
+      <a href="/subsidy/" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">02</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.index.service2_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.index.service2_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.index.service2_cta}}</span>
+      </a>
+      <a href="/services/" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">03</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.index.service3_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.index.service3_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.index.service3_cta}}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 class="fw-section__title">{{t.index.cases_heading}}</h2>
+    <div class="fw-services-grid">
+      <a href="/cases.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">01</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.index.case1_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.index.case1_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.index.case1_cta}}</span>
+      </a>
+      <a href="/services/process.html" class="service-link">
+        <div style="font-size:2rem;font-weight:300;color:#1d1d1f;line-height:1;">02</div>
+        <div style="font-size:1.125rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;">{{t.index.case2_title}}</div>
+        <div style="font-size:0.875rem;color:#6e6e73;line-height:1.6;margin-bottom:12px;">{{t.index.case2_desc}}</div>
+        <span style="font-size:0.75rem;color:#86868b;">{{t.index.case2_cta}}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 class="fw-section__title">{{t.index.trust_heading}}</h2>
+    <div class="trust-compact">{{t.index.trust_text}}</div>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <div style="background:#1d1d1f;padding:48px 40px;text-align:left;">
+      <h3 style="font-size:1.375rem;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.02em;">{{t.index.cta_title}}</h3>
+      <p style="font-size:0.9375rem;color:#86868b;margin-bottom:24px;line-height:1.6;">{{t.index.cta_desc}}</p>
+      <a href="/profile.html" style="display:inline-block;background:#fff;color:#1d1d1f;padding:12px 28px;font-size:0.9375rem;font-weight:600;text-decoration:none;">{{t.index.cta_button}}</a>
+    </div>
+  </div>
+</section>
+
+<footer class="fw-footer">
+  <div class="fw-inner">
+    {{t.footer.brand}} <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="{{t.footer.home_url}}">{{t.footer.home}}</a> <span class="fw-footer__sep">|</span> <a href="{{t.footer.privacy_url}}">{{t.footer.privacy}}</a>
+  </div>
+</footer>
+
+<script src="{{#if zh}}app-core.js{{/if}}{{#if en}}/app-core.js{{/if}}"></script>
+</body>
+</html>

@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <script src="i18n.js" defer></script>
+  
   <script>
   var _hmt = _hmt || [];
   (function(){
@@ -36,20 +36,34 @@
     s.parentNode.insertBefore(bp, s);
   })();
   </script>
+  
 </head>
 <body data-page="cases">
+
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="/quiz.html">测评</a>
+      <a href="/subsidy/">补贴查询</a>
+      <a href="/services/">服务</a>
+      <a href="/blog/">博客</a>
+      <a href="/about.html">关于</a>
+    </div>
+    <a href="/en/cases.html" class="lang-toggle">{{t.cases.lang_toggle}}</a>
+  </div>
+</nav>
 
 <section class="fw-hero" style="padding:100px 32px 80px;">
   <div class="fw-inner">
     <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">OPC 孵化档案</h1>
-    <p class="fw-hero__sub" style="font-size:1.125rem;color:#6e6e73;max-width:520px;line-height:1.7;">2个成功故事 + 1个失败教训。<br>真实数据，不加滤镜。看看哪条路离你最近。</p>
+    <p class="fw-hero__sub" style="font-size:1.125rem;color:#6e6e73;max-width:520px;line-height:1.7;">2个成功故事 + 1个失败教训。</p>
   </div>
 </section>
 
 <section class="fw-section">
   <div class="fw-inner" style="max-width:720px;">
 
-    <!-- Case 1: Success - 老周 -->
     <article style="border-top:1px solid #e5e5e5;padding:48px 0;">
       <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:#2e7d32;letter-spacing:0.06em;margin-bottom:16px;">SUCCESS</div>
       <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;letter-spacing:-0.02em;">深圳装修工长的补贴突围</h2>
@@ -63,28 +77,27 @@
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">背景</h3>
       <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">深圳装修行业干了12年工长，一直挂靠别人公司接活。2025年底被挂靠方抽走15%还拖欠结款。2026年1月自己注册了个体工商户，但没业务。手里有3个正在谈的业主，都没谈下来。</p>
-      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;"><strong style="color:#1d1d1f;">赛道数据：</strong>深圳住建局2025年报告，全市注册装修工长个体户约4,200户，月均产值¥5-8万占比不到15%，大部分¥2万以下。装修行业工长90%挂靠公司，公司抽走10-20%。</p>
+      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">在深圳做了8年装修工长</p>
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">OPC介入做了什么</h3>
       <ul style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;margin-bottom:16px;">
-        <li><strong style="color:#1d1d1f;">测评画像</strong> — 执行力极强（89%），但渠道完全依赖老客户转介绍，无线上获客能力</li>
-        <li><strong style="color:#1d1d1f;">赛道建议</strong> — 不走小红书/抖音。走微信私域+物业合作路线——装修行业90%客源来自熟人介绍和物业推荐</li>
-        <li><strong style="color:#1d1d1f;">补贴申请</strong> — 深圳个体户社保补贴（¥890/月）+ 创业场租补贴（¥1,560/月），一年¥29,400。老周自己不知道有这东西</li>
-        <li><strong style="color:#1d1d1f;">获客方式</strong> — 做了一个微信名片页（姓名+资历+完工照片+业主评价二维码），替换传统纸质名片</li>
+        <li>{<strong style="color:#1d1d1f;">测评画像</strong> — 执行力极强（89%），但渠道完全依赖老客户转介绍，无线上获客能力}</li>
+        <li>{<strong style="color:#1d1d1f;">赛道建议</strong> — 不走小红书/抖音。走微信私域+物业合作路线——装修行业90%客源来自熟人介绍和物业推荐}</li>
+        <li>{<strong style="color:#1d1d1f;">补贴申请</strong> — 深圳个体户社保补贴（¥890/月）+ 创业场租补贴（¥1,560/月），一年¥29,400。老周自己不知道有这东西}</li>
+        <li>{<strong style="color:#1d1d1f;">获客方式</strong> — 做了一个微信名片页（姓名+资历+完工照片+业主评价二维码），替换传统纸质名片}</li>
       </ul>
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">结果</h3>
       <ul style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;margin-bottom:16px;">
-        <li>补贴：2026年3月首次申请通过，4月第一笔¥2,450到账</li>
-        <li>业务：通过物业合作（10%介绍费），3个月新签6单，总额¥18万</li>
+        <li>{补贴：2026年3月首次申请通过，4月第一笔¥2,450到账}</li>
+        <li>{业务：通过物业合作（10%介绍费），3个月新签6单，总额¥18万}</li>
       </ul>
 
       <blockquote style="border-left:2px solid #1d1d1f;padding-left:20px;margin:24px 0;color:#6e6e73;font-style:italic;font-size:0.9375rem;line-height:1.7;">"补贴那几千块其实不是大头，但让我知道——原来这些东西是可以系统搞的。以前就是蒙头干，干一天算一天。"</blockquote>
 
-      <p style="font-size:0.875rem;color:#86868b;"><strong style="color:#1d1d1f;">OPC投入：</strong>材料梳理3小时 + 物业话术设计2小时 = 5小时。之后老周自己跑。</p>
+      <p style="font-size:0.875rem;color:#86868b;">2026年1月</p>
     </article>
 
-    <!-- Case 2: Success - 小林 -->
     <article style="border-top:1px solid #e5e5e5;padding:48px 0;">
       <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:#2e7d32;letter-spacing:0.06em;margin-bottom:16px;">SUCCESS</div>
       <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;letter-spacing:-0.02em;">上海UI设计师的内容模型翻身</h2>
@@ -98,29 +111,28 @@
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">背景</h3>
       <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">上海某互联网公司UI设计师，2025年底被裁。赔偿金N+1，手头¥12万存款。想自己接UI外包，但发了30多份作品集到各个平台，只收到2个询盘，都没成。存款在烧，每天刷Boss直聘和猪八戒。</p>
-      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;"><strong style="color:#1d1d1f;">赛道数据：</strong>2026年Q1中国新注册AI创业公司1,200+家（企查查），75%在找UI设计。大团队报价¥5万+他们给不起，个体UI设计师正好切入。</p>
+      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">在上海做了5年UI设计师</p>
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">OPC介入做了什么</h3>
       <ul style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;margin-bottom:16px;">
-        <li><strong style="color:#1d1d1f;">测评画像</strong> — 专业能力极强（92%），但完全不懂获客和销售（23%）。典型手艺人思维</li>
-        <li><strong style="color:#1d1d1f;">赛道定位</strong> — 不接猪八戒低价单。定位：AI产品UI设计（2026年最缺方向）。客单价¥3,500起步</li>
-        <li><strong style="color:#1d1d1f;">内容模型</strong> — 选题方向：每天拆一个AI产品UI问题（小红书+B站）。输出节奏：每周3条拆解+1条工作流+1条资源。转化路径：评论区→私信→作品集PDF→约电话→报价</li>
-        <li><strong style="color:#1d1d1f;">报价策略</strong> — 新客试单不打折但送图标库、复购9折、月费8折</li>
-        <li><strong style="color:#1d1d1f;">AI工具链</strong> — 教用Midjourney+Claude辅助出稿，3天变6小时</li>
+        <li>{<strong style="color:#1d1d1f;">测评画像</strong> — 专业能力极强（92%），但完全不懂获客和销售（23%）。典型手艺人思维}</li>
+        <li>{<strong style="color:#1d1d1f;">赛道定位</strong> — 不接猪八戒低价单。定位：AI产品UI设计（2026年最缺方向）。客单价¥3,500起步}</li>
+        <li>{<strong style="color:#1d1d1f;">内容模型</strong> — 选题方向：每天拆一个AI产品UI问题（小红书+B站）。输出节奏：每周3条拆解+1条工作流+1条资源。转化路径：评论区→私信→作品集PDF→约电话→报价}</li>
+        <li>{<strong style="color:#1d1d1f;">报价策略</strong> — 新客试单不打折但送图标库、复购9折、月费8折}</li>
+        <li>{<strong style="color:#1d1d1f;">AI工具链</strong> — 教用Midjourney+Claude辅助出稿，3天变6小时}</li>
       </ul>
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">结果</h3>
       <ul style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;margin-bottom:16px;">
-        <li>第1个月：0单（内容账号积累期，正常）</li>
-        <li>第2个月：8个私信询盘，成交3单，单均¥3,500</li>
-        <li>第3个月：12个询盘，成交6单，签了一家AI创业公司月度合作¥12,000/月</li>
-        <li>月收入从0到稳定¥15,000-20,000</li>
+        <li>{第1个月：0单（内容账号积累期，正常）}</li>
+        <li>{第2个月：8个私信询盘，成交3单，单均¥3,500}</li>
+        <li>{第3个月：12个询盘，成交6单，签了一家AI创业公司月度合作¥12,000/月}</li>
+        <li>{月收入从0到稳定¥15,000-20,000}</li>
       </ul>
 
-      <p style="font-size:0.875rem;color:#86868b;"><strong style="color:#1d1d1f;">OPC投入：</strong>内容模型设计3小时 + 报价策略1小时 + 月度复盘（每次30分钟）= 约6小时前期 + 每月2小时跟进。</p>
+      <p style="font-size:0.875rem;color:#86868b;">2026年3月</p>
     </article>
 
-    <!-- Case 3: Failure - 阿强 -->
     <article style="border-top:1px solid #e5e5e5;padding:48px 0;">
       <div style="display:inline-block;font-size:0.6875rem;font-weight:600;color:#c62828;letter-spacing:0.06em;margin-bottom:16px;">FAILURE</div>
       <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:8px;letter-spacing:-0.02em;">他想做"一人公司导师"，但没人买单</h2>
@@ -134,16 +146,16 @@
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">背景</h3>
       <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">成都，之前在某付费社群做运营。2026年初辞职，想做"一人公司导师"——教别人做一人公司。知乎80粉，微信200人，没有任何产品。想先收¥9,999的"IP陪跑"。</p>
-      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;"><strong style="color:#1d1d1f;">赛道数据：</strong>知识付费2025年规模¥2,200亿。小红书搜索"一人公司+导师"有3.2万篇笔记。90%的"一人公司导师"自己没做成过一人公司。</p>
+      <p style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;margin-bottom:12px;">在成都做了3年内容运营</p>
 
       <h3 style="font-size:1rem;font-weight:600;color:#1d1d1f;margin:24px 0 8px;">时间线</h3>
       <ul style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;margin-bottom:16px;">
-        <li><strong style="color:#1d1d1f;">第0个月：</strong>辞职，发3条朋友圈"咨询¥9,999/人"，回复：0</li>
-        <li><strong style="color:#1d1d1f;">第1个月：</strong>发知乎"一人公司10大误区"，阅读量37。发了3篇停更</li>
-        <li><strong style="color:#1d1d1f;">第2个月：</strong>开始卖¥9.9"创业资料包"（网上搜集的公开信息），卖了17份，收入¥168。有2个人在评论区骂"割韭菜"</li>
-        <li><strong style="color:#1d1d1f;">第3个月：</strong>开始借网贷¥3,000→¥5,000→¥4,000</li>
-        <li><strong style="color:#1d1d1f;">第4个月：</strong>注销执照，投简历</li>
-        <li><strong style="color:#1d1d1f;">第5个月：</strong>回老本行做社群运营，工资¥8,000。再也不提"创业"俩字</li>
+        <li>{<strong style="color:#1d1d1f;">第0个月：</strong>辞职，发3条朋友圈"咨询¥9,999/人"，回复：0}</li>
+        <li>{<strong style="color:#1d1d1f;">第1个月：</strong>发知乎"一人公司10大误区"，阅读量37。发了3篇停更}</li>
+        <li>{<strong style="color:#1d1d1f;">第2个月：</strong>开始卖¥9.9"创业资料包"（网上搜集的公开信息），卖了17份，收入¥168。有2个人在评论区骂"割韭菜"}</li>
+        <li>{<strong style="color:#1d1d1f;">第3个月：</strong>开始借网贷¥3,000→¥5,000→¥4,000}</li>
+        <li>{<strong style="color:#1d1d1f;">第4个月：</strong>注销执照，投简历}</li>
+        <li>{<strong style="color:#1d1d1f;">第5个月：</strong>回老本行做社群运营，工资¥8,000。再也不提"创业"俩字}</li>
       </ul>
 
       <div style="border:1px solid #e5e5e5;padding:24px;margin:24px 0;">
@@ -185,15 +197,14 @@
       <blockquote style="border-left:2px solid #c62828;padding-left:20px;margin:24px 0;color:#6e6e73;font-style:italic;font-size:0.9375rem;line-height:1.7;">"不是你们的问题。是我自己的问题。我以为知道怎么做就等于能做。其实知道和做之间差的是TM一个太平洋。"</blockquote>
     </article>
 
-    <!-- Lessons -->
     <div style="border-top:1px solid #e5e5e5;padding:48px 0;">
       <h2 style="font-size:1.375rem;font-weight:600;color:#1d1d1f;margin-bottom:20px;letter-spacing:-0.02em;">这3个案例教会我们什么</h2>
       <ol style="font-size:0.9375rem;color:#6e6e73;line-height:1.8;padding-left:20px;">
-        <li style="margin-bottom:8px;"><strong style="color:#1d1d1f;">赛道比努力重要。</strong>老周选对了获客路径（物业合作），小林选对了赛道定位（AI产品UI），阿强选了一个自己不配做的赛道。</li>
-        <li style="margin-bottom:8px;"><strong style="color:#1d1d1f;">现金储备是氧气。</strong>¥3万撑3个月大概率不够。OPC建议：至少存6个月生活费再启动。</li>
-        <li style="margin-bottom:8px;"><strong style="color:#1d1d1f;">工具可以给，执行力给不了。</strong>同样的内容模型，小林执行了，阿强写了1篇就停了。</li>
-        <li style="margin-bottom:8px;"><strong style="color:#1d1d1f;">先做，再教。</strong>没有实战经历的"导师"是空中楼阁。如果你也想做教育/咨询——先自己跑通一个业务。</li>
-        <li style="margin-bottom:8px;"><strong style="color:#1d1d1f;">OPC不接没产品/服务基础的人。</strong>阿强的教训让我们清晰了边界：不是所有人都适合独立经营，先测评再决定。</li>
+        <li style="margin-bottom:8px;">{<strong style="color:#1d1d1f;">赛道比努力重要。</strong>老周选对了获客路径（物业合作），小林选对了赛道定位（AI产品UI），阿强选了一个自己不配做的赛道。}</li>
+        <li style="margin-bottom:8px;">{<strong style="color:#1d1d1f;">现金储备是氧气。</strong>¥3万撑3个月大概率不够。OPC建议：至少存6个月生活费再启动。}</li>
+        <li style="margin-bottom:8px;">{<strong style="color:#1d1d1f;">工具可以给，执行力给不了。</strong>同样的内容模型，小林执行了，阿强写了1篇就停了。}</li>
+        <li style="margin-bottom:8px;">{<strong style="color:#1d1d1f;">先做，再教。</strong>没有实战经历的"导师"是空中楼阁。如果你也想做教育/咨询——先自己跑通一个业务。}</li>
+        <li style="margin-bottom:8px;">{<strong style="color:#1d1d1f;">OPC不接没产品/服务基础的人。</strong>阿强的教训让我们清晰了边界：不是所有人都适合独立经营，先测评再决定。}</li>
       </ol>
     </div>
 

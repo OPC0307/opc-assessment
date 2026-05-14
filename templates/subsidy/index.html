@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{#if zh}}zh-CN{{/if}}{{#if en}}en{{/if}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{t.subsidy_index.title}}</title>
+  <meta name="description" content="{{t.subsidy_index.meta_desc}}">
+  <meta name="keywords" content="{{t.subsidy_index.keywords}}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{t.subsidy_index.canonical}}">
+  <meta property="og:title" content="{{t.subsidy_index.og_title}}">
+  <meta property="og:description" content="{{t.subsidy_index.og_desc}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{t.subsidy_index.og_url}}">
+  <meta property="og:site_name" content="{{t.brand.og_site_name}}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{t.subsidy_index.twitter_title}}">
+  <meta name="twitter:description" content="{{t.subsidy_index.twitter_desc}}">
+  <script type="application/ld+json">{{t.subsidy_index.ld_webpage}}</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  {{#if zh}}
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
+    else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+  {{/if}}
+</head>
+<body data-page="subsidy">
+
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="{{t.nav.brand_url}}" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="{{t.nav.quiz_url}}">{{t.nav.quiz}}</a>
+      <a href="{{t.nav.subsidy_url}}">{{t.nav.subsidy}}</a>
+      <a href="{{t.nav.services_url}}">{{t.nav.services}}</a>
+      <a href="{{t.nav.blog_url}}">{{t.nav.blog}}</a>
+      <a href="{{t.nav.about_url}}">{{t.nav.about}}</a>
+    </div>
+    <a href="{{t.subsidy_index.lang_switch_url}}" class="lang-toggle">{{t.subsidy_index.lang_toggle}}</a>
+  </div>
+</nav>
+
+<section class="fw-hero" style="padding:100px 32px 80px;">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,4rem);">{{t.subsidy_index.hero_title}}</h1>
+    <p class="fw-hero__sub">{{t.subsidy_index.hero_sub}}</p>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:20px;letter-spacing:-0.02em;">{{t.subsidy_index.national_heading}}</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px;">
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">{{t.subsidy_index.nat1_title}}</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">{{t.subsidy_index.nat1_desc}}</div>
+      </div>
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">{{t.subsidy_index.nat2_title}}</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">{{t.subsidy_index.nat2_desc}}</div>
+      </div>
+      <div style="padding:16px 20px;border:1px solid #e5e5e5;">
+        <div style="font-size:0.9375rem;font-weight:600;color:#1d1d1f;margin-bottom:4px;">{{t.subsidy_index.nat3_title}}</div>
+        <div style="font-size:0.8125rem;color:#6e6e73;line-height:1.5;">{{t.subsidy_index.nat3_desc}}</div>
+      </div>
+    </div>
+
+    <h2 style="font-size:1.5rem;font-weight:600;color:#1d1d1f;margin-bottom:20px;letter-spacing:-0.02em;">{{t.subsidy_index.city_heading}}</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:48px;">
+      <a href="city/shenzhen.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #1d1d1f;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_shenzhen}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_shenzhen_max}}</span></a>
+      <a href="city/suzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #1d1d1f;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_suzhou}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_suzhou_max}}</span></a>
+      <a href="city/guangzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_guangzhou}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_guangzhou_max}}</span></a>
+      <a href="city/shanghai.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_shanghai}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_shanghai_max}}</span></a>
+      <a href="city/beijing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_beijing}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_beijing_max}}</span></a>
+      <a href="city/hangzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_hangzhou}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_hangzhou_max}}</span></a>
+      <a href="city/chengdu.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_chengdu}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_chengdu_max}}</span></a>
+      <a href="city/chongqing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_chongqing}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_chongqing_max}}</span></a>
+      <a href="city/wuhan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_wuhan}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_wuhan_max}}</span></a>
+      <a href="city/nanjing.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_nanjing}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_nanjing_max}}</span></a>
+      <a href="city/xian.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_xian}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_xian_max}}</span></a>
+      <a href="city/changsha.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_changsha}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_changsha_max}}</span></a>
+      <a href="city/zhengzhou.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_zhengzhou}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_zhengzhou_max}}</span></a>
+      <a href="city/jinan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_jinan}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_jinan_max}}</span></a>
+      <a href="city/xiamen.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_xiamen}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_xiamen_max}}</span></a>
+      <a href="city/qingdao.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_qingdao}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_qingdao_max}}</span></a>
+      <a href="city/dongguan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_dongguan}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_dongguan_max}}</span></a>
+      <a href="city/foshan.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_foshan}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_foshan_max}}</span></a>
+      <a href="city/hefei.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_hefei}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_hefei_max}}</span></a>
+      <a href="city/kunming.html" style="text-decoration:none;color:inherit;padding:14px 12px;border:1px solid #e5e5e5;font-size:0.875rem;font-weight:600;">{{t.subsidy_index.city_kunming}} <span style="font-weight:300;color:#86868b;font-size:0.6875rem;display:block;">{{t.subsidy_index.city_kunming_max}}</span></a>
+    </div>
+
+    <div style="border-top:1px solid #e5e5e5;padding-top:48px;">
+      <p style="font-size:1.1875rem;color:#1d1d1f;font-weight:600;margin-bottom:12px;letter-spacing:-0.02em;">{{t.subsidy_index.cta_title}}</p>
+      <p style="font-size:1rem;color:#6e6e73;margin-bottom:28px;line-height:1.5;">{{t.subsidy_index.cta_desc}}</p>
+      <a href="/profile.html" class="fw-hero__cta" style="margin-right:12px;">{{t.subsidy_index.cta_button1}}</a>
+      <a href="/services/subsidy.html" style="font-size:0.9375rem;color:#1d1d1f;text-decoration:none;border-bottom:1px solid #1d1d1f;padding-bottom:2px;">{{t.subsidy_index.cta_button2}}</a>
+    </div>
+  </div>
+</section>
+
+<footer class="fw-footer">
+  <div class="fw-inner">
+    {{t.footer.brand}} <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="{{t.footer.home_url}}">{{t.footer.home}}</a> <span class="fw-footer__sep">|</span> <a href="{{t.footer.privacy_url}}">{{t.footer.privacy}}</a>
+    <div style="font-size:0.6875rem;color:#86868b;margin-top:4px;">{{t.subsidy_index.footer_note}}</div>
+  </div>
+</footer>
+
+<script src="/app-core.js"></script>
+</body>
+</html>

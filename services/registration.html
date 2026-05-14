@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
-  <script src="/i18n.js" defer></script>
+  
   <script>
   (function(){
     var bp = document.createElement('script');
@@ -27,12 +27,27 @@
     s.parentNode.insertBefore(bp, s);
   })();
   </script>
+  
 </head>
 <body data-page="services-registration">
 
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="/quiz.html">测评</a>
+      <a href="/subsidy/">补贴查询</a>
+      <a href="/services/">服务</a>
+      <a href="/blog/">博客</a>
+      <a href="/about.html">关于</a>
+    </div>
+    <a href="/en/services/registration.html" class="lang-toggle">{{t.services_registration.lang_toggle}}</a>
+  </div>
+</nav>
+
 <section class="fw-hero" style="padding:100px 32px 80px;">
   <div class="fw-inner">
-    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">一人公司<br>工商注册代办</h1>
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">一人公司</h1>
     <p class="fw-hero__sub">全国 20 城覆盖 · 最快半天拿执照 · 补贴申请一站式搞定</p>
   </div>
 </section>
@@ -155,7 +170,7 @@
     </div>
 
     <a href="/checkout.html" class="fw-hero__cta">立即办理 ¥399</a>
-    <p style="font-size:0.8125rem;color:#86868b;margin-top:16px;">或先完成<a href="/quiz.html" style="color:#1d1d1f;">免费测评</a>，了解适配度</p>
+    <p style="font-size:0.8125rem;color:#86868b;margin-top:16px;">{或先完成<a href="/quiz.html" style="color:#1d1d1f;">免费测评</a>，了解适配度}</p>
   </div>
 </section>
 

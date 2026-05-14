@@ -2,21 +2,12 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>404 — 页面未找到 | OPC 一人公司孵化器</title>
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://fhopc.top/404.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <script>
-  (function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
-    else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(bp, s);
-  })();
-  </script>
 </head>
 <body data-page="404">
 
@@ -24,25 +15,31 @@
   <div class="site-nav__inner">
     <a href="/" class="site-nav__brand">OPC</a>
     <div class="site-nav__links">
-      <a href="profile.html">测评</a>
-      <a href="subsidy/">补贴查询</a>
+      <a href="/quiz.html">测评</a>
+      <a href="/subsidy/">补贴查询</a>
       <a href="/services/">服务</a>
-      <a href="blog/">博客</a>
+      <a href="/blog/">博客</a>
       <a href="/about.html">关于</a>
     </div>
     <a href="/en/404.html" class="lang-toggle">EN</a>
   </div>
 </nav>
 
-<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:#fff;">
-  <div style="text-align:left;max-width:480px;">
-    <div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;font-size:clamp(4rem,10vw,8rem);font-weight:600;color:#1d1d1f;letter-spacing:-0.04em;line-height:1;">404</div>
-    <div style="font-size:1.25rem;font-weight:600;color:#1d1d1f;margin:16px 0 8px;">页面未找到</div>
-    <div style="font-size:0.9375rem;color:#86868b;margin-bottom:32px;line-height:1.6;">你访问的页面可能已被移除、链接过期或从未存在。</div>
-    <a href="/" style="display:inline-block;background:#1d1d1f;color:#fff;padding:12px 28px;font-size:0.9375rem;font-weight:600;text-decoration:none;margin-right:16px;">返回首页</a>
-    <a href="/blog/" style="font-size:0.875rem;color:#86868b;text-decoration:none;">浏览博客 →</a>
+<section class="fw-hero" style="padding:120px 32px 80px;text-align:center;">
+  <div class="fw-inner">
+    <div style="font-size:6rem;font-weight:300;color:#1d1d1f;line-height:1;margin-bottom:16px;">404</div>
+    <h1 class="fw-hero__title" style="font-size:1.5rem;">页面未找到</h1>
+    <p class="fw-hero__sub" style="margin-bottom:32px;">你访问的页面可能已被移除、链接过期或从未存在。</p>
+    <a href="/" style="display:inline-block;background:#1d1d1f;color:#fff;padding:12px 28px;border-radius:4px;text-decoration:none;font-size:0.9375rem;font-weight:600;">返回首页</a>
   </div>
-</div>
+</section>
 
+<footer class="fw-footer">
+  <div class="fw-inner">
+    一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top
+  </div>
+</footer>
+
+<script src="app-core.js"></script>
 </body>
 </html>

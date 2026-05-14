@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{#if zh}}zh-CN{{/if}}{{#if en}}en{{/if}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{t.checkout.title}}</title>
+  <meta name="description" content="{{t.checkout.meta_desc}}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{{t.checkout.canonical}}">
+  <meta property="og:title" content="{{t.checkout.og_title}}">
+  <meta property="og:description" content="{{t.checkout.og_desc}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{t.checkout.og_url}}">
+  <link rel="icon" type="image/svg+xml" href="{{#if zh}}favicon.svg{{/if}}{{#if en}}/favicon.svg{{/if}}">
+  <link rel="stylesheet" href="{{#if zh}}style.css{{/if}}{{#if en}}/style.css{{/if}}">
+</head>
+<body data-page="checkout">
+
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="{{t.nav.brand_url}}" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="{{t.nav.quiz_url}}">{{t.nav.quiz}}</a>
+      <a href="{{t.nav.subsidy_url}}">{{t.nav.subsidy}}</a>
+      <a href="{{t.nav.services_url}}">{{t.nav.services}}</a>
+      <a href="{{t.nav.blog_url}}">{{t.nav.blog}}</a>
+      <a href="{{t.nav.about_url}}">{{t.nav.about}}</a>
+    </div>
+    <a href="{{t.checkout.lang_switch_url}}" class="lang-toggle">{{t.checkout.lang_toggle}}</a>
+  </div>
+</nav>
+
+<section class="fw-hero" style="padding:100px 32px 80px;">
+  <div class="fw-inner">
+    <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">{{t.checkout.hero_title}}</h1>
+    <p class="fw-hero__sub">{{t.checkout.hero_sub}}</p>
+  </div>
+</section>
+
+<section class="fw-section">
+  <div class="fw-inner" style="max-width:480px;">
+    <div style="background:#fff;border:1px solid #e5e5e5;padding:40px;text-align:center;">
+      <p style="font-size:1rem;font-weight:600;color:#1d1d1f;margin-bottom:16px;">{{t.checkout.price_label}}</p>
+      <div style="font-size:3rem;font-weight:300;color:#1d1d1f;line-height:1;margin-bottom:8px;">{{t.checkout.price}}</div>
+      <p style="font-size:0.8125rem;color:#86868b;margin-bottom:24px;">{{t.checkout.price_note}}</p>
+
+      <div style="border:1px solid #e5e5e5;padding:24px;margin-bottom:24px;text-align:center;">
+        <div style="width:160px;height:160px;background:#f5f5f7;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#86868b;font-size:0.75rem;">{{t.checkout.qr_placeholder}}</span>
+        </div>
+        <p style="font-size:0.8125rem;color:#6e6e73;">{{t.checkout.qr_instruction}}</p>
+      </div>
+
+      <ol style="font-size:0.8125rem;color:#6e6e73;line-height:1.8;text-align:left;padding-left:20px;">
+        <li>{{t.checkout.step1}}</li>
+        <li>{{t.checkout.step2}}</li>
+        <li>{{t.checkout.step3}}</li>
+        <li>{{t.checkout.step4}}</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer class="fw-footer">
+  <div class="fw-inner">
+    {{t.footer.brand}} <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="{{t.footer.home_url}}">{{t.footer.home}}</a> <span class="fw-footer__sep">|</span> <a href="{{t.footer.privacy_url}}">{{t.footer.privacy}}</a>
+  </div>
+</footer>
+
+<script src="{{#if zh}}app-core.js{{/if}}{{#if en}}/app-core.js{{/if}}"></script>
+</body>
+</html>
