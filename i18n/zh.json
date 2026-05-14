@@ -424,7 +424,7 @@
     "heading": "页面未找到",
     "home_btn": "返回首页",
     "home_url": "/",
-    "lang_switch_url": "/en/",
+    "lang_switch_url": "/en/404.html",
     "message": "你访问的页面可能已被移除、链接过期或从未存在。",
     "style": "style.css",
     "title": "404 — 页面未找到 | OPC 一人公司孵化器"
