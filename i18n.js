@@ -71,13 +71,15 @@
           var suffix = path.indexOf("/") === 0 ? path.slice(1) : path;
           window.location.href = "/en/" + suffix;
         } else {
-          window.location.href = "/en/";
+          window.location.reload();
         }
       }
     } else {
       if (path.indexOf("/en/") === 0) {
         var newPath = path.replace("/en", "");
         window.location.href = newPath || "/";
+      } else {
+        window.location.reload();
       }
     }
   }
