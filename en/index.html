@@ -1,266 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style id="i18n-noscript">[data-i18n]{opacity:0}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+
   <title>OPC Assessment — One Person Company Fit in China</title>
-  <meta name="description" content="Assess your fit for starting a One Person Company (OPC) in China. Free 15-question assessment with detailed report.">
-  <meta name="keywords" content="OPC,one person company,China business registration,sole proprietor China,expat business China,startup assessment">
+  <meta name="description" content="OPC Incubator: Free fitness assessment, 20-city startup subsidy lookup, business registration and tax filing services. Your one-stop platform from employee to super individual.">
+  <meta name="keywords" content="OPC,one person company,China business registration,sole proprietor China,startup assessment,expat business China,AI entrepreneurship">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fhopc.top/en/">
-  <meta property="og:title" content="OPC Assessment — One Person Company Fit in China">
-  <meta property="og:description" content="Assess your fit for starting a One Person Company (OPC) in China. Free 15-question assessment with detailed report.">
+  <link rel="alternate" hreflang="zh" href="https://fhopc.top/">
+  <link rel="alternate" hreflang="en" href="https://fhopc.top/en/">
+
+  <meta property="og:site_name" content="OPC Incubator">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fhopc.top/en/">
-  <meta property="og:site_name" content="OPC Incubator">
+  <meta property="og:title" content="OPC Assessment — One Person Company Fit in China">
+  <meta property="og:description" content="Assess your fit for starting a One Person Company (OPC) in China. Free 15-question assessment with detailed report.">
+  <meta property="og:image" content="https://fhopc.top/assets/opc-qr-code.png">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OPC Assessment — One Person Company Fit in China">
-  <meta name="twitter:description" content="Assess your fit for starting a One Person Company (OPC) in China. Free 15-question assessment with detailed report.">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="twitter:title" content="OPC Assessment">
+  <meta name="twitter:description" content="Assess your fit for starting a One Person Company (OPC) in China.">
+  <meta name="twitter:image" content="https://fhopc.top/assets/opc-qr-code.png">
+
+  <style>
+    .hero-wrapper { margin-top: 24px; }
+    .service-link { text-decoration: none; color: inherit; display: block; }
+    .trust-compact { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin: 0 16px; }
+  </style>
+
+
   <style>
     .lang-badge {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      background: rgba(212,175,55,0.15);
-      border: 1px solid rgba(212,175,55,0.4);
-      color: #d4af27;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      z-index: 100;
+      position: fixed; top: 12px; right: 12px;
+      background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4);
+      color: #d4af27; padding: 4px 12px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; z-index: 100;
     }
     .hero-en {
       background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #2d3548 100%);
     }
-    .service-intro {
-      background: linear-gradient(180deg, #f8f6f0 0%, #fff 100%);
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .service-intro h2 {
-      font-size: 28px;
-      color: #0d1b2a;
-      margin-bottom: 16px;
-    }
-    .service-intro p {
-      font-size: 16px;
-      color: #4a5568;
-      max-width: 600px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 32px 24px;
-      text-align: left;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    .service-card .icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #d4af27, #c9a227);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-size: 18px;
-      color: #0d1b2a;
-      margin-bottom: 8px;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: #718096;
-      line-height: 1.6;
-    }
-    .service-cta {
-      margin-top: 48px;
-      padding: 32px 24px;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      border-radius: 16px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .service-cta h3 {
-      color: #d4af27;
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-    .service-cta p {
-      color: #a0aec0;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+    .value-section { background: #fff; padding: 64px 20px; text-align: center; }
+    .value-section .container { max-width: 1000px; margin: 0 auto; }
+    .value-section h2 { font-size: 28px; color: #0d1b2a; margin-bottom: 8px; }
+    .value-sub { font-size: 16px; color: #4a5568; margin-bottom: 40px; }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .value-card { background: #f8f6f0; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px 24px; text-align: left; }
+    .value-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #d4af27, #c9a227); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; margin-bottom: 16px; }
+    .value-card h3 { font-size: 18px; color: #0d1b2a; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: #718096; line-height: 1.6; }
+    .service-intro { background: linear-gradient(180deg, #f8f6f0 0%, #fff 100%); padding: 60px 20px; text-align: center; }
+    .service-intro h2 { font-size: 28px; color: #0d1b2a; margin-bottom: 16px; }
+    .service-intro .subtitle { font-size: 16px; color: #4a5568; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+    .service-grid-en { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto; }
+    .service-card-en { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px 24px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .service-card-en .icon { width: 48px; height: 48px; background: linear-gradient(135deg, #d4af27, #c9a227); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; margin-bottom: 16px; }
+    .service-card-en h3 { font-size: 18px; color: #0d1b2a; margin-bottom: 8px; }
+    .service-card-en p { font-size: 14px; color: #718096; line-height: 1.6; }
+    .service-cta-box { margin-top: 48px; padding: 32px 24px; background: linear-gradient(135deg, #0d1b2a, #1b263b); border-radius: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .service-cta-box h3 { color: #d4af27; font-size: 20px; margin-bottom: 12px; }
+    .service-cta-box p { color: #a0aec0; font-size: 14px; margin-bottom: 20px; }
+    .faq-section { background: #fff; padding: 64px 20px; }
+    .faq-section .container { max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 28px; text-align: center; margin-bottom: 40px; }
+    .faq-item { margin-bottom: 32px; border-bottom: 1px solid #e2e8f0; padding-bottom: 24px; }
+    .faq-item h3 { font-size: 18px; color: #0d1b2a; margin-bottom: 12px; }
+    .faq-item p { font-size: 15px; color: #4a5568; line-height: 1.7; }
+    .cta-banner { background: linear-gradient(135deg, #0d1b2a, #1b263b); padding: 64px 20px; text-align: center; }
+    .cta-banner .container { max-width: 600px; margin: 0 auto; }
+    .cta-banner h2 { color: #d4af27; font-size: 28px; margin-bottom: 12px; }
+    .cta-banner p { color: #a0aec0; font-size: 16px; margin-bottom: 24px; }
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+    .btn-primary { background: #d4af27; color: #0d1b2a; }
+    .btn-secondary { background: transparent; color: #a0aec0; border: 1px solid #a0aec0; margin-left: 12px; }
+    .btn-large { padding: 16px 36px; font-size: 18px; }
+    .en-footer { text-align: center; padding: 48px 20px; background: #f8f6f0; }
+    .en-footer .container { max-width: 800px; margin: 0 auto; }
+    .footer-brand h3 { font-size: 18px; color: #0d1b2a; margin-bottom: 4px; }
+    .footer-brand p { font-size: 14px; color: #718096; margin-bottom: 16px; }
+    .footer-links { margin: 16px 0; }
+    .footer-links a { color: #d4af27; text-decoration: none; margin: 0 8px; font-size: 14px; }
+    .footer-copyright { font-size: 13px; color: #a0aec0; margin-top: 16px; }
   </style>
-<script>
-(function(){
+
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"OPC Incubator","url":"https://fhopc.top/en/","description":"Free OPC fitness assessment. 6 dimensions, 15 questions. Discover your solo-business potential.","inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a One Person Company (OPC)?","acceptedAnswer":{"@type":"Answer","text":"A One Person Company (OPC) is a new entrepreneurial model where one person uses AI tools and automation to independently run what traditionally required a full team. Covered by People's Daily and 36Kr."}},{"@type":"Question","name":"Am I suited to be an OPC?","acceptedAnswer":{"@type":"Answer","text":"The OPC Assessment evaluates your fitness across 6 dimensions — Decision-Making, Resource Integration, Risk Resilience, Brand Building, Systems Operations, and Continuous Learning — in just 15 minutes."}},{"@type":"Question","name":"How much can an OPC earn?","acceptedAnswer":{"@type":"Answer","text":"Income depends on your capabilities, track choice, and business model. OPC helps you find your best direction and provides a 30-day SOP action plan."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"OPC Incubator","url":"https://fhopc.top/en/","description":"AI Agent-powered infrastructure for solo entrepreneurs. OPC fitness assessment, 20-city subsidy lookup, business registration and tax services."}</script>
+
+  <script>
+  var _hmt = _hmt || [];
+  (function(){
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <script>
+  (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
     if (curProtocol === 'https') {
         bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
+    } else {
         bp.src = 'http://push.zhanzhang.baidu.com/push.js';
     }
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+</head>
+<body data-page="index">
+
+<span class="lang-badge">🌐 EN</span>
+
+<!-- ============ Nav ============ -->
+<nav class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <a href="/en/" class="site-nav__brand">OPC</a>
+    <div class="site-nav__links">
+      <a href="../profile.html">Assessment</a>
+      <a href="../subsidy/">Subsidies</a>
+      <a href="../blog/">Blog</a>
+    </div>
+    <a href="/" class="lang-toggle">中文</a>
+  </div>
+</nav>
+
+
+
+
+<!-- ============ Hero (EN) ============ -->
+<section class="hero hero-en">
+  <div class="hero-content">
+    <h1>Start Your Business Journey in China</h1>
+    <p class="hero-sub">Discover if a One Person Company is right for you — and get up to ¥60,000 in government subsidies.</p>
+    <div class="hero-actions">
+      <a href="../profile.html" class="btn btn-primary">Start Free Assessment</a>
+      <a href="#services" class="btn btn-secondary">Our Services</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ============ Value Props (EN) ============ -->
+<section class="value-section">
+  <div class="container">
+    <h2>Why OPC in China?</h2>
+    <p class="value-sub">A legal business structure designed for solo entrepreneurs</p>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">🏢</div>
+        <h3>Lowest Barrier</h3>
+        <p>Start with minimal capital requirements and streamlined registration.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💰</div>
+        <h3>Government Subsidies</h3>
+        <p>Qualify for local subsidies up to ¥60,000 based on your city and industry.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Fast Setup</h3>
+        <p>Complete registration in as little as 2-3 weeks with the right guidance.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Foreigner-Friendly</h3>
+        <p>Legal pathways available for foreign nationals to establish OPCs in China.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ Cases ============ -->
+<section class="fw-section">
+  <div class="fw-inner">
+    <h2 class="fw-cases__head">Industry Cases</h2>
+    <div class="case-grid" id="case-grid"></div>
+  </div>
+</section>
+
+
+
+
+<!-- ============ Services (EN) ============ -->
+<section class="service-intro" id="services">
+  <div class="container">
+    <h2>Services We Offer</h2>
+    <p class="subtitle">From registration to subsidies to tax compliance — we guide you through every step.</p>
+    <div class="service-grid-en">
+      <div class="service-card-en">
+        <div class="icon">📋</div>
+        <h3>Company Registration</h3>
+        <p>Full-service OPC registration: name approval, license application, seal registration, and bank account setup.</p>
+      </div>
+      <div class="service-card-en">
+        <div class="icon">💵</div>
+        <h3>Subsidy Application</h3>
+        <p>Identify eligible subsidies for your city and industry. We prepare all documentation and handle the application.</p>
+      </div>
+      <div class="service-card-en">
+        <div class="icon">📊</div>
+        <h3>Tax Basics</h3>
+        <p>Understand your tax obligations from day one. Monthly/quarterly filings, VAT thresholds, and compliance tips.</p>
+      </div>
+    </div>
+    <div class="service-cta-box">
+      <h3>Ready to Get Started?</h3>
+      <p>Take the free OPC fit assessment first, or contact us for a consultation.</p>
+      <div class="hero-actions">
+        <a href="../profile.html" class="btn btn-primary">Start Free Assessment</a>
+        <a href="../profile.html" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ (EN) ============ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>What You Need to Know About OPC</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What is a One-Person Company (OPC)?</h3>
+        <p>A One-Person Company (OPC) is the hottest entrepreneurial trend of 2026. One person, empowered by AI tools and automation systems, independently executes what traditionally required a full team. From freelancing and side hustles to full-time entrepreneurship, OPC is becoming the choice of millions. Covered by People's Daily and 36Kr.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Am I Suited to Be a One-Person Company?</h3>
+        <p>Not everyone is cut out for independent business. The OPC Assessment evaluates your fitness across 6 dimensions — Decision-Making, Resource Integration, Risk Resilience, Brand Building, Systems Operations, Continuous Learning. Complete the test in 15 minutes and receive your personalized assessment report and action roadmap. Over 1,000 people have used it to upgrade their self-awareness.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What Businesses Can an OPC Run?</h3>
+        <p>OPC businesses span a wide range: AI content creation, personal branding, digital products, e-commerce dropshipping, social media management, consulting, and more. Based on your capability profile, OPC recommends your top 3 business tracks with a 30-day actionable SOP plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA Banner (EN) ============ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Find Out If OPC Is Right for You</h2>
+    <p>15 questions, 9 dimensions, instant results</p>
+    <a href="../profile.html" class="btn btn-primary btn-large">Start Assessment — It's Free</a>
+  </div>
+</section>
+
+
+
+
+
+<!-- ============ Footer (EN) ============ -->
+<footer class="en-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <h3>OPC Incubator</h3>
+      <p>Scientific Assessment · Self-Awareness · Action Guide</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">中文</a>
+      <a href="/en/">English</a>
+    </div>
+    <div class="footer-copyright">
+      <p>© 2026 OPC Assessment. All rights reserved.</p>
+      <p class="timestamp"></p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============ Case Data + Render ============ -->
+<script>
+(function(){
+
+
+  var CASES = [
+    {city:"Shenzhen",role:"Contractor",track:"Independent Renovation",income:"$200-400/mo",desc:"Left agency to take independent projects. Key: property channel + subsidies.",slug:"decoration"},
+    {city:"Shanghai",role:"UI Designer",track:"AI Product UI",income:"$200-300/mo",desc:"From layoff to monthly retainer. Key: content model + pricing strategy.",slug:"ui-design"},
+    {city:"Chengdu",role:"Content Creator",track:"Industry Analysis Channel",income:"$100-200/mo",desc:"One-person niche channel with ads + paid subscriptions.",slug:"content-ops"},
+    {city:"Hangzhou",role:"E-commerce",track:"Single-Product Distribution",income:"$150-400/mo",desc:"Managing 3 product supply chains solo, 1688 dropship model.",slug:"ecommerce"},
+    {city:"Guangzhou",role:"Photographer",track:"Product Photography",income:"$150-350/mo",desc:"Solo e-commerce product shoots, AI-assisted editing.",slug:"photography"},
+    {city:"Beijing",role:"Translator",track:"Niche Localization",income:"$100-200/mo",desc:"Serving 3 overseas teams. Key: toolchain efficiency.",slug:"translation"},
+    {city:"Wuhan",role:"Developer",track:"AI Workflow Templates",income:"$300-700/mo",desc:"Packaging industry workflow templates for Gumroad and domestic platforms.",slug:"developer"},
+    {city:"Nanjing",role:"Accountant",track:"Solo Bookkeeping",income:"$80-160/mo",desc:"Monthly bookkeeping for sole proprietors. Key: batch acquisition.",slug:"accounting"},
+    {city:"Suzhou",role:"Coach",track:"Online Private Coaching",income:"$150-300/mo",desc:"Fitness coach goes online: recorded courses + community.",slug:"coaching"},
+    {city:"Chongqing",role:"Realtor",track:"Independent Consulting",income:"$150-400/mo",desc:"Left platform to do independent housing consulting.",slug:"realestate"},
+    {city:"Xi'an",role:"Craftsperson",track:"Custom Gift E-commerce",income:"$70-200/mo",desc:"Design + orders + shipping solo. AI-assisted design expansion.",slug:"crafts"},
+    {city:"Changsha",role:"Video Editor",track:"Short-Video Agency",income:"$100-300/mo",desc:"Short video clipping for merchants, per-item or monthly billing.",slug:"video-editing"},
+    {city:"Qingdao",role:"Trade Agent",track:"Cross-Border Sourcing",income:"$150-300/mo",desc:"Connecting factories with overseas buyers as sole proprietor.",slug:"trading"},
+    {city:"Xiamen",role:"Nutritionist",track:"Meal Plan Subscription",income:"$80-160/mo",desc:"Custom meal plans with AI-generated personalized menus.",slug:"nutrition"},
+    {city:"Kunming",role:"Travel Designer",track:"Niche Travel Routes",income:"$70-200/mo",desc:"Designing niche routes solo. XiaoHongShu for discovery, WeChat for sales.",slug:"travel"}
+  ];
+
+
+  var shuffled = CASES.slice().sort(function(){ return Math.random() - 0.5; });
+  var picked = shuffled.slice(0, 3);
+  var grid = document.getElementById('case-grid');
+  var html = '';
+  for (var i = 0; i < picked.length; i++) {
+    var c = picked[i];
+    html += '<a href="/cases/' + c.slug + '.html" class="case-card"><div class="case-card__meta">' + c.city + ' · ' + c.role + '</div><div class="case-card__track">' + c.track + '</div><div class="case-card__income">' + c.income + '</div><div class="case-card__desc">' + c.desc + '</div></a>';
+  }
+  grid.innerHTML = html;
 })();
 </script>
-</head>
-<body>
-  <span class="lang-badge">🌐 EN</span>
 
-  <!-- Hero Section -->
-  <section class="hero hero-en">
-    <div class="hero-content">
-      <h1 data-i18n="hero.titleA">Start Your Business Journey in China</h1>
-      <p class="hero-sub" data-i18n="hero.subtitle">Discover if a One Person Company is right for you — and get up to ¥60,000 in government subsidies.</p>
-      <div class="hero-actions">
-        <a href="../profile.html" class="btn btn-primary" data-i18n="hero.cta">Take Free Assessment</a>
-        <a href="#services" class="btn btn-secondary" data-i18n="services.nav_services">Our Services</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Value Proposition -->
-  <section class="value-section">
-    <div class="container">
-      <h2 data-i18n="value.title">Why OPC in China?</h2>
-      <p class="value-sub" data-i18n="value.subtitle">A legal business structure designed for solo entrepreneurs</p>
-      <div class="value-grid">
-        <div class="value-card">
-          <div class="value-icon">🏢</div>
-          <h3 data-i18n="value.main_title">Lowest Barrier</h3>
-          <p data-i18n="value.main_desc">Start with minimal capital requirements and streamlined registration.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">💰</div>
-          <h3 data-i18n="value.item1_title">Government Subsidies</h3>
-          <p data-i18n="value.item1_desc">Qualify for local subsidies up to ¥60,000 based on your city and industry.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">⚡</div>
-          <h3 data-i18n="value.item2_title">Fast Setup</h3>
-          <p data-i18n="value.item2_desc">Complete registration in as little as 2-3 weeks with the right guidance.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">🌍</div>
-          <h3 data-i18n="value.item3_title">Foreigner-Friendly</h3>
-          <p data-i18n="value.item3_desc">Legal pathways available for foreign nationals to establish OPCs in China.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+  // Update timestamp for en footer
+  var ts = document.querySelector('.timestamp');
+  if (ts) {
+    var now = new Date();
+    ts.textContent = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+</script>
 
-  <!-- Services Section -->
-  <section class="service-intro" id="services">
-    <div class="container">
-      <h2 data-i18n="services.title">Services We Offer</h2>
-      <p data-i18n="services.subtitle">From registration to subsidies to tax compliance — we guide you through every step.</p>
 
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="icon">📋</div>
-          <h3 data-i18n="services.reg_title">Company Registration</h3>
-          <p data-i18n="services.reg_desc">Full-service OPC registration: name approval, license application, seal registration, and bank account setup.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">💵</div>
-          <h3 data-i18n="services.subsidy_title">Subsidy Application</h3>
-          <p data-i18n="services.subsidy_desc">Identify eligible subsidies for your city and industry. We prepare all documentation and handle the application.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">📊</div>
-          <h3 data-i18n="services.tax_title">Tax Basics</h3>
-          <p data-i18n="services.tax_desc">Understand your tax obligations from day one. Monthly/quarterly filings, VAT thresholds, and compliance tips.</p>
-        </div>
-      </div>
-
-      <div class="service-cta">
-        <h3 data-i18n="services.cta_title">Ready to Get Started?</h3>
-        <p data-i18n="services.cta_desc">Take the free OPC fit assessment first, or contact us for a consultation.</p>
-        <div class="hero-actions">
-          <a href="../profile.html" class="btn btn-primary" data-i18n="services.cta_btn1">Free Assessment</a>
-          <a href="../profile.html" class="btn btn-secondary" data-i18n="services.cta_btn2">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 data-i18n="faq.q1_title">Can foreigners register an OPC in China?</h3>
-          <p data-i18n="faq.q1_desc">Yes, foreign nationals can establish OPCs in China with a valid residence permit. The process differs slightly from Chinese citizens but remains accessible.</p>
-        </div>
-        <div class="faq-item">
-          <h3 data-i18n="faq.q2_title">How much does it cost to set up an OPC?</h3>
-          <p data-i18n="faq.q2_desc">Official government fees are minimal. The main costs come from registered address (if needed), seals, and optional professional service fees. Many subsidies can offset these costs.</p>
-        </div>
-        <div class="faq-item">
-          <h3 data-i18n="faq.q3_title">How long does registration take?</h3>
-          <p data-i18n="faq.q3_desc">Typically 2-3 weeks from document preparation to receiving your business license, depending on the city and completeness of your application.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section class="cta-banner">
-    <div class="container">
-      <h2 data-i18n="cta.title">Find Out If OPC Is Right for You</h2>
-      <p data-i18n="cta.subtitle">15 questions, 9 dimensions, instant results</p>
-      <a href="../profile.html" class="btn btn-primary btn-large" data-i18n="cta.button">Start Assessment — It's Free</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-brand">
-        <h3 data-i18n="footer.name">OPC Assessment</h3>
-        <p data-i18n="footer.tagline">Your guide to starting a One Person Company in China</p>
-      </div>
-      <div class="footer-links">
-        <a href="javascript:void(0)" onclick="if(window.i18n)i18n.switchLang('zh');localStorage.setItem('preferredLang','zh')">中文</a>
-        <a href="javascript:void(0)" onclick="if(window.i18n)i18n.switchLang('en');localStorage.setItem('preferredLang','en')">English</a>
-      </div>
-      <div class="footer-copyright">
-        <p data-i18n="footer.copyright">© 2026 OPC Assessment. All rights reserved.</p>
-        <p class="timestamp"></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../i18n.js" defer></script>
-  <script src="../app-core.js"></script>
-  <script>
-    // Update timestamp
-    const ts = document.querySelector('.timestamp');
-    if (ts) {
-      const now = new Date();
-      ts.textContent = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-  </script>
+<script src="../app-core.js"></script>
 </body>
 </html>

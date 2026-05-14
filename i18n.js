@@ -1,62 +1,31 @@
 /* ============================================
-   OPC i18n Engine v1.0
-   纯前端多语言引擎 — 零依赖 · 零构建 · 即时切换
+   OPC i18n Engine v2.0
+   Hybrid: static pages use build-time i18n, dynamic pages use runtime t().
    ============================================ */
 (function () {
   "use strict";
 
-  /* ---- 配置 ---- */
   var SUPPORTED = ["zh", "en"];
   var DEFAULT = "zh";
   var STORAGE_KEY = "opc_lang";
   var DICT_PATH = "/i18n/";
   var currentLang = DEFAULT;
   var dictionary = {};
-  var onReadyCallbacks = [];
-  var isReady = false;
 
-  /* ---- 语言检测 ---- */
+  /* ---- Language detection: html[lang] first, then localStorage ---- */
   function detectLang() {
-    var stored;
+    var htmlLang = document.documentElement.lang;
+    if (htmlLang === "zh-CN" || htmlLang === "zh") return "zh";
+    if (htmlLang === "en") return "en";
     try {
-      stored = localStorage.getItem(STORAGE_KEY);
-    } catch (e) {
-      /* localStorage 不可用时回退 */
-    }
-    if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+    } catch (e) {}
     return DEFAULT;
   }
 
-  /* ---- 加载字典（异步，用于切换语言） ---- */
-  function loadDictionary(lang) {
-    return fetch(DICT_PATH + lang + ".json")
-      .then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      })
-      .catch(function (e) {
-        console.warn("[i18n] Failed to load dictionary:", lang, e);
-        return {};
-      });
-  }
-
-  /* ---- 同步加载字典（用于初始化，确保 i18n 在 app.js 之前就绪） ---- */
-  function loadDictionarySync(lang) {
-    try {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", DICT_PATH + lang + ".json", false);
-      xhr.send();
-      if (xhr.status >= 200 && xhr.status < 300) {
-        return JSON.parse(xhr.responseText);
-      }
-    } catch(e) {
-      console.warn("[i18n] Sync load failed:", lang, e);
-    }
-    return {};
-  }
-
-  /* ---- 翻译 key（支持点号路径） ---- */
-  function translate(key) {
+  /* ---- Translate key (dot-path lookup) ---- */
+  function t(key) {
     if (!key) return "";
     var keys = key.split(".");
     var value = dictionary;
@@ -70,64 +39,79 @@
     return typeof value === "string" ? value : key;
   }
 
-  /* ---- 防闪烁：注入一个全局 CSS 到 head ---- */
-  function injectNoFlashCSS() {
-    if (document.querySelector("#i18n-noscript")) return;
-    var style = document.createElement("style");
-    style.id = "i18n-noscript";
-    style.textContent = "[data-i18n] { opacity: 0; }";
-    document.head.appendChild(style);
+  /* ---- Async dictionary loader ---- */
+  function loadDict(lang) {
+    return fetch(DICT_PATH + lang + ".json")
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .catch(function (e) {
+        console.warn("[i18n] Failed to load dictionary:", lang, e);
+        return {};
+      });
   }
 
-  /* ---- 移除防闪烁 ---- */
-  function removeNoFlashCSS() {
-    var el = document.querySelector("#i18n-noscript");
-    if (el) el.remove();
+  /* ---- URL-based language switch ---- */
+  function switchLang(lang) {
+    if (!lang || SUPPORTED.indexOf(lang) === -1) {
+      lang = currentLang === "zh" ? "en" : "zh";
+    }
+    if (lang === currentLang) return;
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+
+    var path = window.location.pathname;
+    // Build new URL based on target language
+    if (lang === "en") {
+      // Going from / to /en/
+      if (path === "/" || path === "/index.html") {
+        window.location.href = "/en/";
+      } else if (path.indexOf("/en/") !== 0) {
+        var suffix = path;
+        if (suffix.indexOf("/") === 0) suffix = suffix.slice(1);
+        window.location.href = "/en/" + suffix;
+      }
+    } else {
+      // Going from /en/ to /
+      if (path.indexOf("/en/") === 0) {
+        var newPath = path.replace("/en", "");
+        window.location.href = newPath || "/";
+      }
+    }
   }
 
-  /* ---- 更新 DOM ---- */
-  function updateDOM() {
-    /* lang 属性 */
+  /* ---- DOM translation for data-i18n elements (dynamic pages only) ---- */
+  function translateDOM() {
     document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
 
-    /* data-i18n 文本元素 */
     var nodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       var key = el.getAttribute("data-i18n");
-      var translated = translate(key);
+      var translated = t(key);
       if (translated !== key) {
-        var isHTML = el.getAttribute("data-i18n-html") !== null;
-        if (isHTML) {
+        if (el.getAttribute("data-i18n-html") !== null) {
           el.innerHTML = translated;
         } else {
           el.textContent = translated;
         }
       }
-      el.style.opacity = "1";
     }
 
-    /* data-i18n-placeholder */
     var inputs = document.querySelectorAll("[data-i18n-placeholder]");
     for (var j = 0; j < inputs.length; j++) {
       var phKey = inputs[j].getAttribute("data-i18n-placeholder");
-      var phTranslated = translate(phKey);
-      if (phTranslated !== phKey) {
-        inputs[j].placeholder = phTranslated;
-      }
+      var phTranslated = t(phKey);
+      if (phTranslated !== phKey) inputs[j].placeholder = phTranslated;
     }
 
-    /* data-i18n-alt 图片 alt 属性 */
     var imgs = document.querySelectorAll("[data-i18n-alt]");
     for (var k = 0; k < imgs.length; k++) {
       var altKey = imgs[k].getAttribute("data-i18n-alt");
-      var altTranslated = translate(altKey);
-      if (altTranslated !== altKey) {
-        imgs[k].alt = altTranslated;
-      }
+      var altTranslated = t(altKey);
+      if (altTranslated !== altKey) imgs[k].alt = altTranslated;
     }
 
-    /* data-i18n-attr 通用属性翻译 */
     var attrEls = document.querySelectorAll("[data-i18n-attr]");
     for (var a = 0; a < attrEls.length; a++) {
       var attrEl = attrEls[a];
@@ -139,81 +123,45 @@
         if (parts.length === 2) {
           var attrName = parts[0].trim();
           var transKey = parts[1].trim();
-          var translated = translate(transKey);
-          if (translated !== transKey) {
-            attrEl.setAttribute(attrName, translated);
-          }
+          var trans = t(transKey);
+          if (trans !== transKey) attrEl.setAttribute(attrName, trans);
         }
       }
     }
-
-    /* 语言切换按钮 */
-    var toggle = document.querySelector(".lang-toggle");
-    if (toggle) {
-      toggle.textContent = currentLang === "zh" ? "EN" : "中文";
-    }
-
-    /* 通知其他脚本语言已就绪 */
-    try {
-      window.dispatchEvent(new CustomEvent("i18n-ready", { detail: { lang: currentLang } }));
-    } catch(e) {}
-
-    removeNoFlashCSS();
-    isReady = true;
-    for (var c = 0; c < onReadyCallbacks.length; c++) {
-      onReadyCallbacks[c](currentLang, dictionary);
-    }
-    onReadyCallbacks = [];
   }
 
-  /* ---- 切换语言 ---- */
-  function switchLang(lang) {
-    if (lang === currentLang) return Promise.resolve();
-    if (SUPPORTED.indexOf(lang) === -1) lang = DEFAULT;
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch (e) {}
-    // 重新加载页面以确保所有动态内容以新语言渲染
-    window.location.reload();
-  }
-
-  /* ---- 初始化 ---- */
+  /* ---- Init ---- */
   function init() {
     currentLang = detectLang();
-    injectNoFlashCSS();
+    document.documentElement.lang = currentLang === "zh" ? "zh-CN" : "en";
 
-    // 同步加载当前语言字典，确保在 app-core.js/app.js 之前就绪
-    dictionary = loadDictionarySync(currentLang);
-    updateDOM();
-
-    /* 绑定切换按钮（事件委托，支持动态生成） */
-    document.addEventListener("click", function (e) {
-      var toggle = e.target.closest(".lang-toggle");
-      if (toggle) {
-        e.preventDefault();
-        var next = currentLang === "zh" ? "en" : "zh";
-        switchLang(next);
-      }
+    loadDict(currentLang).then(function (dict) {
+      dictionary = dict;
+      translateDOM();
+      try {
+        window.dispatchEvent(new CustomEvent("i18n-ready", { detail: { lang: currentLang } }));
+      } catch (e) {}
     });
   }
 
-  /* ---- 暴露全局 API ---- */
+  /* ---- Language toggle click handler ---- */
+  document.addEventListener("click", function (e) {
+    var toggle = e.target.closest(".lang-toggle");
+    if (toggle) {
+      e.preventDefault();
+      var next = currentLang === "zh" ? "en" : "zh";
+      switchLang(next);
+    }
+  });
+
+  /* ---- Public API ---- */
   window.i18n = {
-    t: translate,
-    getLang: function () {
-      return currentLang;
-    },
-    switchLang: switchLang,
-    onReady: function (cb) {
-      if (isReady) {
-        cb(currentLang, dictionary);
-      } else {
-        onReadyCallbacks.push(cb);
-      }
-    },
+    t: t,
+    getLang: function () { return currentLang; },
+    switchLang: switchLang
   };
 
-  /* ---- 启动 ---- */
+  /* ---- Start ---- */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

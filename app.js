@@ -1354,7 +1354,7 @@ function renderClosing(el) {
 function renderGlossary(el) {
   if (!el) return;
   var terms = [
-    { term: _t("glossary OPC", "一人公司"), def: _t("glossary.opc_def", "以个人或极简团队为核心的小规模商业组织，追求高利润、强闭环、抗风险、绝对职业主权。") },
+    { term: _t("glossary.OPC", "一人公司"), def: _t("glossary.opc_def", "以个人或极简团队为核心的小规模商业组织，追求高利润、强闭环、抗风险、绝对职业主权。") },
     { term: _t("glossary core_gift", "核心禀赋"), def: _t("glossary.core_gift_def", "你被他人和市场验证的、具有差异化优势的个人能力，是一人公司最底层的竞争壁垒。") },
     { term: _t("glossary biz_loop", "商业闭环"), def: _t("glossary.biz_loop_def", "从获客、成交、交付到售后的完整变现链路，闭环越完整，收入越稳定。") },
     { term: _t("glossary productize", "产品化"), def: _t("glossary.productize_def", "将个人经验、技能或服务转化为标准化、可售卖的产品形态，实现从「卖时间」到「卖产品」的跃迁。") },
