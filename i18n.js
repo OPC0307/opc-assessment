@@ -96,7 +96,12 @@
           el.textContent = translated;
         }
       }
+      el.style.opacity = "1";
     }
+
+    // Remove no-flash style if present
+    var noFlash = document.getElementById("i18n-noscript");
+    if (noFlash) noFlash.remove();
 
     var inputs = document.querySelectorAll("[data-i18n-placeholder]");
     for (var j = 0; j < inputs.length; j++) {
