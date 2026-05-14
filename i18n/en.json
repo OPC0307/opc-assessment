@@ -159,8 +159,8 @@
     "tagline": "Professional Assessment Tool"
   },
   "checkout": {
-    "app_core": "../app-core.js",
-    "favicon": "../favicon.svg",
+    "app_core": "/app-core.js",
+    "favicon": "/favicon.svg",
     "footer_brand": "OPC Incubator",
     "footer_home": "Home",
     "guarantee1": "Full refund if unsuccessful",
@@ -178,7 +178,7 @@
     "step2": "Pay <strong style=\"color:#1d1d1f;\">¥399</strong> (add your name in notes)",
     "step3": "Screenshot the payment success page",
     "step4": "Add customer service on WeChat, send screenshot to begin",
-    "style": "../style.css",
+    "style": "/style.css",
     "title_tag": "¥399 Payment — OPC Incubator"
   },
   "closing": {
@@ -278,7 +278,7 @@
     "titleE": "From Employee to Super Individual — One Assessment Away"
   },
   "index": {
-    "app_core_path": "../app-core.js",
+    "app_core_path": "/app-core.js",
     "blog_highlight_more": "View All Articles →",
     "blog_highlight_subtitle": "Practical guides for solo founders, from registration to profitability",
     "blog_highlight_title": "Latest Articles",
@@ -315,7 +315,7 @@
     "en_value4_title": "Foreigner-Friendly",
     "en_value_sub": "A legal business structure designed for solo entrepreneurs",
     "en_value_title": "Why OPC in China?",
-    "favicon_path": "../favicon.svg",
+    "favicon_path": "/favicon.svg",
     "footer_about": "",
     "footer_text": "",
     "hero_cta": "",
@@ -328,10 +328,10 @@
     "ld_faq": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is a One Person Company (OPC)?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A One Person Company (OPC) is a new entrepreneurial model where one person uses AI tools and automation to independently run what traditionally required a full team. Covered by People's Daily and 36Kr.\"}},{\"@type\":\"Question\",\"name\":\"Am I suited to be an OPC?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The OPC Assessment evaluates your fitness across 6 dimensions — Decision-Making, Resource Integration, Risk Resilience, Brand Building, Systems Operations, and Continuous Learning — in just 15 minutes.\"}},{\"@type\":\"Question\",\"name\":\"How much can an OPC earn?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Income depends on your capabilities, track choice, and business model. OPC helps you find your best direction and provides a 30-day SOP action plan.\"}}]}",
     "ld_org": "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"OPC Incubator\",\"url\":\"https://fhopc.top/en/\",\"description\":\"AI Agent-powered infrastructure for solo entrepreneurs. OPC fitness assessment, 20-city subsidy lookup, business registration and tax services.\"}",
     "ld_website": "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"OPC Incubator\",\"url\":\"https://fhopc.top/en/\",\"description\":\"Free OPC fitness assessment. 6 dimensions, 15 questions. Discover your solo-business potential.\",\"inLanguage\":\"en\"}",
-    "nav_blog_url": "../blog/",
+    "nav_blog_url": "/blog/",
     "nav_home_url": "/en/",
-    "nav_quiz_url": "../profile.html",
-    "nav_subsidy_url": "../subsidy/",
+    "nav_quiz_url": "/profile.html",
+    "nav_subsidy_url": "/subsidy/",
     "og_description": "Assess your fit for starting a One Person Company (OPC) in China. Free 15-question assessment with detailed report.",
     "og_locale": "en_US",
     "og_site_name": "OPC Incubator",
@@ -368,7 +368,7 @@
     "stat2_label": "",
     "stat3_label": "",
     "stat_note": "",
-    "style_path": "../style.css",
+    "style_path": "/style.css",
     "subsidy_banner_cta": "Look Up →",
     "subsidy_banner_desc": "National + local subsidies, up to ¥35,000+/year. Check your city →",
     "subsidy_banner_title": "20-City Startup Subsidy Lookup",
@@ -410,12 +410,12 @@
   "page404": {
     "blog_link": "Browse Blog →",
     "blog_url": "/en/blog/",
-    "favicon": "../favicon.svg",
+    "favicon": "/favicon.svg",
     "heading": "Page Not Found",
     "home_btn": "Back to Home",
     "home_url": "/en/",
     "message": "The page you're looking for may have been removed, had its link changed, or never existed.",
-    "style": "../style.css",
+    "style": "/style.css",
     "title": "404 — Page Not Found | OPC Incubator"
   },
   "pay": {
