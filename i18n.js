@@ -52,6 +52,8 @@
       });
   }
 
+  var EN_PAGES = ["/", "/index.html", "/about.html", "/privacy.html", "/checkout.html", "/404.html"];
+
   /* ---- URL-based language switch ---- */
   function switchLang(lang) {
     if (!lang || SUPPORTED.indexOf(lang) === -1) {
@@ -61,18 +63,18 @@
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
     var path = window.location.pathname;
-    // Build new URL based on target language
     if (lang === "en") {
-      // Going from / to /en/
       if (path === "/" || path === "/index.html") {
         window.location.href = "/en/";
       } else if (path.indexOf("/en/") !== 0) {
-        var suffix = path;
-        if (suffix.indexOf("/") === 0) suffix = suffix.slice(1);
-        window.location.href = "/en/" + suffix;
+        if (EN_PAGES.indexOf(path) !== -1) {
+          var suffix = path.indexOf("/") === 0 ? path.slice(1) : path;
+          window.location.href = "/en/" + suffix;
+        } else {
+          window.location.href = "/en/";
+        }
       }
     } else {
-      // Going from /en/ to /
       if (path.indexOf("/en/") === 0) {
         var newPath = path.replace("/en", "");
         window.location.href = newPath || "/";
