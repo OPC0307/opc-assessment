@@ -225,8 +225,6 @@ var SITE_FOOTER_LINKS = [
 
 function injectSiteFooter() {
   if (document.getElementById("site-footer-nav")) return;
-  var pageContent = document.querySelector(".page-content");
-  if (!pageContent) return;
 
   var currentLang = window.i18n ? i18n.getLang() : "zh";
 
@@ -242,7 +240,6 @@ function injectSiteFooter() {
     a.textContent = currentLang === "en" ? item.enLabel : item.label;
     a.style.cssText = "color:var(--text-muted);text-decoration:none;white-space:nowrap;";
     if (i > 0) {
-      // Add separator before each link after the first
       var sep = document.createElement("span");
       sep.style.cssText = "color:var(--border);";
       sep.textContent = "|";
@@ -251,12 +248,13 @@ function injectSiteFooter() {
     footerNav.appendChild(a);
   }
 
-  // Insert before the first footer element inside page-content
-  var footer = pageContent.querySelector("footer, .footer");
-  if (footer) {
-    footer.parentNode.insertBefore(footerNav, footer);
+  // Insert before the last footer element in the page
+  var footers = document.querySelectorAll("footer, .footer, .fw-footer");
+  if (footers.length > 0) {
+    var lastFooter = footers[footers.length - 1];
+    lastFooter.parentNode.insertBefore(footerNav, lastFooter);
   } else {
-    pageContent.appendChild(footerNav);
+    document.body.appendChild(footerNav);
   }
 }
 
