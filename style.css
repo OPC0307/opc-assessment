@@ -4,11 +4,11 @@
    ============================================ */
 /* Import: Noto Sans SC (Google Fonts, free for commercial use) */
 
-/* Accessibility: skip-to-content link */
+/* Accessibility: skip-to-content link — hidden until keyboard focus */
 .skip-to-content {
   position: absolute;
-  top: -100%;
-  left: 16px;
+  top: -9999px;
+  left: -9999px;
   background: #1d1d1f;
   color: #fff;
   padding: 8px 16px;
@@ -17,10 +17,11 @@
   font-weight: 600;
   text-decoration: none;
   z-index: 10001;
-  transition: top 0.2s;
 }
 .skip-to-content:focus {
+  position: fixed;
   top: 0;
+  left: 16px;
 }
 
 /* ---- 设计符号 ----
