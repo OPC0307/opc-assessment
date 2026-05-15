@@ -156,6 +156,7 @@ var SITE_NAV = [
   { key: "quiz",     href: "/profile.html",             label: "测评",       enLabel: "Assessment",      match: ["profile", "quiz", "report-free", "report-paid", "pay"] },
   { key: "subsidy",  href: "/subsidy/",                 label: "补贴",       enLabel: "Subsidies",       match: ["subsidy", "subsidy-city"] },
   { key: "services", href: "/services/",             label: "服务",       enLabel: "Services",        match: ["services-index", "services-subsidy", "services-tax", "services-registration"] },
+  { key: "cases",    href: "/cases.html",              label: "案例",       enLabel: "Cases",           match: ["cases-index", "cases-detail"] },
   { key: "blog",     href: "/blog/",                   label: "博客",       enLabel: "Blog",            match: ["blog-index", "blog-article"] },
   { key: "about",    href: "/about.html",              label: "关于",       enLabel: "About",           match: ["about"] }
 ];
