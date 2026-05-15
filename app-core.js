@@ -170,6 +170,7 @@ function injectSiteNav(currentPage) {
   var nav = document.createElement("nav");
   nav.className = "site-nav";
   nav.id = "site-nav";
+  nav.setAttribute("aria-label", currentLang === "en" ? "Main navigation" : "主导航");
 
   var inner = document.createElement("div");
   inner.className = "site-nav__inner";

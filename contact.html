@@ -30,9 +30,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap">
 </head>
-<body>
+<body
+>
+<a class="skip-to-content" href="#main-content">跳转到主内容</a>
 
-<nav class="site-nav" id="site-nav">
+<nav class="site-nav" aria-label="主导航" id="site-nav">
   <div class="site-nav__inner">
     <a href="/" class="site-nav__brand">OPC</a>
     <div class="site-nav__links">
@@ -47,7 +49,7 @@
   </div>
 </nav>
 
-<section class="fw-hero" style="padding:100px 32px 80px;">
+<section class="fw-hero" role="main" style="padding:100px 32px 80px;">
   <div class="fw-inner">
     <div class="fw-hero__note" style="margin-top:0;margin-bottom:16px;">联系我们</div>
     <h1 class="fw-hero__title" style="font-size:clamp(2.5rem,5vw,3.5rem);">联系我们</h1>
@@ -63,7 +65,7 @@
       <div style="padding:32px 24px;border:1px solid #e5e5e5;text-align:center;">
         <div style="font-size:1.5rem;margin-bottom:12px;">微信咨询</div>
         <div style="font-size:0.9375rem;color:#6e6e73;line-height:1.6;margin-bottom:16px;">扫描二维码添加客服微信，免费咨询</div>
-        <img src="assets/wechat-qr.png" alt="微信客服二维码" style="width:150px;height:150px;border-radius:10px;border:2px solid #e5e5e5;">
+        <img loading="lazy" src="assets/wechat-qr.png" alt="微信客服二维码" style="width:150px;height:150px;border-radius:10px;border:2px solid #e5e5e5;">
         <div style="font-size:0.75rem;color:#86868b;margin-top:8px;">工作日 9:00-18:00</div>
       </div>
 
@@ -92,7 +94,7 @@
   </div>
 </section>
 
-<footer class="fw-footer">
+<footer role="contentinfo" class="fw-footer">
   <div class="fw-inner">
     一人公司孵化器 <span class="fw-footer__sep">|</span> fhopc.top <span class="fw-footer__sep">|</span> <a href="/">首页</a> <span class="fw-footer__sep">|</span> <a href="/privacy.html">隐私政策</a> <span class="fw-footer__sep">|</span> <a href="/terms.html">服务条款</a>
     <div style="font-size:0.6875rem;color:#86868b;margin-top:4px;">最后更新：2026年5月</div>
