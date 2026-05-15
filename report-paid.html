@@ -80,6 +80,13 @@
 </head>
 <body data-page="report-paid">
 
+<script>
+// Payment gate: redirect if no payment flag
+if (!localStorage.getItem('opc_paid')) {
+  window.location.replace('/pay.html');
+}
+</script>
+
 <div style="max-width:720px;margin:0 auto;padding:48px 20px;">
 
   <!-- Download Bar -->

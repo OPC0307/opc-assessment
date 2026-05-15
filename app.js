@@ -1601,6 +1601,7 @@ function showPaySuccess() {
       btn.style.pointerEvents = "auto";
       btn.addEventListener("click", function() {
         overlay.classList.remove("active");
+        localStorage.setItem('opc_paid', 'true');
         setTimeout(function() { window.location.href = "report-paid.html"; }, 300);
       });
     }
