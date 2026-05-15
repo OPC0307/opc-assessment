@@ -1,16 +1,20 @@
 /**
  * OPC AI Chat Widget
- * Embedded via app-core.js — appears on all pages
- * Direct call to SenseNova API (token.sensenova.cn)
+ * Calls SenseNova API via Cloudflare Worker proxy (see workers/chat-proxy.js).
+ * The worker injects the API key server-side — never exposed to browsers.
+ *
+ * To enable chat: deploy workers/chat-proxy.js to Cloudflare Workers,
+ * then set CHAT_PROXY_URL below to your worker URL.
  */
 
 (function() {
   'use strict';
 
   // ========== CONFIG ==========
-  var API_URL = 'https://token.sensenova.cn/v1/chat/completions';
-  var API_KEY = 'sk-v9Ig2HymT3vWmFPYJomLXqcoXuU9YW25';
+  // Deploy workers/chat-proxy.js to Cloudflare Workers and put the URL here:
+  var CHAT_PROXY_URL = 'https://opc-chat-proxy.example.workers.dev/v1/chat/completions';
   var MODEL = 'deepseek-v4-flash';
+  var CHAT_ENABLED = false; // Set to true after deploying the worker
   // ============================
 
   var STORAGE_KEY = 'opc_chat_history';
@@ -239,6 +243,13 @@
     ].join('');
 
     async function send() {
+      if (!CHAT_ENABLED) {
+        addMessage('assistant', isEn ?
+          'Chat is temporarily unavailable. Please scan the WeChat QR code (green button, bottom-right) for support.' :
+          'AI客服暂时维护中。请扫描右下角绿色按钮的微信二维码获取人工支持。');
+        return;
+      }
+
       var text = input.value.trim();
       if (!text) return;
       if (text.length > 500) {
@@ -260,10 +271,9 @@
       }
 
       try {
-        var resp = await fetch(API_URL, {
+        var resp = await fetch(CHAT_PROXY_URL, {
           method: 'POST',
           headers: {
-            'Authorization': 'Bearer ' + API_KEY,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
