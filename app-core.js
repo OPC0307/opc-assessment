@@ -482,6 +482,22 @@ document.addEventListener("DOMContentLoaded", function() {
       hm.src = 'https://hm.baidu.com/hm.js?a5621eae6e5f4f4f530c462888dae44f';
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
-    })();
+
+  // Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+
+  // Cookie consent banner
+  if (!localStorage.getItem('opc_cookie_ok')) {
+    var cc = document.createElement('div');
+    cc.id = 'cookie-banner';
+    cc.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#1d1d1f;color:#fff;padding:12px 24px;font-size:0.8125rem;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;';
+    cc.innerHTML = '<span>本网站使用 Cookie 和百度统计来改善体验。继续使用即表示同意。</span><button id="cookie-ok" style="background:#fff;color:#1d1d1f;border:none;padding:6px 18px;border-radius:4px;cursor:pointer;font-weight:600;font-size:0.8125rem;">知道了</button>';
+    document.body.appendChild(cc);
+    document.getElementById('cookie-ok').addEventListener('click', function() {
+      localStorage.setItem('opc_cookie_ok', '1');
+      cc.style.display = 'none';
+    });
   }
 });
