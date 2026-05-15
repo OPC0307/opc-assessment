@@ -1706,6 +1706,13 @@ h3 {
   line-height: 1.55;
 }
 
+/* ---- Services Grid (homepage infrastructure & cases) ---- */
+.fw-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
 /* ---- Services ---- */
 .fw-services__head {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
@@ -1815,7 +1822,8 @@ h3 {
     gap: 24px;
   }
   .case-grid,
-  .service-grid {
+  .service-grid,
+  .fw-services-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
