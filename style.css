@@ -4,6 +4,25 @@
    ============================================ */
 /* Import: Noto Sans SC (Google Fonts, free for commercial use) */
 
+/* Accessibility: skip-to-content link */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: #1d1d1f;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 0 0 4px 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 10001;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
 /* ---- 设计符号 ----
  * 主色：#1d1d1f — 文字、标题、品牌
  * 次级色：#6e6e73 — 次级文字
