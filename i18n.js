@@ -52,7 +52,7 @@
       });
   }
 
-  var EN_PAGES = ["/", "/index.html", "/about.html", "/privacy.html", "/checkout.html", "/404.html"];
+  var EN_PAGES = ["/", "/index.html", "/about.html", "/privacy.html", "/checkout.html", "/404.html", "/cases.html", "/services/", "/services/index.html", "/services/process.html", "/services/registration.html", "/services/subsidy.html", "/services/tax-basics.html", "/subsidy/", "/subsidy/index.html", "/subsidy/checklist.html"];
 
   /* ---- URL-based language switch ---- */
   function switchLang(lang) {
